@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treino — язык на материале твоей жизни</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1117; --bg2:#161b22; --bg3:#21262d;
+    --bd:#30363d; --bd2:#3d444d;
+    --fg:#e6edf3; --mut:#8b949e; --mut2:#6e7681;
+    --blue:#58a6ff; --green:#3fb950; --green-btn:#238636; --green-btn2:#2ea043;
+    --amber:#d29922; --terra:#db6d28; --red:#f85149; --purple:#bc8cff;
+    --ser:'Fraunces',serif; --ui:'Hanken Grotesk',sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#010409;font-family:var(--ui);color:var(--fg);
+    -webkit-font-smoothing:antialiased;padding:24px 16px;line-height:1.55}
+  .page{width:210mm;max-width:100%;margin:0 auto;background:var(--bg);
+    border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+  .pad{padding:30px 38px}
+
+  .repobar{display:flex;align-items:center;gap:10px;padding:14px 38px;
+    border-bottom:1px solid var(--bd);background:var(--bg2);font-family:var(--mono);font-size:13px}
+  .repobar .path{color:var(--blue);font-weight:500}
+  .repobar .slash{color:var(--mut2)}
+  .pill{font-family:var(--mono);font-size:11px;color:var(--mut);border:1px solid var(--bd);
+    border-radius:20px;padding:2px 9px}
+  .repobar .spacer{flex:1}
+  .stat{color:var(--mut);font-size:12px}
+  .stat b{color:var(--fg);font-weight:500}
+
+  .count{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:13px 38px;background:#1b1505;border-bottom:1px solid #3a2c08}
+  .count .lbl{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:.04em}
+  .count .clock{font-family:var(--ser);font-size:24px;font-weight:600;color:#ffd479}
+  .count .clock small{font-family:var(--ui);font-size:13px;color:var(--mut);font-weight:400}
+  .count .note{font-size:12px;color:var(--mut);margin-left:auto}
+
+  .kicker{font-family:var(--mono);font-size:12px;color:var(--green);letter-spacing:.04em;margin-bottom:14px}
+  h1{font-family:var(--ser);font-weight:500;font-size:42px;line-height:1.08;letter-spacing:-.01em;margin-bottom:16px}
+  h1 .em{font-style:italic;color:var(--amber)}
+  .punch{font-size:18px;color:var(--fg);font-weight:500;margin-bottom:14px;max-width:62ch;line-height:1.4}
+  .punch .em{font-style:italic;color:var(--amber)}
+  .lede{font-size:16px;color:var(--mut);max-width:62ch}
+  .lede b{color:var(--fg);font-weight:500}
+
+  .hr{height:1px;background:var(--bd);margin:0}
+
+  .sec-h{font-family:var(--mono);font-size:12px;color:var(--mut);letter-spacing:.05em;
+    text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+  .sec-h::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:18px 20px}
+  .card .lab{font-family:var(--mono);font-size:11px;color:var(--terra);margin-bottom:8px;letter-spacing:.03em}
+  .card h3{font-family:var(--ser);font-size:20px;font-weight:500;margin-bottom:7px}
+  .card p{font-size:14px;color:var(--mut)}
+
+  .langbar{display:flex;height:10px;border-radius:6px;overflow:hidden;margin-bottom:14px;border:1px solid var(--bd)}
+  .langbar span{display:block}
+  .langlegend{display:flex;flex-wrap:wrap;gap:14px 18px;font-size:13px;color:var(--mut)}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+  .langlegend b{color:var(--fg);font-weight:500}
+
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px}
+  .feat .row{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+  .feat .ck{color:var(--green);font-family:var(--mono);flex:none;margin-top:1px}
+  .feat .soon{color:var(--amber);font-family:var(--mono);flex:none;margin-top:1px}
+  .feat .row span.t{color:var(--fg)}
+  .feat .row span.t i{color:var(--mut);font-style:normal}
+  .tag{font-family:var(--mono);font-size:10px;border:1px solid var(--bd2);border-radius:5px;
+    padding:1px 6px;color:var(--mut);margin-left:6px;white-space:nowrap}
+
+  .sci{background:var(--bg2);border:1px solid var(--bd);border-left:3px solid var(--blue);
+    border-radius:8px;padding:18px 22px}
+  .sci p{font-size:14px;color:var(--fg);margin-bottom:10px}
+  .sci p:last-child{margin-bottom:0}
+  .sci .fn{font-size:12px;color:var(--mut2);font-family:var(--mono)}
+
+  .price{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .pcard{border:1px solid var(--bd);border-radius:10px;padding:20px;background:var(--bg2)}
+  .pcard.hot{border-color:var(--green-btn2)}
+  .pcard .pt{font-family:var(--mono);font-size:12px;color:var(--mut);margin-bottom:6px}
+  .pcard .amt{font-family:var(--ser);font-size:30px;font-weight:500;margin-bottom:4px}
+  .pcard .amt small{font-size:14px;color:var(--mut);font-family:var(--ui)}
+  .pcard .amt s{color:var(--mut2)}
+  .pcard .sub{font-size:13px;color:var(--mut);margin-bottom:14px;min-height:52px}
+  .btn{display:block;text-align:center;text-decoration:none;font-weight:500;font-size:14px;
+    border-radius:7px;padding:9px;font-family:var(--ui)}
+  .btn.g{background:var(--green-btn);color:#fff;border:1px solid #2ea04366}
+  .btn.o{background:transparent;color:var(--fg);border:1px solid var(--bd2)}
+
+  .foot{padding:20px 38px;border-top:1px solid var(--bd);background:var(--bg2);
+    display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between}
+  .honest{font-size:13px;color:var(--mut)}
+  .honest b{color:var(--amber);font-weight:500}
+  .madeby{font-family:var(--mono);font-size:11px;color:var(--mut2)}
+  .biglink{font-family:var(--mono);font-size:13px;color:var(--blue);text-decoration:none}
+
+  @media (max-width:680px){
+    h1{font-size:32px}.grid,.feat,.price{grid-template-columns:1fr}
+    .pad{padding:24px 22px}.repobar,.count,.foot{padding-left:22px;padding-right:22px}
+  }
+  @media print{
+    body{background:#fff;padding:0}
+    .page{border:none;border-radius:0;width:auto}
+    @page{size:A4;margin:10mm}
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <div class="repobar">
+    <span class="path">igor-kartuzov<span class="slash"> / </span>treino</span>
+    <span class="pill">Public</span>
+    <span class="spacer"></span>
+    <span class="stat">★ <b>family-of-4</b></span>
+    <span class="stat">forks <b>EN · DE · ES</b></span>
+  </div>
+
+  <div class="count">
+    <span class="lbl">// до запуска осталось</span>
+    <span class="clock" id="clock">— <small>дней</small></span>
+    <span class="note">первые 100 — соавторы: докручиваю фишки на вашем материале → −50%</span>
+  </div>
+
+  <div class="pad">
+    <div class="kicker">// language engine · v1</div>
+    <h1>Большинство приложений учат тебя <span class="em">чужим</span> фразам.<br>Treino учит тебя на <span class="em">твоей собственной неделе.</span></h1>
+    <p class="punch">За тебя работают твои <span class="em">Эмоции и События</span>. Ты просто рассказываешь, как прошла неделя — что было, что происходит, что планируешь.</p>
+    <p class="lede"><b>Эта история и есть твой учебник.</b> Движок дробит её на короткие фразы, раскидывает по временам и возвращает ровно тогда, когда мозг готов забыть. Открыл ссылку — попробовал — захотел дальше.</p>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="pad">
+    <div class="sec-h">Одна идея, на которой всё держится</div>
+    <div class="grid">
+      <div class="card">
+        <div class="lab">self-reference</div>
+        <h3>Твоя жизнь как контент</h3>
+        <p>То, что связано лично с тобой, запоминается глубже всего. Не «яблоко — maçã», а «на этой неделе я нянчил внучку».</p>
+      </div>
+      <div class="card">
+        <div class="lab">active recall</div>
+        <h3>Сначала вслух — потом проверка</h3>
+        <p>Ты достаёшь фразу из памяти сам, а не узнаёшь её из списка. Усилие извлечения и есть момент обучения.</p>
+      </div>
+      <div class="card">
+        <div class="lab">spaced repetition</div>
+        <h3>Возврат в нужный момент</h3>
+        <p>Коробки Лейтнера: выученное прячется и всплывает 7 → 14 → 30 → 60 дней. Никакой зубрёжки впрок.</p>
+      </div>
+      <div class="card">
+        <div class="lab">emotion = fuel</div>
+        <h3>Эмоция как топливо</h3>
+        <p>Своя история несёт эмоцию, а эмоция «помечает» память. Заодно это и мотивация возвращаться.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="pad">
+    <div class="sec-h">Один движок — вся семья и твой круг</div>
+    <div class="langbar">
+      <span style="width:24%;background:var(--green)"></span>
+      <span style="width:18%;background:var(--blue)"></span>
+      <span style="width:16%;background:var(--amber)"></span>
+      <span style="width:14%;background:var(--terra)"></span>
+      <span style="width:16%;background:var(--red)"></span>
+      <span style="width:12%;background:var(--purple)"></span>
+    </div>
+    <div class="langlegend">
+      <span><i class="dot" style="background:var(--green)"></i><b>Português</b> — ты</span>
+      <span><i class="dot" style="background:var(--blue)"></i><b>English</b> — жена</span>
+      <span><i class="dot" style="background:var(--amber)"></i><b>Deutsch</b> — сын</span>
+      <span><i class="dot" style="background:var(--terra)"></i><b>Español</b> — тёща</span>
+      <span><i class="dot" style="background:var(--red)"></i><b>Русский</b> — твой препод</span>
+      <span><i class="dot" style="background:var(--purple)"></i><b>Français</b> — твой друг с улицы</span>
+      <span><i class="dot" style="background:var(--mut2)"></i>+ любой язык, который потянет движок</span>
+    </div>
+    <p style="font-size:14px;color:var(--mut);margin-top:14px">Один <span style="font-family:var(--mono);color:var(--fg)">движок</span> + твоя история на твоём языке = <span style="color:var(--fg)">новый язык в памяти</span>. Каждый учит на материале своей собственной жизни, интерфейс — на родном.</p>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="pad">
+    <div class="sec-h">Что внутри движка</div>
+    <div class="feat">
+      <div class="row"><span class="ck">[✓]</span><span class="t">Вспомни и скажи <i>— карточки RU→PT, озвучка, Лейтнер</i></span></div>
+      <div class="row"><span class="ck">[✓]</span><span class="t">Заполни пропуск <i>— выбор формы + правило</i></span></div>
+      <div class="row"><span class="ck">[✓]</span><span class="t">Собери рассказ <i>— недельная история по аркам времён</i></span></div>
+      <div class="row"><span class="ck">[✓]</span><span class="t">Антонимы и синонимы <i>— фразы в контексте</i></span></div>
+      <div class="row"><span class="soon">[→]</span><span class="t">Запись своего голоса <span class="tag">скоро</span></span></div>
+      <div class="row"><span class="soon">[→]</span><span class="t">Аудирование как навык <span class="tag">скоро</span></span></div>
+      <div class="row"><span class="soon">[→]</span><span class="t">Режим «Сегодня» — всё вперемешку <span class="tag">скоро</span></span></div>
+      <div class="row"><span class="soon">[→]</span><span class="t">Прогресс без стрик-давления <span class="tag">скоро</span></span></div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="pad">
+    <div class="sec-h">Почему это работает — без магии</div>
+    <div class="sci">
+      <p>Самореферентное кодирование (привязка к себе) — по мета-анализу 129 исследований самый эффективный из известных способов запоминания. Извлечение из памяти и интервальное повторение — две техники с самой прочной доказательной базой в когнитивной науке; вместе они дают долговременное удержание.</p>
+      <p style="color:var(--amber)">Это метод, а не чудо. Усилие остаётся за тобой — Treino делает это усилие точным и возвращает энергию через твою же историю.</p>
+      <p class="fn">refs: Symons &amp; Johnson meta-analysis (129 studies) · Craik &amp; Tulving · Roediger (testing effect) · Ebbinghaus / spacing effect</p>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="pad">
+    <div class="sec-h">Доступ · предзаказ −50%</div>
+    <div class="price">
+      <div class="pcard">
+        <div class="pt">// разовая покупка · <span style="color:var(--green)">−50% первым 100</span></div>
+        <div class="amt">€19 <small><s>€39</s> · навсегда</small></div>
+        <div class="sub">Движок целиком + 4 языковых пакета. Твой навсегда, работает офлайн, прогресс — на твоём устройстве. Цена зафиксируется за тобой по предзаказу.</div>
+        <a class="btn o" href="https://kartuzov.gumroad.com/l/ixvpus" target="_blank" rel="noopener">Сделать предзаказ</a>
+      </div>
+      <div class="pcard hot">
+        <div class="pt">// подписка на контент · позже, если нужна</div>
+        <div class="amt">€5 <small><s>€6</s> / мес</small></div>
+        <div class="sub">Всё из разового + еженедельный свежий набор фраз и учебного мотивационного материала, новые типы дрилла, «Батарейки» и «Энерджайзеры» для удовольствия от учёбы — по мере выхода. Продление автоматическое, отписка в один клик — как везде.</div>
+        <a class="btn g" href="https://kartuzov.gumroad.com/l/mzrinu" target="_blank" rel="noopener">Подписаться</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="honest"><b>Честно:</b> это пред-релиз. Часть фишек помечена «скоро» — это дорожная карта; ты получаешь их по мере выхода, без доплат.</span>
+    <a class="biglink" href="https://pt-igor-treinozip.replit.app" target="_blank" rel="noopener">→ открыть демо</a>
+    <span class="madeby">built with Claude · Replit · made on Madeira 🇵🇹</span>
+  </div>
+
+</main>
+
+<script>
+  (function(){
+    var launch = new Date('2026-06-11T20:00:00');
+    var el = document.getElementById('clock');
+    function tick(){
+      var diff = launch - new Date();
+      if(diff <= 0){ el.innerHTML = 'запуск <small>состоялся</small>'; return; }
+      var d = Math.floor(diff/86400000);
+      var h = Math.floor(diff%86400000/3600000);
+      el.innerHTML = d + ' <small>дн</small> ' + h + ' <small>ч</small>';
+    }
+    tick(); setInterval(tick, 60000);
+  })();
+</script>
+</body>
+</html>
