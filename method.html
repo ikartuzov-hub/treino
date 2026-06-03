@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treino — метод, наука и психология</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--bd:#30363d;--bd2:#3d444d;
+    --fg:#e6edf3;--mut:#8b949e;--mut2:#6e7681;
+    --blue:#58a6ff;--green:#3fb950;--amber:#d29922;--terra:#db6d28;--purple:#bc8cff;
+    --ser:'Fraunces',serif;--ui:'Hanken Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#010409;font-family:var(--ui);color:var(--fg);-webkit-font-smoothing:antialiased;padding:24px 16px;line-height:1.65}
+  .page{width:210mm;max-width:100%;margin:0 auto;background:var(--bg);border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+  .pad{padding:32px 44px}
+  .repobar{display:flex;align-items:center;gap:10px;padding:13px 44px;border-bottom:1px solid var(--bd);background:var(--bg2);font-family:var(--mono);font-size:13px}
+  .repobar .path{color:var(--blue);font-weight:500}.repobar .slash{color:var(--mut2)}
+  .repobar .file{color:var(--mut)}
+  .pill{font-family:var(--mono);font-size:11px;color:var(--mut);border:1px solid var(--bd);border-radius:20px;padding:2px 9px;margin-left:auto}
+
+  .kicker{font-family:var(--mono);font-size:12px;color:var(--green);letter-spacing:.04em;margin-bottom:12px}
+  h1{font-family:var(--ser);font-weight:500;font-size:36px;line-height:1.1;margin-bottom:14px}
+  h1 .em{font-style:italic;color:var(--amber)}
+  .intro{font-size:16px;color:var(--mut);max-width:66ch}.intro b{color:var(--fg);font-weight:500}
+
+  h2{font-family:var(--ser);font-weight:500;font-size:24px;margin:0 0 14px;padding-top:4px}
+  h2 .num{font-family:var(--mono);font-size:14px;color:var(--terra);margin-right:8px;vertical-align:3px}
+  h3{font-family:var(--ui);font-weight:600;font-size:16px;margin:18px 0 6px;color:var(--fg)}
+  p{font-size:15px;color:#cdd5de;margin-bottom:12px}
+  p b{color:var(--fg);font-weight:500}
+  .lead{color:var(--fg)}
+  .hr{height:1px;background:var(--bd)}
+  sup a{color:var(--blue);text-decoration:none;font-family:var(--mono);font-size:11px}
+
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  .pl{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:16px 18px}
+  .pl .lab{font-family:var(--mono);font-size:11px;color:var(--terra);margin-bottom:7px}
+  .pl h4{font-family:var(--ser);font-size:18px;font-weight:500;margin-bottom:6px}
+  .pl p{font-size:13.5px;color:var(--mut);margin:0}
+
+  .note{background:var(--bg2);border:1px solid var(--bd);border-left:3px solid var(--amber);border-radius:8px;padding:16px 20px;margin:14px 0}
+  .note.blue{border-left-color:var(--blue)}
+  .note p{margin:0;font-size:14px;color:var(--fg)}
+  .note .cap{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.04em;margin-bottom:6px;display:block}
+  .note.blue .cap{color:var(--blue)}
+
+  ul{margin:0 0 12px 0;padding-left:0;list-style:none}
+  li{font-size:14.5px;color:#cdd5de;padding-left:22px;position:relative;margin-bottom:8px}
+  li::before{content:"→";position:absolute;left:0;color:var(--green);font-family:var(--mono)}
+
+  .refs{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:8px 20px}
+  .ref{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--bd);font-size:13px}
+  .ref:last-child{border-bottom:none}
+  .ref .id{font-family:var(--mono);font-size:11px;color:var(--mut2);flex:none;width:26px;padding-top:1px}
+  .ref .body{color:var(--mut)}.ref .body b{color:var(--fg);font-weight:500}
+  .ref a{color:var(--blue);text-decoration:none;font-family:var(--mono);font-size:11px}
+
+  .foot{padding:18px 44px;border-top:1px solid var(--bd);background:var(--bg2);font-family:var(--mono);font-size:11px;color:var(--mut2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  @media (max-width:680px){h1{font-size:28px}.pillars{grid-template-columns:1fr}.pad{padding:24px 22px}.repobar,.foot{padding-left:22px;padding-right:22px}}
+  @media print{body{background:#fff;padding:0}.page{border:none;border-radius:0;width:auto}@page{size:A4;margin:11mm}}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="repobar">
+    <a class="path" href="https://ikartuzov-hub.github.io/treino/" style="text-decoration:none">treino-lang<span class="slash"> / </span>engine</a>
+    <span class="file">/ docs / methodology.md</span>
+    <span class="pill">v1</span>
+  </div>
+
+  <div class="pad">
+    <div class="kicker">// почему это работает</div>
+    <h1>Метод: ты учишься <span class="em">на собственной жизни</span> — и оттуда же берёшь энергию.</h1>
+    <p class="intro lead"><b>Уникальность Treino не в карточках и не в дизайне, а в источнике контента.</b> Учебник — это твоя собственная неделя: что было, что происходит, что планируешь. Ты не запоминаешь чужие фразы про абстрактных людей — ты говоришь о своей жизни. Поэтому язык цепляется глубже, а главное — учиться хочется, потому что топливом становятся твои же тёплые события и эмоции.</p>
+  </div>
+
+  <div class="hr"></div>
+  <div class="pad">
+    <h2><span class="num">01</span>Четыре опоры метода</h2>
+    <p>Каждая по отдельности — давно доказанный приём когнитивной науки. Treino соединяет все четыре в одном недельном цикле.</p>
+    <div class="pillars">
+      <div class="pl"><div class="lab">self-reference</div><h4>Твоя жизнь как контент</h4><p>Информация, связанная с собой, запоминается лучше всего — это самый эффективный из изученных уровней кодирования.<sup><a href="#r1">[1]</a><a href="#r3">[3]</a></sup></p></div>
+      <div class="pl"><div class="lab">active recall</div><h4>Сначала вслух — потом проверка</h4><p>Достать фразу из памяти самому прочнее, чем перечитать. Усилие извлечения и есть обучение.<sup><a href="#r5">[5]</a></sup></p></div>
+      <div class="pl"><div class="lab">spaced repetition</div><h4>Возврат в нужный момент</h4><p>Коробки Лейтнера: интервалы растут (7→14→30→60 дн.), память консолидируется, а не зубрится.<sup><a href="#r7">[7]</a><a href="#r8">[8]</a></sup></p></div>
+      <div class="pl"><div class="lab">emotion = fuel</div><h4>Эмоция помечает память</h4><p>Эмоциональное возбуждение при кодировании усиливает консолидацию; с возрастом лучше держится позитивное.<sup><a href="#r9">[9]</a><a href="#r10">[10]</a></sup></p></div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="pad">
+    <h2><span class="num">02</span>Почему именно через свою историю</h2>
+    <p>Самый сильный способ закодировать новое — связать его с собой. В мета-анализе 129 исследований самореферентное кодирование оказалось эффективнее любого другого уровня обработки.<sup><a href="#r3">[3]</a></sup> Отдельно это подтверждено и для запоминания слов <i>иностранного</i> языка: слово, привязанное к себе, попадает в богатую сеть знаний о себе — и держится крепче.<sup><a href="#r4">[4]</a></sup></p>
+    <p>Treino делает это системно: твой недельный рассказ дробится на короткие фразы (он/она, прошлое/настоящее/будущее), и каждая фраза несёт твой собственный эпизод. Ты учишь не «человек пьёт кофе», а «в среду я гулял с внучкой».</p>
+    <div class="note blue"><span class="cap">// и про мотивацию</span><p>Устойчивее всего учатся те, у кого мотивация <b>внутренняя</b> (автономия + интерес), а не внешняя (давление, стрики). Внутренняя мотивация даёт и лучший результат, и меньше тревоги.<sup><a href="#r11">[11]</a></sup> Поэтому Treino намеренно без стрик-давления: тяга возвращаться рождается из смысла твоей истории.</p></div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="pad">
+    <h2><span class="num">03</span>Психологическая польза — мягкая, честная</h2>
+    <p>Метод устроен так, что попутно поддерживает тонус и мотивацию. Это <b>побочный эффект обучения</b>, а не лечение — но эффект приятный и реальный.</p>
+
+    <h3>Пересказ хорошего = заново прожить хорошее</h3>
+    <p>Рассказывая о позитивном событии недели, ты его «смакуешь» заново (savoring) — а заодно учишь язык. Так учёба перестаёт отнимать энергию и начинает её возвращать.</p>
+
+    <h3>Программирование будущего: тащим желаемое в настоящее</h3>
+    <p>Если позитивных событий пока мало — рассказывай короткие позитивные истории о <b>желаемом будущем</b> (благо в движке есть будущее время). Это перекликается с упражнением «Лучшее возможное Я»: регулярное представление конкретного хорошего будущего повышает оптимизм и мотивацию действовать.<sup><a href="#r12">[12]</a></sup> В Treino эти фразы из будущего постепенно «вытаскиваются» в настоящее — по мере того, как ты реально становишься к ним на шаг ближе.</p>
+    <p>А сам по себе рассказ о своей жизни своими словами — близкий родственник экспрессивного письма, которое связывают с улучшением самочувствия.<sup><a href="#r13">[13]</a></sup></p>
+
+    <div class="note"><span class="cap">// честная оговорка</span><p>Это инструмент для языка и тонуса, <b>не замена психотерапии</b>. При серьёзных трудностях с настроением стоит обратиться к специалисту — Treino хорошо работает рядом с такой поддержкой, но не вместо неё.</p></div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="pad">
+    <h2><span class="num">04</span>Что это значит на практике</h2>
+    <ul>
+      <li>Один цикл в неделю: рассказал → движок собрал фразы → всю неделю короткие подходы по 5–10 минут.</li>
+      <li>Говоришь вслух, проверяешь, отмечаешь «вспомнил / не вспомнил» — остальное (когда повторить) решает алгоритм.</li>
+      <li>Любой язык → любой язык: учишь язык новой страны или, наоборот, язык приехавших; для семьи — один движок на всех.</li>
+      <li>Прогресс живёт на твоём устройстве, работает офлайн, ничего лишнего.</li>
+    </ul>
+  </div>
+
+  <div class="hr"></div>
+  <div class="pad">
+    <h2><span class="num">05</span>Источники</h2>
+    <div class="refs">
+      <div class="ref" id="r1"><span class="id">[1]</span><span class="body">Rogers, Kuiper &amp; Kirker (1977). Self-reference and the encoding of personal information. <i>J. Personality &amp; Social Psychology.</i></span></div>
+      <div class="ref" id="r2"><span class="id">[2]</span><span class="body">Craik &amp; Tulving (1975). Depth of processing and the retention of words. <i>J. Experimental Psychology.</i></span></div>
+      <div class="ref" id="r3"><span class="id">[3]</span><span class="body">Symons &amp; Johnson (1997). The self-reference effect in memory: a meta-analysis (129 studies). — обзор: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5417556/">ncbi.nlm.nih.gov</a></span></div>
+      <div class="ref" id="r4"><span class="id">[4]</span><span class="body">Self-reference promotes vocabulary learning in a foreign language (2024). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12426137/">ncbi.nlm.nih.gov</a></span></div>
+      <div class="ref" id="r5"><span class="id">[5]</span><span class="body">Roediger &amp; Karpicke (2006). Test-enhanced learning. — обзор приёма: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6598954/">ncbi.nlm.nih.gov</a></span></div>
+      <div class="ref" id="r6"><span class="id">[6]</span><span class="body">Ebbinghaus (1885). Über das Gedächtnis — первооснова эффекта интервалов. <a href="https://en.wikipedia.org/wiki/Spacing_effect">en.wikipedia.org</a></span></div>
+      <div class="ref" id="r7"><span class="id">[7]</span><span class="body">Cepeda, Pashler et al. (2006). Distributed practice: meta-analysis. <a href="https://en.wikipedia.org/wiki/Spacing_effect">en.wikipedia.org</a></span></div>
+      <div class="ref" id="r8"><span class="id">[8]</span><span class="body">Обзор когнитивной науки об интервальном повторении. <a href="https://www.justinmath.com/cognitive-science-of-learning-spaced-repetition/">justinmath.com</a></span></div>
+      <div class="ref" id="r9"><span class="id">[9]</span><span class="body">McGaugh (2000). Memory — a century of consolidation (эмоция и память). <i>Science.</i></span></div>
+      <div class="ref" id="r10"><span class="id">[10]</span><span class="body">Age-related positivity effect in emotional memory (2024). <a href="https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2024.1342589/full">frontiersin.org</a></span></div>
+      <div class="ref" id="r11"><span class="id">[11]</span><span class="body">Deci &amp; Ryan — Self-Determination Theory; Alamer et al. (2025), мотивация и достижения в L2. <a href="https://selfdeterminationtheory.org/wp-content/uploads/2025/06/2025_AlamerRobatEtAl_L2.pdf">selfdeterminationtheory.org</a></span></div>
+      <div class="ref" id="r12"><span class="id">[12]</span><span class="body">King (2001); Sheldon &amp; Lyubomirsky (2006). «Best Possible Self» — представление желаемого будущего повышает оптимизм. (позитивная психология)</span></div>
+      <div class="ref" id="r13"><span class="id">[13]</span><span class="body">Pennebaker — экспрессивное письмо и благополучие; рассказ о своей жизни как практика.</span></div>
+      <div class="ref" id="r14"><span class="id">[14]</span><span class="body">Книги: Brown, Roediger &amp; McDaniel — <b>«Make It Stick»</b> (2014); Gabriel Wyner — <b>«Fluent Forever»</b> (2014).</span></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span><a href="https://ikartuzov-hub.github.io/treino/" style="color:var(--blue);text-decoration:none">← к продукту</a> · treino · language engine · docs/methodology</span>
+    <span><a href="https://kartuzov.gumroad.com/l/ixvpus" style="color:var(--green);text-decoration:none">сделать предзаказ →</a></span>
+  </div>
+</main>
+</body>
+</html>
