@@ -2,6 +2,8 @@
   "config": {
     "lang": "pt-PT",
     "ui": "ru",
+    "brand": "PT-Igor ·",
+    "flag": "🇵🇹",
     "neg": "Não, é…",
     "subscribeUrl": "",
     "subscribeText": "",

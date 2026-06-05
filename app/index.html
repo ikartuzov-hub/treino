@@ -486,8 +486,10 @@ function setMode(m){mode=m;archiveScreen=null;document.querySelectorAll(".tab").
 function applyI18n(){
   L=I18N[(DATA.config&&DATA.config.ui)] || I18N.en;
   document.documentElement.lang=(DATA.config&&DATA.config.ui)||"en";
-  document.getElementById("wm").innerHTML=L.brand+' <em>Treino</em>';
-  document.getElementById("flag").textContent=L.flag||"";
+  var _brand=(DATA.config&&DATA.config.brand)||L.brand;
+  var _flag=(DATA.config&&DATA.config.flag!=null)?DATA.config.flag:L.flag;
+  document.getElementById("wm").innerHTML=_brand+' <em>Treino</em>';
+  document.getElementById("flag").textContent=_flag||"";
   document.querySelectorAll(".tab").forEach(t=>t.textContent=L.tabs[t.dataset.mode]||t.dataset.mode);
   document.getElementById("archBtn").textContent=L.archBtn;
   document.getElementById("footNote").textContent=L.footNote;
