@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treino — your week, in Portuguese</title>
+<meta name="theme-color" content="#F2EBDA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F2EBDA; --paper:#FBF7EC; --ink:#16302B; --ink-soft:#54655A;
+    --azul:#1F7A5C; --azul-deep:#0E5138; --terra:#BC4B2F; --gold:#C2872E;
+    --line:#DBD0B8; --good:#3E7A57; --soft-shadow:0 18px 40px -22px rgba(22,48,43,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--cream);color:var(--ink);font-family:"Hanken Grotesk",sans-serif;line-height:1.6;
+    padding:0 18px 56px;
+    background-image:radial-gradient(circle at 10% 4%,rgba(31,122,92,.09),transparent 44%),radial-gradient(circle at 92% 0%,rgba(194,135,46,.09),transparent 40%);}
+  .wrap{max-width:600px;margin:0 auto}
+  .brandbar{display:flex;align-items:center;justify-content:space-between;padding:22px 2px 0}
+  .wm{font-family:"Fraunces",serif;font-weight:600;font-size:18px;letter-spacing:-.01em}
+  .wm em{font-style:italic;color:var(--gold)}
+  .flag{font-size:15px}
+  .kick{font-family:"Hanken Grotesk";font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);margin:38px 0 12px}
+  h1{font-family:"Fraunces",serif;font-weight:600;font-size:34px;line-height:1.14;letter-spacing:-.015em;margin-bottom:16px}
+  h1 .it{font-style:italic;color:var(--azul-deep)}
+  .lede{font-size:17.5px;color:var(--ink);margin-bottom:26px}
+  .cta{display:block;text-align:center;font-family:inherit;font-weight:700;font-size:17px;text-decoration:none;border-radius:13px;padding:17px 20px;transition:.16s;border:1px solid var(--ink)}
+  .cta.primary{background:var(--ink);color:var(--paper);box-shadow:var(--soft-shadow)}
+  .cta.primary:active{transform:translateY(1px)}
+  .cta.ghost{background:transparent;color:var(--ink);border-color:var(--line);font-size:15px;font-weight:600}
+  .sub{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:10px}
+  h2{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:46px 0 16px}
+  .steps{display:flex;flex-direction:column;gap:12px}
+  .step{display:flex;gap:14px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:15px 17px;box-shadow:var(--soft-shadow)}
+  .step .num{flex:0 0 auto;width:27px;height:27px;border-radius:8px;background:rgba(31,122,92,.12);color:var(--azul-deep);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .step h3{font-family:"Fraunces",serif;font-size:17px;color:var(--azul-deep);margin-bottom:3px}
+  .step p{font-size:14px;color:var(--ink-soft);margin:0}
+  .prices{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:4px}
+  .price{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 18px;box-shadow:var(--soft-shadow);text-align:center}
+  .price.lead{border-color:var(--azul);border-width:1.5px}
+  .badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--terra);color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap}
+  .price .name{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+  .price .amt{font-family:"Fraunces",serif;font-size:38px;color:var(--azul-deep);line-height:1}
+  .price .old{font-size:15px;color:var(--ink-soft);text-decoration:line-through;margin-left:6px}
+  .price .desc{font-size:13px;color:var(--ink-soft);margin-top:12px;line-height:1.45}
+  .free{background:rgba(62,122,87,.08);border:1px solid var(--line);border-left:3px solid var(--good);border-radius:0 12px 12px 0;padding:14px 16px;margin-top:16px;font-size:14.5px;color:var(--ink)}
+  .free b{color:var(--azul-deep)}
+  .email{display:block;text-align:center;margin-top:8px;color:var(--azul);font-weight:600;text-decoration:none;word-break:break-word}
+  .fineprint{font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:18px;line-height:1.6}
+  .foot{display:flex;justify-content:space-between;align-items:center;margin-top:42px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft)}
+  .foot a{color:var(--azul);text-decoration:none;font-weight:600}
+  .reveal{opacity:0;transform:translateY(12px);animation:rise .6s ease forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media(max-width:420px){h1{font-size:29px}.prices{grid-template-columns:1fr;gap:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brandbar reveal"><span class="wm"><em>Treino</em></span><span class="flag">🇵🇹</span></div>
+
+  <div class="kick reveal" style="animation-delay:.05s">Learn Portuguese from your own life</div>
+  <h1 class="reveal" style="animation-delay:.08s">Your <span class="it">real week</span>, turned into a Portuguese trainer.</h1>
+  <p class="lede reveal" style="animation-delay:.12s">No abstract textbook sentences. You speak about what actually happened in your week — so the language sticks deeper, and you want to come back. Five to ten minutes a day, in your browser, nothing to install.</p>
+
+  <a class="cta primary reveal" style="animation-delay:.16s" href="./">Open the app →</a>
+  <div class="sub reveal" style="animation-delay:.18s">Works on iPhone (Safari) and Android. Add it to your home screen and it opens like an app.</div>
+
+  <h2 class="reveal">How it works</h2>
+  <div class="steps">
+    <div class="step reveal"><span class="num">1</span><div><h3>Open the link</h3><p>It runs in your browser. On the phone: Share → "Add to Home Screen" — now it sits like a real app and works offline.</p></div></div>
+    <div class="step reveal" style="animation-delay:.05s"><span class="num">2</span><div><h3>Practise daily</h3><p>Say each phrase aloud, then check. Mark "got it / didn't" — the app decides when to bring it back (spaced repetition).</p></div></div>
+    <div class="step reveal" style="animation-delay:.1s"><span class="num">3</span><div><h3>Make it yours</h3><p>Send your real week — what happened, what you do now, what you plan — and get up to 8 new sentences built straight into your app.</p></div></div>
+  </div>
+
+  <h2 class="reveal">Pricing</h2>
+  <div class="prices">
+    <div class="price lead reveal">
+      <span class="badge">Launch price</span>
+      <div class="name">Personal Starter</div>
+      <div><span class="amt">€19</span><span class="old">€39</span></div>
+      <div class="desc">Your first full personal pack, built from your own week.</div>
+    </div>
+    <div class="price reveal" style="animation-delay:.06s">
+      <div class="name">Top-up</div>
+      <div><span class="amt">€5</span><span class="old">€6</span></div>
+      <div class="desc">A fresh pack of up to 8 sentences, whenever you want more.</div>
+    </div>
+  </div>
+  <div class="free reveal"><b>No subscription.</b> You pay only when you want a new pack — one-time, that's it. VAT is handled automatically at checkout.</div>
+  <p class="sub reveal" style="margin-top:16px">After payment, send your text to:</p>
+  <a class="email reveal" href="mailto:i.kartuzov@gmail.com">i.kartuzov@gmail.com</a>
+
+  <a class="cta primary reveal" style="margin-top:24px" href="https://kartuzov.gumroad.com/l/fkfdbg">Get your personal pack →</a>
+  <a class="cta ghost reveal" style="margin-top:11px" href="method.html">How the method works &amp; the science →</a>
+
+  <p class="fineprint reveal">A tool for language and tone — not a replacement for therapy. Progress lives on your device.</p>
+
+  <div class="foot reveal">
+    <a href="./">← the app</a>
+    <span>treino · language engine</span>
+    <a href="method.html">the method →</a>
+  </div>
+</div>
+</body>
+</html>
