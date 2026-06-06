@@ -1,0 +1,40 @@
+{
+  "config":{
+    "lang":"pt-PT",
+    "ui":"es",
+    "neg":"Não, é…",
+    "brand":"España",
+    "flag":"🇵🇹",
+    "subscribeUrl":"https://kartuzov.gumroad.com/l/fkfdbg",
+    "subscribeText":"¿Quieres tu propio set, hecho con tu semana?",
+    "subscribeBtn":"Conseguir mi set →",
+    "flyerUrl":"start.html",
+    "flyerText":"Cómo funciona y precios",
+    "methodUrl":"method.html",
+    "methodText":"El método"
+  },
+  "phrases":[
+    {"pt":"Gosto muito do meu gato.","ru":"Quiero mucho a mi gato.","sit":"día a día","cue":"Gosto muito do <span>meu gato</span>…","hi":["meu gato"]},
+    {"pt":"Todas as manhãs bebo um café.","ru":"Todas las mañanas bebo un café.","sit":"día a día","cue":"Todas as manhãs <span>bebo</span>…","hi":["bebo"]},
+    {"pt":"Vivo aqui há dois anos.","ru":"Vivo aquí desde hace dos años.","sit":"encuentro","cue":"Vivo aqui <span>há</span>…","hi":["há"]},
+    {"pt":"Foi um prazer!","ru":"¡Fue un placer!","sit":"encuentro","cue":"Foi um…!","hi":[]}
+  ],
+  "weeks":[
+    {"id":"w1","label":"Semana 1","date":"esta semana","month":"Base","sentences":[
+      {"pt":"Ontem fiz o jantar em casa.","ru":"Ayer hice la cena en casa.","t":"pas"},
+      {"pt":"Todas as manhãs bebo um café.","ru":"Todas las mañanas bebo un café.","t":"pre"},
+      {"pt":"Para a semana vou visitar uma amiga.","ru":"La semana que viene voy a visitar a una amiga.","t":"fut"}
+    ]}
+  ],
+  "cloze":[
+    {"q":"Ontem ___ o jantar em casa.","opts":["faço","fiz","fazia"],"ok":1,"rule":"<b>fiz</b> = hice (acción terminada). 'Ontem' (ayer) → acción terminada → fiz."},
+    {"q":"Todas as manhãs ___ um café.","opts":["bebo","bebi","beberei"],"ok":0,"rule":"<b>bebo</b> = bebo (presente, hábito). 'Todas as manhãs' (todas las mañanas) → hábito → presente: bebo."}
+  ],
+  "antonyms":[
+    {"qpt":"É preguiçoso?","apt":"Não, é trabalhador.","qru":"¿Es perezoso?","aru":"No, es trabajador.","wq":"preguiçoso","wa":"trabalhador","grp":"car"},
+    {"qpt":"É alto?","apt":"Não, é baixo.","qru":"¿Es alto?","aru":"No, es bajo.","wq":"alto","wa":"baixo","grp":"fis"}
+  ],
+  "synonyms":[
+    {"qpt":"Estou cansada.","apt":"Estou exausta.","qru":"Estoy cansada.","aru":"Estoy agotada.","wq":"cansada","wa":"exausta"}
+  ]
+}
