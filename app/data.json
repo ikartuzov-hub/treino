@@ -1,672 +1,857 @@
 {
-  "config": {
-    "lang": "pt-PT",
-    "ui": "ru",
-    "neg": "Não, é…",
-    "subscribeUrl": "",
-    "subscribeText": "",
-    "subscribeBtn": "",
-    "flyerUrl": "start.html",
-    "flyerText": "Как это работает и цены",
-    "brand": "PT-Igor ·",
-    "flag": "🇵🇹",
-    "methodUrl": "method.html",
-    "methodText": "Метод"
+ "config": {
+  "lang": "pt-PT",
+  "ui": "ru",
+  "neg": "Não, é…",
+  "subscribeUrl": "",
+  "subscribeText": "",
+  "subscribeBtn": "",
+  "flyerUrl": "start.html",
+  "flyerText": "Как это работает и цены",
+  "brand": "PT-Igor ·",
+  "flag": "🇵🇹",
+  "methodUrl": "method.html",
+  "methodText": "Метод"
+ },
+ "weeks": [
+  {
+   "id": "jun1",
+   "label": "Июнь / 1",
+   "date": "первая неделя",
+   "month": "Июнь 2026",
+   "sentences": [
+    {
+     "pt": "Esta semana, estudei português todos os dias.",
+     "ru": "На этой неделе я занимался португальским каждый день.",
+     "t": "pas"
+    },
+    {
+     "pt": "Pratiquei na loja e com os vizinhos.",
+     "ru": "Я практиковал в магазине и с соседями.",
+     "t": "pas"
+    },
+    {
+     "pt": "No sábado, fui às montanhas ver as flores.",
+     "ru": "В субботу я ездил в горы смотреть на цветы.",
+     "t": "pas"
+    },
+    {
+     "pt": "No domingo, passei o dia todo na praia.",
+     "ru": "В воскресенье я провёл весь день на пляже.",
+     "t": "pas"
+    },
+    {
+     "pt": "À noite, jantei com amigos num restaurante.",
+     "ru": "Вечером я поужинал с друзьями в ресторане.",
+     "t": "pas"
+    },
+    {
+     "pt": "Hoje é quinta-feira e estou no clube de conversação.",
+     "ru": "Сегодня четверг, и я в разговорном клубе.",
+     "t": "pre"
+    },
+    {
+     "pt": "Agora as flores estão a florir nas montanhas.",
+     "ru": "Сейчас в горах цветут цветы.",
+     "t": "pre"
+    },
+    {
+     "pt": "Para a próxima semana, vou a Lisboa por três dias.",
+     "ru": "На следующей неделе я поеду в Лиссабон на три дня.",
+     "t": "fut"
+    }
+   ]
   },
-  "weeks": [
+  {
+   "id": "apr4",
+   "label": "Апрель / 4",
+   "date": "четвёртая неделя",
+   "month": "Апрель 2026",
+   "sentences": [
     {
-      "id": "jun1",
-      "label": "Июнь / 1",
-      "date": "первая неделя",
-      "month": "Июнь 2026",
-      "sentences": [
-        {
-          "pt": "Esta semana, estudei português todos os dias.",
-          "ru": "На этой неделе я занимался португальским каждый день.",
-          "t": "pas"
-        },
-        {
-          "pt": "Pratiquei na loja e com os vizinhos.",
-          "ru": "Я практиковал в магазине и с соседями.",
-          "t": "pas"
-        },
-        {
-          "pt": "No sábado, fui às montanhas ver as flores.",
-          "ru": "В субботу я ездил в горы смотреть на цветы.",
-          "t": "pas"
-        },
-        {
-          "pt": "No domingo, passei o dia todo na praia.",
-          "ru": "В воскресенье я провёл весь день на пляже.",
-          "t": "pas"
-        },
-        {
-          "pt": "À noite, jantei com amigos num restaurante.",
-          "ru": "Вечером я поужинал с друзьями в ресторане.",
-          "t": "pas"
-        },
-        {
-          "pt": "Hoje é quinta-feira e estou no clube de conversação.",
-          "ru": "Сегодня четверг, и я в разговорном клубе.",
-          "t": "pre"
-        },
-        {
-          "pt": "Agora as flores estão a florir nas montanhas.",
-          "ru": "Сейчас в горах цветут цветы.",
-          "t": "pre"
-        },
-        {
-          "pt": "Para a próxima semana, vou a Lisboa por três dias.",
-          "ru": "На следующей неделе я поеду в Лиссабон на три дня.",
-          "t": "fut"
-        }
-      ]
+     "pt": "Na semana passada, comecei aulas de português.",
+     "ru": "На прошлой неделе я начал уроки португальского.",
+     "t": "pas"
     },
     {
-      "id": "apr4",
-      "label": "Апрель / 4",
-      "date": "четвёртая неделя",
-      "month": "Апрель 2026",
-      "sentences": [
-        {
-          "pt": "Na semana passada, comecei aulas de português.",
-          "ru": "На прошлой неделе я начал уроки португальского.",
-          "t": "pas"
-        },
-        {
-          "pt": "Ontem, fiz o jantar em casa.",
-          "ru": "Вчера я приготовил ужин дома.",
-          "t": "pas"
-        },
-        {
-          "pt": "No fim de semana, passeei à beira-mar.",
-          "ru": "На выходных я гулял у моря.",
-          "t": "pas"
-        },
-        {
-          "pt": "Todas as manhãs, bebo um café.",
-          "ru": "Каждое утро я пью кофе.",
-          "t": "pre"
-        },
-        {
-          "pt": "Agora está a ficar mais quente.",
-          "ru": "Сейчас становится теплее.",
-          "t": "pre"
-        },
-        {
-          "pt": "Gosto muito do meu gato.",
-          "ru": "Я очень люблю своего кота.",
-          "t": "pre"
-        },
-        {
-          "pt": "Para a próxima semana, vou visitar a parte antiga da cidade.",
-          "ru": "На следующей неделе я навещу старую часть города.",
-          "t": "fut"
-        },
-        {
-          "pt": "Vou encontrar-me com alguns amigos.",
-          "ru": "Я собираюсь встретиться с друзьями.",
-          "t": "fut"
-        }
-      ]
+     "pt": "Ontem, fiz o jantar em casa.",
+     "ru": "Вчера я приготовил ужин дома.",
+     "t": "pas"
+    },
+    {
+     "pt": "No fim de semana, passeei à beira-mar.",
+     "ru": "На выходных я гулял у моря.",
+     "t": "pas"
+    },
+    {
+     "pt": "Todas as manhãs, bebo um café.",
+     "ru": "Каждое утро я пью кофе.",
+     "t": "pre"
+    },
+    {
+     "pt": "Agora está a ficar mais quente.",
+     "ru": "Сейчас становится теплее.",
+     "t": "pre"
+    },
+    {
+     "pt": "Gosto muito do meu gato.",
+     "ru": "Я очень люблю своего кота.",
+     "t": "pre"
+    },
+    {
+     "pt": "Para a próxima semana, vou visitar a parte antiga da cidade.",
+     "ru": "На следующей неделе я навещу старую часть города.",
+     "t": "fut"
+    },
+    {
+     "pt": "Vou encontrar-me com alguns amigos.",
+     "ru": "Я собираюсь встретиться с друзьями.",
+     "t": "fut"
     }
-  ],
-  "phrases": [
+   ]
+  },
+  {
+   "id": "test",
+   "label": "Тест",
+   "date": "пример",
+   "month": "Тест",
+   "sentences": [
     {
-      "pt": "Hoje é quinta-feira e estou no clube.",
-      "ru": "Сегодня четверг, и я в клубе.",
-      "sit": "клуб",
-      "cue": "Hoje é… e <span>estou</span>…",
-      "hi": [
-        "estou no clube"
-      ],
-      "week": "jun1"
+     "pt": "No sábado passado passeei pela cidade velha com a minha amiga alegre.",
+     "ru": "В прошлую субботу я гуляла по старому городу с весёлой подругой.",
+     "t": "pas"
     },
     {
-      "pt": "Não me esqueci de tomar o pequeno-almoço.",
-      "ru": "Я не забыл позавтракать.",
-      "sit": "утро",
-      "cue": "Não me <span>esqueci</span>…",
-      "hi": [
-        "esqueci"
-      ],
-      "week": "jun1"
+     "pt": "A manhã estava soalheira e quente, e as ruas estreitas estavam calmas e acolhedoras.",
+     "ru": "Утро было солнечное и тёплое, а узкие улочки — тихие и уютные.",
+     "t": "pas"
     },
     {
-      "pt": "A semana foi ótima e cheia de coisas.",
-      "ru": "Неделя была отличной и насыщенной.",
-      "sit": "клуб",
-      "cue": "A semana <span>foi</span>…",
-      "hi": [
-        "foi",
-        "cheia"
-      ],
-      "week": "jun1"
+     "pt": "Todas as manhãs bebo um café forte na minha pequena varanda.",
+     "ru": "Каждое утро я пью крепкий кофе на маленьком балконе.",
+     "t": "pre"
     },
     {
-      "pt": "Esta semana, estudei português todos os dias.",
-      "ru": "На этой неделе я занимался португальским каждый день.",
-      "sit": "учёба",
-      "cue": "Esta semana, <span>estudei</span>…",
-      "hi": [
-        "estudei"
-      ],
-      "week": "jun1"
+     "pt": "O meu vizinho é uma pessoa calma e simpática; cumprimenta-me sempre primeiro.",
+     "ru": "Мой сосед — спокойный и добрый человек, он всегда здоровается первым.",
+     "t": "pre"
     },
     {
-      "pt": "Pratiquei com a vizinha e com o carteiro.",
-      "ru": "Я практиковал с соседкой и с почтальоном.",
-      "sit": "учёба",
-      "cue": "Pratiquei com…",
-      "hi": [
-        "a vizinha",
-        "o carteiro"
-      ],
-      "week": "jun1"
+     "pt": "Agora vivo num apartamento luminoso ao lado de um mercado barulhento.",
+     "ru": "Сейчас я живу в светлой квартире рядом с шумным рынком.",
+     "t": "pre"
     },
     {
-      "pt": "No sábado, fui às montanhas.",
-      "ru": "В субботу я ездил в горы.",
-      "sit": "выходные",
-      "cue": "No sábado, <span>fui</span>…",
-      "hi": [
-        "fui"
-      ],
-      "week": "jun1"
+     "pt": "Ontem fiz um jantar saboroso e convidei duas amigas próximas.",
+     "ru": "Вчера я приготовила вкусный ужин и позвала двух близких друзей.",
+     "t": "pas"
     },
     {
-      "pt": "No domingo, passei o dia na praia.",
-      "ru": "В воскресенье я провёл день на пляже.",
-      "sit": "выходные",
-      "cue": "No domingo, <span>passei</span>…",
-      "hi": [
-        "passei"
-      ],
-      "week": "jun1"
+     "pt": "À noite leio um livro interessante ou oiço música lenta.",
+     "ru": "По вечерам я читаю интересную книгу или слушаю медленную музыку.",
+     "t": "pre"
     },
     {
-      "pt": "À noite, jantei com amigos.",
-      "ru": "Вечером я поужинал с друзьями.",
-      "sit": "выходные",
-      "cue": "À noite, <span>jantei</span>…",
-      "hi": [
-        "jantei"
-      ],
-      "week": "jun1"
+     "pt": "Para a semana vou visitar a minha irmã mais velha.",
+     "ru": "На следующей неделе я навещу свою старшую сестру.",
+     "t": "fut"
     },
     {
-      "pt": "Agora as flores estão a florir.",
-      "ru": "Сейчас цветут цветы.",
-      "sit": "природа",
-      "cue": "Agora as flores <span>estão a</span>…",
-      "hi": [
-        "estão a florir"
-      ],
-      "week": "jun1"
+     "pt": "Em breve vou começar um projeto novo e mais fácil.",
+     "ru": "Скоро я начну новый, более лёгкий проект.",
+     "t": "fut"
     },
     {
-      "pt": "Para a próxima semana, vou a Lisboa.",
-      "ru": "На следующей неделе я поеду в Лиссабон.",
-      "sit": "планы",
-      "cue": "Para a próxima semana, <span>vou</span>…",
-      "hi": [
-        "vou"
-      ],
-      "week": "jun1"
-    },
-    {
-      "pt": "Na semana passada, comecei aulas de português.",
-      "ru": "На прошлой неделе я начал уроки португальского.",
-      "sit": "учёба",
-      "cue": "Na semana passada, <span>comecei</span>…",
-      "hi": [
-        "comecei"
-      ],
-      "week": "apr4"
-    },
-    {
-      "pt": "Ontem, fiz o jantar em casa.",
-      "ru": "Вчера я приготовил ужин дома.",
-      "sit": "быт",
-      "cue": "Ontem, <span>fiz</span>…",
-      "hi": [
-        "fiz"
-      ],
-      "week": "apr4"
-    },
-    {
-      "pt": "Gosto muito do meu gato.",
-      "ru": "Я очень люблю своего кота.",
-      "sit": "быт",
-      "cue": "Gosto muito do…",
-      "hi": [
-        "meu gato"
-      ],
-      "week": "apr4"
-    },
-    {
-      "pt": "Todas as manhãs, bebo um café.",
-      "ru": "Каждое утро я пью кофе.",
-      "sit": "утро",
-      "cue": "Todas as manhãs, <span>bebo</span>…",
-      "hi": [
-        "bebo"
-      ],
-      "week": "apr4"
-    },
-    {
-      "pt": "Agora está a ficar mais quente.",
-      "ru": "Сейчас становится теплее.",
-      "sit": "природа",
-      "cue": "Agora <span>está a</span>…",
-      "hi": [
-        "está a ficar"
-      ],
-      "week": "apr4"
-    },
-    {
-      "pt": "No fim de semana, passeei à beira-mar.",
-      "ru": "На выходных я гулял у моря.",
-      "sit": "выходные",
-      "cue": "No fim de semana, <span>passeei</span>…",
-      "hi": [
-        "passeei"
-      ],
-      "week": "apr4"
-    },
-    {
-      "pt": "Para a próxima semana, vou visitar a cidade.",
-      "ru": "На следующей неделе я навещу город.",
-      "sit": "планы",
-      "cue": "Para a próxima semana, <span>vou</span>…",
-      "hi": [
-        "vou"
-      ],
-      "week": "apr4"
-    },
-    {
-      "pt": "Vou encontrar-me com alguns amigos.",
-      "ru": "Я собираюсь встретиться с друзьями.",
-      "sit": "планы",
-      "cue": "Vou <span>encontrar-me</span>…",
-      "hi": [
-        "encontrar-me"
-      ],
-      "week": "apr4"
+     "pt": "Daqui a um mês vamos ao mar, e finalmente vou descansar.",
+     "ru": "Через месяц мы поедем к морю, и я наконец отдохну.",
+     "t": "fut"
     }
-  ],
-  "cloze": [
-    {
-      "q": "Esta semana, ___ português todos os dias.",
-      "opts": [
-        "estudo",
-        "estudei",
-        "estudava"
-      ],
-      "ok": 1,
-      "rule": "<b>estudei</b> = я учил (pretérito perfeito — завершённое действие, у недели есть итог). <b>estudo</b> = я учу (настоящее). <b>estudava</b> = я учивал (imperfeito — длящееся/привычное). «Esta semana» + итог → <b>estudei</b>.",
-      "week": "jun1"
-    },
-    {
-      "q": "No sábado, ___ às montanhas.",
-      "opts": [
-        "vou",
-        "fui",
-        "ia"
-      ],
-      "ok": 1,
-      "rule": "<b>fui</b> = я поехал (perfeito глагола <b>ir</b>, завершённо). <b>vou</b> = я еду/поеду (настоящее/будущее). «No sábado» — конкретный прошлый день → <b>fui</b>.",
-      "week": "jun1"
-    },
-    {
-      "q": "Agora as flores ___ a florir.",
-      "opts": [
-        "está",
-        "estão",
-        "estavam"
-      ],
-      "ok": 1,
-      "rule": "<b>as flores</b> — множественное число → <b>estão</b>. Конструкция <b>estar a + инфинитив</b> = действие прямо сейчас (европейский португальский). «Agora» → настоящее → <b>estão a florir</b>.",
-      "week": "jun1"
-    },
-    {
-      "q": "Não me ___ de tomar o pequeno-almoço.",
-      "opts": [
-        "esqueço",
-        "esqueci",
-        "esquecia"
-      ],
-      "ok": 1,
-      "rule": "<b>esqueci</b> = я (не) забыл — perfeito, завершённый факт сегодня утром. <b>esqueço</b> = забываю (настоящее). Глагол <b>esquecer-se de</b> всегда с <b>de</b>.",
-      "week": "jun1"
-    },
-    {
-      "q": "Hoje ___ quinta-feira.",
-      "opts": [
-        "é",
-        "está",
-        "foi"
-      ],
-      "ok": 0,
-      "rule": "День недели — это постоянный факт дня → глагол <b>ser</b>: «Hoje <b>é</b> quinta-feira». <b>está</b> (estar) — про временное состояние, не подходит.",
-      "week": "jun1"
-    },
-    {
-      "q": "Para a próxima semana, ___ a Lisboa.",
-      "opts": [
-        "fui",
-        "vou",
-        "ia"
-      ],
-      "ok": 1,
-      "rule": "Ближайшее будущее: <b>ir + место</b> в настоящем = планы. «Para a próxima semana» → <b>vou</b> a Lisboa. <b>fui</b> — это прошлое.",
-      "week": "jun1"
-    },
-    {
-      "q": "Pratiquei ___ a vizinha.",
-      "opts": [
-        "com",
-        "de",
-        "em"
-      ],
-      "ok": 0,
-      "rule": "«с кем» = <b>com</b>: pratiquei <b>com</b> a vizinha (с соседкой). <b>de</b> = из/о, <b>em</b> = в — здесь не подходят.",
-      "week": "jun1"
-    },
-    {
-      "q": "Passei o dia ___ praia.",
-      "opts": [
-        "na",
-        "no",
-        "em"
-      ],
-      "ok": 0,
-      "rule": "<b>praia</b> — слово женского рода (a praia). «на пляже» = <b>na</b> praia (em + a = <b>na</b>). Для мужского было бы «no» (no parque).",
-      "week": "jun1"
-    },
-    {
-      "q": "A semana ___ ótima.",
-      "opts": [
-        "é",
-        "foi",
-        "era"
-      ],
-      "ok": 1,
-      "rule": "Неделя уже закончилась и мы подводим итог → perfeito: «A semana <b>foi</b> ótima» (была отличной). <b>é</b> — настоящее, <b>era</b> — длящееся прошлое.",
-      "week": "jun1"
-    },
-    {
-      "q": "Jantei com amigos ___ restaurante.",
-      "opts": [
-        "num",
-        "no",
-        "de"
-      ],
-      "ok": 0,
-      "rule": "«в (одном) ресторане» = <b>num</b> (em + um = <b>num</b>) — один из многих. <b>no</b> (em + o) — про конкретный, уже известный ресторан.",
-      "week": "jun1"
-    },
-    {
-      "q": "Ontem, ___ o jantar em casa.",
-      "opts": [
-        "faço",
-        "fiz",
-        "fazia"
-      ],
-      "ok": 1,
-      "rule": "<b>fiz</b> = я сделал/приготовил (pretérito perfeito — завершённое действие). <b>faço</b> = делаю (настоящее). <b>fazia</b> = делал (imperfeito — привычное). «Ontem» (вчера) завершено → <b>fiz</b>.",
-      "week": "apr4"
-    },
-    {
-      "q": "Gosto muito ___ meu gato.",
-      "opts": [
-        "de",
-        "do",
-        "o"
-      ],
-      "ok": 1,
-      "rule": "Глагол <b>gostar</b> всегда требует <b>de</b>. Перед «o meu» сливается: de + o = <b>do</b>. Итог: gosto <b>do</b> meu gato.",
-      "week": "apr4"
-    },
-    {
-      "q": "Agora está ___ ficar mais quente.",
-      "opts": [
-        "a",
-        "de",
-        "para"
-      ],
-      "ok": 0,
-      "rule": "<b>estar a + инфинитив</b> = действие прямо сейчас (европейский португальский). «está <b>a</b> ficar» = становится. (В Бразилии: «está ficando».)",
-      "week": "apr4"
-    },
-    {
-      "q": "Vivo cá ___ dois anos.",
-      "opts": [
-        "por",
-        "há",
-        "desde"
-      ],
-      "ok": 1,
-      "rule": "<b>há</b> + промежуток времени = «в течение». «há dois anos» = два года. <b>desde</b> = с момента (точки во времени).",
-      "week": "apr4"
-    },
-    {
-      "q": "Como ___ chama?",
-      "opts": [
-        "se",
-        "te",
-        "—"
-      ],
-      "ok": 0,
-      "rule": "Вежливо спросить имя: «Como <b>se</b> chama?». Глагол «chamar» здесь несёт местоимение «se».",
-      "week": "apr4"
-    },
-    {
-      "q": "___ aulas de português.",
-      "opts": [
-        "Comecei",
-        "Começo",
-        "Começava"
-      ],
-      "ok": 0,
-      "rule": "<b>Comecei</b> = я начал (perfeito — одно завершённое событие). <b>Começo</b> = начинаю (настоящее). Ты начал уроки → <b>comecei</b>.",
-      "week": "apr4"
-    },
-    {
-      "q": "Vou ___ a cidade.",
-      "opts": [
-        "visito",
-        "visitar",
-        "visitando"
-      ],
-      "ok": 1,
-      "rule": "<b>ir + инфинитив</b> = ближайшее будущее: «vou <b>visitar</b>» = я навещу. После «vou» — инфинитив.",
-      "week": "apr4"
-    },
-    {
-      "q": "Chamo-___ Igor.",
-      "opts": [
-        "me",
-        "se",
-        "te"
-      ],
-      "ok": 0,
-      "rule": "Назвать своё имя: «Chamo-<b>me</b> …» = меня зовут … («chamar» + «me» для «я»).",
-      "week": "apr4"
-    }
-  ],
-  "antonyms": [
-    {
-      "qpt": "É preguiçoso?",
-      "apt": "Não, é trabalhador.",
-      "qru": "Он ленивый?",
-      "aru": "Нет, он трудолюбивый.",
-      "wq": "preguiçoso",
-      "wa": "trabalhador",
-      "grp": "car"
-    },
-    {
-      "qpt": "É antipático?",
-      "apt": "Não, é simpático.",
-      "qru": "Он неприятный?",
-      "aru": "Нет, он приятный.",
-      "wq": "antipático",
-      "wa": "simpático",
-      "grp": "car"
-    },
-    {
-      "qpt": "É triste?",
-      "apt": "Não, é alegre.",
-      "qru": "Он грустный?",
-      "aru": "Нет, он весёлый.",
-      "wq": "triste",
-      "wa": "alegre",
-      "grp": "car"
-    },
-    {
-      "qpt": "É arrogante?",
-      "apt": "Não, é humilde.",
-      "qru": "Он высокомерный?",
-      "aru": "Нет, он скромный.",
-      "wq": "arrogante",
-      "wa": "humilde",
-      "grp": "car"
-    },
-    {
-      "qpt": "É nervoso?",
-      "apt": "Não, é calmo.",
-      "qru": "Он нервный?",
-      "aru": "Нет, он спокойный.",
-      "wq": "nervoso",
-      "wa": "calmo",
-      "grp": "car"
-    },
-    {
-      "qpt": "É tímido?",
-      "apt": "Não, é confiante.",
-      "qru": "Он застенчивый?",
-      "aru": "Нет, он уверенный.",
-      "wq": "tímido",
-      "wa": "confiante",
-      "grp": "car"
-    },
-    {
-      "qpt": "É difícil?",
-      "apt": "Não, é fácil.",
-      "qru": "Это трудно?",
-      "aru": "Нет, это легко.",
-      "wq": "difícil",
-      "wa": "fácil",
-      "grp": "car"
-    },
-    {
-      "qpt": "Tem cabelo curto?",
-      "apt": "Não, tem cabelo comprido.",
-      "qru": "У него короткие волосы?",
-      "aru": "Нет, у него длинные волосы.",
-      "wq": "curto",
-      "wa": "comprido",
-      "grp": "fis"
-    },
-    {
-      "qpt": "É alto?",
-      "apt": "Não, é baixo.",
-      "qru": "Он высокий?",
-      "aru": "Нет, он низкий.",
-      "wq": "alto",
-      "wa": "baixo",
-      "grp": "fis"
-    },
-    {
-      "qpt": "É novo?",
-      "apt": "Não, é velho.",
-      "qru": "Это новое?",
-      "aru": "Нет, это старое.",
-      "wq": "novo",
-      "wa": "velho",
-      "grp": "fis"
-    }
-  ],
-  "synonyms": [
-    {
-      "qpt": "A semana foi ótima.",
-      "apt": "A semana foi excelente.",
-      "qru": "Неделя была отличной.",
-      "aru": "Неделя была превосходной.",
-      "wq": "ótima",
-      "wa": "excelente"
-    },
-    {
-      "qpt": "O dia foi cheio.",
-      "apt": "O dia foi repleto.",
-      "qru": "День был насыщенным.",
-      "aru": "День был наполненным.",
-      "wq": "cheio",
-      "wa": "repleto"
-    },
-    {
-      "qpt": "O lugar é bonito.",
-      "apt": "O lugar é lindo.",
-      "qru": "Место красивое.",
-      "aru": "Место прекрасное.",
-      "wq": "bonito",
-      "wa": "lindo"
-    },
-    {
-      "qpt": "Estou cansado.",
-      "apt": "Estou exausto.",
-      "qru": "Я устал.",
-      "aru": "Я вымотан.",
-      "wq": "cansado",
-      "wa": "exausto"
-    },
-    {
-      "qpt": "Hoje estou contente.",
-      "apt": "Hoje estou feliz.",
-      "qru": "Сегодня я доволен.",
-      "aru": "Сегодня я счастлив.",
-      "wq": "contente",
-      "wa": "feliz"
-    },
-    {
-      "qpt": "O exercício é difícil.",
-      "apt": "O exercício é complicado.",
-      "qru": "Упражнение трудное.",
-      "aru": "Упражнение сложное.",
-      "wq": "difícil",
-      "wa": "complicado"
-    },
-    {
-      "qpt": "Ele corre rápido.",
-      "apt": "Ele corre depressa.",
-      "qru": "Он бегает быстро.",
-      "aru": "Он бегает живо.",
-      "wq": "rápido",
-      "wa": "depressa"
-    },
-    {
-      "qpt": "O mar está calmo.",
-      "apt": "O mar está tranquilo.",
-      "qru": "Море спокойное.",
-      "aru": "Море тихое.",
-      "wq": "calmo",
-      "wa": "tranquilo"
-    },
-    {
-      "qpt": "As montanhas são grandes.",
-      "apt": "As montanhas são enormes.",
-      "qru": "Горы большие.",
-      "aru": "Горы огромные.",
-      "wq": "grandes",
-      "wa": "enormes"
-    },
-    {
-      "qpt": "O jantar foi bom.",
-      "apt": "O jantar foi agradável.",
-      "qru": "Ужин был хорошим.",
-      "aru": "Ужин был приятным.",
-      "wq": "bom",
-      "wa": "agradável"
-    }
-  ]
+   ]
+  }
+ ],
+ "phrases": [
+  {
+   "pt": "Hoje é quinta-feira e estou no clube.",
+   "ru": "Сегодня четверг, и я в клубе.",
+   "sit": "клуб",
+   "cue": "Hoje é… e <span>estou</span>…",
+   "hi": [
+    "estou no clube"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "Não me esqueci de tomar o pequeno-almoço.",
+   "ru": "Я не забыл позавтракать.",
+   "sit": "утро",
+   "cue": "Não me <span>esqueci</span>…",
+   "hi": [
+    "esqueci"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "A semana foi ótima e cheia de coisas.",
+   "ru": "Неделя была отличной и насыщенной.",
+   "sit": "клуб",
+   "cue": "A semana <span>foi</span>…",
+   "hi": [
+    "foi",
+    "cheia"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "Esta semana, estudei português todos os dias.",
+   "ru": "На этой неделе я занимался португальским каждый день.",
+   "sit": "учёба",
+   "cue": "Esta semana, <span>estudei</span>…",
+   "hi": [
+    "estudei"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "Pratiquei com a vizinha e com o carteiro.",
+   "ru": "Я практиковал с соседкой и с почтальоном.",
+   "sit": "учёба",
+   "cue": "Pratiquei com…",
+   "hi": [
+    "a vizinha",
+    "o carteiro"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "No sábado, fui às montanhas.",
+   "ru": "В субботу я ездил в горы.",
+   "sit": "выходные",
+   "cue": "No sábado, <span>fui</span>…",
+   "hi": [
+    "fui"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "No domingo, passei o dia na praia.",
+   "ru": "В воскресенье я провёл день на пляже.",
+   "sit": "выходные",
+   "cue": "No domingo, <span>passei</span>…",
+   "hi": [
+    "passei"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "À noite, jantei com amigos.",
+   "ru": "Вечером я поужинал с друзьями.",
+   "sit": "выходные",
+   "cue": "À noite, <span>jantei</span>…",
+   "hi": [
+    "jantei"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "Agora as flores estão a florir.",
+   "ru": "Сейчас цветут цветы.",
+   "sit": "природа",
+   "cue": "Agora as flores <span>estão a</span>…",
+   "hi": [
+    "estão a florir"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "Para a próxima semana, vou a Lisboa.",
+   "ru": "На следующей неделе я поеду в Лиссабон.",
+   "sit": "планы",
+   "cue": "Para a próxima semana, <span>vou</span>…",
+   "hi": [
+    "vou"
+   ],
+   "week": "jun1"
+  },
+  {
+   "pt": "Na semana passada, comecei aulas de português.",
+   "ru": "На прошлой неделе я начал уроки португальского.",
+   "sit": "учёба",
+   "cue": "Na semana passada, <span>comecei</span>…",
+   "hi": [
+    "comecei"
+   ],
+   "week": "apr4"
+  },
+  {
+   "pt": "Ontem, fiz o jantar em casa.",
+   "ru": "Вчера я приготовил ужин дома.",
+   "sit": "быт",
+   "cue": "Ontem, <span>fiz</span>…",
+   "hi": [
+    "fiz"
+   ],
+   "week": "apr4"
+  },
+  {
+   "pt": "Gosto muito do meu gato.",
+   "ru": "Я очень люблю своего кота.",
+   "sit": "быт",
+   "cue": "Gosto muito do…",
+   "hi": [
+    "meu gato"
+   ],
+   "week": "apr4"
+  },
+  {
+   "pt": "Todas as manhãs, bebo um café.",
+   "ru": "Каждое утро я пью кофе.",
+   "sit": "утро",
+   "cue": "Todas as manhãs, <span>bebo</span>…",
+   "hi": [
+    "bebo"
+   ],
+   "week": "apr4"
+  },
+  {
+   "pt": "Agora está a ficar mais quente.",
+   "ru": "Сейчас становится теплее.",
+   "sit": "природа",
+   "cue": "Agora <span>está a</span>…",
+   "hi": [
+    "está a ficar"
+   ],
+   "week": "apr4"
+  },
+  {
+   "pt": "No fim de semana, passeei à beira-mar.",
+   "ru": "На выходных я гулял у моря.",
+   "sit": "выходные",
+   "cue": "No fim de semana, <span>passeei</span>…",
+   "hi": [
+    "passeei"
+   ],
+   "week": "apr4"
+  },
+  {
+   "pt": "Para a próxima semana, vou visitar a cidade.",
+   "ru": "На следующей неделе я навещу город.",
+   "sit": "планы",
+   "cue": "Para a próxima semana, <span>vou</span>…",
+   "hi": [
+    "vou"
+   ],
+   "week": "apr4"
+  },
+  {
+   "pt": "Vou encontrar-me com alguns amigos.",
+   "ru": "Я собираюсь встретиться с друзьями.",
+   "sit": "планы",
+   "cue": "Vou <span>encontrar-me</span>…",
+   "hi": [
+    "encontrar-me"
+   ],
+   "week": "apr4"
+  },
+  {
+   "pt": "passeei pela cidade velha",
+   "ru": "гуляла по старому городу",
+   "sit": "тест",
+   "cue": "passeei pela <span>cidade velha</span>",
+   "hi": [
+    "cidade velha"
+   ],
+   "week": "test"
+  },
+  {
+   "pt": "bebo um café forte",
+   "ru": "пью крепкий кофе",
+   "sit": "тест",
+   "cue": "bebo um café <span>forte</span>",
+   "hi": [
+    "forte"
+   ],
+   "week": "test"
+  },
+  {
+   "pt": "fiz um jantar saboroso",
+   "ru": "приготовила вкусный ужин",
+   "sit": "тест",
+   "cue": "fiz um jantar <span>saboroso</span>",
+   "hi": [
+    "saboroso"
+   ],
+   "week": "test"
+  },
+  {
+   "pt": "vou visitar a minha irmã mais velha",
+   "ru": "навещу старшую сестру",
+   "sit": "тест",
+   "cue": "vou visitar a minha <span>irmã</span> mais velha",
+   "hi": [
+    "irmã"
+   ],
+   "week": "test"
+  }
+ ],
+ "cloze": [
+  {
+   "q": "Esta semana, ___ português todos os dias.",
+   "opts": [
+    "estudo",
+    "estudei",
+    "estudava"
+   ],
+   "ok": 1,
+   "rule": "<b>estudei</b> = я учил (pretérito perfeito — завершённое действие, у недели есть итог). <b>estudo</b> = я учу (настоящее). <b>estudava</b> = я учивал (imperfeito — длящееся/привычное). «Esta semana» + итог → <b>estudei</b>.",
+   "week": "jun1"
+  },
+  {
+   "q": "No sábado, ___ às montanhas.",
+   "opts": [
+    "vou",
+    "fui",
+    "ia"
+   ],
+   "ok": 1,
+   "rule": "<b>fui</b> = я поехал (perfeito глагола <b>ir</b>, завершённо). <b>vou</b> = я еду/поеду (настоящее/будущее). «No sábado» — конкретный прошлый день → <b>fui</b>.",
+   "week": "jun1"
+  },
+  {
+   "q": "Agora as flores ___ a florir.",
+   "opts": [
+    "está",
+    "estão",
+    "estavam"
+   ],
+   "ok": 1,
+   "rule": "<b>as flores</b> — множественное число → <b>estão</b>. Конструкция <b>estar a + инфинитив</b> = действие прямо сейчас (европейский португальский). «Agora» → настоящее → <b>estão a florir</b>.",
+   "week": "jun1"
+  },
+  {
+   "q": "Não me ___ de tomar o pequeno-almoço.",
+   "opts": [
+    "esqueço",
+    "esqueci",
+    "esquecia"
+   ],
+   "ok": 1,
+   "rule": "<b>esqueci</b> = я (не) забыл — perfeito, завершённый факт сегодня утром. <b>esqueço</b> = забываю (настоящее). Глагол <b>esquecer-se de</b> всегда с <b>de</b>.",
+   "week": "jun1"
+  },
+  {
+   "q": "Hoje ___ quinta-feira.",
+   "opts": [
+    "é",
+    "está",
+    "foi"
+   ],
+   "ok": 0,
+   "rule": "День недели — это постоянный факт дня → глагол <b>ser</b>: «Hoje <b>é</b> quinta-feira». <b>está</b> (estar) — про временное состояние, не подходит.",
+   "week": "jun1"
+  },
+  {
+   "q": "Para a próxima semana, ___ a Lisboa.",
+   "opts": [
+    "fui",
+    "vou",
+    "ia"
+   ],
+   "ok": 1,
+   "rule": "Ближайшее будущее: <b>ir + место</b> в настоящем = планы. «Para a próxima semana» → <b>vou</b> a Lisboa. <b>fui</b> — это прошлое.",
+   "week": "jun1"
+  },
+  {
+   "q": "Pratiquei ___ a vizinha.",
+   "opts": [
+    "com",
+    "de",
+    "em"
+   ],
+   "ok": 0,
+   "rule": "«с кем» = <b>com</b>: pratiquei <b>com</b> a vizinha (с соседкой). <b>de</b> = из/о, <b>em</b> = в — здесь не подходят.",
+   "week": "jun1"
+  },
+  {
+   "q": "Passei o dia ___ praia.",
+   "opts": [
+    "na",
+    "no",
+    "em"
+   ],
+   "ok": 0,
+   "rule": "<b>praia</b> — слово женского рода (a praia). «на пляже» = <b>na</b> praia (em + a = <b>na</b>). Для мужского было бы «no» (no parque).",
+   "week": "jun1"
+  },
+  {
+   "q": "A semana ___ ótima.",
+   "opts": [
+    "é",
+    "foi",
+    "era"
+   ],
+   "ok": 1,
+   "rule": "Неделя уже закончилась и мы подводим итог → perfeito: «A semana <b>foi</b> ótima» (была отличной). <b>é</b> — настоящее, <b>era</b> — длящееся прошлое.",
+   "week": "jun1"
+  },
+  {
+   "q": "Jantei com amigos ___ restaurante.",
+   "opts": [
+    "num",
+    "no",
+    "de"
+   ],
+   "ok": 0,
+   "rule": "«в (одном) ресторане» = <b>num</b> (em + um = <b>num</b>) — один из многих. <b>no</b> (em + o) — про конкретный, уже известный ресторан.",
+   "week": "jun1"
+  },
+  {
+   "q": "Ontem, ___ o jantar em casa.",
+   "opts": [
+    "faço",
+    "fiz",
+    "fazia"
+   ],
+   "ok": 1,
+   "rule": "<b>fiz</b> = я сделал/приготовил (pretérito perfeito — завершённое действие). <b>faço</b> = делаю (настоящее). <b>fazia</b> = делал (imperfeito — привычное). «Ontem» (вчера) завершено → <b>fiz</b>.",
+   "week": "apr4"
+  },
+  {
+   "q": "Gosto muito ___ meu gato.",
+   "opts": [
+    "de",
+    "do",
+    "o"
+   ],
+   "ok": 1,
+   "rule": "Глагол <b>gostar</b> всегда требует <b>de</b>. Перед «o meu» сливается: de + o = <b>do</b>. Итог: gosto <b>do</b> meu gato.",
+   "week": "apr4"
+  },
+  {
+   "q": "Agora está ___ ficar mais quente.",
+   "opts": [
+    "a",
+    "de",
+    "para"
+   ],
+   "ok": 0,
+   "rule": "<b>estar a + инфинитив</b> = действие прямо сейчас (европейский португальский). «está <b>a</b> ficar» = становится. (В Бразилии: «está ficando».)",
+   "week": "apr4"
+  },
+  {
+   "q": "Vivo cá ___ dois anos.",
+   "opts": [
+    "por",
+    "há",
+    "desde"
+   ],
+   "ok": 1,
+   "rule": "<b>há</b> + промежуток времени = «в течение». «há dois anos» = два года. <b>desde</b> = с момента (точки во времени).",
+   "week": "apr4"
+  },
+  {
+   "q": "Como ___ chama?",
+   "opts": [
+    "se",
+    "te",
+    "—"
+   ],
+   "ok": 0,
+   "rule": "Вежливо спросить имя: «Como <b>se</b> chama?». Глагол «chamar» здесь несёт местоимение «se».",
+   "week": "apr4"
+  },
+  {
+   "q": "___ aulas de português.",
+   "opts": [
+    "Comecei",
+    "Começo",
+    "Começava"
+   ],
+   "ok": 0,
+   "rule": "<b>Comecei</b> = я начал (perfeito — одно завершённое событие). <b>Começo</b> = начинаю (настоящее). Ты начал уроки → <b>comecei</b>.",
+   "week": "apr4"
+  },
+  {
+   "q": "Vou ___ a cidade.",
+   "opts": [
+    "visito",
+    "visitar",
+    "visitando"
+   ],
+   "ok": 1,
+   "rule": "<b>ir + инфинитив</b> = ближайшее будущее: «vou <b>visitar</b>» = я навещу. После «vou» — инфинитив.",
+   "week": "apr4"
+  },
+  {
+   "q": "Chamo-___ Igor.",
+   "opts": [
+    "me",
+    "se",
+    "te"
+   ],
+   "ok": 0,
+   "rule": "Назвать своё имя: «Chamo-<b>me</b> …» = меня зовут … («chamar» + «me» для «я»).",
+   "week": "apr4"
+  },
+  {
+   "q": "Ontem ___ um jantar saboroso.",
+   "opts": [
+    "faço",
+    "fiz",
+    "farei"
+   ],
+   "ok": 1,
+   "rule": "<b>fiz</b> = приготовила (прошедшее, законченное действие). «Ontem» (вчера) → действие завершено.",
+   "week": "test"
+  }
+ ],
+ "antonyms": [
+  {
+   "qpt": "É preguiçoso?",
+   "apt": "Não, é trabalhador.",
+   "qru": "Он ленивый?",
+   "aru": "Нет, он трудолюбивый.",
+   "wq": "preguiçoso",
+   "wa": "trabalhador",
+   "grp": "car"
+  },
+  {
+   "qpt": "É antipático?",
+   "apt": "Não, é simpático.",
+   "qru": "Он неприятный?",
+   "aru": "Нет, он приятный.",
+   "wq": "antipático",
+   "wa": "simpático",
+   "grp": "car"
+  },
+  {
+   "qpt": "É triste?",
+   "apt": "Não, é alegre.",
+   "qru": "Он грустный?",
+   "aru": "Нет, он весёлый.",
+   "wq": "triste",
+   "wa": "alegre",
+   "grp": "car"
+  },
+  {
+   "qpt": "É arrogante?",
+   "apt": "Não, é humilde.",
+   "qru": "Он высокомерный?",
+   "aru": "Нет, он скромный.",
+   "wq": "arrogante",
+   "wa": "humilde",
+   "grp": "car"
+  },
+  {
+   "qpt": "É nervoso?",
+   "apt": "Não, é calmo.",
+   "qru": "Он нервный?",
+   "aru": "Нет, он спокойный.",
+   "wq": "nervoso",
+   "wa": "calmo",
+   "grp": "car"
+  },
+  {
+   "qpt": "É tímido?",
+   "apt": "Não, é confiante.",
+   "qru": "Он застенчивый?",
+   "aru": "Нет, он уверенный.",
+   "wq": "tímido",
+   "wa": "confiante",
+   "grp": "car"
+  },
+  {
+   "qpt": "É difícil?",
+   "apt": "Não, é fácil.",
+   "qru": "Это трудно?",
+   "aru": "Нет, это легко.",
+   "wq": "difícil",
+   "wa": "fácil",
+   "grp": "car"
+  },
+  {
+   "qpt": "Tem cabelo curto?",
+   "apt": "Não, tem cabelo comprido.",
+   "qru": "У него короткие волосы?",
+   "aru": "Нет, у него длинные волосы.",
+   "wq": "curto",
+   "wa": "comprido",
+   "grp": "fis"
+  },
+  {
+   "qpt": "É alto?",
+   "apt": "Não, é baixo.",
+   "qru": "Он высокий?",
+   "aru": "Нет, он низкий.",
+   "wq": "alto",
+   "wa": "baixo",
+   "grp": "fis"
+  },
+  {
+   "qpt": "É novo?",
+   "apt": "Não, é velho.",
+   "qru": "Это новое?",
+   "aru": "Нет, это старое.",
+   "wq": "novo",
+   "wa": "velho",
+   "grp": "fis"
+  },
+  {
+   "qpt": "É alegre?",
+   "apt": "Não, é triste.",
+   "qru": "Он весёлый?",
+   "aru": "Нет, он грустный.",
+   "wq": "alegre",
+   "wa": "triste",
+   "grp": "car",
+   "week": "test"
+  },
+  {
+   "qpt": "Está quente?",
+   "apt": "Não, está frio.",
+   "qru": "Тепло?",
+   "aru": "Нет, холодно.",
+   "wq": "quente",
+   "wa": "frio",
+   "grp": "fis",
+   "week": "test"
+  },
+  {
+   "qpt": "É barulhento?",
+   "apt": "Não, é silencioso.",
+   "qru": "Шумно?",
+   "aru": "Нет, тихо.",
+   "wq": "barulhento",
+   "wa": "silencioso",
+   "grp": "fis",
+   "week": "test"
+  },
+  {
+   "qpt": "É fácil?",
+   "apt": "Não, é difícil.",
+   "qru": "Легко?",
+   "aru": "Нет, трудно.",
+   "wq": "fácil",
+   "wa": "difícil",
+   "grp": "car",
+   "week": "test"
+  }
+ ],
+ "synonyms": [
+  {
+   "qpt": "A semana foi ótima.",
+   "apt": "A semana foi excelente.",
+   "qru": "Неделя была отличной.",
+   "aru": "Неделя была превосходной.",
+   "wq": "ótima",
+   "wa": "excelente"
+  },
+  {
+   "qpt": "O dia foi cheio.",
+   "apt": "O dia foi repleto.",
+   "qru": "День был насыщенным.",
+   "aru": "День был наполненным.",
+   "wq": "cheio",
+   "wa": "repleto"
+  },
+  {
+   "qpt": "O lugar é bonito.",
+   "apt": "O lugar é lindo.",
+   "qru": "Место красивое.",
+   "aru": "Место прекрасное.",
+   "wq": "bonito",
+   "wa": "lindo"
+  },
+  {
+   "qpt": "Estou cansado.",
+   "apt": "Estou exausto.",
+   "qru": "Я устал.",
+   "aru": "Я вымотан.",
+   "wq": "cansado",
+   "wa": "exausto"
+  },
+  {
+   "qpt": "Hoje estou contente.",
+   "apt": "Hoje estou feliz.",
+   "qru": "Сегодня я доволен.",
+   "aru": "Сегодня я счастлив.",
+   "wq": "contente",
+   "wa": "feliz"
+  },
+  {
+   "qpt": "O exercício é difícil.",
+   "apt": "O exercício é complicado.",
+   "qru": "Упражнение трудное.",
+   "aru": "Упражнение сложное.",
+   "wq": "difícil",
+   "wa": "complicado"
+  },
+  {
+   "qpt": "Ele corre rápido.",
+   "apt": "Ele corre depressa.",
+   "qru": "Он бегает быстро.",
+   "aru": "Он бегает живо.",
+   "wq": "rápido",
+   "wa": "depressa"
+  },
+  {
+   "qpt": "O mar está calmo.",
+   "apt": "O mar está tranquilo.",
+   "qru": "Море спокойное.",
+   "aru": "Море тихое.",
+   "wq": "calmo",
+   "wa": "tranquilo"
+  },
+  {
+   "qpt": "As montanhas são grandes.",
+   "apt": "As montanhas são enormes.",
+   "qru": "Горы большие.",
+   "aru": "Горы огромные.",
+   "wq": "grandes",
+   "wa": "enormes"
+  },
+  {
+   "qpt": "O jantar foi bom.",
+   "apt": "O jantar foi agradável.",
+   "qru": "Ужин был хорошим.",
+   "aru": "Ужин был приятным.",
+   "wq": "bom",
+   "wa": "agradável"
+  },
+  {
+   "qpt": "É acolhedor.",
+   "apt": "É confortável.",
+   "qru": "Уютно.",
+   "aru": "Комфортно.",
+   "wq": "acolhedor",
+   "wa": "confortável",
+   "week": "test"
+  },
+  {
+   "qpt": "O café é forte.",
+   "apt": "O café é intenso.",
+   "qru": "Кофе крепкий.",
+   "aru": "Кофе насыщенный.",
+   "wq": "forte",
+   "wa": "intenso",
+   "week": "test"
+  },
+  {
+   "qpt": "O jantar é saboroso.",
+   "apt": "O jantar é delicioso.",
+   "qru": "Ужин вкусный.",
+   "aru": "Ужин аппетитный.",
+   "wq": "saboroso",
+   "wa": "delicioso",
+   "week": "test"
+  },
+  {
+   "qpt": "Ele é calmo.",
+   "apt": "Ele é sereno.",
+   "qru": "Он спокойный.",
+   "aru": "Он безмятежный.",
+   "wq": "calmo",
+   "wa": "sereno",
+   "week": "test"
+  }
+ ]
 }
