@@ -1,0 +1,40 @@
+{
+  "config":{
+    "lang":"ru-RU",
+    "ui":"pt",
+    "neg":"Нет, …",
+    "brand":"Portugal",
+    "flag":"🇷🇺",
+    "subscribeUrl":"https://kartuzov.gumroad.com/l/fkfdbg",
+    "subscribeText":"Queres o teu próprio conjunto, feito a partir da tua semana?",
+    "subscribeBtn":"Obter o meu conjunto →",
+    "flyerUrl":"start.html",
+    "flyerText":"Como funciona e preços",
+    "methodUrl":"method.html",
+    "methodText":"O método"
+  },
+  "phrases":[
+    {"pt":"Я очень люблю своего кота.","ru":"Gosto muito do meu gato.","sit":"dia a dia","cue":"Я очень <span>люблю</span>…","hi":["люблю"]},
+    {"pt":"Каждое утро я пью кофе.","ru":"Todas as manhãs bebo um café.","sit":"dia a dia","cue":"Каждое утро я <span>пью</span>…","hi":["пью"]},
+    {"pt":"Я живу здесь уже два года.","ru":"Vivo aqui há dois anos.","sit":"encontro","cue":"Я живу здесь <span>уже</span>…","hi":["уже"]},
+    {"pt":"Это было приятно!","ru":"Foi um prazer!","sit":"encontro","cue":"Это было…!","hi":[]}
+  ],
+  "weeks":[
+    {"id":"w1","label":"Semana 1","date":"esta semana","month":"Base","sentences":[
+      {"pt":"Вчера я приготовила ужин дома.","ru":"Ontem fiz o jantar em casa.","t":"pas"},
+      {"pt":"Каждое утро я пью кофе.","ru":"Todas as manhãs bebo um café.","t":"pre"},
+      {"pt":"На следующей неделе я навещу подругу.","ru":"Para a semana vou visitar uma amiga.","t":"fut"}
+    ]}
+  ],
+  "cloze":[
+    {"q":"Каждое утро я ___ кофе.","opts":["пью","пил","выпью"],"ok":0,"rule":"<b>пью</b> = bebo (presente, hábito). 'Каждое утро' (todas as manhãs) → hábito → presente: пью."},
+    {"q":"Вчера я ___ ужин.","opts":["готовлю","приготовила","приготовлю"],"ok":1,"rule":"<b>приготовила</b> = fiz / preparei (ação terminada, feminino). 'Вчера' (ontem) → ação terminada → приготовила."}
+  ],
+  "antonyms":[
+    {"qpt":"Он ленивый?","apt":"Нет, он трудолюбивый.","qru":"Ele é preguiçoso?","aru":"Não, é trabalhador.","wq":"ленивый","wa":"трудолюбивый","grp":"car"},
+    {"qpt":"Он высокий?","apt":"Нет, он низкий.","qru":"Ele é alto?","aru":"Não, é baixo.","wq":"высокий","wa":"низкий","grp":"fis"}
+  ],
+  "synonyms":[
+    {"qpt":"Я устала.","apt":"Я измотана.","qru":"Estou cansada.","aru":"Estou exausta.","wq":"устала","wa":"измотана"}
+  ]
+}
