@@ -107,6 +107,9 @@
   .cta-t{font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px}
   .cta-btn{display:inline-block;background:var(--gold);color:#fff;font-family:inherit;font-weight:700;font-size:15px;text-decoration:none;padding:13px 20px;border-radius:11px}
   .cta-link{display:block;margin-top:10px;font-size:13px;color:var(--azul);text-decoration:underline}
+  .applinks{text-align:center;margin-top:10px;font-size:12.5px}
+  .applinks a{color:var(--azul,#1F7A5C);text-decoration:none;font-weight:600;white-space:nowrap}
+  .applinks .sep{color:var(--ink-soft);margin:0 8px;opacity:.6}
 </style>
 </head>
 <body>
@@ -125,6 +128,7 @@
   <div class="weekbar" id="weekbar"><span id="weekLabel"></span><button id="archBtn"></button></div>
   <div class="card" id="card"><div class="loading">…</div></div>
   <p class="note" id="footNote"></p>
+  <p class="applinks" id="appLinks"></p>
 </div>
 
 <script>
@@ -498,6 +502,10 @@ function applyI18n(){
   document.querySelectorAll(".tab").forEach(t=>t.textContent=L.tabs[t.dataset.mode]||t.dataset.mode);
   document.getElementById("archBtn").textContent=L.archBtn;
   document.getElementById("footNote").textContent=L.footNote;
+  var c=DATA.config||{}, links=[];
+  if(c.flyerUrl)links.push('<a href="'+c.flyerUrl+'" target="_blank" rel="noopener">'+(c.flyerText||"How it works")+'</a>');
+  if(c.methodUrl)links.push('<a href="'+c.methodUrl+'" target="_blank" rel="noopener">'+(c.methodText||"The method")+'</a>');
+  document.getElementById("appLinks").innerHTML=links.join('<span class="sep">·</span>');
 }
 
 /* ===== СВАЙП (нейтральный пропуск) + АВТО-ПОДЪЁМ КНОПОК =====

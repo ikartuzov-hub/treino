@@ -9,7 +9,9 @@
     "subscribeText": "Like it? Make it yours. Send your real week — what happened, what you do now, what you plan — to i.kartuzov@gmail.com and get up to 8 new sentences built into your app. No subscription: pay only when you want a fresh pack. One top-up €5 (normally €6).",
     "subscribeBtn": "Add a top-up · €5",
     "flyerUrl": "start.html",
-    "flyerText": "How it works & pricing"
+    "flyerText": "How it works & pricing",
+    "methodUrl": "method.html",
+    "methodText": "The method"
   },
 
   "weeks": [
