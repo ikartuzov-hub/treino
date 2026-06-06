@@ -1,40 +1,314 @@
 {
-  "config":{
-    "lang":"ru-RU",
-    "ui":"pt",
-    "neg":"Нет, …",
-    "brand":"Portugal",
-    "flag":"🇷🇺",
-    "subscribeUrl":"https://kartuzov.gumroad.com/l/fkfdbg",
-    "subscribeText":"Queres o teu próprio conjunto, feito a partir da tua semana?",
-    "subscribeBtn":"Obter o meu conjunto →",
-    "flyerUrl":"start.html",
-    "flyerText":"Como funciona e preços",
-    "methodUrl":"method.html",
-    "methodText":"O método"
+ "config": {
+  "lang": "ru-RU",
+  "ui": "pt",
+  "neg": "Нет, …",
+  "brand": "Portugal",
+  "flag": "🇷🇺",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Queres o teu próprio conjunto, feito a partir da tua semana?",
+  "subscribeBtn": "Obter o meu conjunto →",
+  "flyerUrl": "start.html",
+  "flyerText": "Como funciona e preços",
+  "methodUrl": "method.html",
+  "methodText": "O método"
+ },
+ "phrases": [
+  {
+   "pt": "Я очень люблю своего кота.",
+   "ru": "Gosto muito do meu gato.",
+   "sit": "dia a dia",
+   "cue": "Я очень <span>люблю</span>…",
+   "hi": [
+    "люблю"
+   ]
   },
-  "phrases":[
-    {"pt":"Я очень люблю своего кота.","ru":"Gosto muito do meu gato.","sit":"dia a dia","cue":"Я очень <span>люблю</span>…","hi":["люблю"]},
-    {"pt":"Каждое утро я пью кофе.","ru":"Todas as manhãs bebo um café.","sit":"dia a dia","cue":"Каждое утро я <span>пью</span>…","hi":["пью"]},
-    {"pt":"Я живу здесь уже два года.","ru":"Vivo aqui há dois anos.","sit":"encontro","cue":"Я живу здесь <span>уже</span>…","hi":["уже"]},
-    {"pt":"Это было приятно!","ru":"Foi um prazer!","sit":"encontro","cue":"Это было…!","hi":[]}
-  ],
-  "weeks":[
-    {"id":"w1","label":"Semana 1","date":"esta semana","month":"Base","sentences":[
-      {"pt":"Вчера я приготовила ужин дома.","ru":"Ontem fiz o jantar em casa.","t":"pas"},
-      {"pt":"Каждое утро я пью кофе.","ru":"Todas as manhãs bebo um café.","t":"pre"},
-      {"pt":"На следующей неделе я навещу подругу.","ru":"Para a semana vou visitar uma amiga.","t":"fut"}
-    ]}
-  ],
-  "cloze":[
-    {"q":"Каждое утро я ___ кофе.","opts":["пью","пил","выпью"],"ok":0,"rule":"<b>пью</b> = bebo (presente, hábito). 'Каждое утро' (todas as manhãs) → hábito → presente: пью."},
-    {"q":"Вчера я ___ ужин.","opts":["готовлю","приготовила","приготовлю"],"ok":1,"rule":"<b>приготовила</b> = fiz / preparei (ação terminada, feminino). 'Вчера' (ontem) → ação terminada → приготовила."}
-  ],
-  "antonyms":[
-    {"qpt":"Он ленивый?","apt":"Нет, он трудолюбивый.","qru":"Ele é preguiçoso?","aru":"Não, é trabalhador.","wq":"ленивый","wa":"трудолюбивый","grp":"car"},
-    {"qpt":"Он высокий?","apt":"Нет, он низкий.","qru":"Ele é alto?","aru":"Não, é baixo.","wq":"высокий","wa":"низкий","grp":"fis"}
-  ],
-  "synonyms":[
-    {"qpt":"Я устала.","apt":"Я измотана.","qru":"Estou cansada.","aru":"Estou exausta.","wq":"устала","wa":"измотана"}
-  ]
+  {
+   "pt": "Каждое утро я пью кофе.",
+   "ru": "Todas as manhãs bebo um café.",
+   "sit": "dia a dia",
+   "cue": "Каждое утро я <span>пью</span>…",
+   "hi": [
+    "пью"
+   ]
+  },
+  {
+   "pt": "Я живу здесь уже два года.",
+   "ru": "Vivo aqui há dois anos.",
+   "sit": "encontro",
+   "cue": "Я живу здесь <span>уже</span>…",
+   "hi": [
+    "уже"
+   ]
+  },
+  {
+   "pt": "Это было приятно!",
+   "ru": "Foi um prazer!",
+   "sit": "encontro",
+   "cue": "Это было…!",
+   "hi": []
+  },
+  {
+   "pt": "гуляла по старому городу",
+   "ru": "passeei pela cidade velha",
+   "sit": "teste",
+   "cue": "гуляла по <span>старому городу</span>",
+   "hi": [
+    "старому городу"
+   ],
+   "week": "test"
+  },
+  {
+   "pt": "пью крепкий кофе",
+   "ru": "bebo um café forte",
+   "sit": "teste",
+   "cue": "пью <span>крепкий</span> кофе",
+   "hi": [
+    "крепкий"
+   ],
+   "week": "test"
+  },
+  {
+   "pt": "приготовила вкусный ужин",
+   "ru": "fiz um jantar saboroso",
+   "sit": "teste",
+   "cue": "приготовила <span>вкусный</span> ужин",
+   "hi": [
+    "вкусный"
+   ],
+   "week": "test"
+  },
+  {
+   "pt": "навещу старшую сестру",
+   "ru": "vou visitar a minha irmã mais velha",
+   "sit": "teste",
+   "cue": "навещу старшую <span>сестру</span>",
+   "hi": [
+    "сестру"
+   ],
+   "week": "test"
+  }
+ ],
+ "weeks": [
+  {
+   "id": "w1",
+   "label": "Semana 1",
+   "date": "esta semana",
+   "month": "Base",
+   "sentences": [
+    {
+     "pt": "Вчера я приготовила ужин дома.",
+     "ru": "Ontem fiz o jantar em casa.",
+     "t": "pas"
+    },
+    {
+     "pt": "Каждое утро я пью кофе.",
+     "ru": "Todas as manhãs bebo um café.",
+     "t": "pre"
+    },
+    {
+     "pt": "На следующей неделе я навещу подругу.",
+     "ru": "Para a semana vou visitar uma amiga.",
+     "t": "fut"
+    }
+   ]
+  },
+  {
+   "id": "test",
+   "label": "Teste",
+   "date": "exemplo",
+   "month": "Teste",
+   "sentences": [
+    {
+     "pt": "В прошлую субботу я гуляла по старому городу с весёлой подругой.",
+     "ru": "No sábado passado passeei pela cidade velha com a minha amiga alegre.",
+     "t": "pas"
+    },
+    {
+     "pt": "Утро было солнечное и тёплое, а узкие улочки — тихие и уютные.",
+     "ru": "A manhã estava soalheira e quente, e as ruas estreitas estavam calmas e acolhedoras.",
+     "t": "pas"
+    },
+    {
+     "pt": "Каждое утро я пью крепкий кофе на маленьком балконе.",
+     "ru": "Todas as manhãs bebo um café forte na minha pequena varanda.",
+     "t": "pre"
+    },
+    {
+     "pt": "Мой сосед — спокойный и добрый человек, он всегда здоровается первым.",
+     "ru": "O meu vizinho é uma pessoa calma e simpática; cumprimenta-me sempre primeiro.",
+     "t": "pre"
+    },
+    {
+     "pt": "Сейчас я живу в светлой квартире рядом с шумным рынком.",
+     "ru": "Agora vivo num apartamento luminoso ao lado de um mercado barulhento.",
+     "t": "pre"
+    },
+    {
+     "pt": "Вчера я приготовила вкусный ужин и позвала двух близких друзей.",
+     "ru": "Ontem fiz um jantar saboroso e convidei duas amigas próximas.",
+     "t": "pas"
+    },
+    {
+     "pt": "По вечерам я читаю интересную книгу или слушаю медленную музыку.",
+     "ru": "À noite leio um livro interessante ou oiço música lenta.",
+     "t": "pre"
+    },
+    {
+     "pt": "На следующей неделе я навещу свою старшую сестру.",
+     "ru": "Para a semana vou visitar a minha irmã mais velha.",
+     "t": "fut"
+    },
+    {
+     "pt": "Скоро я начну новый, более лёгкий проект.",
+     "ru": "Em breve vou começar um projeto novo e mais fácil.",
+     "t": "fut"
+    },
+    {
+     "pt": "Через месяц мы поедем к морю, и я наконец отдохну.",
+     "ru": "Daqui a um mês vamos ao mar, e finalmente vou descansar.",
+     "t": "fut"
+    }
+   ]
+  }
+ ],
+ "cloze": [
+  {
+   "q": "Каждое утро я ___ кофе.",
+   "opts": [
+    "пью",
+    "пил",
+    "выпью"
+   ],
+   "ok": 0,
+   "rule": "<b>пью</b> = bebo (presente, hábito). 'Каждое утро' (todas as manhãs) → hábito → presente: пью."
+  },
+  {
+   "q": "Вчера я ___ ужин.",
+   "opts": [
+    "готовлю",
+    "приготовила",
+    "приготовлю"
+   ],
+   "ok": 1,
+   "rule": "<b>приготовила</b> = fiz / preparei (ação terminada, feminino). 'Вчера' (ontem) → ação terminada → приготовила."
+  },
+  {
+   "q": "Вчера я ___ ужин.",
+   "opts": [
+    "готовлю",
+    "приготовила",
+    "приготовлю"
+   ],
+   "ok": 1,
+   "rule": "<b>приготовила</b> = fiz (passado, ação terminada, feminino). «Вчера» (ontem) → ação concluída.",
+   "week": "test"
+  }
+ ],
+ "antonyms": [
+  {
+   "qpt": "Он ленивый?",
+   "apt": "Нет, он трудолюбивый.",
+   "qru": "Ele é preguiçoso?",
+   "aru": "Não, é trabalhador.",
+   "wq": "ленивый",
+   "wa": "трудолюбивый",
+   "grp": "car"
+  },
+  {
+   "qpt": "Он высокий?",
+   "apt": "Нет, он низкий.",
+   "qru": "Ele é alto?",
+   "aru": "Não, é baixo.",
+   "wq": "высокий",
+   "wa": "низкий",
+   "grp": "fis"
+  },
+  {
+   "qpt": "Он весёлый?",
+   "apt": "Нет, он грустный.",
+   "qru": "É alegre?",
+   "aru": "Não, é triste.",
+   "wq": "весёлый",
+   "wa": "грустный",
+   "grp": "car",
+   "week": "test"
+  },
+  {
+   "qpt": "Тепло?",
+   "apt": "Нет, холодно.",
+   "qru": "Está quente?",
+   "aru": "Não, está frio.",
+   "wq": "тёплый",
+   "wa": "холодный",
+   "grp": "fis",
+   "week": "test"
+  },
+  {
+   "qpt": "Шумно?",
+   "apt": "Нет, тихо.",
+   "qru": "É barulhento?",
+   "aru": "Não, é silencioso.",
+   "wq": "шумный",
+   "wa": "тихий",
+   "grp": "fis",
+   "week": "test"
+  },
+  {
+   "qpt": "Легко?",
+   "apt": "Нет, трудно.",
+   "qru": "É fácil?",
+   "aru": "Não, é difícil.",
+   "wq": "лёгкий",
+   "wa": "трудный",
+   "grp": "car",
+   "week": "test"
+  }
+ ],
+ "synonyms": [
+  {
+   "qpt": "Я устала.",
+   "apt": "Я измотана.",
+   "qru": "Estou cansada.",
+   "aru": "Estou exausta.",
+   "wq": "устала",
+   "wa": "измотана"
+  },
+  {
+   "qpt": "Уютно.",
+   "apt": "Комфортно.",
+   "qru": "É acolhedor.",
+   "aru": "É confortável.",
+   "wq": "уютно",
+   "wa": "комфортно",
+   "week": "test"
+  },
+  {
+   "qpt": "Кофе крепкий.",
+   "apt": "Кофе насыщенный.",
+   "qru": "O café é forte.",
+   "aru": "O café é intenso.",
+   "wq": "крепкий",
+   "wa": "насыщенный",
+   "week": "test"
+  },
+  {
+   "qpt": "Ужин вкусный.",
+   "apt": "Ужин аппетитный.",
+   "qru": "O jantar é saboroso.",
+   "aru": "O jantar é delicioso.",
+   "wq": "вкусный",
+   "wa": "аппетитный",
+   "week": "test"
+  },
+  {
+   "qpt": "Он спокойный.",
+   "apt": "Он безмятежный.",
+   "qru": "Ele é calmo.",
+   "aru": "Ele é sereno.",
+   "wq": "спокойный",
+   "wa": "безмятежный",
+   "week": "test"
+  }
+ ]
 }
