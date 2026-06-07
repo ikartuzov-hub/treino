@@ -122,6 +122,10 @@
   .pick-btn .pf{font-size:22px;flex:0 0 auto}
   .pick-btn .pn{flex:1}
 
+  .langbtn{display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink-soft,#54655A);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:6px 12px;cursor:pointer;transition:.15s;line-height:1}
+  .langbtn:active{transform:translateY(1px)}
+  .langbtn:hover{border-color:var(--azul);color:var(--azul-deep)}
+  .langbtn-globe{font-size:14px}
   .owner{text-align:center;margin-top:16px;font-size:11px;color:var(--ink-soft,#54655A);opacity:.6;letter-spacing:.02em}
 </style>
 </head>
@@ -130,7 +134,7 @@
 <div class="wrap">
   <header>
     <span class="wm" id="wm">· <em>Treino</em></span>
-    <span class="flag" id="flag"></span>
+    <button class="langbtn" id="langBtn" type="button" aria-label="Сменить язык"><span class="langbtn-globe">🌐</span><span class="flag" id="flag"></span></button>
   </header>
   <div class="tabs" id="tabs">
     <button class="tab active" data-mode="recall"></button>
@@ -539,7 +543,7 @@ function setMode(m){mode=m;archiveScreen=null;document.querySelectorAll(".tab").
 function applyI18n(){
   if(!L) L = I18N[(DATA.config&&DATA.config.ui)] || EMBEDDED_L;
   applyDir(); applyFont();
-  var _fl=document.getElementById("flag"); if(_fl){_fl.style.cursor="pointer"; _fl.title="Change language"; _fl.onclick=function(){showPicker();};}
+  var _lb=document.getElementById("langBtn"); if(_lb){_lb.onclick=function(){showPicker();};}
   document.documentElement.lang=(DATA.config&&DATA.config.ui)||"en";
   var _brand=(DATA.config&&DATA.config.brand)||L.brand;
   var _flag=(DATA.config&&DATA.config.flag!=null)?DATA.config.flag:L.flag;

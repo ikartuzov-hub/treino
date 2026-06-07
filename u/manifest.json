@@ -21,15 +21,6 @@
    "live": true
   },
   {
-   "id": "pt-ru",
-   "native": "pt",
-   "nativeName": "Português",
-   "targetName": "Русский",
-   "flag": "🇷🇺",
-   "data": "data/data.pt-ru.json",
-   "live": true
-  },
-  {
    "id": "es-pt",
    "native": "es",
    "nativeName": "Español",
@@ -45,7 +36,7 @@
    "targetName": "Português",
    "flag": "🇵🇹",
    "data": "data/data.de-pt.json",
-   "live": false
+   "live": true
   },
   {
    "id": "fr-pt",
@@ -55,6 +46,24 @@
    "flag": "🇵🇹",
    "data": "data/data.fr-pt.json",
    "live": false
+  },
+  {
+   "id": "pt-ru",
+   "native": "pt",
+   "nativeName": "Português",
+   "targetName": "Русский",
+   "flag": "🇷🇺",
+   "data": "data/data.pt-ru.json",
+   "live": true
+  },
+  {
+   "id": "ru-de",
+   "native": "ru",
+   "nativeName": "Русский",
+   "targetName": "Deutsch",
+   "flag": "🇩🇪",
+   "data": "data/data.ru-de.json",
+   "live": true
   }
  ],
  "hubUrl": "https://ikartuzov-hub.github.io/seedwave-catalog/",
