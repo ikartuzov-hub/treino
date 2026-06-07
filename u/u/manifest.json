@@ -1,0 +1,71 @@
+{
+ "_note": "Реестр пар. Новый язык = новая запись здесь + ui.{native}.json + data.{pair}.json. Движок не трогать.",
+ "defaultPair": "ru-pt",
+ "pairs": [
+  {
+   "id": "ru-pt",
+   "native": "ru",
+   "nativeName": "Русский",
+   "targetName": "Português",
+   "flag": "🇵🇹",
+   "data": "data/data.ru-pt.json",
+   "live": true
+  },
+  {
+   "id": "en-pt",
+   "native": "en",
+   "nativeName": "English",
+   "targetName": "Português",
+   "flag": "🇵🇹",
+   "data": "data/data.en-pt.json",
+   "live": true
+  },
+  {
+   "id": "es-pt",
+   "native": "es",
+   "nativeName": "Español",
+   "targetName": "Português",
+   "flag": "🇵🇹",
+   "data": "data/data.es-pt.json",
+   "live": true
+  },
+  {
+   "id": "de-pt",
+   "native": "de",
+   "nativeName": "Deutsch",
+   "targetName": "Português",
+   "flag": "🇵🇹",
+   "data": "data/data.de-pt.json",
+   "live": true
+  },
+  {
+   "id": "fr-pt",
+   "native": "fr",
+   "nativeName": "Français",
+   "targetName": "Português",
+   "flag": "🇵🇹",
+   "data": "data/data.fr-pt.json",
+   "live": false
+  },
+  {
+   "id": "pt-ru",
+   "native": "pt",
+   "nativeName": "Português",
+   "targetName": "Русский",
+   "flag": "🇷🇺",
+   "data": "data/data.pt-ru.json",
+   "live": true
+  },
+  {
+   "id": "ru-de",
+   "native": "ru",
+   "nativeName": "Русский",
+   "targetName": "Deutsch",
+   "flag": "🇩🇪",
+   "data": "data/data.ru-de.json",
+   "live": true
+  }
+ ],
+ "hubUrl": "https://ikartuzov-hub.github.io/seedwave-catalog/",
+ "_hubNote": "Ссылка на Хаб. Движок сам подставит ?lang=. Поменять здесь — обновится везде."
+}

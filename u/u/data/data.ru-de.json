@@ -1,0 +1,176 @@
+{
+ "config": {
+  "lang": "de-DE",
+  "ui": "ru",
+  "neg": "Nein, …",
+  "brand": "",
+  "flag": "🇩🇪",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Хочешь свой набор, собранный по твоей реальной неделе?",
+  "subscribeBtn": "Получить мой набор →",
+  "flyerUrl": "start.html",
+  "flyerText": "Как это работает и цены",
+  "methodUrl": "method.html",
+  "methodText": "Метод"
+ },
+ "weeks": [
+  {
+   "id": "start1",
+   "label": "Старт / 1",
+   "date": "первая неделя",
+   "month": "Затравка",
+   "sentences": [
+    {
+     "pt": "Diese Woche habe ich jeden Tag Deutsch gelernt.",
+     "ru": "На этой неделе я учил немецкий каждый день.",
+     "t": "pas"
+    },
+    {
+     "pt": "Ich habe im Laden und mit Nachbarn geübt.",
+     "ru": "Я практиковал в магазине и с соседями.",
+     "t": "pas"
+    },
+    {
+     "pt": "Heute treffe ich Freunde im Café.",
+     "ru": "Сегодня я встречаюсь с друзьями в кафе.",
+     "t": "pre"
+    },
+    {
+     "pt": "Jetzt spreche ich schon ein bisschen.",
+     "ru": "Сейчас я уже немного говорю.",
+     "t": "pre"
+    },
+    {
+     "pt": "Nächste Woche fahre ich nach Berlin.",
+     "ru": "На следующей неделе я поеду в Берлин.",
+     "t": "fut"
+    }
+   ]
+  }
+ ],
+ "phrases": [
+  {
+   "pt": "Guten Morgen! Wie geht es dir?",
+   "ru": "Доброе утро! Как у тебя дела?",
+   "sit": "приветствие",
+   "cue": "Guten Morgen! Wie <span>geht</span>…",
+   "hi": [
+    "Wie geht es dir"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "Ich lerne jeden Tag Deutsch.",
+   "ru": "Я учу немецкий каждый день.",
+   "sit": "ежедневно",
+   "cue": "Ich <span>lerne</span> jeden Tag…",
+   "hi": [
+    "lerne"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "Ich wohne seit zwei Jahren hier.",
+   "ru": "Я живу здесь два года.",
+   "sit": "знакомство",
+   "cue": "Ich wohne <span>seit</span>…",
+   "hi": [
+    "seit zwei Jahren"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "Am Wochenende treffe ich Freunde.",
+   "ru": "На выходных я встречаюсь с друзьями.",
+   "sit": "досуг",
+   "cue": "Am Wochenende <span>treffe</span>…",
+   "hi": [
+    "treffe"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "Das war ein schöner Tag.",
+   "ru": "Это был прекрасный день.",
+   "sit": "итог",
+   "cue": "Das <span>war</span>…",
+   "hi": [
+    "war"
+   ],
+   "week": "start1"
+  }
+ ],
+ "cloze": [
+  {
+   "q": "Ich ___ jeden Tag Deutsch.",
+   "opts": [
+    "lerne",
+    "lernst",
+    "lernen"
+   ],
+   "ok": 0,
+   "rule": "<b>ich</b> + глагол на <b>-e</b>: <b>lerne</b>. lernst = ты, lernen = мы/они.",
+   "week": "start1"
+  },
+  {
+   "q": "Ich wohne ___ zwei Jahren hier.",
+   "opts": [
+    "seit",
+    "für",
+    "ab"
+   ],
+   "ok": 0,
+   "rule": "<b>seit</b> + период = «уже … (как)» — длится с прошлого до сейчас.",
+   "week": "start1"
+  },
+  {
+   "q": "Am Wochenende ___ ich Freunde.",
+   "opts": [
+    "treffe",
+    "triffst",
+    "trifft"
+   ],
+   "ok": 0,
+   "rule": "<b>ich → treffe</b>. triffst = ты, trifft = он/она.",
+   "week": "start1"
+  }
+ ],
+ "antonyms": [
+  {
+   "qpt": "Ist er faul?",
+   "apt": "Nein, er ist fleißig.",
+   "qru": "Он ленивый?",
+   "aru": "Нет, он трудолюбивый.",
+   "wq": "faul",
+   "wa": "fleißig",
+   "grp": "car"
+  },
+  {
+   "qpt": "Ist es groß?",
+   "apt": "Nein, es ist klein.",
+   "qru": "Оно большое?",
+   "aru": "Нет, оно маленькое.",
+   "wq": "groß",
+   "wa": "klein",
+   "grp": "fis"
+  }
+ ],
+ "synonyms": [
+  {
+   "qpt": "Der Tag war toll.",
+   "apt": "Der Tag war wunderbar.",
+   "qru": "День был классный.",
+   "aru": "День был чудесный.",
+   "wq": "toll",
+   "wa": "wunderbar"
+  },
+  {
+   "qpt": "Das ist gut.",
+   "apt": "Das ist prima.",
+   "qru": "Это хорошо.",
+   "aru": "Это здорово.",
+   "wq": "gut",
+   "wa": "prima"
+  }
+ ]
+}
