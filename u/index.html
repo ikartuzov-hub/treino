@@ -653,11 +653,12 @@ function showPicker(){
 }
 async function choosePair(id){ try{localStorage.setItem(PAIR_KEY,id);}catch(e){} document.getElementById("picker").style.display="none"; await bootPair(id); }
 async function bootPair(id){
-  PAIR=id; LS_KEY="treino_progress_v1_"+id;
+  PAIR=id; var deck=qparam("d")||""; LS_KEY="treino_progress_v1_"+id+(deck?"_"+deck:"");
   var entry=MANIFEST.pairs.find(p=>p.id===id);
   try{ if(!I18N[entry.native]) I18N[entry.native]=await loadJSON("ui/ui."+entry.native+".json"); }catch(e){ I18N[entry.native]=EMBEDDED_L; }
   L=I18N[entry.native]||EMBEDDED_L;
-  try{ var j=await loadJSON(entry.data); DATA=(j&&Array.isArray(j.phrases)&&Array.isArray(j.weeks))?j:EMBEDDED; }catch(e){ DATA=EMBEDDED; }
+  var dataUrl=deck?entry.data.replace(".json","."+deck+".json"):entry.data;
+  try{ var j=await loadJSON(dataUrl); DATA=(j&&Array.isArray(j.phrases)&&Array.isArray(j.weeks))?j:EMBEDDED; }catch(e){ DATA=EMBEDDED; }
   init();
 }
 (async function(){
