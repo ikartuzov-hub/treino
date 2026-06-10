@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Treino — язык на материале твоей жизни</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Treino — язык на материале твоей жизни · v2-lang</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -384,6 +387,16 @@
 </main>
 
 <script>
+const CLOCK_D={ru:'дн',pt:'d',en:'d',de:'T',es:'d'};
+const CLOCK_H={ru:'ч',pt:'h',en:'h',de:'Std',es:'h'};
+const CLOCK_DONE={
+ ru:'открыто <small>· −50% первым 100</small>',
+ pt:'aberto <small>· −50% para os primeiros 100</small>',
+ en:'open <small>· −50% for the first 100</small>',
+ de:'offen <small>· −50% für die ersten 100</small>',
+ es:'abierto <small>· −50% para los primeros 100</small>'
+};
+var CUR='ru';
   (function(){
     var KEY='treino_launch';
     var launch = localStorage.getItem(KEY);
@@ -401,16 +414,6 @@
     tick(); setInterval(tick, 60000);
   })();
 
-const CLOCK_D={ru:'дн',pt:'d',en:'d',de:'T',es:'d'};
-const CLOCK_H={ru:'ч',pt:'h',en:'h',de:'Std',es:'h'};
-const CLOCK_DONE={
- ru:'открыто <small>· −50% первым 100</small>',
- pt:'aberto <small>· −50% para os primeiros 100</small>',
- en:'open <small>· −50% for the first 100</small>',
- de:'offen <small>· −50% für die ersten 100</small>',
- es:'abierto <small>· −50% para los primeros 100</small>'
-};
-var CUR='ru';
 
 const I18N={
 ru:{},
@@ -612,10 +615,16 @@ function setLang(l){
   if(window.__tick) window.__tick();
   try{ localStorage.setItem('treino_flyer_lang',l); }catch(e){}
 }
-const btn=document.getElementById('langBtn'), menu=document.getElementById('langMenu');
-btn.addEventListener('click',e=>{ e.stopPropagation(); menu.classList.toggle('open'); });
-document.addEventListener('click',()=>menu.classList.remove('open'));
-menu.querySelectorAll('.langitem').forEach(b=>b.addEventListener('click',()=>{ setLang(b.dataset.lang); menu.classList.remove('open'); }));
+function initLangMenu(){
+  const btn=document.getElementById('langBtn'), menu=document.getElementById('langMenu');
+  if(!btn||!menu) return;
+  btn.addEventListener('click',function(e){ e.stopPropagation(); menu.classList.toggle('open'); });
+  document.addEventListener('click',function(){ menu.classList.remove('open'); });
+  menu.querySelectorAll('.langitem').forEach(function(b){
+    b.addEventListener('click',function(){ setLang(b.dataset.lang); menu.classList.remove('open'); });
+  });
+}
+initLangMenu();
 (function(){
   let l=new URLSearchParams(location.search).get('lang');
   if(!l){ try{ l=localStorage.getItem('treino_flyer_lang'); }catch(e){} }
