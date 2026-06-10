@@ -1,0 +1,86 @@
+{
+ "config": {
+  "lang": "de-DE",
+  "ui": "ru",
+  "neg": "Nein, …",
+  "brand": "Lena ·",
+  "flag": "🇩🇪",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Хочешь продолжение — свою следующую неделю?",
+  "subscribeBtn": "Пополнить набор →",
+  "flyerUrl": "start.html",
+  "flyerText": "Как это работает и цены",
+  "methodUrl": "method.html",
+  "methodText": "Метод"
+ },
+ "weeks": [
+  {
+   "id": "jun2",
+   "label": "Июнь / 2",
+   "date": "вторая неделя июня",
+   "month": "Июнь",
+   "sentences": [
+    {"pt": "Gestern war das Wetter toll.", "ru": "Вчера была классная погода.", "t": "pas"},
+    {"pt": "Ich war bei Freunden zu Besuch und wir sind spazieren gegangen.", "ru": "Я ездила в гости к друзьям, мы гуляли.", "t": "pas"},
+    {"pt": "Heute regnet es den ganzen Tag und ich bin traurig.", "ru": "Сегодня весь день идёт дождь, у меня грустное настроение.", "t": "pre"},
+    {"pt": "Ich bereite ein leckeres Hähnchen und Pasta zu.", "ru": "Я готовлю вкусную курицу и пасту.", "t": "pre"},
+    {"pt": "In meiner Freizeit tanze ich und trainiere im Fitnessstudio.", "ru": "В моё свободное время я танцую и тренируюсь в зале.", "t": "pre"},
+    {"pt": "Im Fitnessstudio habe ich schon nette und bescheidene Freunde.", "ru": "В зале у меня уже тоже есть милые и скромные друзья.", "t": "pre"},
+    {"pt": "Ich schwimme auch im Schwimmbad.", "ru": "Я также плаваю в бассейне.", "t": "pre"},
+    {"pt": "Morgen werde ich arbeiten.", "ru": "Завтра я буду работать.", "t": "fut"},
+    {"pt": "Ich liebe schönes sonniges Wetter.", "ru": "Я люблю хорошую солнечную погоду.", "t": "pre"},
+    {"pt": "Ich esse gern draußen.", "ru": "Я люблю есть на улице (вне дома).", "t": "pre"}
+   ]
+  }
+ ],
+ "phrases": [
+  {"pt": "Gestern war das Wetter toll.", "ru": "Вчера была классная погода.", "sit": "погода, прошлое", "cue": "Gestern <span>war</span> das Wetter…", "hi": ["war", "toll"], "week": "jun2"},
+  {"pt": "Ich war bei Freunden zu Besuch.", "ru": "Я была у друзей в гостях.", "sit": "визит", "cue": "Ich <span>war</span> bei Freunden…", "hi": ["bei Freunden", "zu Besuch"], "week": "jun2"},
+  {"pt": "Wir sind spazieren gegangen.", "ru": "Мы гуляли.", "sit": "прогулка", "cue": "Wir sind <span>spazieren gegangen</span>.", "hi": ["spazieren gegangen"], "week": "jun2"},
+  {"pt": "Heute regnet es den ganzen Tag.", "ru": "Сегодня весь день идёт дождь.", "sit": "погода, настоящее", "cue": "Heute <span>regnet</span> es…", "hi": ["regnet"], "week": "jun2"},
+  {"pt": "Ich bin traurig.", "ru": "Мне грустно.", "sit": "эмоции", "cue": "Ich bin <span>traurig</span>.", "hi": ["traurig"], "week": "jun2"},
+  {"pt": "Ich bereite Hähnchen und Pasta zu.", "ru": "Я готовлю курицу и пасту.", "sit": "кулинария", "cue": "Ich <span>bereite</span>… <span>zu</span>.", "hi": ["bereite", "zu"], "week": "jun2"},
+  {"pt": "In meiner Freizeit tanze ich.", "ru": "В моё свободное время я танцую.", "sit": "хобби", "cue": "In meiner <span>Freizeit</span>…", "hi": ["Freizeit", "tanze"], "week": "jun2"},
+  {"pt": "Ich trainiere im Fitnessstudio.", "ru": "Я тренируюсь в зале.", "sit": "спорт", "cue": "Ich <span>trainiere</span> im…", "hi": ["trainiere", "Fitnessstudio"], "week": "jun2"},
+  {"pt": "Ich schwimme im Schwimmbad.", "ru": "Я плаваю в бассейне.", "sit": "спорт", "cue": "Ich <span>schwimme</span> im…", "hi": ["schwimme", "Schwimmbad"], "week": "jun2"},
+  {"pt": "Morgen werde ich arbeiten.", "ru": "Завтра я буду работать.", "sit": "планы", "cue": "Morgen <span>werde</span> ich…", "hi": ["werde", "arbeiten"], "week": "jun2"},
+  {"pt": "Ich liebe schönes sonniges Wetter.", "ru": "Я люблю красивую солнечную погоду.", "sit": "предпочтения", "cue": "Ich <span>liebe</span> schönes…", "hi": ["liebe", "sonniges"], "week": "jun2"},
+  {"pt": "Ich esse gern draußen.", "ru": "Я люблю есть на улице.", "sit": "предпочтения", "cue": "Ich esse <span>gern draußen</span>.", "hi": ["gern", "draußen"], "week": "jun2"}
+ ],
+ "cloze": [
+  {"q": "Gestern ___ das Wetter toll.", "opts": ["war", "ist", "hatte"], "ok": 0, "rule": "<b>war</b> — Präteritum глагола <b>sein</b> (был/была). Для описания погоды в прошлом — всегда <b>war</b>.", "week": "jun2"},
+  {"q": "Ich ___ bei Freunden zu Besuch.", "opts": ["war", "bin", "habe"], "ok": 0, "rule": "<b>Ich war</b> — я была (прошедшее). <b>Sein</b> в Präteritum: ich war, du warst, er/sie war.", "week": "jun2"},
+  {"q": "Wir sind spazieren ___.", "opts": ["gegangen", "gegangt", "gehen"], "ok": 0, "rule": "<b>Gegangen</b> — Partizip II от <b>gehen</b> (идти). Perfekt с <b>sein</b>: мы ходили. Неправильный глагол!", "week": "jun2"},
+  {"q": "Heute ___ es den ganzen Tag.", "opts": ["regnet", "regnt", "regnete"], "ok": 0, "rule": "<b>Regnet</b> — безличный глагол в Präsens: <b>es regnet</b> = идёт дождь. Без <b>es</b> не употребляется.", "week": "jun2"},
+  {"q": "Ich bereite Hähnchen und Pasta ___.", "opts": ["zu", "an", "auf"], "ok": 0, "rule": "<b>Zubereiten</b> — разделяемый глагол: <b>Ich bereite… zu</b>. Приставка <b>zu-</b> уходит в конец предложения.", "week": "jun2"},
+  {"q": "Ich trainiere ___ Fitnessstudio.", "opts": ["im", "in", "am"], "ok": 0, "rule": "<b>im</b> = in + dem (дательный, ср. род). <b>Fitnessstudio</b> — средний род (das), поэтому <b>im</b>.", "week": "jun2"},
+  {"q": "Ich schwimme ___ Schwimmbad.", "opts": ["im", "in dem", "am"], "ok": 0, "rule": "<b>im</b> = in + dem. <b>Das Schwimmbad</b> — средний род. Оба варианта (im / in dem) правильны, но <b>im</b> — норма.", "week": "jun2"},
+  {"q": "Morgen ___ ich arbeiten.", "opts": ["werde", "bin", "will"], "ok": 0, "rule": "<b>Werde + Infinitiv</b> = будущее время (Futur I): я буду работать. <b>Will</b> = хочу (другое значение!).", "week": "jun2"},
+  {"q": "In meiner ___ tanze ich.", "opts": ["Freizeit", "Freibeit", "Freistat"], "ok": 0, "rule": "<b>Freizeit</b> — свободное время (die Freizeit). Составное слово: <b>frei</b> (свободный) + <b>Zeit</b> (время).", "week": "jun2"},
+  {"q": "Ich esse ___ draußen.", "opts": ["gern", "gerne", "gut"], "ok": 0, "rule": "<b>Gern / gerne</b> — охотно, с удовольствием. Оба варианта правильны! <b>Ich esse gern</b> = я люблю есть.", "week": "jun2"}
+ ],
+ "antonyms": [
+  {"qpt": "Ist das Wetter gut?", "apt": "Nein, das Wetter ist schlecht.", "qru": "Погода хорошая?", "aru": "Нет, погода плохая.", "wq": "gut", "wa": "schlecht", "grp": "cli"},
+  {"qpt": "Bist du traurig?", "apt": "Nein, ich bin fröhlich.", "qru": "Тебе грустно?", "aru": "Нет, мне весело.", "wq": "traurig", "wa": "fröhlich", "grp": "emo"},
+  {"qpt": "Ist sie faul?", "apt": "Nein, sie ist fleißig.", "qru": "Она ленивая?", "aru": "Нет, она трудолюбивая.", "wq": "faul", "wa": "fleißig", "grp": "car"},
+  {"qpt": "Ist das Hähnchen kalt?", "apt": "Nein, das Hähnchen ist heiß.", "qru": "Курица холодная?", "aru": "Нет, курица горячая.", "wq": "kalt", "wa": "heiß", "grp": "tmp"},
+  {"qpt": "Ist das Schwimmbad klein?", "apt": "Nein, das Schwimmbad ist groß.", "qru": "Бассейн маленький?", "aru": "Нет, бассейн большой.", "wq": "klein", "wa": "groß", "grp": "fis"},
+  {"qpt": "War der Tag kurz?", "apt": "Nein, der Tag war lang.", "qru": "День был коротким?", "aru": "Нет, день был длинным.", "wq": "kurz", "wa": "lang", "grp": "fis"},
+  {"qpt": "Ist das Essen schlecht?", "apt": "Nein, das Essen ist lecker.", "qru": "Еда плохая?", "aru": "Нет, еда вкусная.", "wq": "schlecht", "wa": "lecker", "grp": "foo"},
+  {"qpt": "Sind sie unfreundlich?", "apt": "Nein, sie sind nett.", "qru": "Они недружелюбные?", "aru": "Нет, они милые.", "wq": "unfreundlich", "wa": "nett", "grp": "car"},
+  {"qpt": "Ist sie arrogant?", "apt": "Nein, sie ist bescheiden.", "qru": "Она высокомерная?", "aru": "Нет, она скромная.", "wq": "arrogant", "wa": "bescheiden", "grp": "car"},
+  {"qpt": "Ist es warm?", "apt": "Nein, es ist kalt.", "qru": "Тепло?", "aru": "Нет, холодно.", "wq": "warm", "wa": "kalt", "grp": "cli"}
+ ],
+ "synonyms": [
+  {"qpt": "Das Wetter war toll.", "apt": "Das Wetter war wunderbar.", "qru": "Погода была классная.", "aru": "Погода была чудесная.", "wq": "toll", "wa": "wunderbar"},
+  {"qpt": "Ich bin traurig.", "apt": "Ich bin niedergeschlagen.", "qru": "Мне грустно.", "aru": "Я подавлена.", "wq": "traurig", "wa": "niedergeschlagen"},
+  {"qpt": "Das Hähnchen ist lecker.", "apt": "Das Hähnchen ist köstlich.", "qru": "Курица вкусная.", "aru": "Курица восхитительная.", "wq": "lecker", "wa": "köstlich"},
+  {"qpt": "Sie sind nett.", "apt": "Sie sind freundlich.", "qru": "Они милые.", "aru": "Они дружелюбные.", "wq": "nett", "wa": "freundlich"},
+  {"qpt": "Sie sind bescheiden.", "apt": "Sie sind demütig.", "qru": "Они скромные.", "aru": "Они смиренные.", "wq": "bescheiden", "wa": "demütig"},
+  {"qpt": "Ich esse gern draußen.", "apt": "Ich esse gern im Freien.", "qru": "Люблю есть на улице.", "aru": "Люблю есть на свежем воздухе.", "wq": "draußen", "wa": "im Freien"},
+  {"qpt": "Das Wetter ist schön.", "apt": "Das Wetter ist angenehm.", "qru": "Погода красивая.", "aru": "Погода приятная.", "wq": "schön", "wa": "angenehm"},
+  {"qpt": "Morgen werde ich arbeiten.", "apt": "Morgen muss ich arbeiten.", "qru": "Завтра буду работать.", "aru": "Завтра мне нужно работать.", "wq": "werde", "wa": "muss"},
+  {"qpt": "Wir sind spazieren gegangen.", "apt": "Wir haben einen Spaziergang gemacht.", "qru": "Мы гуляли.", "aru": "Мы совершили прогулку.", "wq": "spazieren gegangen", "wa": "einen Spaziergang gemacht"},
+  {"qpt": "Ich liebe Sonnenschein.", "apt": "Ich mag Sonnenschein.", "qru": "Я обожаю солнце.", "aru": "Мне нравится солнце.", "wq": "liebe", "wa": "mag"}
+ ]
+}
