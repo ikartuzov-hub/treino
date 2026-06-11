@@ -9,13 +9,24 @@
     --bg:#14100d; --ink:#f1e8dd; --dim:#8d7f70;
     --accent:#c89b6d; --accent-ink:#1a140f;
   }
+  :root[data-theme="light"]{
+    --bg:#f7f0e4; --ink:#2a211a; --dim:#9c8a76;
+    --accent:#a86f33; --accent-ink:#fbf6ee;
+  }
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{height:100%}
   body{
     background:var(--bg);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     display:flex;flex-direction:column;min-height:100vh;min-height:100dvh;
+    transition:background .4s ease,color .4s ease;
   }
+  .themebtn{
+    position:fixed;top:14px;left:14px;z-index:10;
+    background:none;border:1px solid transparent;color:var(--dim);
+    font-size:16px;line-height:1;padding:6px 9px;border-radius:999px;cursor:pointer;
+  }
+  .themebtn:active{transform:scale(.95)}
   .langbar{position:fixed;top:14px;right:14px;display:flex;gap:6px;z-index:10}
   .langbar button{
     background:none;border:1px solid transparent;color:var(--dim);
@@ -53,6 +64,7 @@
 </head>
 <body>
 
+<button id="themeBtn" class="themebtn" aria-label="Сменить тему">☀</button>
 <nav class="langbar" id="langbar" aria-label="Language"></nav>
 
 <main>
@@ -77,11 +89,11 @@
 </main>
 
 <footer>
-  <span>© Igor Kartuzov · <a id="authorLink" href="#" target="_blank" rel="noopener">Igor Kartuzov</a></span>
+  <span>© <a id="authorLink" href="#" target="_blank" rel="noopener">Igor Kartuzov</a></span>
   <span>·</span>
   <a id="hubLink" href="#" target="_blank" rel="noopener">SeedWave</a>
   <span>·</span>
-  <span style="opacity:.55">v4</span>
+  <span style="opacity:.55">v5</span>
 </footer>
 
 <script>
@@ -247,6 +259,17 @@ function enterS3(){
 }
 
 buildLangbar();applyLocale();
+
+/* ---- ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ (старт тёмная) ---- */
+let theme="dark";
+function setTheme(t){
+  if(t==="light")document.documentElement.setAttribute("data-theme","light");
+  else document.documentElement.removeAttribute("data-theme");
+  $("themeBtn").textContent=(t==="light")?"☾":"☀";
+}
+setTheme("dark");
+$("themeBtn").onclick=function(){ theme=(theme==="dark")?"light":"dark"; setTheme(theme); };
+
 $("btnYes").onclick=enterS2;
 $("btnListen").onclick=speak;
 $("btnNext").onclick=enterS3;
