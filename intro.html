@@ -5,22 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Treino</title>
 <style>
-  /* ===== СЛОЙ ДВИЖКА: про язык ничего не знает ===== */
   :root{
-    --bg:#14100d;          /* эспрессо — тёмная сцена */
-    --ink:#f1e8dd;         /* тёплые сливки — текст */
-    --dim:#8d7f70;         /* приглушённый — служебное */
-    --accent:#c89b6d;      /* карамель — фирменный акцент Treino */
-    --accent-ink:#1a140f;
+    --bg:#14100d; --ink:#f1e8dd; --dim:#8d7f70;
+    --accent:#c89b6d; --accent-ink:#1a140f;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{height:100%}
   body{
-    background:var(--bg);
-    color:var(--ink);
+    background:var(--bg);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    display:flex;flex-direction:column;
-    min-height:100dvh;
+    display:flex;flex-direction:column;min-height:100vh;min-height:100dvh;
   }
   .langbar{position:fixed;top:14px;right:14px;display:flex;gap:6px;z-index:10}
   .langbar button{
@@ -29,71 +23,32 @@
     cursor:pointer;text-transform:uppercase;
   }
   .langbar button.on{color:var(--accent);border-color:var(--accent)}
-  .langbar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-  main{
-    flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;
-    padding:24px;text-align:center;
-  }
+  main{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center}
   .step{display:none;flex-direction:column;align-items:center;gap:34px;max-width:560px;width:100%}
   .step.on{display:flex}
 
-  /* печатаемая строка-вопрос */
-  .line{
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:clamp(22px,5.5vw,32px);
-    line-height:1.45;font-weight:400;
-    min-height:2.9em;
-  }
-  .caret::after{content:"▎";color:var(--accent);animation:blink 1s steps(1) infinite}
-  @keyframes blink{50%{opacity:0}}
-
-  .phrase{
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:clamp(30px,8vw,46px);
-    line-height:1.3;color:var(--accent);min-height:1.3em;
-  }
-  .phrase.caret::after{content:"▎";color:var(--accent);animation:blink 1s steps(1) infinite}
+  .line{font-family:Georgia,"Times New Roman",serif;font-size:clamp(22px,5.5vw,32px);line-height:1.45;min-height:2.9em}
+  .phrase{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,8vw,46px);line-height:1.3;color:var(--accent);min-height:1.3em}
   .translation{font-size:clamp(16px,4vw,20px);color:var(--dim);min-height:1.4em}
-  .wowline{
-    font-family:Georgia,serif;font-size:clamp(19px,4.6vw,26px);line-height:1.45;min-height:1.4em;
-  }
-  .wowline.caret::after{content:"▎";color:var(--accent);animation:blink 1s steps(1) infinite}
+  .wowline{font-family:Georgia,serif;font-size:clamp(19px,4.6vw,26px);line-height:1.45;min-height:1.4em}
 
   .btn{
     font-family:inherit;font-size:17px;letter-spacing:.02em;
     padding:15px 38px;border-radius:999px;cursor:pointer;
     border:1px solid var(--accent);background:none;color:var(--accent);
-    transition:background .25s,color .25s;
+    transition:background .25s,color .25s;will-change:transform;
   }
   .btn:hover{background:var(--accent);color:var(--accent-ink)}
   .btn:active{transform:scale(.97)}
-  .btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
   .btn.primary{background:var(--accent);color:var(--accent-ink);font-weight:600}
   .btn.ghost{border-color:transparent;color:var(--dim);font-size:15px;padding:10px 20px}
   .btn.ghost:hover{background:none;color:var(--ink)}
   .btn.hidden{visibility:hidden;pointer-events:none}
 
-  /* постоянная пульсация — кнопка зовёт нажать */
-  @keyframes pulse{
-    0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(200,155,109,0)}
-    50%{transform:scale(1.07);box-shadow:0 0 0 12px rgba(200,155,109,0)}
-  }
-  .btn.pulse{animation:pulse 1.4s ease-in-out infinite}
-
   .cta-col{display:flex;flex-direction:column;gap:14px;align-items:center}
-
-  footer{
-    padding:18px;text-align:center;font-size:12px;color:var(--dim);
-    display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
-  }
+  footer{padding:18px;text-align:center;font-size:12px;color:var(--dim);display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
   footer a{color:var(--dim);text-decoration:none;border-bottom:1px solid rgba(141,127,112,.4)}
-  footer a:hover{color:var(--accent);border-color:var(--accent)}
-
-  @media (prefers-reduced-motion: reduce){
-    .caret::after,.phrase.caret::after,.wowline.caret::after{animation:none}
-    .btn.pulse{animation:none}
-  }
 </style>
 </head>
 <body>
@@ -105,7 +60,6 @@
     <p class="line" id="hook" aria-live="polite"></p>
     <button class="btn hidden" id="btnYes"></button>
   </section>
-
   <section class="step" id="s2">
     <p class="phrase" id="phrase"></p>
     <button class="btn primary hidden" id="btnListen"></button>
@@ -113,7 +67,6 @@
     <p class="wowline" id="wow"></p>
     <button class="btn hidden" id="btnNext"></button>
   </section>
-
   <section class="step" id="s3">
     <p class="line" id="pitch"></p>
     <div class="cta-col">
@@ -127,6 +80,8 @@
   <span>© Igor Kartuzov · <a id="authorLink" href="#" target="_blank" rel="noopener">Igor Kartuzov</a></span>
   <span>·</span>
   <a id="hubLink" href="#" target="_blank" rel="noopener">SeedWave</a>
+  <span>·</span>
+  <span style="opacity:.55">v4</span>
 </footer>
 
 <script>
@@ -136,7 +91,7 @@ const MORE_URL   = "./";
 const HUB_URL    = "https://ikartuzov-hub.github.io/seedwave-catalog/hub/";
 const AUTHOR_URL = "https://www.linkedin.com/in/igor-kartuzov/";
 
-/* ===== ЛОКАЛИ + КОНТЕНТ: новый язык = новый блок ===== */
+/* ===== ЛОКАЛИ + КОНТЕНТ ===== */
 const LOCALES = {
   ru:{dir:"ltr",ui:{
     hook:"Хочешь, скажу одну фразу — и ты поймёшь португальский?",
@@ -185,7 +140,6 @@ const params=new URLSearchParams(location.search);
 let lang=params.get("lang");
 if(!LOCALES[lang]){const nav=(navigator.language||"ru").slice(0,2).toLowerCase();lang=LOCALES[nav]?nav:"ru";}
 let L=LOCALES[lang];
-const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $=id=>document.getElementById(id);
 const withLang=u=>u+(u.includes("?")?"&":"?")+"lang="+lang;
 
@@ -195,7 +149,7 @@ function buildLangbar(){
     const b=document.createElement("button");
     b.textContent=code;
     if(code===lang)b.classList.add("on");
-    b.onclick=()=>{location.search="?lang="+code;};
+    b.onclick=function(){location.search="?lang="+code;};
     bar.appendChild(b);
   });
 }
@@ -212,66 +166,92 @@ function applyLocale(){
   $("hubLink").href=withLang(HUB_URL);
 }
 
-/* печать строки + мигающий курсор; по концу — callback */
+/* ---- ПЕЧАТЬ через requestAnimationFrame (iOS-устойчиво) ---- */
+const CPS=22;           // символов в секунду
 function typeLine(el,text,done){
-  el.classList.add("caret");
-  if(reduced){el.textContent=text;el.classList.remove("caret");if(done)done();return;}
-  let i=0;el.textContent="";
-  const t=setInterval(()=>{
-    el.textContent=text.slice(0,++i);
-    if(i>=text.length){clearInterval(t);setTimeout(()=>{el.classList.remove("caret");if(done)done();},400);}
-  },42);
+  el.textContent="";
+  let shown=0,start=null,finished=false;
+  function finish(){
+    if(finished)return;finished=true;
+    el.textContent=text;
+    setTimeout(function(){ if(done)done(); },300);
+  }
+  function frame(ts){
+    if(start===null)start=ts;
+    const should=Math.floor((ts-start)/1000*CPS);
+    if(should!==shown){
+      shown=Math.min(should,text.length);
+      el.textContent=text.slice(0,shown)+(shown<text.length?"▎":"");
+    }
+    if(shown<text.length){ requestAnimationFrame(frame); }
+    else { finish(); }
+  }
+  requestAnimationFrame(frame);
+  // подстраховка: если кадры не идут вообще — показать через 3.5с
+  setTimeout(finish,3500);
 }
-/* показать кнопку и запустить вечную пульсацию */
-function callBtn(id){$(id).classList.remove("hidden");$(id).classList.add("pulse");}
-function show(stepId){document.querySelectorAll(".step").forEach(s=>s.classList.remove("on"));$(stepId).classList.add("on");}
 
-/* === ШАГ 1 === */
+/* ---- ПУЛЬСАЦИЯ через requestAnimationFrame (iOS-устойчиво) ---- */
+const pulsing=new Set();
+function pulseOn(id){ pulsing.add(id); }
+function pulseOff(id){ pulsing.delete(id); const e=$(id); if(e)e.style.transform=""; }
+function pulseLoop(ts){
+  const s=1+0.07*(0.5+0.5*Math.sin(ts/230));   // 1.00 .. 1.07, период ~1.4с
+  pulsing.forEach(function(id){ const e=$(id); if(e)e.style.transform="scale("+s.toFixed(4)+")"; });
+  requestAnimationFrame(pulseLoop);
+}
+requestAnimationFrame(pulseLoop);
+
+function callBtn(id){ $(id).classList.remove("hidden"); pulseOn(id); }
+function show(stepId){ document.querySelectorAll(".step").forEach(function(s){s.classList.remove("on");}); $(stepId).classList.add("on"); }
+
+/* === ШАГИ === */
 function enterS1(){
   show("s1");
-  $("btnYes").classList.add("hidden");$("btnYes").classList.remove("pulse");
-  setTimeout(()=>typeLine($("hook"),L.ui.hook,()=>callBtn("btnYes")),500);
+  $("btnYes").classList.add("hidden");pulseOff("btnYes");
+  typeLine($("hook"),L.ui.hook,function(){callBtn("btnYes");});
 }
-/* === ШАГ 2 === */
 let revealed=false;
 function enterS2(){
   show("s2");revealed=false;
-  ["btnListen","btnNext"].forEach(id=>{$(id).classList.add("hidden");$(id).classList.remove("pulse");});
+  ["btnListen","btnNext"].forEach(function(id){$(id).classList.add("hidden");pulseOff(id);});
   $("translation").textContent="";$("wow").textContent="";
   $("btnListen").textContent=L.ui.listen;
-  setTimeout(()=>typeLine($("phrase"),L.phrase.text,()=>callBtn("btnListen")),350);
+  typeLine($("phrase"),L.phrase.text,function(){callBtn("btnListen");});
 }
 function speak(){
-  const u=new SpeechSynthesisUtterance(L.phrase.text);
-  u.lang=L.phrase.voice;u.rate=0.9;
-  const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith(L.phrase.voice.slice(0,2)));
-  if(v)u.voice=v;
-  u.onend=reveal;
-  speechSynthesis.cancel();speechSynthesis.speak(u);
+  try{
+    const u=new SpeechSynthesisUtterance(L.phrase.text);
+    u.lang=L.phrase.voice;u.rate=0.9;
+    const vs=speechSynthesis.getVoices();
+    const v=vs.find(function(v){return v.lang&&v.lang.toLowerCase().indexOf(L.phrase.voice.slice(0,2))===0;});
+    if(v)u.voice=v;
+    u.onend=reveal;
+    speechSynthesis.cancel();speechSynthesis.speak(u);
+  }catch(e){}
   setTimeout(reveal,3500);
 }
 function reveal(){
   if(revealed)return;revealed=true;
-  $("btnListen").textContent=L.ui.again;$("btnListen").classList.remove("pulse");
+  $("btnListen").textContent=L.ui.again;pulseOff("btnListen");
   $("translation").textContent=L.phrase.translation;
-  typeLine($("wow"),L.ui.wow,()=>callBtn("btnNext"));
+  typeLine($("wow"),L.ui.wow,function(){callBtn("btnNext");});
 }
-/* === ШАГ 3 === */
 function enterS3(){
   show("s3");
-  ["btnTry","btnMore"].forEach(id=>{$(id).classList.add("hidden");$(id).classList.remove("pulse");});
-  setTimeout(()=>typeLine($("pitch"),L.ui.pitch,()=>{
+  ["btnTry","btnMore"].forEach(function(id){$(id).classList.add("hidden");pulseOff(id);});
+  typeLine($("pitch"),L.ui.pitch,function(){
     callBtn("btnTry");
     $("btnMore").classList.remove("hidden");
-  }),350);
+  });
 }
 
 buildLangbar();applyLocale();
 $("btnYes").onclick=enterS2;
 $("btnListen").onclick=speak;
 $("btnNext").onclick=enterS3;
-$("btnTry").onclick=()=>location.href=withLang(APP_URL);
-$("btnMore").onclick=()=>location.href=withLang(MORE_URL);
+$("btnTry").onclick=function(){location.href=withLang(APP_URL);};
+$("btnMore").onclick=function(){location.href=withLang(MORE_URL);};
 enterS1();
 </script>
 </body>
