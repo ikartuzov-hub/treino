@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treino</title>
+<style>
+  /* ===== СЛОЙ ДВИЖКА: про язык ничего не знает ===== */
+  :root{
+    --bg:#14100d;          /* эспрессо — тёмная сцена */
+    --ink:#f1e8dd;         /* тёплые сливки — текст */
+    --dim:#8d7f70;         /* приглушённый — служебное */
+    --accent:#c89b6d;      /* карамель — фирменный акцент Treino */
+    --accent-ink:#1a140f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    display:flex;flex-direction:column;
+    min-height:100dvh;
+  }
+  /* язык — видимая кнопка, правый верх */
+  .langbar{
+    position:fixed;top:14px;right:14px;display:flex;gap:6px;z-index:10;
+  }
+  .langbar button{
+    background:none;border:1px solid transparent;color:var(--dim);
+    font-size:12px;letter-spacing:.08em;padding:5px 8px;border-radius:999px;
+    cursor:pointer;text-transform:uppercase;
+  }
+  .langbar button.on{color:var(--accent);border-color:var(--accent)}
+  .langbar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  main{
+    flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:24px;text-align:center;
+  }
+  .step{display:none;flex-direction:column;align-items:center;gap:34px;max-width:560px;width:100%}
+  .step.on{display:flex;animation:fadein .8s ease both}
+  @keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  /* фирменная строка — серифом, как голос */
+  .line{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(22px,5.5vw,32px);
+    line-height:1.45;font-weight:400;
+    min-height:2.9em;
+  }
+  .caret::after{content:"▎";color:var(--accent);animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  .phrase{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(30px,8vw,46px);
+    line-height:1.3;color:var(--accent);
+  }
+  .translation{
+    font-size:clamp(16px,4vw,20px);color:var(--dim);
+    opacity:0;transition:opacity .9s ease;
+  }
+  .translation.show{opacity:1}
+  .wowline{
+    font-family:Georgia,serif;font-size:clamp(19px,4.6vw,26px);line-height:1.45;
+    opacity:0;transition:opacity .9s ease .3s;
+  }
+  .wowline.show{opacity:1}
+
+  .btn{
+    font-family:inherit;font-size:17px;letter-spacing:.02em;
+    padding:15px 38px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--accent);background:none;color:var(--accent);
+    transition:background .25s,color .25s,transform .15s;
+  }
+  .btn:hover{background:var(--accent);color:var(--accent-ink)}
+  .btn:active{transform:scale(.97)}
+  .btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .btn.primary{background:var(--accent);color:var(--accent-ink);font-weight:600}
+  .btn.primary:hover{filter:brightness(1.08)}
+  .btn.ghost{border-color:transparent;color:var(--dim);font-size:15px;padding:10px 20px}
+  .btn.ghost:hover{background:none;color:var(--ink)}
+  .hidden{visibility:hidden}
+  .cta-col{display:flex;flex-direction:column;gap:14px;align-items:center}
+
+  footer{
+    padding:18px;text-align:center;font-size:12px;color:var(--dim);
+    display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+  }
+  footer a{color:var(--dim);text-decoration:none;border-bottom:1px solid rgba(141,127,112,.4)}
+  footer a:hover{color:var(--accent);border-color:var(--accent)}
+
+  @media (prefers-reduced-motion: reduce){
+    .step.on{animation:none}
+    .caret::after{animation:none}
+    .translation,.wowline{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="langbar" id="langbar" aria-label="Language"></nav>
+
+<main>
+  <!-- Шаг 1: пустой экран, одна строка -->
+  <section class="step on" id="s1">
+    <p class="line caret" id="hook" aria-live="polite"></p>
+    <button class="btn hidden" id="btnYes"></button>
+  </section>
+
+  <!-- Шаг 2: фраза + звук + вау -->
+  <section class="step" id="s2">
+    <p class="phrase" id="phrase"></p>
+    <button class="btn primary" id="btnListen"></button>
+    <p class="translation" id="translation"></p>
+    <p class="wowline" id="wow"></p>
+    <button class="btn hidden" id="btnNext"></button>
+  </section>
+
+  <!-- Шаг 3: что это и куда дальше -->
+  <section class="step" id="s3">
+    <p class="line" id="pitch"></p>
+    <div class="cta-col">
+      <button class="btn primary" id="btnTry"></button>
+      <button class="btn ghost" id="btnMore"></button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© Igor Kartuzov · <a id="authorLink" href="#" target="_blank" rel="noopener">Igor Kartuzov</a></span>
+  <span>·</span>
+  <a id="hubLink" href="#" target="_blank" rel="noopener">SeedWave</a>
+</footer>
+
+<script>
+/* ===== РЕЕСТР (manifest-уровень): единые точки ===== */
+const APP_URL    = "https://ikartuzov-hub.github.io/treino/u/";
+const MORE_URL   = "./";  // подробный лендинг index.html рядом
+const HUB_URL    = "https://ikartuzov-hub.github.io/seedwave-catalog/hub/";
+const AUTHOR_URL = "https://www.linkedin.com/in/igor-kartuzov/";
+
+/* ===== СЛОЙ ЛОКАЛЕЙ + КОНТЕНТА: новый язык = новый блок, движок не трогаем ===== */
+const LOCALES = {
+  ru: {
+    dir:"ltr",
+    ui:{
+      hook:"Хочешь, скажу одну фразу — и ты поймёшь португальский?",
+      yes:"Да, давай",
+      listen:"🔊 Послушать",
+      again:"🔊 Ещё раз",
+      wow:"Ты только что понял португальский. Без словаря и без правил.",
+      next:"Дальше",
+      pitch:"Так работает Treino. Фразы, которые понимаешь с первого раза, — и язык начинает звучать в тебе. 6 языковых пар.",
+      tryIt:"Попробовать бесплатно",
+      more:"Узнать больше"
+    },
+    phrase:{ text:"Isto é fantástico!", translation:"«Это фантастично!»", voice:"pt-PT" }
+  },
+  en: {
+    dir:"ltr",
+    ui:{
+      hook:"Want me to say one phrase — and you'll understand Portuguese?",
+      yes:"Yes, go on",
+      listen:"🔊 Listen",
+      again:"🔊 Once more",
+      wow:"You just understood Portuguese. No dictionary, no rules.",
+      next:"Next",
+      pitch:"That's how Treino works. Phrases you understand on first hearing — and the language starts to live in you. 6 language pairs.",
+      tryIt:"Try it free",
+      more:"Learn more"
+    },
+    phrase:{ text:"Isto é fantástico!", translation:"“This is fantastic!”", voice:"pt-PT" }
+  },
+  pt: {
+    dir:"ltr",
+    ui:{
+      hook:"Queres ouvir uma frase — e entender russo?",
+      yes:"Sim, quero",
+      listen:"🔊 Ouvir",
+      again:"🔊 Outra vez",
+      wow:"Acabaste de entender russo. Sem dicionário, sem regras.",
+      next:"Continuar",
+      pitch:"É assim que o Treino funciona. Frases que entendes à primeira — e a língua começa a viver em ti. 6 pares de línguas.",
+      tryIt:"Experimentar grátis",
+      more:"Saber mais"
+    },
+    phrase:{ text:"Это фантастика!", translation:"«Isto é fantástico!»", voice:"ru-RU" }
+  },
+  es: {
+    dir:"ltr",
+    ui:{
+      hook:"¿Quieres que diga una frase — y entenderás portugués?",
+      yes:"Sí, adelante",
+      listen:"🔊 Escuchar",
+      again:"🔊 Otra vez",
+      wow:"Acabas de entender portugués. Sin diccionario, sin reglas.",
+      next:"Siguiente",
+      pitch:"Así funciona Treino. Frases que entiendes a la primera — y el idioma empieza a vivir en ti. 6 pares de idiomas.",
+      tryIt:"Probar gratis",
+      more:"Saber más"
+    },
+    phrase:{ text:"Isto é fantástico!", translation:"«¡Esto es fantástico!»", voice:"pt-PT" }
+  },
+  de: {
+    dir:"ltr",
+    ui:{
+      hook:"Soll ich einen Satz sagen — und du verstehst Portugiesisch?",
+      yes:"Ja, los",
+      listen:"🔊 Anhören",
+      again:"🔊 Noch einmal",
+      wow:"Du hast gerade Portugiesisch verstanden. Ohne Wörterbuch, ohne Regeln.",
+      next:"Weiter",
+      pitch:"So funktioniert Treino. Sätze, die du beim ersten Hören verstehst — und die Sprache beginnt in dir zu leben. 6 Sprachpaare.",
+      tryIt:"Kostenlos ausprobieren",
+      more:"Mehr erfahren"
+    },
+    phrase:{ text:"Isto é fantástico!", translation:"„Das ist fantastisch!“", voice:"pt-PT" }
+  }
+};
+
+/* ===== ДВИЖОК ===== */
+const params = new URLSearchParams(location.search);
+let lang = params.get("lang");
+if(!LOCALES[lang]){
+  const nav=(navigator.language||"ru").slice(0,2).toLowerCase();
+  lang = LOCALES[nav] ? nav : "ru";
+}
+let L = LOCALES[lang];
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $=id=>document.getElementById(id);
+
+function withLang(url){
+  return url + (url.includes("?") ? "&" : "?") + "lang=" + lang;
+}
+
+function buildLangbar(){
+  const bar=$("langbar"); bar.innerHTML="";
+  Object.keys(LOCALES).forEach(code=>{
+    const b=document.createElement("button");
+    b.textContent=code;
+    if(code===lang) b.classList.add("on");
+    b.onclick=()=>{ location.search="?lang="+code; };
+    bar.appendChild(b);
+  });
+}
+
+function applyLocale(){
+  document.documentElement.lang=lang;
+  document.documentElement.dir=L.dir||"ltr";
+  $("btnYes").textContent=L.ui.yes;
+  $("btnListen").textContent=L.ui.listen;
+  $("btnNext").textContent=L.ui.next;
+  $("phrase").textContent=L.phrase.text;
+  $("translation").textContent=L.phrase.translation;
+  $("wow").textContent=L.ui.wow;
+  $("pitch").textContent=L.ui.pitch;
+  $("btnTry").textContent=L.ui.tryIt;
+  $("btnMore").textContent=L.ui.more;
+  $("authorLink").href=AUTHOR_URL;
+  $("hubLink").href=withLang(HUB_URL);
+}
+
+/* печатающаяся строка */
+function typeLine(el,text,done){
+  if(reduced){ el.textContent=text; el.classList.remove("caret"); done(); return; }
+  let i=0; el.textContent="";
+  const t=setInterval(()=>{
+    el.textContent=text.slice(0,++i);
+    if(i>=text.length){ clearInterval(t); setTimeout(()=>{el.classList.remove("caret"); done();},350); }
+  },42);
+}
+
+function show(stepId){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("on"));
+  $(stepId).classList.add("on");
+}
+
+/* озвучка фразы */
+let revealed=false;
+function speak(){
+  const u=new SpeechSynthesisUtterance(L.phrase.text);
+  u.lang=L.phrase.voice; u.rate=0.9;
+  const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith(L.phrase.voice.slice(0,2)));
+  if(v) u.voice=v;
+  u.onend=reveal;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+  setTimeout(reveal,3500); /* подстраховка, если TTS молчит */
+}
+function reveal(){
+  if(revealed) return; revealed=true;
+  $("translation").classList.add("show");
+  $("wow").classList.add("show");
+  $("btnNext").classList.remove("hidden");
+  $("btnListen").textContent=L.ui.again;
+}
+
+/* связка шагов */
+buildLangbar();
+applyLocale();
+typeLine($("hook"),L.ui.hook,()=>$("btnYes").classList.remove("hidden"));
+$("btnYes").onclick =()=>show("s2");
+$("btnListen").onclick=speak;
+$("btnNext").onclick=()=>show("s3");
+$("btnTry").onclick =()=>location.href=withLang(APP_URL);
+$("btnMore").onclick=()=>location.href=withLang(MORE_URL);
+</script>
+</body>
+</html>
