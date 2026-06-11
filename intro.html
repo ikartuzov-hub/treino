@@ -21,13 +21,14 @@
     display:flex;flex-direction:column;min-height:100vh;min-height:100dvh;
     transition:background .4s ease,color .4s ease;
   }
+  .brandmark{position:fixed;top:13px;left:16px;width:24px;height:24px;z-index:10}
+  .topctrl{position:fixed;top:12px;right:14px;z-index:10;display:flex;align-items:center;gap:8px}
   .themebtn{
-    position:fixed;top:14px;left:14px;z-index:10;
     background:none;border:1px solid transparent;color:var(--dim);
     font-size:16px;line-height:1;padding:6px 9px;border-radius:999px;cursor:pointer;
   }
   .themebtn:active{transform:scale(.95)}
-  .langbar{position:fixed;top:14px;right:14px;display:flex;gap:6px;z-index:10}
+  .langbar{display:flex;gap:6px}
   .langbar button{
     background:none;border:1px solid transparent;color:var(--dim);
     font-size:12px;letter-spacing:.08em;padding:5px 8px;border-radius:999px;
@@ -64,8 +65,11 @@
 </head>
 <body>
 
-<button id="themeBtn" class="themebtn" aria-label="Сменить тему">☀</button>
-<nav class="langbar" id="langbar" aria-label="Language"></nav>
+<svg class="brandmark" viewBox="0 0 100 100" fill="none" stroke="var(--accent)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Treino"><path d="M18 32 Q31 19 43 31 Q50 38 57 31 Q69 19 82 32"/><path d="M50 33 V80"/></svg>
+<div class="topctrl">
+  <button id="themeBtn" class="themebtn" aria-label="Сменить тему">☀</button>
+  <nav class="langbar" id="langbar" aria-label="Language"></nav>
+</div>
 
 <main>
   <section class="step on" id="s1">
@@ -89,11 +93,11 @@
 </main>
 
 <footer>
-  <span>© <a id="authorLink" href="#" target="_blank" rel="noopener">Igor Kartuzov</a></span>
-  <span>·</span>
+  © <a id="authorLink" href="#" target="_blank" rel="noopener">Igor Kartuzov</a>
+  <span> · </span>
   <a id="hubLink" href="#" target="_blank" rel="noopener">SeedWave</a>
-  <span>·</span>
-  <span style="opacity:.55">v5</span>
+  <span> · </span>
+  <span style="opacity:.55">v9</span>
 </footer>
 
 <script>
@@ -152,8 +156,9 @@ const params=new URLSearchParams(location.search);
 let lang=params.get("lang");
 if(!LOCALES[lang]){const nav=(navigator.language||"ru").slice(0,2).toLowerCase();lang=LOCALES[nav]?nav:"ru";}
 let L=LOCALES[lang];
+let theme=params.get("theme")==="light"?"light":"dark";
 const $=id=>document.getElementById(id);
-const withLang=u=>u+(u.includes("?")?"&":"?")+"lang="+lang;
+const withNav=u=>u+(u.includes("?")?"&":"?")+"lang="+lang+"&theme="+theme;
 
 function buildLangbar(){
   const bar=$("langbar");bar.innerHTML="";
@@ -161,7 +166,7 @@ function buildLangbar(){
     const b=document.createElement("button");
     b.textContent=code;
     if(code===lang)b.classList.add("on");
-    b.onclick=function(){location.search="?lang="+code;};
+    b.onclick=function(){const u=new URL(location.href);u.searchParams.set("lang",code);u.searchParams.set("theme",theme);location.href=u.toString();};
     bar.appendChild(b);
   });
 }
@@ -175,7 +180,7 @@ function applyLocale(){
   $("btnMore").textContent=L.ui.more;
   $("translation").textContent="";
   $("authorLink").href=AUTHOR_URL;
-  $("hubLink").href=withLang(HUB_URL);
+  $("hubLink").href=withNav(HUB_URL);
 }
 
 /* ---- ПЕЧАТЬ через requestAnimationFrame (iOS-устойчиво) ---- */
@@ -234,9 +239,12 @@ function enterS2(){
 function speak(){
   try{
     const u=new SpeechSynthesisUtterance(L.phrase.text);
-    u.lang=L.phrase.voice;u.rate=0.9;
+    u.lang=L.phrase.voice;u.rate=0.88;
     const vs=speechSynthesis.getVoices();
-    const v=vs.find(function(v){return v.lang&&v.lang.toLowerCase().indexOf(L.phrase.voice.slice(0,2))===0;});
+    const tgt=L.phrase.voice.toLowerCase().replace("_","-");
+    const v=vs.find(function(v){return v.lang&&v.lang.toLowerCase().replace("_","-")===tgt;})
+         || vs.find(function(v){return v.lang&&v.lang.toLowerCase().replace("_","-").indexOf(tgt)===0&&/\bPT\b/i.test(v.name||"");})
+         || vs.find(function(v){return v.lang&&v.lang.toLowerCase().indexOf(tgt.slice(0,2))===0;});
     if(v)u.voice=v;
     u.onend=reveal;
     speechSynthesis.cancel();speechSynthesis.speak(u);
@@ -260,21 +268,22 @@ function enterS3(){
 
 buildLangbar();applyLocale();
 
-/* ---- ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ (старт тёмная) ---- */
-let theme="dark";
+/* ---- ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ (сквозной через ?theme=) ---- */
 function setTheme(t){
+  theme=t;
   if(t==="light")document.documentElement.setAttribute("data-theme","light");
   else document.documentElement.removeAttribute("data-theme");
   $("themeBtn").textContent=(t==="light")?"☾":"☀";
+  $("hubLink").href=withNav(HUB_URL);
 }
-setTheme("dark");
-$("themeBtn").onclick=function(){ theme=(theme==="dark")?"light":"dark"; setTheme(theme); };
+setTheme(theme);
+$("themeBtn").onclick=function(){ setTheme(theme==="dark"?"light":"dark"); };
 
 $("btnYes").onclick=enterS2;
 $("btnListen").onclick=speak;
 $("btnNext").onclick=enterS3;
-$("btnTry").onclick=function(){location.href=withLang(APP_URL);};
-$("btnMore").onclick=function(){location.href=withLang(MORE_URL);};
+$("btnTry").onclick=function(){location.href=withNav(APP_URL);};
+$("btnMore").onclick=function(){location.href=withNav(MORE_URL);};
 enterS1();
 </script>
 </body>
