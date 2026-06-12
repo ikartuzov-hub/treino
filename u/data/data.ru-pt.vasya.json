@@ -1,0 +1,248 @@
+{
+  "config": {
+    "lang": "pt-PT",
+    "ui": "ru",
+    "neg": "Não, …",
+    "brand": "Vasya ·",
+    "flag": "🇵🇹",
+    "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+    "subscribeText": "Хочешь продолжение — свою следующую неделю?",
+    "subscribeBtn": "Пополнить набор →",
+    "flyerUrl": "start.html",
+    "flyerText": "Как это работает и цены",
+    "methodUrl": "method.html",
+    "methodText": "Метод"
+  },
+  "phrases": [
+    {
+      "pt": "Chamo-me Vasya e vivo em Tenerife há um ano.",
+      "ru": "Меня зовут Вася, и я живу на Тенерифе уже год.",
+      "sit": "о себе",
+      "cue": "Chamo-me Vasya e vivo em Tenerife <span>há</span>…",
+      "hi": ["Chamo-me", "há um ano"],
+      "week": "jun2"
+    },
+    {
+      "pt": "Ontem fui a Nago.",
+      "ru": "Вчера я ездил в Наго.",
+      "sit": "поездка",
+      "cue": "Ontem <span>fui</span> a…",
+      "hi": ["Ontem", "fui"],
+      "week": "jun2"
+    },
+    {
+      "pt": "Hoje andei de funicular.",
+      "ru": "Сегодня я катался на фуникулёре.",
+      "sit": "поездка",
+      "cue": "Hoje <span>andei</span> de…",
+      "hi": ["Hoje", "andei de funicular"],
+      "week": "jun2"
+    },
+    {
+      "pt": "Amanhã vou nadar no mar.",
+      "ru": "Завтра я пойду купаться в море.",
+      "sit": "планы",
+      "cue": "Amanhã <span>vou</span> nadar…",
+      "hi": ["Amanhã", "vou nadar"],
+      "week": "jun2"
+    },
+    {
+      "pt": "Tenho bons amigos aqui.",
+      "ru": "У меня здесь хорошие друзья.",
+      "sit": "друзья",
+      "cue": "Tenho <span>bons</span> amigos…",
+      "hi": ["Tenho", "bons amigos"],
+      "week": "jun2"
+    },
+    {
+      "pt": "Jogamos golfe juntos.",
+      "ru": "Мы вместе играем в гольф.",
+      "sit": "гольф",
+      "cue": "<span>Jogamos</span> golfe…",
+      "hi": ["Jogamos", "juntos"],
+      "week": "jun2"
+    },
+    {
+      "pt": "Gosto muito do tempo, está muito quente.",
+      "ru": "Мне очень нравится погода, очень тепло.",
+      "sit": "погода",
+      "cue": "Gosto muito do tempo, está <span>quente</span>…",
+      "hi": ["Gosto muito", "quente"],
+      "week": "jun2"
+    },
+    {
+      "pt": "O oceano é maravilhoso.",
+      "ru": "Океан прекрасен.",
+      "sit": "океан",
+      "cue": "O oceano é <span>maravilhoso</span>…",
+      "hi": ["oceano", "maravilhoso"],
+      "week": "jun2"
+    },
+    {
+      "pt": "A água é tão salgada.",
+      "ru": "Вода такая солёная.",
+      "sit": "океан",
+      "cue": "A água é tão <span>salgada</span>…",
+      "hi": ["água", "salgada"],
+      "week": "jun2"
+    },
+    {
+      "pt": "Adoro nadar no oceano.",
+      "ru": "Обожаю купаться в океане.",
+      "sit": "океан",
+      "cue": "<span>Adoro</span> nadar no oceano…",
+      "hi": ["Adoro", "nadar"],
+      "week": "jun2"
+    }
+  ],
+  "weeks": [
+    {
+      "id": "jun2",
+      "label": "Июнь / 2",
+      "date": "вторая неделя июня",
+      "month": "Июнь",
+      "sentences": [
+        {
+          "pt": "Chamo-me Vasya e vivo em Tenerife há um ano.",
+          "ru": "Меня зовут Вася, и я живу на Тенерифе уже год.",
+          "t": "pre"
+        },
+        {
+          "pt": "Ontem fui a Nago.",
+          "ru": "Вчера я ездил в Наго.",
+          "t": "pas"
+        },
+        {
+          "pt": "Hoje andei de funicular.",
+          "ru": "Сегодня я катался на фуникулёре.",
+          "t": "pas"
+        },
+        {
+          "pt": "Tenho bons amigos aqui.",
+          "ru": "У меня здесь хорошие друзья.",
+          "t": "pre"
+        },
+        {
+          "pt": "Jogamos golfe juntos.",
+          "ru": "Мы вместе играем в гольф.",
+          "t": "pre"
+        },
+        {
+          "pt": "Gosto muito do tempo, está muito quente.",
+          "ru": "Мне очень нравится погода, очень тепло.",
+          "t": "pre"
+        },
+        {
+          "pt": "O oceano é maravilhoso e a água é salgada.",
+          "ru": "Океан прекрасен, а вода солёная.",
+          "t": "pre"
+        },
+        {
+          "pt": "Amanhã vou nadar no mar.",
+          "ru": "Завтра я пойду купаться в море.",
+          "t": "fut"
+        },
+        {
+          "pt": "Vou encontrar-me com os meus amigos.",
+          "ru": "Я встречусь со своими друзьями.",
+          "t": "fut"
+        },
+        {
+          "pt": "Adoro viver aqui.",
+          "ru": "Обожаю жить здесь.",
+          "t": "pre"
+        }
+      ]
+    }
+  ],
+  "cloze": [
+    {
+      "q": "Ontem ___ a Nago.",
+      "opts": ["vou", "fui", "vamos"],
+      "ok": 1,
+      "rule": "<b>fui</b> = я ездил (завершённое, прошлое). 'Ontem' (вчера) → завершено → fui."
+    },
+    {
+      "q": "Amanhã ___ nadar no mar.",
+      "opts": ["fui", "vou", "andei"],
+      "ok": 1,
+      "rule": "<b>vou</b> = я пойду (будущее). 'Amanhã' (завтра) → план → vou + инфинитив."
+    },
+    {
+      "q": "Vivo em Tenerife ___ um ano.",
+      "opts": ["há", "em", "de"],
+      "ok": 0,
+      "rule": "<b>há</b> = уже (о времени с прошлого до сейчас). 'há um ano' = уже год."
+    },
+    {
+      "q": "A água é tão ___.",
+      "opts": ["doce", "salgada", "quente"],
+      "ok": 1,
+      "rule": "<b>salgada</b> = солёная. Вода в океане солёная (не пресная — doce)."
+    }
+  ],
+  "antonyms": [
+    {
+      "qpt": "A água é doce?",
+      "apt": "Não, é salgada.",
+      "qru": "Вода пресная?",
+      "aru": "Нет, она солёная.",
+      "wq": "doce",
+      "wa": "salgada",
+      "grp": "вкус"
+    },
+    {
+      "qpt": "Está frio em Tenerife?",
+      "apt": "Não, está quente.",
+      "qru": "На Тенерифе холодно?",
+      "aru": "Нет, тепло.",
+      "wq": "frio",
+      "wa": "quente",
+      "grp": "погода"
+    },
+    {
+      "qpt": "O oceano é horrível?",
+      "apt": "Não, é maravilhoso.",
+      "qru": "Океан ужасный?",
+      "aru": "Нет, он прекрасный.",
+      "wq": "horrível",
+      "wa": "maravilhoso",
+      "grp": "впечатление"
+    },
+    {
+      "qpt": "Estás sozinho aqui?",
+      "apt": "Não, tenho bons amigos.",
+      "qru": "Ты здесь один?",
+      "aru": "Нет, у меня хорошие друзья.",
+      "wq": "sozinho",
+      "wa": "amigos",
+      "grp": "друзья"
+    }
+  ],
+  "synonyms": [
+    {
+      "qpt": "Gosto muito do tempo.",
+      "apt": "Adoro o tempo.",
+      "qru": "Мне очень нравится погода.",
+      "aru": "Обожаю погоду.",
+      "wq": "gosto muito",
+      "wa": "adoro"
+    },
+    {
+      "qpt": "O oceano é maravilhoso.",
+      "apt": "O oceano é lindo.",
+      "qru": "Океан прекрасен.",
+      "aru": "Океан великолепен.",
+      "wq": "maravilhoso",
+      "wa": "lindo"
+    },
+    {
+      "qpt": "Hoje andei de funicular.",
+      "apt": "Hoje viajei de funicular.",
+      "qru": "Сегодня я катался на фуникулёре.",
+      "aru": "Сегодня я ездил на фуникулёре.",
+      "wq": "andei",
+      "wa": "viajei"
+    }
+  ]
+}
