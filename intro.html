@@ -185,7 +185,7 @@
   <a id="authorLink" target="_blank" rel="noopener">Igor Kartuzov</a>
   <span>·</span>
   <a id="hubLink">SeedWave</a>
-  <span style="opacity:.55">intro v12</span>
+  <span style="opacity:.55">intro v13</span>
 </footer>
 
 <script>
@@ -220,6 +220,7 @@ const LOCALES = {
     demo:"А пока — открой демо",
     needStory:"Расскажи что-нибудь — текстом или голосом.",
     needContact:"Укажи, куда прислать ссылку.",
+    badContact:"Упс, кажется в контакте опечатка. Проверь и укажи корректный Telegram, WhatsApp или email.",
     errMic:"Нет доступа к микрофону. Разреши доступ или напиши текстом.",
     errSend:"Не отправилось. Проверь интернет и нажми ещё раз."}},
   en:{dir:"ltr",ui:{
@@ -235,6 +236,7 @@ const LOCALES = {
     demo:"Meanwhile — open the demo",
     needStory:"Tell me something — by text or voice.",
     needContact:"Tell me where to send the link.",
+    badContact:"Oops, the contact looks off. Check it and enter a valid Telegram, WhatsApp or email.",
     errMic:"No microphone access. Allow access or just type.",
     errSend:"Sending failed. Check your connection and try again."}},
   pt:{dir:"ltr",ui:{
@@ -250,6 +252,7 @@ const LOCALES = {
     demo:"Entretanto — abre a demo",
     needStory:"Conta-me algo — por texto ou por voz.",
     needContact:"Indica para onde enviar o link.",
+    badContact:"Ups, o contacto parece ter um erro. Verifica e indica um Telegram, WhatsApp ou email válido.",
     errMic:"Sem acesso ao microfone. Permite o acesso ou escreve.",
     errSend:"Não foi enviado. Verifica a internet e tenta de novo."}},
   es:{dir:"ltr",ui:{
@@ -265,6 +268,7 @@ const LOCALES = {
     demo:"Mientras tanto — abre la demo",
     needStory:"Cuéntame algo — por texto o por voz.",
     needContact:"Indica adónde enviar el enlace.",
+    badContact:"Ups, el contacto parece tener un error. Revísalo e indica un Telegram, WhatsApp o email válido.",
     errMic:"Sin acceso al micrófono. Permite el acceso o escribe.",
     errSend:"No se envió. Revisa tu conexión e inténtalo de nuevo."}},
   de:{dir:"ltr",ui:{
@@ -280,6 +284,7 @@ const LOCALES = {
     demo:"Inzwischen — öffne die Demo",
     needStory:"Erzähl mir etwas — per Text oder Stimme.",
     needContact:"Gib an, wohin der Link gehen soll.",
+    badContact:"Ups, der Kontakt sieht falsch aus. Prüfe ihn und gib ein gültiges Telegram, WhatsApp oder E-Mail an.",
     errMic:"Kein Mikrofonzugriff. Erlaube den Zugriff oder schreibe.",
     errSend:"Senden fehlgeschlagen. Prüfe die Verbindung und versuche es erneut."}}
 };
@@ -500,6 +505,24 @@ function blobToBase64(blob){
     r.readAsDataURL(blob);
   });
 }
+/* ---- Проверка контакта: Telegram / WhatsApp / email / телефон ---- */
+function validContact(v){
+  v=v.trim();
+  if(v.length<3)return false;
+  // email
+  if(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))return true;
+  // telegram @username (5-32 симв, буквы/цифры/_)
+  if(/^@?[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(v))return true;
+  // t.me / telegram.me ссылка
+  if(/(t\.me|telegram\.me)\/[a-zA-Z][a-zA-Z0-9_]{4,31}\/?$/i.test(v))return true;
+  // wa.me ссылка
+  if(/wa\.me\/\+?\d{7,15}\/?$/i.test(v))return true;
+  // телефон: + и 7-15 цифр (допускаем пробелы/скобки/дефисы)
+  const digits=v.replace(/[^\d]/g,"");
+  if(/^\+?[\d\s().-]{7,20}$/.test(v) && digits.length>=7 && digits.length<=15)return true;
+  return false;
+}
+
 $("btnSend").onclick=async function(){
   if(listening)stopSpeak();
   $("err").textContent="";
@@ -507,6 +530,7 @@ $("btnSend").onclick=async function(){
   const contact=$("contact").value.trim();
   if(!text&&!audioBlob){$("err").textContent=L.ui.needStory;return;}
   if(!contact){$("err").textContent=L.ui.needContact;return;}
+  if(!validContact(contact)){$("err").textContent=L.ui.badContact;$("contact").focus();return;}
   const btn=$("btnSend");btn.disabled=true;btn.textContent=L.ui.sending;
   try{
     const payload={
