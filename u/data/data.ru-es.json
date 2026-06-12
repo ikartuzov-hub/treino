@@ -1,0 +1,176 @@
+{
+ "config": {
+  "lang": "es-ES",
+  "ui": "ru",
+  "neg": "No, …",
+  "brand": "",
+  "flag": "🇪🇸",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Хочешь свой набор, собранный по твоей реальной неделе?",
+  "subscribeBtn": "Получить мой набор →",
+  "flyerUrl": "start.html",
+  "flyerText": "Как это работает и цены",
+  "methodUrl": "method.html",
+  "methodText": "Метод"
+ },
+ "weeks": [
+  {
+   "id": "start1",
+   "label": "Старт / 1",
+   "date": "первая неделя",
+   "month": "Затравка",
+   "sentences": [
+    {
+     "pt": "Esta semana estudié español todos los días.",
+     "ru": "На этой неделе я учил испанский каждый день.",
+     "t": "pas"
+    },
+    {
+     "pt": "Practiqué en la tienda y con los vecinos.",
+     "ru": "Я практиковал в магазине и с соседями.",
+     "t": "pas"
+    },
+    {
+     "pt": "Hoy quedo con amigos en el café.",
+     "ru": "Сегодня я встречаюсь с друзьями в кафе.",
+     "t": "pre"
+    },
+    {
+     "pt": "Ahora ya hablo un poco.",
+     "ru": "Сейчас я уже немного говорю.",
+     "t": "pre"
+    },
+    {
+     "pt": "La próxima semana iré a Madrid.",
+     "ru": "На следующей неделе я поеду в Мадрид.",
+     "t": "fut"
+    }
+   ]
+  }
+ ],
+ "phrases": [
+  {
+   "pt": "¡Buenos días! ¿Cómo estás?",
+   "ru": "Доброе утро! Как у тебя дела?",
+   "sit": "приветствие",
+   "cue": "¡Buenos días! ¿Cómo <span>estás</span>…",
+   "hi": [
+    "Cómo estás"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "Estudio español todos los días.",
+   "ru": "Я учу испанский каждый день.",
+   "sit": "ежедневно",
+   "cue": "<span>Estudio</span> español…",
+   "hi": [
+    "Estudio"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "Vivo aquí desde hace dos años.",
+   "ru": "Я живу здесь два года.",
+   "sit": "знакомство",
+   "cue": "Vivo aquí <span>desde hace</span>…",
+   "hi": [
+    "desde hace dos años"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "El fin de semana quedo con mis amigos.",
+   "ru": "На выходных я встречаюсь с друзьями.",
+   "sit": "досуг",
+   "cue": "El fin de semana <span>quedo</span>…",
+   "hi": [
+    "quedo"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "Fue un día precioso.",
+   "ru": "Это был прекрасный день.",
+   "sit": "итог",
+   "cue": "<span>Fue</span> un día…",
+   "hi": [
+    "Fue"
+   ],
+   "week": "start1"
+  }
+ ],
+ "cloze": [
+  {
+   "q": "___ español todos los días.",
+   "opts": [
+    "Estudio",
+    "Estudias",
+    "Estudian"
+   ],
+   "ok": 0,
+   "rule": "<b>yo</b> + глагол на <b>-o</b>: <b>estudio</b>. estudias = ты, estudian = они.",
+   "week": "start1"
+  },
+  {
+   "q": "Vivo aquí ___ dos años.",
+   "opts": [
+    "desde hace",
+    "por",
+    "en"
+   ],
+   "ok": 0,
+   "rule": "<b>desde hace</b> + период = «уже … (как)» — длится с прошлого до сейчас.",
+   "week": "start1"
+  },
+  {
+   "q": "El fin de semana ___ con mis amigos.",
+   "opts": [
+    "quedo",
+    "quedas",
+    "queda"
+   ],
+   "ok": 0,
+   "rule": "<b>yo → quedo</b>. quedas = ты, queda = он/она.",
+   "week": "start1"
+  }
+ ],
+ "antonyms": [
+  {
+   "qpt": "¿Es perezoso?",
+   "apt": "No, es trabajador.",
+   "qru": "Он ленивый?",
+   "aru": "Нет, он трудолюбивый.",
+   "wq": "perezoso",
+   "wa": "trabajador",
+   "grp": "car"
+  },
+  {
+   "qpt": "¿Es grande?",
+   "apt": "No, es pequeño.",
+   "qru": "Оно большое?",
+   "aru": "Нет, оно маленькое.",
+   "wq": "grande",
+   "wa": "pequeño",
+   "grp": "fis"
+  }
+ ],
+ "synonyms": [
+  {
+   "qpt": "El día fue genial.",
+   "apt": "El día fue maravilloso.",
+   "qru": "День был классный.",
+   "aru": "День был чудесный.",
+   "wq": "genial",
+   "wa": "maravilloso"
+  },
+  {
+   "qpt": "Eso está bien.",
+   "apt": "Eso está estupendo.",
+   "qru": "Это хорошо.",
+   "aru": "Это здорово.",
+   "wq": "bien",
+   "wa": "estupendo"
+  }
+ ]
+}

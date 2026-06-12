@@ -1,0 +1,176 @@
+{
+ "config": {
+  "lang": "en-GB",
+  "ui": "ru",
+  "neg": "No, …",
+  "brand": "",
+  "flag": "🇬🇧",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Хочешь свой набор, собранный по твоей реальной неделе?",
+  "subscribeBtn": "Получить мой набор →",
+  "flyerUrl": "start.html",
+  "flyerText": "Как это работает и цены",
+  "methodUrl": "method.html",
+  "methodText": "Метод"
+ },
+ "weeks": [
+  {
+   "id": "start1",
+   "label": "Старт / 1",
+   "date": "первая неделя",
+   "month": "Затравка",
+   "sentences": [
+    {
+     "pt": "This week I studied English every day.",
+     "ru": "На этой неделе я учил английский каждый день.",
+     "t": "pas"
+    },
+    {
+     "pt": "I practised in the shop and with my neighbours.",
+     "ru": "Я практиковал в магазине и с соседями.",
+     "t": "pas"
+    },
+    {
+     "pt": "Today I am meeting friends at the café.",
+     "ru": "Сегодня я встречаюсь с друзьями в кафе.",
+     "t": "pre"
+    },
+    {
+     "pt": "Now I already speak a little.",
+     "ru": "Сейчас я уже немного говорю.",
+     "t": "pre"
+    },
+    {
+     "pt": "Next week I will go to London.",
+     "ru": "На следующей неделе я поеду в Лондон.",
+     "t": "fut"
+    }
+   ]
+  }
+ ],
+ "phrases": [
+  {
+   "pt": "Good morning! How are you?",
+   "ru": "Доброе утро! Как у тебя дела?",
+   "sit": "приветствие",
+   "cue": "Good morning! How <span>are</span>…",
+   "hi": [
+    "How are you"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "I study English every day.",
+   "ru": "Я учу английский каждый день.",
+   "sit": "ежедневно",
+   "cue": "I <span>study</span> English…",
+   "hi": [
+    "study"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "I have lived here for two years.",
+   "ru": "Я живу здесь два года.",
+   "sit": "знакомство",
+   "cue": "I have lived here <span>for</span>…",
+   "hi": [
+    "for two years"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "At the weekend I meet my friends.",
+   "ru": "На выходных я встречаюсь с друзьями.",
+   "sit": "досуг",
+   "cue": "At the weekend I <span>meet</span>…",
+   "hi": [
+    "meet"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "That was a lovely day.",
+   "ru": "Это был прекрасный день.",
+   "sit": "итог",
+   "cue": "That <span>was</span>…",
+   "hi": [
+    "was"
+   ],
+   "week": "start1"
+  }
+ ],
+ "cloze": [
+  {
+   "q": "I ___ English every day.",
+   "opts": [
+    "study",
+    "studies",
+    "studying"
+   ],
+   "ok": 0,
+   "rule": "<b>I</b> + глагол без окончания: <b>study</b>. studies = он/она, studying = форма на -ing (нужен be).",
+   "week": "start1"
+  },
+  {
+   "q": "I have lived here ___ two years.",
+   "opts": [
+    "for",
+    "since",
+    "from"
+   ],
+   "ok": 0,
+   "rule": "<b>for</b> + период («два года»). <b>since</b> — с точки во времени («с 2024-го»).",
+   "week": "start1"
+  },
+  {
+   "q": "At the weekend I ___ my friends.",
+   "opts": [
+    "meet",
+    "meets",
+    "meeting"
+   ],
+   "ok": 0,
+   "rule": "<b>I → meet</b>. meets = он/она, meeting = форма на -ing (нужен be).",
+   "week": "start1"
+  }
+ ],
+ "antonyms": [
+  {
+   "qpt": "Is he lazy?",
+   "apt": "No, he is hard-working.",
+   "qru": "Он ленивый?",
+   "aru": "Нет, он трудолюбивый.",
+   "wq": "lazy",
+   "wa": "hard-working",
+   "grp": "car"
+  },
+  {
+   "qpt": "Is it big?",
+   "apt": "No, it is small.",
+   "qru": "Оно большое?",
+   "aru": "Нет, оно маленькое.",
+   "wq": "big",
+   "wa": "small",
+   "grp": "fis"
+  }
+ ],
+ "synonyms": [
+  {
+   "qpt": "The day was great.",
+   "apt": "The day was wonderful.",
+   "qru": "День был классный.",
+   "aru": "День был чудесный.",
+   "wq": "great",
+   "wa": "wonderful"
+  },
+  {
+   "qpt": "That is good.",
+   "apt": "That is nice.",
+   "qru": "Это хорошо.",
+   "aru": "Это здорово.",
+   "wq": "good",
+   "wa": "nice"
+  }
+ ]
+}
