@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Treino · установка</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23c89b6d' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 32 Q31 19 43 31 Q50 38 57 31 Q69 19 82 32'/%3E%3Cpath d='M50 33 V80'/%3E%3C/svg%3E">
+<style>
+  :root{--bg:#f7f0e4;--ink:#2a211a;--dim:#9c8a76;--accent:#a86f33;--accent-ink:#fbf6ee;--card:#fffaf2;--line:#e7dcc9;--apple:#0a84ff;--android:#3ddc84}
+  :root[data-theme="dark"]{--bg:#14100d;--ink:#f1e8dd;--dim:#8d7f70;--accent:#c89b6d;--accent-ink:#1a140f;--card:#1d1813;--line:#332a21}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5;transition:background .4s,color .4s;padding:calc(58px + env(safe-area-inset-top,0px)) 20px 40px}
+  .topbar-bg{position:fixed;top:0;left:0;right:0;height:calc(52px + env(safe-area-inset-top,0px));background:var(--bg);z-index:9;transition:background .4s}
+  .brandmark{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:18px;width:26px;height:26px;z-index:10}
+  .topctrl{position:fixed;top:calc(15px + env(safe-area-inset-top,0px));right:16px;z-index:10;display:flex;align-items:center;gap:10px}
+  .themebtn{background:none;border:none;color:var(--dim);font-size:16px;cursor:pointer;padding:4px}
+  .langbar{display:flex;gap:5px}
+  .langbar button{background:none;border:1px solid transparent;color:var(--dim);font-size:12px;letter-spacing:.06em;padding:5px 7px;border-radius:999px;cursor:pointer;text-transform:uppercase}
+  .langbar button.on{color:var(--accent);border-color:var(--accent)}
+  .wrap{max-width:520px;margin:0 auto}
+  h1{font-size:clamp(22px,5vw,28px);margin-bottom:6px;text-align:center}
+  .lead{text-align:center;color:var(--dim);margin-bottom:26px}
+  .tabs{display:flex;gap:8px;margin-bottom:18px}
+  .tab{flex:1;padding:12px;border:1px solid var(--line);border-radius:12px;background:none;color:var(--dim);font-family:inherit;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px}
+  .tab.on{background:var(--card);color:var(--ink);border-color:var(--accent)}
+  .panel{display:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .panel.on{display:block}
+  ol{list-style:none;counter-reset:s}
+  li{counter-increment:s;padding:11px 0 11px 42px;position:relative;border-bottom:1px solid var(--line)}
+  li:last-child{border-bottom:none}
+  li::before{content:counter(s);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+  b{color:var(--accent)}
+  footer{margin-top:30px;text-align:center;font-size:12px;color:var(--dim)}
+  footer a{color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="topbar-bg"></div>
+<a class="brandmark" href="https://ikartuzov-hub.github.io/treino/u/" aria-label="Treino">
+  <svg viewBox="0 0 100 100" fill="none" stroke="#c89b6d" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 32 Q31 19 43 31 Q50 38 57 31 Q69 19 82 32"/><path d="M50 33 V80"/>
+  </svg>
+</a>
+<div class="topctrl">
+  <button class="themebtn" id="themeBtn" aria-label="theme">☾</button>
+  <div class="langbar" id="langbar"></div>
+</div>
+
+<div class="wrap">
+  <h1 id="h1"></h1>
+  <p class="lead" id="lead"></p>
+  <div class="tabs">
+    <button class="tab on" id="tabA" data-os="ios"></button>
+    <button class="tab" id="tabB" data-os="android"></button>
+  </div>
+  <div class="panel on" id="panel-ios"><ol id="list-ios"></ol></div>
+  <div class="panel" id="panel-android"><ol id="list-android"></ol></div>
+  <footer>© <a href="https://www.linkedin.com/in/igor-kartuzov/" target="_blank" rel="noopener">Igor Kartuzov</a> · <a id="hubLink">SeedWave</a></footer>
+</div>
+
+<script>
+const HUB="https://ikartuzov-hub.github.io/seedwave-catalog/hub/";
+const T={
+ ru:{h1:"Установи Treino на телефон 🌊",lead:"Будет как обычная иконка приложения",ios:"iPhone",android:"Android",
+  iosSteps:["Открой ссылку в <b>Safari</b>","Нажми <b>«Поделиться»</b> (квадрат со стрелкой ↑ внизу)","Выбери <b>«На экран Домой»</b>","Готово — значок Treino на экране"],
+  andSteps:["Открой ссылку в <b>Chrome</b>","Нажми <b>⋮</b> (три точки вверху справа)","Выбери <b>«Добавить на главный экран»</b>","Готово — значок Treino на экране"]},
+ pt:{h1:"Instala o Treino no telemóvel 🌊",lead:"Fica como um ícone normal de app",ios:"iPhone",android:"Android",
+  iosSteps:["Abre o link no <b>Safari</b>","Toca em <b>«Partilhar»</b> (quadrado com seta ↑ em baixo)","Escolhe <b>«Adicionar ao ecrã principal»</b>","Pronto — o ícone Treino no ecrã"],
+  andSteps:["Abre o link no <b>Chrome</b>","Toca em <b>⋮</b> (três pontos em cima à direita)","Escolhe <b>«Adicionar ao ecrã principal»</b>","Pronto — o ícone Treino no ecrã"]},
+ en:{h1:"Install Treino on your phone 🌊",lead:"It works like a normal app icon",ios:"iPhone",android:"Android",
+  iosSteps:["Open the link in <b>Safari</b>","Tap <b>«Share»</b> (square with ↑ arrow at the bottom)","Choose <b>«Add to Home Screen»</b>","Done — the Treino icon is on your screen"],
+  andSteps:["Open the link in <b>Chrome</b>","Tap <b>⋮</b> (three dots, top right)","Choose <b>«Add to Home screen»</b>","Done — the Treino icon is on your screen"]},
+ es:{h1:"Instala Treino en tu móvil 🌊",lead:"Funciona como un icono normal",ios:"iPhone",android:"Android",
+  iosSteps:["Abre el enlace en <b>Safari</b>","Toca <b>«Compartir»</b> (cuadrado con flecha ↑ abajo)","Elige <b>«Añadir a pantalla de inicio»</b>","Listo — el icono de Treino en tu pantalla"],
+  andSteps:["Abre el enlace en <b>Chrome</b>","Toca <b>⋮</b> (tres puntos, arriba a la derecha)","Elige <b>«Añadir a pantalla de inicio»</b>","Listo — el icono de Treino en tu pantalla"]},
+ de:{h1:"Installiere Treino auf dem Handy 🌊",lead:"Wie ein normales App-Symbol",ios:"iPhone",android:"Android",
+  iosSteps:["Öffne den Link in <b>Safari</b>","Tippe auf <b>«Teilen»</b> (Quadrat mit Pfeil ↑ unten)","Wähle <b>«Zum Home-Bildschirm»</b>","Fertig — das Treino-Symbol ist da"],
+  andSteps:["Öffne den Link in <b>Chrome</b>","Tippe auf <b>⋮</b> (drei Punkte, oben rechts)","Wähle <b>«Zum Startbildschirm hinzufügen»</b>","Fertig — das Treino-Symbol ist da"]}
+};
+const p=new URLSearchParams(location.search);
+let lang=p.get("lang"); if(!T[lang]){const n=(navigator.language||"en").slice(0,2);lang=T[n]?n:"en";}
+let theme=p.get("theme")==="dark"?"dark":"light";
+const $=i=>document.getElementById(i);
+function render(){
+ const L=T[lang];document.documentElement.lang=lang;
+ $("h1").textContent=L.h1;$("lead").textContent=L.lead;
+ $("tabA").textContent="📱 "+L.ios;$("tabB").textContent="🤖 "+L.android;
+ $("list-ios").innerHTML=L.iosSteps.map(s=>"<li>"+s+"</li>").join("");
+ $("list-android").innerHTML=L.andSteps.map(s=>"<li>"+s+"</li>").join("");
+ $("hubLink").href=HUB+"?lang="+lang+"&theme="+theme;
+ const bar=$("langbar");bar.innerHTML="";
+ Object.keys(T).forEach(c=>{const b=document.createElement("button");b.textContent=c;if(c===lang)b.classList.add("on");b.onclick=()=>{const u=new URL(location.href);u.searchParams.set("lang",c);u.searchParams.set("theme",theme);location.href=u;};bar.appendChild(b);});
+}
+function setTheme(t){theme=t;if(t==="dark")document.documentElement.setAttribute("data-theme","dark");else document.documentElement.removeAttribute("data-theme");$("themeBtn").textContent=t==="dark"?"☀":"☾";if($("hubLink"))$("hubLink").href=HUB+"?lang="+lang+"&theme="+theme;}
+document.querySelectorAll(".tab").forEach(t=>t.onclick=function(){
+ document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));
+ document.querySelectorAll(".panel").forEach(x=>x.classList.remove("on"));
+ this.classList.add("on");$("panel-"+this.dataset.os).classList.add("on");
+});
+$("themeBtn").onclick=()=>setTheme(theme==="dark"?"light":"dark");
+render();setTheme(theme);
+</script>
+</body>
+</html>
