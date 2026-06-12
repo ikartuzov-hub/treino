@@ -13,6 +13,18 @@
   "methodUrl": "method.html",
   "methodText": "Метод"
  },
+ "phrases": [
+  {"pt": "Vivo em Portugal com a minha mulher e os meus filhos há mais de quatro anos.", "ru": "Я живу в Португалии с женой и детьми больше четырёх лет.", "sit": "о себе", "cue": "Vivo em Portugal <span>há</span>…", "hi": ["Vivo", "há mais de quatro anos"], "week": "jun2"},
+  {"pt": "Na semana passada fomos à serra.", "ru": "На прошлой неделе мы ездили в горы.", "sit": "прошлое, поездка", "cue": "Na semana passada <span>fomos</span>…", "hi": ["fomos"], "week": "jun2"},
+  {"pt": "Vimos os arbustos amarelos em flor.", "ru": "Мы видели цветущие жёлтые кусты.", "sit": "природа, прошлое", "cue": "<span>Vimos</span> os arbustos…", "hi": ["Vimos"], "week": "jun2"},
+  {"pt": "Os cumes das montanhas brilhavam como ouro.", "ru": "Верхушки гор сияли золотом.", "sit": "природа", "cue": "Os cumes <span>brilhavam</span>…", "hi": ["brilhavam"], "week": "jun2"},
+  {"pt": "Estava tudo muito bonito.", "ru": "Всё было очень красиво.", "sit": "впечатление", "cue": "<span>Estava</span> tudo…", "hi": ["Estava"], "week": "jun2"},
+  {"pt": "Esta semana jogo golfe com os meus amigos.", "ru": "На этой неделе я играю в гольф со знакомыми.", "sit": "хобби, настоящее", "cue": "Esta semana <span>jogo</span> golfe…", "hi": ["jogo"], "week": "jun2"},
+  {"pt": "Gosto muito de jogar golfe.", "ru": "Мне очень нравится играть в гольф.", "sit": "хобби", "cue": "<span>Gosto</span> de jogar…", "hi": ["Gosto de"], "week": "jun2"},
+  {"pt": "Em breve vamos a Lisboa visitar o meu filho mais novo.", "ru": "Скоро мы поедем в Лиссабон к младшему сыну.", "sit": "планы, будущее", "cue": "Em breve <span>vamos</span> a Lisboa…", "hi": ["vamos"], "week": "jun2"},
+  {"pt": "Vamos passear, ir ao teatro e ao Cabo.", "ru": "Будем гулять, сходим в театр и на Кабо.", "sit": "планы", "cue": "<span>Vamos</span> passear…", "hi": ["Vamos"], "week": "jun2"},
+  {"pt": "São estes os meus planos.", "ru": "Такие у меня планы.", "sit": "итог", "cue": "<span>São</span> estes os meus planos.", "hi": ["São"], "week": "jun2"}
+ ],
  "weeks": [
   {
    "id": "jun2",
