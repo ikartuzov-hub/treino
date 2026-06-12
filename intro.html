@@ -60,6 +60,8 @@
   .fx-pop{animation:fxPop .28s ease 1}
   @keyframes fxPop{50%{transform:scale(1.18)}}
   @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  @keyframes softBlink{0%,100%{opacity:1}50%{opacity:.5}}
+  @media (prefers-reduced-motion:reduce){#btnYes{animation:none!important}}
 
   main{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center;padding-top:calc(64px + env(safe-area-inset-top,0px))}
   .step{display:none;flex-direction:column;align-items:center;gap:30px;max-width:560px;width:100%}
@@ -69,14 +71,16 @@
   .hello{
     font-family:'Caveat',cursive;
     font-size:clamp(40px,11vw,64px);line-height:1.2;color:var(--ink);
-    min-height:1.3em;opacity:0;transform:translateY(6px);
+    height:2.4em;overflow:hidden;opacity:0;transform:translateY(6px);
     transition:opacity .9s ease,transform .9s ease;
   }
   .hello.show{opacity:1;transform:translateY(0)}
   .talk{
     font-family:Georgia,"Times New Roman",serif;
     font-size:clamp(24px,6vw,34px);line-height:1.4;min-height:1.4em;color:var(--accent);
+    opacity:0;transition:opacity .9s ease;
   }
+  .talk.show{opacity:1}
   .meet{
     font-family:Georgia,"Times New Roman",serif;
     font-size:clamp(18px,4.4vw,23px);line-height:1.5;min-height:4.5em;text-align:left;
@@ -419,12 +423,12 @@ function enterS1(){
   cycleGreet();
   /* после первого приветствия — печатаем «Поговорим?» на языке пользователя */
   setTimeout(function(){
-    typeLine($("talk"),L.ui.talk,function(){
+    const t=$("talk"); t.textContent=L.ui.talk; t.classList.add("show");   /* статично, без печати */
+    setTimeout(function(){
       const b=$("btnYes");
       b.classList.remove("hidden");
-      b.style.animation="blink .55s ease 4";
-      setTimeout(function(){ b.style.animation=""; pulseOn("btnYes"); },2300);
-    });
+      b.style.animation="softBlink 1.8s ease-in-out infinite";   /* мягкое мигание */
+    },800);
   },2600);
 }
 
