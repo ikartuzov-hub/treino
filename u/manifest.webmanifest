@@ -2,8 +2,6 @@
   "name": "Treino",
   "short_name": "Treino",
   "description": "Твой личный тренажёр языка — из твоей жизни",
-  "start_url": "./",
-  "scope": "./",
   "display": "standalone",
   "background_color": "#F2EBDA",
   "theme_color": "#c89b6d",
