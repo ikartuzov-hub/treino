@@ -1,0 +1,36 @@
+{
+ "config": {
+  "lang": "pt-PT",
+  "ui": "ru",
+  "neg": "Não, …",
+  "brand": "Igor ·",
+  "flag": "🇵🇹",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Хочешь продолжение — свою следующую неделю?",
+  "subscribeBtn": "Пополнить набор →",
+  "flyerUrl": "start.html",
+  "flyerText": "Как это работает и цены",
+  "methodUrl": "method.html",
+  "methodText": "Метод"
+ },
+ "weeks": [
+  {
+   "id": "jun2",
+   "label": "Июнь / 2",
+   "date": "вторая неделя июня",
+   "month": "Июнь",
+   "sentences": [
+    {"pt": "Vivo em Portugal com a minha mulher e os meus filhos há mais de quatro anos.", "ru": "Я живу в Португалии с женой и детьми больше четырёх лет.", "t": "pre"},
+    {"pt": "Na semana passada fomos à serra.", "ru": "На прошлой неделе мы ездили в горы.", "t": "pas"},
+    {"pt": "Vimos os arbustos amarelos em flor.", "ru": "Мы видели цветущие жёлтые кусты.", "t": "pas"},
+    {"pt": "Os cumes das montanhas brilhavam como ouro.", "ru": "Верхушки гор сияли золотом.", "t": "pas"},
+    {"pt": "Estava tudo muito bonito.", "ru": "Всё было очень красиво.", "t": "pas"},
+    {"pt": "Esta semana jogo golfe com os meus amigos.", "ru": "На этой неделе я играю в гольф со знакомыми.", "t": "pre"},
+    {"pt": "Gosto muito de jogar golfe.", "ru": "Мне очень нравится играть в гольф.", "t": "pre"},
+    {"pt": "Em breve vamos a Lisboa visitar o meu filho mais novo.", "ru": "Скоро мы поедем в Лиссабон к младшему сыну.", "t": "fut"},
+    {"pt": "Vamos passear, ir ao teatro e ao Cabo.", "ru": "Будем гулять, сходим в театр и на Кабо.", "t": "fut"},
+    {"pt": "São estes os meus planos.", "ru": "Такие у меня планы.", "t": "pre"}
+   ]
+  }
+ ]
+}
