@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Treino</title>
-<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 8 H26' stroke='%23c89b6d' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3Cpath d='M16 9 V20 Q16 25 11 25' stroke='%23c89b6d' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
@@ -28,9 +28,10 @@
     display:flex;flex-direction:column;min-height:100vh;min-height:100dvh;
     transition:background .4s ease,color .4s ease;
   }
-  .brandmark{position:fixed;top:13px;left:16px;width:24px;height:24px;z-index:10}
-  .brandmark img{width:100%;height:100%}
-  .topctrl{position:fixed;top:12px;right:14px;z-index:10;display:flex;align-items:center;gap:8px}
+  .topbar-bg{position:fixed;top:0;left:0;right:0;height:calc(52px + env(safe-area-inset-top,0px));background:var(--bg);z-index:9;transition:background .4s ease}
+  .brandmark{position:fixed;top:calc(13px + env(safe-area-inset-top,0px));left:16px;width:24px;height:24px;z-index:10}
+  .brandmark img,.brandmark svg{width:100%;height:100%}
+  .topctrl{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:14px;z-index:10;display:flex;align-items:center;gap:8px}
   .themebtn{
     background:none;border:1px solid transparent;color:var(--dim);
     font-size:16px;line-height:1;padding:6px 9px;border-radius:999px;cursor:pointer;
@@ -46,7 +47,7 @@
   .langbar button.on{color:var(--accent);border-color:var(--accent)}
   @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
 
-  main{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center}
+  main{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center;padding-top:calc(64px + env(safe-area-inset-top,0px))}
   .step{display:none;flex-direction:column;align-items:center;gap:30px;max-width:560px;width:100%}
   .step.on{display:flex}
 
@@ -123,7 +124,14 @@
 </head>
 <body>
 
-<a class="brandmark" id="brandLink" href="./"><img src="icon.svg" alt="Treino"></a>
+<div class="topbar-bg"></div>
+<a class="brandmark" id="brandLink" href="./" aria-label="Treino">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6 8 H26" stroke="#c89b6d" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M16 9 V20 Q16 25 11 25" stroke="#c89b6d" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M5 13 Q9 10 13 13 T21 13 T27 13" stroke="#c89b6d" stroke-width="2" fill="none" opacity="0.55" stroke-linecap="round"/>
+  </svg>
+</a>
 <div class="topctrl">
   <div class="langbar" id="langbar"></div>
   <button class="themebtn" id="themeBtn" aria-label="theme">☾</button>
@@ -177,7 +185,7 @@
   <a id="authorLink" target="_blank" rel="noopener">Igor Kartuzov</a>
   <span>·</span>
   <a id="hubLink">SeedWave</a>
-  <span style="opacity:.55">intro v11</span>
+  <span style="opacity:.55">intro v12</span>
 </footer>
 
 <script>
