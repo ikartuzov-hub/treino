@@ -97,6 +97,12 @@
   }
   textarea:focus,input:focus{outline:none;border-color:var(--accent)}
   .voiceRow{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+  .voiceFold{font-size:14px}
+  .voiceFold summary{color:var(--dim);cursor:pointer;list-style:none;padding:4px 0}
+  .voiceFold summary::-webkit-details-marker{display:none}
+  .voiceFold summary::before{content:"▸ ";color:var(--accent)}
+  .voiceFold[open] summary::before{content:"▾ "}
+  #btnSpeak.live{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
   .voiceHint{font-size:14px;color:var(--dim)}
   .timer{font-variant-numeric:tabular-nums;font-size:15px;color:var(--accent);min-width:3.2em}
   audio{width:100%;height:38px}
@@ -135,17 +141,23 @@
   <section class="step" id="s2">
     <div class="meet" id="meet"></div>
     <div class="card" id="formCard" style="visibility:hidden">
+      <div class="voiceRow" id="speakRow">
+        <button class="btn small" id="btnSpeak"></button>
+        <span class="voiceHint" id="speakHint"></span>
+      </div>
       <textarea id="storyText"></textarea>
-      <div class="voiceRow">
-        <span class="voiceHint" id="orVoice"></span>
-        <button class="btn small" id="btnRec"></button>
-        <span class="timer" id="timer"></span>
-      </div>
-      <div class="voiceRow" id="playRow" style="display:none">
-        <audio id="player" controls></audio>
-        <button class="btn small" id="btnRedo"></button>
-        <button class="btn small" id="btnDel"></button>
-      </div>
+      <details class="voiceFold">
+        <summary id="orVoice"></summary>
+        <div class="voiceRow" style="margin-top:10px">
+          <button class="btn small" id="btnRec"></button>
+          <span class="timer" id="timer"></span>
+        </div>
+        <div class="voiceRow" id="playRow" style="display:none;margin-top:10px">
+          <audio id="player" controls></audio>
+          <button class="btn small" id="btnRedo"></button>
+          <button class="btn small" id="btnDel"></button>
+        </div>
+      </details>
       <div class="fieldLabel" id="contactLabel"></div>
       <input type="text" id="contact" autocomplete="off">
       <div class="err" id="err"></div>
@@ -165,7 +177,7 @@
   <a id="authorLink" target="_blank" rel="noopener">Igor Kartuzov</a>
   <span>·</span>
   <a id="hubLink">SeedWave</a>
-  <span style="opacity:.55">intro v10</span>
+  <span style="opacity:.55">intro v11</span>
 </footer>
 
 <script>
@@ -191,6 +203,7 @@ const LOCALES = {
     talk:"Поговорим?", yes:"Да!",
     meet:"Круто! Познакомимся? Расскажи немного о себе: кто ты, как прошла твоя неделя, что принесло приятные моменты, что интересного планируешь дальше? Текстом или голосом — а я соберу из твоего рассказа твой личный Treino.",
     ph:"Напиши здесь…", orVoice:"…или расскажи голосом:",
+    speak:"🎤 Говорить", speakStop:"⏹ Остановить", speakHint:"Говори — я запишу словами, потом сможешь поправить.",
     rec:"🎙 Записать", stop:"⏹ Стоп", redo:"↻ Перезаписать", del:"✕ Удалить",
     contactLabel:"Куда прислать ссылку на твой личный Treino?",
     contactPh:"Telegram / WhatsApp / email",
@@ -205,6 +218,7 @@ const LOCALES = {
     talk:"Shall we talk?", yes:"Yes!",
     meet:"Great! Let's get to know each other. Tell me a bit about yourself: who you are, how your week went, what brought you nice moments, what interesting things are coming up? Type or speak — and I'll build your personal Treino from your story.",
     ph:"Write here…", orVoice:"…or tell me by voice:",
+    speak:"🎤 Speak", speakStop:"⏹ Stop", speakHint:"Speak — I'll write it down, then you can fix it.",
     rec:"🎙 Record", stop:"⏹ Stop", redo:"↻ Re-record", del:"✕ Delete",
     contactLabel:"Where should I send the link to your personal Treino?",
     contactPh:"Telegram / WhatsApp / email",
@@ -219,6 +233,7 @@ const LOCALES = {
     talk:"Falamos?", yes:"Sim!",
     meet:"Boa! Vamos conhecer-nos? Conta um pouco de ti: quem és, como foi a tua semana, o que te trouxe bons momentos, o que planeias de interessante? Por texto ou por voz — e eu construo o teu Treino pessoal a partir da tua história.",
     ph:"Escreve aqui…", orVoice:"…ou conta por voz:",
+    speak:"🎤 Falar", speakStop:"⏹ Parar", speakHint:"Fala — eu escrevo, depois podes corrigir.",
     rec:"🎙 Gravar", stop:"⏹ Parar", redo:"↻ Regravar", del:"✕ Apagar",
     contactLabel:"Para onde envio o link do teu Treino pessoal?",
     contactPh:"Telegram / WhatsApp / email",
@@ -233,6 +248,7 @@ const LOCALES = {
     talk:"¿Hablamos?", yes:"¡Sí!",
     meet:"¡Genial! ¿Nos conocemos? Cuéntame un poco de ti: quién eres, cómo fue tu semana, qué te trajo buenos momentos, qué planeas de interesante? Por texto o por voz — y construiré tu Treino personal a partir de tu historia.",
     ph:"Escribe aquí…", orVoice:"…o cuéntalo con tu voz:",
+    speak:"🎤 Hablar", speakStop:"⏹ Parar", speakHint:"Habla — yo lo escribo, luego puedes corregirlo.",
     rec:"🎙 Grabar", stop:"⏹ Parar", redo:"↻ Regrabar", del:"✕ Borrar",
     contactLabel:"¿Adónde envío el enlace de tu Treino personal?",
     contactPh:"Telegram / WhatsApp / email",
@@ -247,6 +263,7 @@ const LOCALES = {
     talk:"Reden wir?", yes:"Ja!",
     meet:"Super! Lernen wir uns kennen? Erzähl ein wenig von dir: wer du bist, wie deine Woche war, was dir schöne Momente gebracht hat, was du Interessantes vorhast? Per Text oder Stimme — und ich baue daraus dein persönliches Treino.",
     ph:"Schreib hier…", orVoice:"…oder erzähl es mit deiner Stimme:",
+    speak:"🎤 Sprechen", speakStop:"⏹ Stopp", speakHint:"Sprich — ich schreibe mit, danach kannst du es korrigieren.",
     rec:"🎙 Aufnehmen", stop:"⏹ Stopp", redo:"↻ Neu aufnehmen", del:"✕ Löschen",
     contactLabel:"Wohin soll ich den Link zu deinem persönlichen Treino senden?",
     contactPh:"Telegram / WhatsApp / E-Mail",
@@ -283,6 +300,8 @@ function applyLocale(){
   document.documentElement.dir=L.dir||"ltr";
   $("btnYes").textContent=L.ui.yes;
   $("storyText").placeholder=L.ui.ph;
+  $("btnSpeak").textContent=L.ui.speak;
+  $("speakHint").textContent=L.ui.speakHint;
   $("orVoice").textContent=L.ui.orVoice;
   $("btnRec").textContent=L.ui.rec;
   $("btnRedo").textContent=L.ui.redo;
@@ -369,7 +388,52 @@ function enterS2(){
   });
 }
 
-/* ---- Запись голоса ---- */
+/* ---- Живая расшифровка речи (Web Speech API) ---- */
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+const BCP = {ru:"ru-RU",en:"en-US",pt:"pt-PT",es:"es-ES",de:"de-DE"};
+let recog=null, listening=false, baseText="";
+function initSpeech(){
+  if(!SR){ $("speakRow").style.display="none"; return; }   // нет поддержки → прячем, остаётся запись файлом
+  recog=new SR();
+  recog.lang=BCP[lang]||"en-US";
+  recog.continuous=true;
+  recog.interimResults=true;
+  recog.onresult=function(e){
+    let fin="",intr="";
+    for(let i=e.resultIndex;i<e.results.length;i++){
+      const t=e.results[i][0].transcript;
+      if(e.results[i].isFinal)fin+=t; else intr+=t;
+    }
+    if(fin)baseText=(baseText+" "+fin).trim();
+    $("storyText").value=(baseText+" "+intr).trim();
+  };
+  recog.onerror=function(ev){
+    if(ev.error==="not-allowed"||ev.error==="service-not-allowed"){ $("err").textContent=L.ui.errMic; }
+    stopSpeak();
+  };
+  recog.onend=function(){ if(listening){ try{recog.start();}catch(e){} } };  // авто-перезапуск пока слушаем
+}
+function startSpeak(){
+  if(!recog)return;
+  $("err").textContent="";
+  baseText=$("storyText").value.trim();
+  listening=true;
+  try{recog.start();}catch(e){}
+  $("btnSpeak").textContent=L.ui.speakStop;
+  $("btnSpeak").classList.add("live");
+  pulseOn("btnSpeak");
+}
+function stopSpeak(){
+  listening=false;
+  if(recog){try{recog.stop();}catch(e){}}
+  $("btnSpeak").textContent=L.ui.speak;
+  $("btnSpeak").classList.remove("live");
+  pulseOff("btnSpeak");
+}
+$("btnSpeak").onclick=function(){ listening?stopSpeak():startSpeak(); };
+initSpeech();
+
+/* ---- Запись голоса файлом (фолбэк) ---- */
 let mediaRecorder=null, chunks=[], audioBlob=null, audioMime="", recTimer=null, recSec=0;
 function fmt(s){return Math.floor(s/60)+":"+String(s%60).padStart(2,"0");}
 async function startRec(){
@@ -429,6 +493,7 @@ function blobToBase64(blob){
   });
 }
 $("btnSend").onclick=async function(){
+  if(listening)stopSpeak();
   $("err").textContent="";
   const text=$("storyText").value.trim();
   const contact=$("contact").value.trim();
