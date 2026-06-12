@@ -1,634 +1,674 @@
+<!-- Treino © 2026 Igor Kartuzov. Метод открыт; перепубликация приложения как продукта без разрешения автора не допускается. -->
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>Treino — язык на материале твоей жизни · v2-lang</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Treino">
+<meta name="theme-color" content="#F2EBDA">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Treino</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* тема Treino: тёплый кофе + дымчатая терракота */
-    --bg:#191210; --bg2:#211813; --bg3:#2B2017;
-    --bd:#3B2D20; --bd2:#4D3B29;
-    --fg:#F4EADB; --mut:#BCA78F; --mut2:#8E7B65;
-    --coral:#D98E70; --coral2:#F0B294; --amber:#FFB454; --cream:#FFE3B3;
-    --leaf:#9BC46B; --sky:#6FB7FF; --terra:#E0703C; --berry:#E05C7E; --lav:#B79BE8;
-    --ser:'Fraunces',serif; --ui:'Hanken Grotesk',sans-serif; --mono:'JetBrains Mono',monospace;
+    --cream:#F2EBDA; --paper:#FBF7EC; --ink:#16302B; --ink-soft:#54655A;
+    --azul:#1F7A5C; --azul-deep:#0E5138; --terra:#BC4B2F; --gold:#C2872E;
+    --line:#DBD0B8; --good:#3E7A57; --soft-shadow:0 18px 40px -22px rgba(22,48,43,.45);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#0E0A07;font-family:var(--ui);color:var(--fg);
-    -webkit-font-smoothing:antialiased;padding:20px 14px;line-height:1.5}
-  .page{width:210mm;max-width:100%;margin:0 auto;background:var(--bg);
-    border:1px solid var(--bd);border-radius:14px;overflow:hidden}
-  .pad{padding:22px 34px}
-
-  /* фирменная цветная линия — подпись семейства */
-  .brandline{display:flex;height:5px}
-  .brandline span{flex:1}
-
-  .repobar{display:flex;align-items:center;gap:10px;padding:12px 34px;
-    border-bottom:1px solid var(--bd);background:var(--bg2);font-family:var(--mono);font-size:13px}
-  .repobar .path{color:var(--amber);font-weight:500}
-  .repobar .slash{color:var(--mut2)}
-  .pill{font-family:var(--mono);font-size:11px;color:var(--mut);border:1px solid var(--bd2);
-    border-radius:20px;padding:2px 9px}
-  .repobar .spacer{flex:1}
-  .stat{color:var(--mut);font-size:12px}
-  .stat b{color:var(--fg);font-weight:500}
-  .tmark{flex:none;color:var(--coral2)}
-
-  .langsel{position:relative}
-  .langbtn{display:flex;align-items:center;gap:7px;background:var(--bg3);border:1px solid var(--bd2);
-    border-radius:8px;padding:5px 11px;color:var(--fg);font-family:var(--mono);font-size:13px;
-    cursor:pointer;transition:transform .16s ease,border-color .16s ease}
-  .langbtn:hover{transform:translateY(-1px) scale(1.05);border-color:var(--coral)}
-  .globe{display:inline-block;line-height:0;animation:gspin 1.6s ease .4s 1 both}
-  .langbtn:hover .globe{animation:gspin 1.2s ease infinite}
-  @keyframes gspin{
-    0%{transform:rotate(0deg) scale(1)}
-    50%{transform:rotate(180deg) scale(1.12)}
-    100%{transform:rotate(360deg) scale(1)}
+  html,body{background:var(--cream);color:var(--ink);font-family:"Hanken Grotesk",sans-serif;-webkit-text-size-adjust:100%}
+  body{min-height:100vh;padding:18px 16px 48px;
+    background-image:radial-gradient(circle at 12% 8%,rgba(31,122,92,.08),transparent 42%),radial-gradient(circle at 88% 0%,rgba(194,135,46,.08),transparent 38%);}
+  .wrap{max-width:560px;margin:0 auto}
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;padding:2px 2px}
+  .wm{font-family:"Fraunces",serif;font-weight:600;font-size:17px;letter-spacing:-.01em;color:var(--ink);line-height:1}
+  .wm em{font-style:italic;color:var(--gold)}
+  .flag{font-size:13px;color:var(--ink-soft)}
+  .tabs{display:flex;flex-wrap:wrap;gap:5px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:5px;margin-bottom:12px;box-shadow:var(--soft-shadow)}
+  .tab{flex:1 1 28%;min-width:0;border:1px solid var(--line);background:transparent;font-family:inherit;font-size:12px;font-weight:600;color:var(--ink-soft);padding:10px 6px;border-radius:10px;cursor:pointer;transition:.18s;line-height:1.2;text-align:center}
+  .tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .weekbar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(31,122,92,.08);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:16px;font-size:13.5px}
+  .weekbar b{color:var(--azul-deep)}
+  .weekbar button{font-family:inherit;font-size:13px;font-weight:700;color:var(--azul);background:none;border:none;cursor:pointer;padding:4px 2px;white-space:nowrap}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 22px;box-shadow:var(--soft-shadow);min-height:300px;display:flex;flex-direction:column}
+  .sit{align-self:flex-start;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--azul);background:rgba(31,122,92,.10);padding:5px 11px;border-radius:99px;margin-bottom:18px}
+  .chead{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:18px}
+  .chead .sit{margin-bottom:0}
+  .src{font-size:9.5px;font-weight:600;letter-spacing:.03em;color:var(--ink-soft);background:rgba(194,135,46,.10);border:1px solid var(--line);padding:4px 9px;border-radius:99px}
+  .ru{font-size:20px;font-weight:500;line-height:1.4}
+  .cue{margin-top:13px;font-family:"Fraunces",serif;font-style:italic;font-size:16px;color:var(--ink-soft)}
+  .cue span{color:var(--azul-deep);font-style:normal;font-weight:600}
+  .pt{font-family:"Fraunces",serif;font-size:24px;line-height:1.38;margin-top:16px;color:var(--azul-deep)}
+  .pt mark{background:linear-gradient(transparent 55%,rgba(194,135,46,.45) 55%);padding:0 1px;border-radius:2px}
+  .spacer{flex:1}
+  .row{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+  button.act{font-family:inherit;font-weight:600;font-size:15px;border-radius:11px;padding:13px 16px;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink);transition:.16s;flex:1;min-width:110px}
+  button.act:active{transform:translateY(1px)}
+  button.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  button.ghost{background:transparent}
+  button.good{background:var(--good);color:#fff;border-color:var(--good)}
+  button.bad{background:var(--terra);color:#fff;border-color:var(--terra)}
+  button.listen{flex:0 0 auto;min-width:0;width:52px;padding:13px 0;font-size:19px}
+  .opts{display:flex;flex-direction:column;gap:9px;margin-top:20px}
+  .opt{font-family:"Fraunces",serif;font-size:19px;text-align:left;padding:14px 17px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--azul-deep);cursor:pointer;transition:.15s}
+  .opt.correct{background:rgba(62,122,87,.14);border-color:var(--good);color:var(--good)}
+  .opt.wrong{background:rgba(188,75,47,.12);border-color:var(--terra);color:var(--terra)}
+  .rule{margin-top:16px;font-size:14px;line-height:1.5;color:var(--ink-soft);border-left:3px solid var(--gold);padding:5px 0 5px 13px;background:rgba(194,135,46,.06)}
+  .rule b{color:var(--ink)}
+  .seq-bank,.seq-built{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+  .chip{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-size:16px;padding:11px 13px;border-radius:11px;border:1px solid var(--line);background:var(--paper);cursor:pointer;transition:.14s;text-align:left;color:var(--azul-deep);line-height:1.3}
+  .chip:active{transform:scale(.99)}
+  .chip .tense{font-family:"Hanken Grotesk";font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 7px;border-radius:99px;flex:0 0 auto}
+  .t-pas{background:rgba(188,75,47,.14);color:var(--terra)}
+  .t-pre{background:rgba(62,122,87,.16);color:var(--good)}
+  .t-fut{background:rgba(194,135,46,.16);color:var(--gold)}
+  .chip.placed{opacity:.35;pointer-events:none}
+  .seq-built .chip{background:rgba(22,48,43,.04)}
+  .seq-built.ok .chip{border-color:var(--good)}
+  .lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-top:16px}
+  .meta{display:flex;align-items:center;justify-content:space-between;margin-top:16px;font-size:13px;color:var(--ink-soft)}
+  .boxes{display:flex;gap:5px}
+  .boxes i{width:9px;height:9px;border-radius:2px;background:var(--line);display:inline-block;transition:.2s}
+  .boxes i.on{background:var(--azul)} .boxes i.full{background:var(--good)}
+  .count{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+  .done{text-align:center;padding:18px 0}
+  .done h2{font-family:"Fraunces",serif;font-size:23px;margin-bottom:8px}
+  .done p{color:var(--ink-soft);margin-bottom:18px}
+  .reset{background:none;border:none;color:var(--ink-soft);font-family:inherit;font-size:12px;text-decoration:underline;cursor:pointer;margin-top:14px}
+  .week-item{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:9px;cursor:pointer;font-family:inherit;transition:.15s}
+  .week-item:active{transform:scale(.995)}
+  .week-item .wk{font-family:"Fraunces",serif;font-size:19px;color:var(--azul-deep);font-weight:600;flex:0 0 auto;width:82px}
+  .week-item .wk small{display:block;font-family:"Hanken Grotesk";font-size:11px;color:var(--ink-soft);font-weight:500;margin-top:2px}
+  .week-item .pv{flex:1;font-size:13.5px;color:var(--ink-soft);line-height:1.4}
+  .week-item .cur{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--good);background:rgba(62,122,87,.14);padding:3px 7px;border-radius:99px}
+  .detail-line{margin-bottom:14px;padding-left:12px;border-left:3px solid var(--line)}
+  .detail-line.l-pas{border-color:var(--terra)} .detail-line.l-pre{border-color:var(--good)} .detail-line.l-fut{border-color:var(--gold)}
+  .detail-line .dpt{font-family:"Fraunces",serif;font-size:18px;color:var(--azul-deep);line-height:1.35;cursor:pointer}
+  .detail-line .dru{font-size:13px;color:var(--ink-soft);margin-top:3px}
+  .back{align-self:flex-start;background:none;border:none;font-family:inherit;font-size:14px;font-weight:600;color:var(--azul);cursor:pointer;margin-bottom:14px;padding:2px 0}
+  .note{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:20px;line-height:1.6}
+  .loading{text-align:center;color:var(--ink-soft);padding:60px 0;font-family:"Fraunces",serif;font-style:italic}
+  .afilter{display:flex;gap:6px;margin-bottom:16px}
+  .afb{flex:1;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:8px 4px;cursor:pointer;transition:.15s}
+  .afb.on{background:rgba(31,122,92,.12);border-color:var(--azul);color:var(--azul-deep)}
+  .pairbox{display:flex;align-items:center;gap:10px;margin-top:14px;font-family:"Fraunces",serif;font-size:19px}
+  .pairbox .w1{color:var(--terra)}
+  .pairbox .w2{color:var(--good);font-weight:600}
+  .pairbox .ar{color:var(--ink-soft);font-size:16px}
+  /* свайп: лёгкая отдача карточки */
+  .card{transition:transform .15s ease, opacity .15s ease}
+  .card.sw-l{transform:translateX(-14px);opacity:.5}
+  .card.sw-r{transform:translateX(14px);opacity:.5}
+  /* CTA подписки */
+  .cta{margin-top:22px;border-top:1px solid var(--line);padding-top:18px}
+  .cta-t{font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px}
+  .cta-btn{display:inline-block;background:var(--gold);color:#fff;font-family:inherit;font-weight:700;font-size:15px;text-decoration:none;padding:13px 20px;border-radius:11px}
+  .cta-link{display:block;margin-top:10px;font-size:13px;color:var(--azul);text-decoration:underline}
+  .applinks{text-align:center;margin-top:10px;font-size:12.5px}
+  .applinks a{color:var(--azul,#1F7A5C);text-decoration:none;font-weight:600;white-space:nowrap}
+  .applinks .sep{color:var(--ink-soft);margin:0 8px;opacity:.6}
+  /* экран выбора языка/пары */
+  .picker{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--cream);background-image:radial-gradient(circle at 12% 8%,rgba(31,122,92,.10),transparent 42%),radial-gradient(circle at 88% 0%,rgba(194,135,46,.10),transparent 38%)}
+  .pick-card{max-width:420px;width:100%;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 22px;box-shadow:var(--soft-shadow)}
+  .pick-title{font-family:"Fraunces",serif;font-size:18px;color:var(--ink);text-align:center;margin-bottom:20px;line-height:1.4}
+  .pick-list{display:flex;flex-direction:column;gap:10px}
+  .pick-btn{display:flex;align-items:center;gap:10px;font-family:inherit;font-size:15px;font-weight:600;color:var(--azul-deep);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 14px;cursor:pointer;transition:.15s;text-align:left}
+  .pick-btn:active{transform:translateY(1px)}
+  .pick-btn:hover{border-color:var(--azul);background:rgba(31,122,92,.06)}
+  .pick-btn .pf{font-size:20px;flex:0 0 auto}
+  .pick-btn .pn{flex:1;white-space:nowrap}
+  @media (max-width:430px){
+    .picker{padding:16px}
+    .pick-card{padding:22px 16px}
+    .pick-btn{font-size:14px;gap:8px;padding:13px 12px}
+    .pick-btn .pf{font-size:18px}
   }
-  .langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--bg3);
-    border:1px solid var(--bd2);border-radius:9px;padding:5px;display:none;z-index:9;min-width:160px}
-  .langmenu.open{display:block}
-  .langitem{display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;
-    color:var(--fg);font-family:var(--ui);font-size:14px;padding:8px 12px;border-radius:6px}
-  .langitem:hover{background:var(--bg2);color:var(--coral2)}
-  .langitem.on{color:var(--coral2)}
 
-  .count{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 34px;
-    background:#221710;border-bottom:1px solid var(--bd)}
-  .count .lbl{font-family:var(--mono);font-size:12px;color:var(--coral2);letter-spacing:.04em}
-  .count .clock{font-family:var(--ser);font-size:21px;font-weight:600;color:var(--cream)}
-  .count .clock small{font-family:var(--ui);font-size:13px;color:var(--mut);font-weight:400}
-  .count .note{font-size:12px;color:var(--mut);margin-left:auto}
-  .count .note b{color:var(--amber);font-weight:500}
-
-  .kicker{font-family:var(--mono);font-size:12px;color:var(--coral2);letter-spacing:.04em;margin-bottom:12px}
-  h1{font-family:var(--ser);font-weight:500;font-size:38px;line-height:1.08;letter-spacing:-.01em;margin-bottom:14px}
-  h1 .em{font-style:italic;color:var(--amber)}
-  .punch{font-size:17px;color:var(--fg);font-weight:500;margin-bottom:10px;max-width:62ch;line-height:1.4}
-  .punch .em{font-style:italic;color:var(--amber)}
-  .lede{font-size:15px;color:var(--mut);max-width:62ch}
-  .lede b{color:var(--fg);font-weight:500}
-  .hero-link{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:14px;
-    color:var(--coral2);text-decoration:none;border-bottom:1px dashed var(--coral)}
-
-  .hr{height:1px;background:var(--bd);margin:0}
-
-  .sec-h{font-family:var(--mono);font-size:12px;color:var(--mut);letter-spacing:.05em;
-    text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-  .sec-h::before{content:"";width:18px;height:4px;border-radius:2px;background:var(--coral)}
-  .sec-h.a::before{background:var(--amber)}
-  .sec-h.l::before{background:var(--leaf)}
-  .sec-h.s::before{background:var(--sky)}
-
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-  .card{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;
-    border-top:3px solid var(--bd2)}
-  .card:nth-child(1){border-top-color:var(--coral)}
-  .card:nth-child(2){border-top-color:var(--amber)}
-  .card:nth-child(3){border-top-color:var(--leaf)}
-  .card:nth-child(4){border-top-color:var(--berry)}
-  .card .lab{font-family:var(--mono);font-size:11px;color:var(--terra);margin-bottom:6px;letter-spacing:.03em}
-  .card h3{font-family:var(--ser);font-size:19px;font-weight:500;margin-bottom:5px}
-  .card p{font-size:13.5px;color:var(--mut)}
-
-  .langbar{display:flex;height:9px;border-radius:6px;overflow:hidden;margin-bottom:11px;border:1px solid var(--bd)}
-  .langbar span{display:block}
-  .langlegend{display:flex;flex-wrap:wrap;gap:9px 16px;font-size:13px;color:var(--mut)}
-  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}
-  .langlegend b{color:var(--fg);font-weight:500}
-
-  .feat{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
-  .feat .row{display:flex;gap:10px;font-size:13.5px;align-items:flex-start}
-  .feat .ck{color:var(--leaf);font-family:var(--mono);flex:none;margin-top:1px}
-  .feat .soon{color:var(--amber);font-family:var(--mono);flex:none;margin-top:1px}
-  .feat .row span.t{color:var(--fg)}
-  .feat .row span.t i{color:var(--mut);font-style:normal}
-  .tag{font-family:var(--mono);font-size:10px;border:1px solid var(--bd2);border-radius:5px;
-    padding:1px 6px;color:var(--mut);margin-left:6px;white-space:nowrap}
-
-  .sci{background:var(--bg2);border:1px solid var(--bd);border-left:3px solid var(--sky);
-    border-radius:8px;padding:14px 18px}
-  .sci p{font-size:13.5px;color:var(--fg);margin-bottom:8px}
-  .sci p:last-child{margin-bottom:0}
-  .sci .fn{font-size:11.5px;color:var(--mut2);font-family:var(--mono)}
-
-  /* лестница из четырёх ступеней */
-  .ladder{display:flex;flex-direction:column;gap:10px}
-  .step{display:flex;gap:16px;align-items:stretch;border:1px solid var(--bd);border-radius:12px;
-    background:var(--bg2);padding:14px 18px;transition:transform .16s ease}
-  .step:hover{transform:translateY(-2px)}
-  .step .no{font-family:var(--mono);font-size:12px;color:var(--mut2);flex:none;width:26px;padding-top:3px}
-  .step .body{flex:1;min-width:0}
-  .step .pt{font-family:var(--mono);font-size:11.5px;color:var(--mut);margin-bottom:4px}
-  .step h3{font-family:var(--ser);font-size:20px;font-weight:500;margin-bottom:4px}
-  .step .sub{font-size:13px;color:var(--mut);max-width:58ch}
-  .step .sub b{color:var(--fg);font-weight:500}
-  .step .side{flex:none;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:8px;min-width:165px}
-  .step .amt{font-family:var(--ser);font-size:24px;font-weight:500;white-space:nowrap;transition:transform .16s ease}
-  .step:hover .amt{transform:scale(1.08)}
-  .step .amt small{font-size:13px;color:var(--mut);font-family:var(--ui)}
-  .step .amt s{color:var(--mut2)}
-  .btn{display:block;text-align:center;text-decoration:none;font-weight:600;font-size:14px;
-    border-radius:8px;padding:9px 16px;font-family:var(--ui);min-width:165px;
-    transition:transform .16s ease}
-  .btn:hover{transform:translateY(-2px) scale(1.05)}
-  .btn:active{transform:scale(.96)}
-  .btn.hot{background:var(--coral);color:#2E1810;border:1px solid var(--coral2)}
-  .btn.warm{background:transparent;color:var(--amber);border:1px solid var(--amber)}
-  .btn.o{background:transparent;color:var(--fg);border:1px solid var(--bd2)}
-  .step.s1{border-color:var(--coral);background:#291C14;border-left:6px solid var(--coral)}
-  .step.s1 .no{color:var(--coral2)}
-  .step.s1 h3{color:var(--cream)}
-  .step.s2{border-left:6px solid var(--amber)}
-  .step.s3{border-left:6px solid var(--leaf)}
-  .step.s4{border-left:6px solid var(--bd2);background:var(--bg)}
-  .step.s4 h3,.step.s4 .amt{color:var(--mut)}
-  .lock{font-family:var(--mono);font-size:11px;color:var(--mut2);border:1px dashed var(--bd2);
-    border-radius:6px;padding:2px 8px;margin-left:8px;vertical-align:2px;white-space:nowrap}
-  .honest{font-size:12.5px;color:var(--mut);margin-top:14px}
-  .honest b{color:var(--amber);font-weight:500}
-
-  /* семейный подвал — единый для всех продуктов */
-  .family{text-align:center;padding:14px 34px;background:#140E0A;border-top:1px solid var(--bd);
-    font-family:var(--mono);font-size:12px;color:var(--mut2)}
-  .family a{color:var(--mut);text-decoration:none;border-bottom:1px dotted var(--mut2)}
-
-  @media (max-width:680px){
-    h1{font-size:30px}.grid,.feat{grid-template-columns:1fr}
-    .pad{padding:20px 20px}.repobar,.count,.family{padding-left:20px;padding-right:20px}
-    .stat{display:none}
-    .step{flex-direction:column;gap:10px}
-    .step .side{flex-direction:row;align-items:center;justify-content:space-between;min-width:0}
-    .step .amt{font-size:22px}
-    .btn{min-width:0;flex:1;max-width:220px}
-  }
-  @media (prefers-reduced-motion: reduce){
-    .btn,.step,.step .amt,.langbtn,.globe{animation:none;transition:none}
-    .btn:hover,.step:hover,.step:hover .amt,.langbtn:hover{transform:none}
-  }
-  @media print{
-    body{background:#fff;padding:0}
-    .page{border:none;border-radius:0;width:auto}
-    .langsel{display:none}
-    @page{size:A4;margin:8mm}
-  }
+  .langbtn{display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink-soft,#54655A);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:6px 12px;cursor:pointer;transition:.15s;line-height:1}
+  .langbtn:active{transform:translateY(1px)}
+  .langbtn:hover{border-color:var(--azul);color:var(--azul-deep)}
+  .langbtn-globe{font-size:14px}
+  .owner{text-align:center;margin-top:16px;font-size:11px;color:var(--ink-soft,#54655A);opacity:.6;letter-spacing:.02em}
 </style>
 </head>
 <body>
-<main class="page">
-
-  <div class="brandline">
-    <span style="background:var(--coral)"></span>
-    <span style="background:var(--amber)"></span>
-    <span style="background:var(--cream)"></span>
-    <span style="background:var(--leaf)"></span>
-    <span style="background:var(--sky)"></span>
+<div id="picker" class="picker" style="display:none"></div>
+<div class="wrap">
+  <header>
+    <span class="wm" id="wm">· <em>Treino</em></span>
+    <button class="langbtn" id="langBtn" type="button" aria-label="Сменить язык"><span class="langbtn-globe">🌐</span><span class="flag" id="flag"></span></button>
+  </header>
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-mode="recall"></button>
+    <button class="tab" data-mode="cloze"></button>
+    <button class="tab" data-mode="seq"></button>
+    <button class="tab" data-mode="anton"></button>
+    <button class="tab" data-mode="syn"></button>
   </div>
-
-  <div class="repobar">
-    <svg class="tmark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M20 11a8 8 0 1 0-2.3 5.7"/>
-      <path d="M20 5v6h-6"/>
-    </svg>
-    <span class="path">treino<span class="slash"> / </span>language engine</span>
-    <span class="pill">Public</span>
-    <span class="spacer"></span>
-    <span class="stat">★ <b>family-of-4</b></span>
-    <div class="langsel">
-      <button class="langbtn" id="langBtn" aria-label="Сменить язык">
-        <span class="globe">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--coral2)" stroke-width="1.7" stroke-linecap="round">
-            <circle cx="12" cy="12" r="9"/>
-            <ellipse cx="12" cy="12" rx="4" ry="9"/>
-            <path d="M3.5 9h17M3.5 15h17"/>
-          </svg>
-        </span>
-        <span id="langCode">RU</span>
-        <span style="color:var(--mut2);font-size:10px">▾</span>
-      </button>
-      <div class="langmenu" id="langMenu">
-        <button class="langitem on" data-lang="ru">🇷🇺 Русский</button>
-        <button class="langitem" data-lang="pt">🇵🇹 Português</button>
-        <button class="langitem" data-lang="en">🇬🇧 English</button>
-        <button class="langitem" data-lang="de">🇩🇪 Deutsch</button>
-        <button class="langitem" data-lang="es">🇪🇸 Español</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="count">
-    <span class="lbl" data-i18n="count_lbl">// окно предзаказа · 14 дней</span>
-    <span class="clock" id="clock">— <small>дней</small></span>
-    <span class="note" data-i18n="count_note">первые <b>100</b> — соавторы: докручиваю фишки на вашем материале → <b>−50%</b></span>
-  </div>
-
-  <div class="pad">
-    <div class="kicker">// language engine · v1</div>
-    <h1 data-i18n="h1">Большинство приложений учат тебя <span class="em">чужим</span> фразам.<br>Treino учит тебя на <span class="em">твоей собственной неделе.</span></h1>
-    <p class="punch" data-i18n="punch">За тебя работают твои <span class="em">Эмоции и События</span>. Ты просто рассказываешь, как прошла неделя — что было, что происходит, что планируешь.</p>
-    <p class="lede" data-i18n="lede"><b>Эта история и есть твой учебник.</b> Движок дробит её на короткие фразы, раскидывает по временам и возвращает ровно тогда, когда мозг готов забыть.</p>
-    <a class="hero-link" href="https://ikartuzov-hub.github.io/treino/u/" target="_blank" rel="noopener" data-i18n="hero">→ открыть демо — бесплатно · 30 секунд</a>
-  </div>
-
-  <div class="hr"></div>
-
-  <div class="pad">
-    <div class="sec-h" data-i18n="sec1">Одна идея, на которой всё держится</div>
-    <div class="grid">
-      <div class="card">
-        <div class="lab">self-reference</div>
-        <h3 data-i18n="c1h">Твоя жизнь как контент</h3>
-        <p data-i18n="c1p">То, что связано лично с тобой, запоминается глубже всего. Не «яблоко — maçã», а «на этой неделе я нянчил внучку».</p>
-      </div>
-      <div class="card">
-        <div class="lab">active recall</div>
-        <h3 data-i18n="c2h">Сначала вслух — потом проверка</h3>
-        <p data-i18n="c2p">Ты достаёшь фразу из памяти сам, а не узнаёшь её из списка. Усилие извлечения и есть момент обучения.</p>
-      </div>
-      <div class="card">
-        <div class="lab">spaced repetition</div>
-        <h3 data-i18n="c3h">Возврат в нужный момент</h3>
-        <p data-i18n="c3p">Коробки Лейтнера: выученное прячется и всплывает 7 → 14 → 30 → 60 дней. Никакой зубрёжки впрок.</p>
-      </div>
-      <div class="card">
-        <div class="lab">emotion = fuel</div>
-        <h3 data-i18n="c4h">Эмоция как топливо</h3>
-        <p data-i18n="c4p">Своя история несёт эмоцию, а эмоция «помечает» память. Заодно это и мотивация возвращаться.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="hr"></div>
-
-  <div class="pad">
-    <div class="sec-h a" data-i18n="sec2">Один движок — вся семья и твой круг</div>
-    <div class="langbar">
-      <span style="width:24%;background:var(--leaf)"></span>
-      <span style="width:18%;background:var(--sky)"></span>
-      <span style="width:16%;background:var(--amber)"></span>
-      <span style="width:14%;background:var(--terra)"></span>
-      <span style="width:16%;background:var(--berry)"></span>
-      <span style="width:12%;background:var(--lav)"></span>
-    </div>
-    <div class="langlegend">
-      <span><i class="dot" style="background:var(--leaf)"></i><b>Português</b> — ты</span>
-      <span><i class="dot" style="background:var(--sky)"></i><b>English</b> — жена</span>
-      <span><i class="dot" style="background:var(--amber)"></i><b>Deutsch</b> — сын</span>
-      <span><i class="dot" style="background:var(--terra)"></i><b>Español</b> — тёща</span>
-      <span><i class="dot" style="background:var(--berry)"></i><b>Русский</b> — твой препод</span>
-      <span><i class="dot" style="background:var(--lav)"></i><b>Français</b> — твой друг с улицы</span>
-      <span><i class="dot" style="background:var(--mut2)"></i>+ любой язык, который потянет движок</span>
-    </div>
-    <p style="font-size:13.5px;color:var(--mut);margin-top:11px" data-i18n="lnote">Один <span style="font-family:var(--mono);color:var(--fg)">движок</span> + твоя история на твоём языке = <span style="color:var(--fg)">новый язык в памяти</span>. Каждый учит на материале своей собственной жизни, интерфейс — на родном.</p>
-  </div>
-
-  <div class="hr"></div>
-
-  <div class="pad">
-    <div class="sec-h l" data-i18n="sec3">Что внутри движка</div>
-    <div class="feat">
-      <div class="row"><span class="ck">[✓]</span><span class="t">Вспомни и скажи <i>— карточки RU→PT, озвучка, Лейтнер</i></span></div>
-      <div class="row"><span class="ck">[✓]</span><span class="t">Заполни пропуск <i>— выбор формы + правило</i></span></div>
-      <div class="row"><span class="ck">[✓]</span><span class="t">Собери рассказ <i>— недельная история по аркам времён</i></span></div>
-      <div class="row"><span class="ck">[✓]</span><span class="t">Антонимы и синонимы <i>— фразы в контексте</i></span></div>
-      <div class="row"><span class="soon">[→]</span><span class="t">Запись своего голоса <span class="tag">скоро</span></span></div>
-      <div class="row"><span class="soon">[→]</span><span class="t">Аудирование как навык <span class="tag">скоро</span></span></div>
-      <div class="row"><span class="soon">[→]</span><span class="t">Режим «Сегодня» — всё вперемешку <span class="tag">скоро</span></span></div>
-      <div class="row"><span class="soon">[→]</span><span class="t">Прогресс без стрик-давления <span class="tag">скоро</span></span></div>
-    </div>
-  </div>
-
-  <div class="hr"></div>
-
-  <div class="pad">
-    <div class="sec-h s" data-i18n="sec4">Почему это работает — без магии</div>
-    <div class="sci">
-      <p data-i18n="sci1">Самореферентное кодирование (привязка к себе) — по мета-анализу 129 исследований самый эффективный из известных способов запоминания. Извлечение из памяти и интервальное повторение — две техники с самой прочной доказательной базой в когнитивной науке; вместе они дают долговременное удержание.</p>
-      <p style="color:var(--amber)" data-i18n="sci2">Это метод, а не чудо. Усилие остаётся за тобой — Treino делает это усилие точным и возвращает энергию через твою же историю.</p>
-      <p class="fn">refs: Symons &amp; Johnson meta-analysis (129 studies) · Craik &amp; Tulving · Roediger (testing effect) · Ebbinghaus / spacing effect</p>
-    </div>
-  </div>
-
-  <div class="hr"></div>
-
-  <div class="pad">
-    <div class="sec-h" data-i18n="sec5">Четыре ступени — начни с бесплатной</div>
-    <div class="ladder">
-
-      <div class="step s1">
-        <span class="no">01</span>
-        <div class="body">
-          <div class="pt" style="color:var(--coral2)" data-i18n="s1pt">// демо · бесплатно · без регистрации</div>
-          <h3 data-i18n="s1h">Открой и попробуй прямо сейчас</h3>
-          <p class="sub" data-i18n="s1s">Живой движок с демо-неделей: карточки, пропуски, рассказ, озвучка. <b>Открыл ссылку — через 30 секунд уже тренируешься.</b> Ничего не вводишь, ничего не платишь.</p>
-        </div>
-        <div class="side">
-          <div class="amt" style="color:var(--cream)">€0</div>
-          <a class="btn hot" href="https://ikartuzov-hub.github.io/treino/u/" target="_blank" rel="noopener" data-i18n="s1b">Открыть демо →</a>
-        </div>
-      </div>
-
-      <div class="step s2">
-        <span class="no">02</span>
-        <div class="body">
-          <div class="pt" data-i18n="s2pt">// top-up · пополнение · разово</div>
-          <h3 data-i18n="s2h">Загрузи в демо свою неделю</h3>
-          <p class="sub" data-i18n="s2s">Пришли 8–10 простых предложений (уровень A1–A2): <b>что было, что происходит, что планируешь</b> — глаголы в трёх временах, прилагательные, синонимы и антонимы. Соберу из них твой личный тренажёр и верну в твоё демо. Плати только когда хочешь свежую порцию.</p>
-        </div>
-        <div class="side">
-          <div class="amt">€5 <small data-i18n="s2a">разово</small></div>
-          <a class="btn warm" href="https://kartuzov.gumroad.com/l/fkfdbg" target="_blank" rel="noopener" data-i18n="s2b">Пополнить — Top-up</a>
-        </div>
-      </div>
-
-      <div class="step s3">
-        <span class="no">03</span>
-        <div class="body">
-          <div class="pt" data-i18n="s3pt">// разовая покупка · <span style="color:var(--leaf)">−50% первым 100</span></div>
-          <h3 data-i18n="s3h">Забери движок навсегда</h3>
-          <p class="sub" data-i18n="s3s">Движок целиком + 4 языковых пакета. Твой навсегда, работает офлайн, прогресс — на твоём устройстве. Цена фиксируется за тобой по предзаказу.</p>
-        </div>
-        <div class="side">
-          <div class="amt">€19 <small><s>€39</s> <span data-i18n="s3a">· навсегда</span></small></div>
-          <a class="btn warm" href="https://kartuzov.gumroad.com/l/ixvpus" target="_blank" rel="noopener" data-i18n="s3b">Сделать предзаказ</a>
-        </div>
-      </div>
-
-      <div class="step s4">
-        <span class="no">04</span>
-        <div class="body">
-          <div class="pt"><span data-i18n="s4pt">// подписка на контент</span> <span class="lock" data-i18n="s4lk">только при покупке приложения</span></div>
-          <h3 data-i18n="s4h">Свежий материал каждую неделю</h3>
-          <p class="sub" data-i18n="s4s">Всё из разового + еженедельный набор фраз из твоих рассказов, новые типы дрилла, «Батарейки» и «Энерджайзеры» — по мере выхода. Продление автоматическое, отписка в один клик.</p>
-        </div>
-        <div class="side">
-          <div class="amt">€5 <small><s>€6</s> <span data-i18n="s4a">/ мес</span></small></div>
-          <a class="btn o" href="https://kartuzov.gumroad.com/l/mzrinu" target="_blank" rel="noopener" data-i18n="s4b">Подписаться</a>
-        </div>
-      </div>
-
-    </div>
-    <p class="honest" data-i18n="honest"><b>Честно:</b> это пред-релиз. Часть фишек помечена «скоро» — это дорожная карта; ты получаешь их по мере выхода, без доплат.</p>
-  </div>
-
-  <div class="family">
-    © 2026 <a id="hubLink" href="https://ikartuzov-hub.github.io/seedwave-catalog/hub/?lang=ru" target="_blank" rel="noopener">SeedWave</a> · <a href="https://www.linkedin.com/in/igor-kartuzov/" target="_blank" rel="noopener">Igor Kartuzov</a>
-  </div>
-
-</main>
+  <div class="weekbar" id="weekbar"><span id="weekLabel"></span><button id="archBtn"></button></div>
+  <div class="card" id="card"><div class="loading">…</div></div>
+  <p class="note" id="footNote"></p>
+  <p class="applinks" id="appLinks"></p>
+  <p class="owner">© Igor Kartuzov · Treino</p>
+</div>
 
 <script>
-const CLOCK_D={ru:'дн',pt:'d',en:'d',de:'T',es:'d'};
-const CLOCK_H={ru:'ч',pt:'h',en:'h',de:'Std',es:'h'};
-const CLOCK_DONE={
- ru:'открыто <small>· −50% первым 100</small>',
- pt:'aberto <small>· −50% para os primeiros 100</small>',
- en:'open <small>· −50% for the first 100</small>',
- de:'offen <small>· −50% für die ersten 100</small>',
- es:'abierto <small>· −50% para los primeros 100</small>'
-};
-var CUR='ru';
-  (function(){
-    var KEY='treino_launch';
-    var launch = localStorage.getItem(KEY);
-    if(!launch){ launch = Date.now() + 14*86400000; localStorage.setItem(KEY, launch); }
-    launch = Number(launch);
-    var el = document.getElementById('clock');
-    function tick(){
-      var diff = launch - Date.now();
-      if(diff <= 0){ el.innerHTML = (CLOCK_DONE[CUR]||CLOCK_DONE.ru); return; }
-      var d = Math.floor(diff/86400000);
-      var h = Math.floor(diff%86400000/3600000);
-      el.innerHTML = d + ' <small>'+(CLOCK_D[CUR]||CLOCK_D.ru)+'</small> ' + h + ' <small>'+(CLOCK_H[CUR]||CLOCK_H.ru)+'</small>';
-    }
-    window.__tick = tick;
-    tick(); setInterval(tick, 60000);
-  })();
+/* ============================================================
+   УНИВЕРСАЛЬНЫЙ ДВИЖОК TREINO
+   - Контент и настройки берутся из data.json (его готовит Cowork).
+   - "ru" = строка на ИСХОДНОМ языке ученика; "pt" = на ЦЕЛЕВОМ (что учит).
+   - config.lang  : язык озвучки целевого (pt-PT / en-GB / ru-RU / ...).
+   - config.ui    : язык интерфейса (ru / en ; pt / es добавляются в I18N).
+   - config.neg   : пример отрицания для «Антонимов» (Não, é… / Нет, … / No, …).
+   - config.subscribeUrl / subscribeText / subscribeBtn : кнопка подписки.
+   - config.flyerUrl / flyerText : ссылка на рекламную листовку.
+   - Род целевого языка зашит прямо в контенте под пол ученика.
+   ============================================================ */
 
+/* ---- словари интерфейса (каркас; pt/es допишем при запуске тех учеников) ---- */
+/* ===== ЛОКАЛИ (слой 2): грузятся из ui/ui.{lang}.json. Движок языков НЕ знает. ===== */
+let I18N = {};     // кэш загруженных локалей
+let L = null;      // активная локаль (ставится при загрузке пары)
 
-const I18N={
-ru:{},
-pt:{
- count_lbl:"// janela de pré-encomenda · 14 dias",
- count_note:"primeiros <b>100</b> — coautores: afino as funções no vosso material → <b>−50%</b>",
- h1:"A maioria das apps ensina-te frases <span class=\"em\">dos outros.</span><br>O Treino ensina-te na <span class=\"em\">tua própria semana.</span>",
- punch:"Por ti trabalham as tuas <span class=\"em\">emoções e acontecimentos</span>. Tu só contas como correu a semana — o que foi, o que está a acontecer, o que planeias.",
- lede:"<b>Esta história é o teu manual.</b> O motor parte-a em frases curtas, distribui-as pelos tempos e devolve-as mesmo quando o cérebro está prestes a esquecer.",
- hero:"→ abrir demo — grátis · 30 segundos",
- sec1:"Uma ideia que sustenta tudo",
- c1h:"A tua vida como conteúdo",
- c1p:"O que está ligado a ti pessoalmente fixa-se mais fundo. Não «maçã — apple», mas «esta semana tomei conta da minha neta».",
- c2h:"Primeiro em voz alta — depois confirma",
- c2p:"Tiras a frase da memória sozinho, não a reconheces numa lista. O esforço de a recuperar é o próprio momento de aprender.",
- c3h:"Regresso no momento certo",
- c3p:"Caixas de Leitner: o que aprendeste esconde-se e volta aos 7 → 14 → 30 → 60 dias. Nada de decorar à força.",
- c4h:"A emoção como combustível",
- c4p:"A tua história traz emoção, e a emoção «marca» a memória. Ao mesmo tempo é motivo para voltares.",
- sec2:"Um motor — toda a família e o teu círculo",
- lnote:"Um <span style=\"font-family:var(--mono);color:var(--fg)\">motor</span> + a tua história na tua língua = <span style=\"color:var(--fg)\">nova língua na memória</span>. Cada um aprende com o material da sua própria vida, interface na língua materna.",
- sec3:"O que há dentro do motor",
- sec4:"Porque funciona — sem magia",
- sci1:"A codificação autorreferente (ligação a ti) — segundo a meta-análise de 129 estudos, o método de memorização mais eficaz conhecido. Recuperação da memória e repetição espaçada — duas técnicas com a base de evidência mais sólida da ciência cognitiva; juntas dão retenção a longo prazo.",
- sci2:"É um método, não um milagre. O esforço continua teu — o Treino torna-o preciso e devolve-te energia através da tua própria história.",
- sec5:"Quatro degraus — começa pelo grátis",
- s1pt:"// demo · grátis · sem registo",
- s1h:"Abre e experimenta agora mesmo",
- s1s:"Motor vivo com semana-demo: cartões, lacunas, história, voz. <b>Abriste o link — em 30 segundos já treinas.</b> Não introduzes nada, não pagas nada.",
- s1b:"Abrir demo →",
- s2pt:"// top-up · recarga · pagamento único",
- s2h:"Carrega a tua semana na demo",
- s2s:"Envia 8–10 frases simples (nível A1–A2): <b>o que foi, o que está a acontecer, o que planeias</b> — verbos em três tempos, adjetivos, sinónimos e antónimos. Monto o teu treinador pessoal e devolvo à tua demo. Pagas só quando queres uma porção nova.",
- s2a:"único",
- s2b:"Recarregar — Top-up",
- s3pt:"// compra única · <span style=\"color:var(--leaf)\">−50% primeiros 100</span>",
- s3h:"Leva o motor para sempre",
- s3s:"Motor completo + 4 pacotes de idiomas. Teu para sempre, funciona offline, progresso no teu dispositivo. O preço fica fixo para ti na pré-encomenda.",
- s3a:"· para sempre",
- s3b:"Fazer pré-encomenda",
- s4pt:"// subscrição de conteúdo",
- s4lk:"só com a compra da aplicação",
- s4h:"Material fresco todas as semanas",
- s4s:"Tudo da compra única + conjunto semanal de frases das tuas histórias, novos tipos de treino, «Baterias» e «Energizadores» — à medida que saem. Renovação automática, cancelas num clique.",
- s4a:"/ mês",
- s4b:"Subscrever",
- honest:"<b>Honestamente:</b> é um pré-lançamento. Algumas funções estão marcadas «em breve» — é o roteiro; recebe-las à medida que saem, sem custos extra."
-},
-en:{
- count_lbl:"// pre-order window · 14 days",
- count_note:"first <b>100</b> — co-authors: I tune the features on your material → <b>−50%</b>",
- h1:"Most apps teach you <span class=\"em\">other people's</span> phrases.<br>Treino teaches you on <span class=\"em\">your own week.</span>",
- punch:"Your <span class=\"em\">emotions and events</span> do the work. You just tell how your week went — what happened, what's happening, what you plan.",
- lede:"<b>This story is your textbook.</b> The engine breaks it into short phrases, spreads them across tenses and brings them back right when your brain is about to forget.",
- hero:"→ open demo — free · 30 seconds",
- sec1:"One idea that holds it all together",
- c1h:"Your life as content",
- c1p:"What's tied to you personally sticks deepest. Not «apple — maçã», but «this week I looked after my granddaughter».",
- c2h:"First out loud — then check",
- c2p:"You pull the phrase from memory yourself, not recognise it from a list. The effort of retrieval is the moment of learning.",
- c3h:"Return at the right moment",
- c3p:"Leitner boxes: what you've learned hides and resurfaces at 7 → 14 → 30 → 60 days. No cramming ahead.",
- c4h:"Emotion as fuel",
- c4p:"Your story carries emotion, and emotion «tags» memory. It's also the reason to come back.",
- sec2:"One engine — the whole family and your circle",
- lnote:"One <span style=\"font-family:var(--mono);color:var(--fg)\">engine</span> + your story in your language = <span style=\"color:var(--fg)\">a new language in memory</span>. Everyone learns from their own life's material, interface in their native tongue.",
- sec3:"What's inside the engine",
- sec4:"Why it works — no magic",
- sci1:"Self-referent encoding (linking to yourself) — per a meta-analysis of 129 studies, the most effective known way to memorise. Memory retrieval and spaced repetition — two techniques with the strongest evidence base in cognitive science; together they give long-term retention.",
- sci2:"It's a method, not a miracle. The effort stays yours — Treino makes it precise and returns energy through your own story.",
- sec5:"Four steps — start with the free one",
- s1pt:"// demo · free · no sign-up",
- s1h:"Open and try right now",
- s1s:"A live engine with a demo week: cards, gaps, story, voice. <b>Open the link — in 30 seconds you're training.</b> Nothing to enter, nothing to pay.",
- s1b:"Open demo →",
- s2pt:"// top-up · refill · one-time",
- s2h:"Load your own week into the demo",
- s2s:"Send 8–10 simple sentences (A1–A2): <b>what happened, what's happening, what you plan</b> — verbs in three tenses, adjectives, synonyms and antonyms. I'll build your personal trainer and return it to your demo. Pay only when you want a fresh batch.",
- s2a:"one-time",
- s2b:"Top-up",
- s3pt:"// one-time purchase · <span style=\"color:var(--leaf)\">−50% first 100</span>",
- s3h:"Take the engine forever",
- s3s:"The whole engine + 4 language packs. Yours forever, works offline, progress on your device. The price is locked in for you with the pre-order.",
- s3a:"· forever",
- s3b:"Pre-order",
- s4pt:"// content subscription",
- s4lk:"only with the app purchase",
- s4h:"Fresh material every week",
- s4s:"Everything from the one-time + a weekly set of phrases from your stories, new drill types, «Batteries» and «Energizers» — as they ship. Auto-renews, cancel in one click.",
- s4a:"/ mo",
- s4b:"Subscribe",
- honest:"<b>Honestly:</b> this is a pre-release. Some features are marked «soon» — that's the roadmap; you get them as they ship, at no extra cost."
-},
-de:{
- count_lbl:"// Vorbestell-Fenster · 14 Tage",
- count_note:"erste <b>100</b> — Co-Autoren: ich feile die Funktionen an eurem Material → <b>−50%</b>",
- h1:"Die meisten Apps lehren dich <span class=\"em\">fremde</span> Sätze.<br>Treino lehrt dich an <span class=\"em\">deiner eigenen Woche.</span>",
- punch:"Für dich arbeiten deine <span class=\"em\">Emotionen und Ereignisse</span>. Du erzählst einfach, wie die Woche war — was war, was ist, was du planst.",
- lede:"<b>Diese Geschichte ist dein Lehrbuch.</b> Der Motor zerlegt sie in kurze Sätze, verteilt sie auf die Zeiten und bringt sie genau dann zurück, wenn das Gehirn vergessen will.",
- hero:"→ Demo öffnen — gratis · 30 Sekunden",
- sec1:"Eine Idee, die alles trägt",
- c1h:"Dein Leben als Inhalt",
- c1p:"Was persönlich mit dir verbunden ist, prägt sich am tiefsten ein. Nicht «Apfel — maçã», sondern «diese Woche habe ich auf meine Enkelin aufgepasst».",
- c2h:"Erst laut — dann prüfen",
- c2p:"Du holst den Satz selbst aus dem Gedächtnis, statt ihn in einer Liste wiederzuerkennen. Die Mühe des Abrufs ist der Moment des Lernens.",
- c3h:"Rückkehr im richtigen Moment",
- c3p:"Leitner-Kästen: Gelerntes versteckt sich und taucht nach 7 → 14 → 30 → 60 Tagen wieder auf. Kein Pauken auf Vorrat.",
- c4h:"Emotion als Treibstoff",
- c4p:"Deine Geschichte trägt Emotion, und Emotion «markiert» das Gedächtnis. Zugleich ist sie der Grund zurückzukommen.",
- sec2:"Ein Motor — die ganze Familie und dein Kreis",
- lnote:"Ein <span style=\"font-family:var(--mono);color:var(--fg)\">Motor</span> + deine Geschichte in deiner Sprache = <span style=\"color:var(--fg)\">neue Sprache im Gedächtnis</span>. Jeder lernt am Material seines eigenen Lebens, Oberfläche in der Muttersprache.",
- sec3:"Was im Motor steckt",
- sec4:"Warum es funktioniert — ohne Magie",
- sci1:"Selbstbezogene Kodierung (Bezug auf dich) — laut einer Meta-Analyse von 129 Studien die wirksamste bekannte Art zu memorieren. Gedächtnisabruf und verteilte Wiederholung — zwei Techniken mit der stärksten Evidenz der Kognitionswissenschaft; zusammen ergeben sie langfristiges Behalten.",
- sci2:"Es ist eine Methode, kein Wunder. Die Mühe bleibt deine — Treino macht sie präzise und gibt Energie durch deine eigene Geschichte zurück.",
- sec5:"Vier Stufen — starte mit der kostenlosen",
- s1pt:"// Demo · gratis · ohne Registrierung",
- s1h:"Öffne und probiere sofort",
- s1s:"Lebendiger Motor mit Demo-Woche: Karten, Lücken, Geschichte, Stimme. <b>Link geöffnet — in 30 Sekunden trainierst du.</b> Nichts eingeben, nichts zahlen.",
- s1b:"Demo öffnen →",
- s2pt:"// Top-up · Aufladung · einmalig",
- s2h:"Lade deine Woche in die Demo",
- s2s:"Schick 8–10 einfache Sätze (Niveau A1–A2): <b>was war, was ist, was du planst</b> — Verben in drei Zeiten, Adjektive, Synonyme und Antonyme. Ich baue deinen persönlichen Trainer und gebe ihn in deine Demo zurück. Du zahlst nur, wenn du eine frische Portion willst.",
- s2a:"einmalig",
- s2b:"Aufladen — Top-up",
- s3pt:"// Einmalkauf · <span style=\"color:var(--leaf)\">−50% erste 100</span>",
- s3h:"Nimm den Motor für immer",
- s3s:"Ganzer Motor + 4 Sprachpakete. Für immer deiner, läuft offline, Fortschritt auf deinem Gerät. Der Preis wird mit der Vorbestellung für dich fixiert.",
- s3a:"· für immer",
- s3b:"Vorbestellen",
- s4pt:"// Inhalts-Abo",
- s4lk:"nur mit dem App-Kauf",
- s4h:"Frisches Material jede Woche",
- s4s:"Alles aus dem Einmalkauf + wöchentlicher Satz Sätze aus deinen Geschichten, neue Drill-Typen, «Batterien» und «Energizer» — sobald sie erscheinen. Verlängert sich automatisch, Kündigung mit einem Klick.",
- s4a:"/ Mon",
- s4b:"Abonnieren",
- honest:"<b>Ehrlich:</b> das ist eine Vorab-Version. Einige Funktionen sind mit «bald» markiert — das ist die Roadmap; du erhältst sie, sobald sie kommen, ohne Aufpreis."
-},
-es:{
- count_lbl:"// ventana de pre-reserva · 14 días",
- count_note:"primeros <b>100</b> — coautores: ajusto las funciones con vuestro material → <b>−50%</b>",
- h1:"La mayoría de las apps te enseñan frases <span class=\"em\">ajenas.</span><br>Treino te enseña con <span class=\"em\">tu propia semana.</span>",
- punch:"Por ti trabajan tus <span class=\"em\">emociones y acontecimientos</span>. Tú solo cuentas cómo fue la semana — qué fue, qué pasa, qué planeas.",
- lede:"<b>Esta historia es tu libro de texto.</b> El motor la parte en frases cortas, las reparte por los tiempos y las devuelve justo cuando el cerebro está por olvidar.",
- hero:"→ abrir demo — gratis · 30 segundos",
- sec1:"Una idea que lo sostiene todo",
- c1h:"Tu vida como contenido",
- c1p:"Lo ligado a ti personalmente se fija más hondo. No «manzana — maçã», sino «esta semana cuidé a mi nieta».",
- c2h:"Primero en voz alta — luego comprueba",
- c2p:"Sacas la frase de la memoria tú mismo, no la reconoces en una lista. El esfuerzo de recuperarla es el momento de aprender.",
- c3h:"Regreso en el momento justo",
- c3p:"Cajas de Leitner: lo aprendido se esconde y reaparece a los 7 → 14 → 30 → 60 días. Nada de empollar de golpe.",
- c4h:"La emoción como combustible",
- c4p:"Tu historia lleva emoción, y la emoción «marca» la memoria. A la vez es el motivo para volver.",
- sec2:"Un motor — toda la familia y tu círculo",
- lnote:"Un <span style=\"font-family:var(--mono);color:var(--fg)\">motor</span> + tu historia en tu idioma = <span style=\"color:var(--fg)\">nuevo idioma en la memoria</span>. Cada uno aprende con el material de su propia vida, interfaz en su lengua materna.",
- sec3:"Qué hay dentro del motor",
- sec4:"Por qué funciona — sin magia",
- sci1:"La codificación autorreferente (vínculo contigo) — según un metaanálisis de 129 estudios, el método de memorización más eficaz conocido. Recuperación de memoria y repetición espaciada — dos técnicas con la base de evidencia más sólida de la ciencia cognitiva; juntas dan retención a largo plazo.",
- sci2:"Es un método, no un milagro. El esfuerzo sigue siendo tuyo — Treino lo hace preciso y te devuelve energía a través de tu propia historia.",
- sec5:"Cuatro escalones — empieza por el gratis",
- s1pt:"// demo · gratis · sin registro",
- s1h:"Abre y prueba ahora mismo",
- s1s:"Motor vivo con semana-demo: tarjetas, huecos, historia, voz. <b>Abriste el enlace — en 30 segundos ya entrenas.</b> No introduces nada, no pagas nada.",
- s1b:"Abrir demo →",
- s2pt:"// top-up · recarga · pago único",
- s2h:"Carga tu semana en la demo",
- s2s:"Envía 8–10 frases simples (nivel A1–A2): <b>qué fue, qué pasa, qué planeas</b> — verbos en tres tiempos, adjetivos, sinónimos y antónimos. Armo tu entrenador personal y lo devuelvo a tu demo. Pagas solo cuando quieres una porción nueva.",
- s2a:"único",
- s2b:"Recargar — Top-up",
- s3pt:"// compra única · <span style=\"color:var(--leaf)\">−50% primeros 100</span>",
- s3h:"Llévate el motor para siempre",
- s3s:"Motor completo + 4 paquetes de idiomas. Tuyo para siempre, funciona sin conexión, progreso en tu dispositivo. El precio se fija para ti con la pre-reserva.",
- s3a:"· para siempre",
- s3b:"Hacer pre-reserva",
- s4pt:"// suscripción de contenido",
- s4lk:"solo con la compra de la app",
- s4h:"Material fresco cada semana",
- s4s:"Todo lo de la compra única + un set semanal de frases de tus historias, nuevos tipos de drill, «Baterías» y «Energizantes» — a medida que salen. Renovación automática, cancelas en un clic.",
- s4a:"/ mes",
- s4b:"Suscribirse",
- honest:"<b>Sinceramente:</b> es un pre-lanzamiento. Algunas funciones están marcadas «pronto» — es la hoja de ruta; las recibes a medida que salen, sin coste extra."
-}
+/* Встроенный минимальный fallback-словарь (en) — если загрузка локали сорвётся. */
+const EMBEDDED_L = {
+ "brand": "·",
+ "flag": "🇬🇧",
+ "tabs": {
+  "recall": "Recall & say",
+  "cloze": "Fill the gap",
+  "seq": "Build the story",
+  "anton": "Opposites",
+  "syn": "Synonyms"
+ },
+ "arc": {
+  "recall": "archive · phrases",
+  "cloze": "archive · rules",
+  "syn": "archive · synonyms",
+  "anton": "archive · opposites",
+  "seq": "archive · stories"
+ },
+ "archBtn": "Archive →",
+ "sectionArchive": "Section archive:",
+ "footNote": "Your progress is saved on this device. Learned items are hidden and come back from time to time to refresh.",
+ "showAnswer": "Show answer",
+ "recallHint": "Say it aloud first, then check.",
+ "forgot": "Didn't recall",
+ "recalled": "Recalled ✓",
+ "recallDoneTitle": "Round complete 🌅",
+ "avgBox": "Average Leitner box: ",
+ "recallDoneTail": "/5. Learned items are hidden — they come back to refresh on their own.",
+ "nextRound": "Another round",
+ "resetProg": "reset progress",
+ "box": "Box",
+ "ruleLabel": "rule · ",
+ "clozeDoneTitle": "Gaps filled ✓",
+ "clozeDoneBody": "These are the most common mistakes. The more often you see the rule, the less you think about it when speaking.",
+ "again": "Again",
+ "next": "Next",
+ "filAll": "All",
+ "filCar": "Character",
+ "filFis": "Appearance",
+ "headFis": "traits · appearance",
+ "headCar": "traits · character",
+ "doneTitle": "Done ✓",
+ "avgBoxShort": "Average box: ",
+ "antDoneTail": "/5. Learned items are hidden — they come back on their own. An opposite is a pair: know one word and you get the other almost for free.",
+ "synDoneTail": "/5. Learned items are hidden — they come back on their own. A synonym grows your vocabulary: you can say one idea in different ways.",
+ "noAnt": "No opposites yet.",
+ "noSyn": "No synonyms yet.",
+ "noStories": "No stories yet.",
+ "antHint": "Answer with a negation: «{neg}» — say the opposite aloud.",
+ "synHead": "say it differently · synonyms",
+ "synHint": "Say the same phrase another way — say the synonym aloud.",
+ "seqHead": "build the story · ",
+ "seqIntro": "Put the whole story in order. Hint by the labels: <b>past → present → future.</b>",
+ "bankLbl": "Phrase bank",
+ "builtLbl": "Your story",
+ "resetBtn": "Reset",
+ "checkBtn": "Check",
+ "addAll": "Add all the phrases first.",
+ "seqPerfect": "<b>Perfect!</b> The story is built. Read it aloud; below is the translation for the words you forgot.",
+ "listenAll": "🔊 Listen to the whole story",
+ "storyWithTr": "Story with translation",
+ "seqPart1": "In place: <b>",
+ "seqPart2": " of ",
+ "seqPart3": "</b>. Past comes first, future last. Fix it and check again.",
+ "tense": {
+  "pas": "past",
+  "pre": "present",
+  "fut": "future"
+ },
+ "toTraining": "← Back to practice",
+ "allMonths": "← All months",
+ "cur": "now",
+ "fromStory": "from story · ",
+ "buildThis": "Build this story",
+ "arcEmpty": "Empty for now — it will appear after an update.",
+ "core": "Core",
+ "baseMonth": "Base",
+ "baseDate": "base",
+ "plural": "one_other",
+ "parts": {
+  "one": "part",
+  "other": "parts"
+ }
 };
-const RU_BASE={};
-document.querySelectorAll('[data-i18n]').forEach(el=>{ RU_BASE[el.dataset.i18n]=el.innerHTML; });
-I18N.ru=RU_BASE;
-function setLang(l){
-  CUR=l;
-  const d=I18N[l]||I18N.ru;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.dataset.i18n;
-    el.innerHTML=(d[k]!==undefined)?d[k]:RU_BASE[k];
-  });
-  document.documentElement.lang=l;
-  document.getElementById('langCode').textContent=l.toUpperCase();
-  document.querySelectorAll('.langitem').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));
-  document.getElementById('hubLink').href='https://ikartuzov-hub.github.io/seedwave-catalog/hub/?lang='+l;
-  if(window.__tick) window.__tick();
-  try{ localStorage.setItem('treino_flyer_lang',l); }catch(e){}
+
+/* Склонение из данных локали (заменяет прежнюю функцию parts). */
+function pluralForm(n){
+  var r=(L&&L.plural)||"one_other";
+  if(r==="slavic"){var x=n%10,y=n%100;return (x===1&&y!==11)?"one":(x>=2&&x<=4&&(y<10||y>=20))?"few":"many";}
+  return n===1?"one":"other";
 }
-function initLangMenu(){
-  const btn=document.getElementById('langBtn'), menu=document.getElementById('langMenu');
-  if(!btn||!menu) return;
-  btn.addEventListener('click',function(e){ e.stopPropagation(); menu.classList.toggle('open'); });
-  document.addEventListener('click',function(){ menu.classList.remove('open'); });
-  menu.querySelectorAll('.langitem').forEach(function(b){
-    b.addEventListener('click',function(){ setLang(b.dataset.lang); menu.classList.remove('open'); });
-  });
+function partsStr(n){ var p=(L&&L.parts)||{}, f=pluralForm(n); return n+" "+(p[f]||p.other||p.many||""); }
+
+/* Заделы под расширение языков (наполнение по спросу). */
+function applyDir(){ document.documentElement.dir=(L&&L.dir)||"ltr"; }
+function applyFont(){ document.documentElement.setAttribute("data-script",(L&&L.script)||"latin"); }
+
+const EMBEDDED = {
+  "config":{"lang":"pt-PT","ui":"en","neg":"Não, é…","subscribeUrl":"","subscribeText":"","subscribeBtn":"","flyerUrl":"","flyerText":""},
+  "phrases":[
+   {"pt":"Gosto muito do meu gato.","ru":"I really like my cat.","sit":"daily","cue":"Gosto muito do…","hi":["meu gato"]},
+   {"pt":"Todas as manhãs, bebo um café.","ru":"Every morning I drink a coffee.","sit":"daily","cue":"Todas as manhãs, <span>bebo</span>…","hi":["bebo"]},
+   {"pt":"Vivo cá há dois anos.","ru":"I have lived here for two years.","sit":"meeting","cue":"Vivo cá <span>há</span>…","hi":["há"]},
+   {"pt":"Foi um prazer!","ru":"It was a pleasure!","sit":"meeting","cue":"Foi um…!","hi":[]}
+  ],
+  "weeks":[
+   {"id":"w1","label":"Week 1","date":"this week","month":"June 2026","sentences":[
+     {"pt":"Ontem, fiz o jantar em casa.","ru":"Yesterday I cooked dinner at home.","t":"pas"},
+     {"pt":"Todas as manhãs, bebo um café.","ru":"Every morning I drink a coffee.","t":"pre"},
+     {"pt":"Para a próxima semana, vou visitar a cidade.","ru":"Next week I will visit the city.","t":"fut"}
+   ]}
+  ],
+  "cloze":[
+   {"q":"Ontem, ___ o jantar em casa.","opts":["faço","fiz","fazia"],"ok":1,"rule":"<b>fiz</b> = I made (finished action). 'Ontem' (yesterday) → finished → fiz."}
+  ],
+  "antonyms":[
+   {"qpt":"É preguiçoso?","apt":"Não, é trabalhador.","qru":"Is he lazy?","aru":"No, he is hardworking.","wq":"preguiçoso","wa":"trabalhador","grp":"car"},
+   {"qpt":"É alto?","apt":"Não, é baixo.","qru":"Is he tall?","aru":"No, he is short.","wq":"alto","wa":"baixo","grp":"fis"}
+  ],
+  "synonyms":[
+   {"qpt":"Estou cansado.","apt":"Estou exausto.","qru":"I am tired.","aru":"I am exhausted.","wq":"cansado","wa":"exausto"}
+  ]
+};
+
+let CLOZE=[]; const CLOZE_FALLBACK=[];
+let ANTONYMS=[]; const ANTONYMS_FALLBACK=[];
+let SYN=[]; const SYN_FALLBACK=[];
+
+const TCLS={pas:"t-pas",pre:"t-pre",fut:"t-fut"};
+const LCLS={pas:"l-pas",pre:"l-pre",fut:"l-fut"};
+
+/* ===== прогресс на устройстве + интервальное повторение ===== */
+let LS_KEY="treino_progress_v1";
+const DAY=86400000, REFRESH=[7,14,30,60];
+function loadProgress(){try{return JSON.parse(localStorage.getItem(LS_KEY))||{};}catch(e){return {};}}
+function saveProgress(){try{localStorage.setItem(LS_KEY,JSON.stringify(progress));}catch(e){}}
+function getRec(k){const v=progress[k];if(v==null)return{b:1,d:0,i:0};if(typeof v==="number")return{b:v,d:0,i:0};return{b:v.b||1,d:v.d||0,i:v.i||0};}
+function isActive(k){const r=getRec(k);return r.b<5||Date.now()>=r.d;}
+function rateKey(k,ok){let r=getRec(k);
+  if(ok){r.b=Math.min(5,r.b+1);
+    if(r.b===5){const ni=r.i?REFRESH[Math.min(REFRESH.length-1,REFRESH.indexOf(r.i)+1)]:REFRESH[0];r.i=ni;r.d=Date.now()+ni*DAY;}
+    else{r.d=0;r.i=0;}
+  }else{r.b=1;r.d=0;r.i=0;}
+  progress[k]={b:r.b,d:r.d,i:r.i};saveProgress();return r.b;}
+
+/* ===== TTS (язык целевой из config.lang) ===== */
+let voices=[], LANG="pt-PT";
+function loadVoices(){voices=window.speechSynthesis?speechSynthesis.getVoices():[];}
+if(window.speechSynthesis){loadVoices();speechSynthesis.onvoiceschanged=loadVoices;}
+function pickVoice(){
+  if(!voices.length)return null;
+  const base=LANG.toLowerCase();
+  let v=voices.find(x=>x.lang&&x.lang.toLowerCase().replace("_","-")===base);
+  if(base==="pt-pt"){
+    if(!v)v=voices.find(x=>/joana|catarina|madalena|in[eê]s|duarte|\(portugal\)/i.test(x.name||""));
+    if(!v)v=voices.find(x=>x.lang&&x.lang.toLowerCase().startsWith("pt")&&!/br/i.test(x.lang));
+  }
+  if(base==="en-gb"){
+    if(!v)v=voices.find(x=>/daniel|kate|serena|arthur|martha|oliver|stephanie|libby|sonia|united kingdom|\(uk\)/i.test(x.name||""));
+    if(!v)v=voices.find(x=>x.lang&&/en[-_]gb/i.test(x.lang));
+  }
+  if(base.startsWith("ru")){
+    if(!v)v=voices.find(x=>/milena|yuri|katya|russia/i.test(x.name||""));
+    if(!v)v=voices.find(x=>x.lang&&x.lang.toLowerCase().startsWith("ru"));
+  }
+  if(!v)v=voices.find(x=>x.lang&&x.lang.toLowerCase().startsWith(base.split("-")[0]));
+  return v;
 }
-initLangMenu();
-(function(){
-  let l=new URLSearchParams(location.search).get('lang');
-  if(!l){ try{ l=localStorage.getItem('treino_flyer_lang'); }catch(e){} }
-  if(l && I18N[l]) setLang(l);
+function speak(text){if(!window.speechSynthesis)return;const u=new SpeechSynthesisUtterance(text);u.lang=LANG;u.rate=.85;const v=pickVoice();if(v){u.voice=v;u.lang=v.lang;}speechSynthesis.cancel();speechSynthesis.speak(u);}
+
+/* ===== state ===== */
+let DATA=EMBEDDED, PHRASES=[], WEEKS=[], progress={};
+let mode="recall", archiveScreen=null, selWeek=null;
+const card=document.getElementById("card");
+const getWeek=id=>WEEKS.find(w=>w.id===id);
+function deriveCue(pt){const w=pt.split(" ");return (w.slice(0,2).join(" "))+"…";}
+function neg(){return (DATA.config&&DATA.config.neg)||"…";}
+
+/* CTA подписки */
+function ctaHTML(){
+  const c=DATA.config||{};
+  if(!c.subscribeUrl)return '';
+  let s='<div class="cta">';
+  if(c.subscribeText)s+='<p class="cta-t">'+c.subscribeText+'</p>';
+  s+='<a class="cta-btn" href="'+c.subscribeUrl+'" target="_blank" rel="noopener">'+(c.subscribeBtn||"Continue")+'</a>';
+  if(c.flyerUrl)s+='<a class="cta-link" href="'+c.flyerUrl+'" target="_blank" rel="noopener">'+(c.flyerText||"How it works")+' →</a>';
+  return s+'</div>';
+}
+
+function refreshWeekbar(){
+  document.getElementById("weekLabel").innerHTML=L.sectionArchive+' <b>'+(L.tabs[mode]||"")+'</b>';
+}
+function markHi(pt,hi){let o=pt;(hi||[]).forEach(h=>o=o.replace(h,"<mark>"+h+"</mark>"));return o;}
+function srcTag(week){if(!week)return '';const w=getWeek(week);return w?'<span class="src">'+L.fromStory+w.label+'</span>':'';}
+function head(t,week){return '<div class="chead"><span class="sit">'+t+'</span>'+srcTag(week)+'</div>';}
+function stripTags(s){return (s||"").replace(/<[^>]+>/g,"");}
+function boxesHTML(box){let s='<span class="boxes">';for(let i=1;i<=5;i++){s+='<i class="'+(i<=box?(box>=5?'full':'on'):'')+'"></i>';}return s+'</span>';}
+
+/* ===== RECALL ===== */
+let rQ=[],rI=0,rRev=false;
+function buildRQ(){rQ=PHRASES.filter(p=>isActive(p.pt)).sort((a,b)=>a.box-b.box);rI=0;rRev=false;}
+function renderRecall(){
+  if(rI>=rQ.length){const avg=PHRASES.length?(PHRASES.reduce((s,p)=>s+p.box,0)/PHRASES.length).toFixed(1):'—';
+    card.innerHTML='<div class="done"><h2>'+L.recallDoneTitle+'</h2><p>'+L.avgBox+'<b>'+avg+L.recallDoneTail+'</p><button class="act primary" onclick="buildRQ();renderRecall()">'+L.nextRound+'</button><div><button class="reset" onclick="resetProgress()">'+L.resetProg+'</button></div>'+ctaHTML()+'</div>';return;}
+  const p=rQ[rI];let h=head(p.sit,p.week)+'<div class="ru">'+p.ru+'</div><div class="cue">'+p.cue+'</div>';
+  if(rRev)h+='<div class="pt">'+markHi(p.pt,p.hi)+'</div>';
+  h+='<div class="spacer"></div><div class="meta"><span>'+L.box+'</span>'+boxesHTML(p.box)+'<span class="count">'+(rI+1)+' / '+rQ.length+'</span></div>';
+  if(!rRev)h+='<div class="row"><button class="act listen" onclick="speak(rQ[rI].pt)">🔊</button><button class="act primary" onclick="rRev=true;renderRecall()">'+L.showAnswer+'</button></div><p class="note" style="margin-top:12px">'+L.recallHint+'</p>';
+  else h+='<div class="row"><button class="act listen" onclick="speak(rQ[rI].pt)">🔊</button><button class="act bad" onclick="rate(0)">'+L.forgot+'</button><button class="act good" onclick="rate(1)">'+L.recalled+'</button></div>';
+  card.innerHTML=h;
+}
+function rate(ok){const p=rQ[rI];p.box=rateKey(p.pt,ok);rI++;rRev=false;renderRecall();}
+function resetProgress(){progress={};saveProgress();PHRASES.forEach(p=>p.box=1);ANTONYMS.forEach(p=>p.box=1);SYN.forEach(p=>p.box=1);buildRQ();renderRecall();}
+
+/* ===== CLOZE ===== */
+let cI=0,cAns=false;
+function renderCloze(){
+  if(cI>=CLOZE.length){card.innerHTML='<div class="done"><h2>'+L.clozeDoneTitle+'</h2><p>'+L.clozeDoneBody+'</p><button class="act primary" onclick="cI=0;renderCloze()">'+L.again+'</button>'+ctaHTML()+'</div>';return;}
+  const it=CLOZE[cI];let h=head(L.ruleLabel+(cI+1)+'/'+CLOZE.length,it.week)+'<div class="pt" style="margin-top:6px">'+it.q+'</div><div class="opts">';
+  it.opts.forEach((o,i)=>h+='<button class="opt" onclick="ansCloze('+i+')">'+o+'</button>');
+  h+='</div><div id="fb"></div>';card.innerHTML=h;cAns=false;
+}
+function ansCloze(i){if(cAns)return;cAns=true;const it=CLOZE[cI];card.querySelectorAll(".opt").forEach((b,bi)=>{if(bi===it.ok)b.classList.add("correct");if(bi===i&&i!==it.ok)b.classList.add("wrong");});
+  document.getElementById("fb").innerHTML='<div class="rule">'+it.rule+'</div><div class="row"><button class="act primary" onclick="cI++;renderCloze()">'+L.next+'</button></div>';}
+
+/* ===== ANTONYMS ===== */
+let aQ=[],aI=0,aRev=false,aFilter="all";
+function aPool(){return ANTONYMS.filter(x=>aFilter==="all"||x.grp===aFilter);}
+function buildAQ(){aQ=aPool().filter(p=>isActive("A:"+p.qpt)).sort((a,b)=>a.box-b.box);aI=0;aRev=false;}
+function afBtn(f,label){return '<button class="afb'+(aFilter===f?' on':'')+'" onclick="setAFilter(\''+f+'\')">'+label+'</button>';}
+function setAFilter(f){aFilter=f;buildAQ();renderAnton();}
+function renderAnton(){
+  const fh='<div class="afilter">'+afBtn('all',L.filAll)+afBtn('car',L.filCar)+afBtn('fis',L.filFis)+'</div>';
+  if(!ANTONYMS.length){card.innerHTML=fh+'<div class="done"><p>'+L.noAnt+'</p></div>';return;}
+  if(aI>=aQ.length){const pool=aPool();const avg=pool.length?(pool.reduce((s,p)=>s+p.box,0)/pool.length).toFixed(1):'—';
+    card.innerHTML=fh+'<div class="done"><h2>'+L.doneTitle+'</h2><p>'+L.avgBoxShort+'<b>'+avg+L.antDoneTail+'</p><button class="act primary" onclick="buildAQ();renderAnton()">'+L.nextRound+'</button>'+ctaHTML()+'</div>';return;}
+  const p=aQ[aI];
+  let h=fh+head((p.grp==="fis"?L.headFis:L.headCar),p.week);
+  h+='<div class="ru">'+p.qru+'</div><div class="cue">'+p.qpt+'</div>';
+  if(aRev){
+    h+='<div class="pt">'+markHi(p.apt,[p.wa])+'</div>';
+    h+='<div class="pairbox"><span class="w1">'+p.wq+'</span><span class="ar">↔</span><span class="w2">'+p.wa+'</span></div>';
+    h+='<div class="dru" style="margin-top:8px;color:var(--ink-soft);font-size:14px">'+p.aru+'</div>';
+  }
+  h+='<div class="spacer"></div><div class="meta"><span>'+L.box+'</span>'+boxesHTML(p.box)+'<span class="count">'+(aI+1)+' / '+aQ.length+'</span></div>';
+  if(!aRev)h+='<div class="row"><button class="act listen" onclick="speak(aQ[aI].qpt)">🔊</button><button class="act primary" onclick="aRev=true;renderAnton()">'+L.showAnswer+'</button></div><p class="note" style="margin-top:12px">'+L.antHint.replace("{neg}",neg())+'</p>';
+  else h+='<div class="row"><button class="act listen" onclick="speak(aQ[aI].apt)">🔊</button><button class="act bad" onclick="rateA(0)">'+L.forgot+'</button><button class="act good" onclick="rateA(1)">'+L.recalled+'</button></div>';
+  card.innerHTML=h;
+}
+function rateA(ok){const p=aQ[aI];p.box=rateKey("A:"+p.qpt,ok);aI++;aRev=false;renderAnton();}
+
+/* ===== SYNONYMS ===== */
+let sQ=[],sI=0,sRev=false;
+function buildSQ(){sQ=SYN.filter(p=>isActive("S:"+p.qpt)).sort((a,b)=>a.box-b.box);sI=0;sRev=false;}
+function renderSyn(){
+  if(!SYN.length){card.innerHTML='<div class="done"><p>'+L.noSyn+'</p></div>';return;}
+  if(sI>=sQ.length){const avg=SYN.length?(SYN.reduce((s,p)=>s+p.box,0)/SYN.length).toFixed(1):'—';
+    card.innerHTML='<div class="done"><h2>'+L.doneTitle+'</h2><p>'+L.avgBoxShort+'<b>'+avg+L.synDoneTail+'</p><button class="act primary" onclick="buildSQ();renderSyn()">'+L.nextRound+'</button>'+ctaHTML()+'</div>';return;}
+  const p=sQ[sI];
+  let h=head(L.synHead,p.week);
+  h+='<div class="ru">'+p.qru+'</div><div class="cue">'+p.qpt+'</div>';
+  if(sRev){
+    h+='<div class="pt">'+markHi(p.apt,[p.wa])+'</div>';
+    h+='<div class="pairbox"><span class="w1">'+p.wq+'</span><span class="ar">≈</span><span class="w2">'+p.wa+'</span></div>';
+    h+='<div class="dru" style="margin-top:8px;color:var(--ink-soft);font-size:14px">'+p.aru+'</div>';
+  }
+  h+='<div class="spacer"></div><div class="meta"><span>'+L.box+'</span>'+boxesHTML(p.box)+'<span class="count">'+(sI+1)+' / '+sQ.length+'</span></div>';
+  if(!sRev)h+='<div class="row"><button class="act listen" onclick="speak(sQ[sI].qpt)">🔊</button><button class="act primary" onclick="sRev=true;renderSyn()">'+L.showAnswer+'</button></div><p class="note" style="margin-top:12px">'+L.synHint+'</p>';
+  else h+='<div class="row"><button class="act listen" onclick="speak(sQ[sI].apt)">🔊</button><button class="act bad" onclick="rateS(0)">'+L.forgot+'</button><button class="act good" onclick="rateS(1)">'+L.recalled+'</button></div>';
+  card.innerHTML=h;
+}
+function rateS(ok){const p=sQ[sI];p.box=rateKey("S:"+p.qpt,ok);sI++;sRev=false;renderSyn();}
+
+/* ===== SEQUENCE ===== */
+let order=[],built=[],shuffled=[];
+function renderSeq(){
+  const w=getWeek(selWeek);if(!w){card.innerHTML='<div class="done"><p>'+L.noStories+'</p></div>';return;}
+  order=w.sentences.map((_,i)=>i);built=[];
+  let h='<span class="sit">'+L.seqHead+w.label+'</span><div class="ru" style="font-size:16px">'+L.seqIntro+'</div>';
+  h+='<div class="lbl">'+L.bankLbl+'</div><div class="seq-bank" id="bank"></div><div class="lbl">'+L.builtLbl+'</div><div class="seq-built" id="builtBox"></div>';
+  h+='<div class="row"><button class="act ghost" onclick="renderSeq()">'+L.resetBtn+'</button><button class="act primary" onclick="checkSeq()">'+L.checkBtn+'</button></div><div id="fb"></div>';
+  card.innerHTML=h;
+  shuffled=[...order].sort(()=>Math.random()-.5);paintSeq();
+}
+function paintSeq(){
+  const w=getWeek(selWeek),bank=document.getElementById("bank"),bb=document.getElementById("builtBox");
+  bank.innerHTML="";bb.innerHTML="";
+  shuffled.forEach(idx=>{const s=w.sentences[idx];const placed=built.includes(idx);
+    const c=document.createElement("button");c.className="chip "+(placed?"placed":"");
+    c.innerHTML='<span class="tense '+TCLS[s.t]+'">'+L.tense[s.t]+'</span>'+s.pt;
+    c.onclick=()=>{if(!built.includes(idx)){built.push(idx);paintSeq();}};bank.appendChild(c);});
+  built.forEach((idx,pos)=>{const s=w.sentences[idx];const c=document.createElement("button");c.className="chip";
+    c.innerHTML='<span class="tense '+TCLS[s.t]+'">'+(pos+1)+'</span>'+s.pt;
+    c.onclick=()=>{built.splice(pos,1);paintSeq();};bb.appendChild(c);});
+}
+function checkSeq(){
+  const w=getWeek(selWeek),fb=document.getElementById("fb");
+  if(built.length<w.sentences.length){fb.innerHTML='<div class="rule">'+L.addAll+'</div>';return;}
+  const right=built.filter((v,i)=>v===order[i]).length;
+  if(right===w.sentences.length){document.getElementById("builtBox").classList.add("ok");
+    let tr='';w.sentences.forEach((s,i)=>{tr+='<div class="detail-line '+LCLS[s.t]+'"><div class="dpt" onclick="speak(getWeek(\''+w.id+'\').sentences['+i+'].pt)">'+s.pt+'</div><div class="dru">'+s.ru+'</div></div>';});
+    fb.innerHTML='<div class="rule" style="border-color:var(--good);background:rgba(62,122,87,.08)">'+L.seqPerfect+'</div><div class="row"><button class="act good" onclick="speakWeek()">'+L.listenAll+'</button></div><div class="lbl">'+L.storyWithTr+'</div>'+tr;}
+  else fb.innerHTML='<div class="rule" style="border-color:var(--terra);background:rgba(188,75,47,.08)">'+L.seqPart1+right+L.seqPart2+w.sentences.length+L.seqPart3+'</div>';
+}
+function speakWeek(){speak(getWeek(selWeek).sentences.map(s=>s.pt).join(" "));}
+
+/* ===== ARCHIVE ===== */
+function modeList(){return mode==="recall"?PHRASES:mode==="cloze"?CLOZE:mode==="syn"?SYN:ANTONYMS;}
+function secTitleAll(){return L.arc[mode]||L.arc.recall;}
+function previewOf(it){return mode==="recall"?it.pt:mode==="cloze"?it.q.replace("___","…"):it.qpt;}
+function weeksForMode(){
+  if(mode==="seq")return WEEKS.map(w=>({key:w.id,label:w.label,date:w.date,month:w.month,items:w.sentences,preview:w.sentences.length?w.sentences[0].pt:""}));
+  const list=modeList(),map={};
+  list.forEach(it=>{const k=it.week||"_base";(map[k]=map[k]||[]).push(it);});
+  const order=WEEKS.map(w=>w.id).filter(id=>map[id]);
+  Object.keys(map).forEach(k=>{if(k!=="_base"&&order.indexOf(k)<0)order.push(k);});
+  if(map["_base"])order.push("_base");
+  return order.map(k=>{const w=getWeek(k),items=map[k];
+    return {key:k,label:w?w.label:L.core,date:w?w.date:L.baseDate,month:w?w.month:L.baseMonth,items:items,preview:previewOf(items[0])};});
+}
+let ARCHM=[], ARCHSAY=[];
+function buildArchM(){const wk=weeksForMode();ARCHM=[];const idx={};
+  wk.forEach(w=>{if(!(w.month in idx)){idx[w.month]=ARCHM.length;ARCHM.push({month:w.month,weeks:[]});}ARCHM[idx[w.month]].weeks.push(w);});}
+function renderArchMonths(){
+  buildArchM();
+  let h='<button class="back" onclick="closeArchive()">'+L.toTraining+'</button><span class="sit">'+secTitleAll()+'</span>';
+  if(!ARCHM.length){h+='<div class="done"><p>'+L.arcEmpty+'</p></div>';card.innerHTML=h;return;}
+  ARCHM.forEach((m,i)=>{const cnt=m.weeks.length;
+    h+='<button class="week-item" onclick="openArchMonth('+i+')"><span class="wk" style="width:auto;min-width:96px">'+m.month+'</span><span class="pv">'+partsStr(cnt)+'</span>'+(i===0?'<span class="cur">'+L.cur+'</span>':'')+'</button>';});
+  card.innerHTML=h;
+}
+function openArchMonth(i){const m=ARCHM[i];
+  let h='<button class="back" onclick="renderArchMonths()">'+L.allMonths+'</button><span class="sit">'+m.month+'</span>';
+  m.weeks.forEach((w,wi)=>{h+='<button class="week-item" onclick="openArchWeek('+i+','+wi+')"><span class="wk">'+w.label+'<small>'+w.date+'</small></span><span class="pv">'+w.preview+'</span></button>';});
+  card.innerHTML=h;
+}
+function openArchWeek(i,wi){const m=ARCHM[i],w=m.weeks[wi];ARCHSAY=[];
+  let h='<button class="back" onclick="openArchMonth('+i+')">← '+m.month+'</button><span class="sit">'+w.label+' · '+w.date+'</span>';
+  if(mode==="seq"){
+    w.items.forEach(s=>{const k=ARCHSAY.push(s.pt)-1;
+      h+='<div class="detail-line '+LCLS[s.t]+'"><div class="dpt" onclick="speak(ARCHSAY['+k+'])">'+s.pt+'</div><div class="dru">'+s.ru+'</div></div>';});
+    h+='<div class="row"><button class="act listen" onclick="speakArch()">🔊</button><button class="act primary" onclick="trainWeek(\''+w.key+'\')">'+L.buildThis+'</button></div>';
+  }else{
+    w.items.forEach(it=>{
+      if(mode==="recall"){const k=ARCHSAY.push(it.pt)-1;
+        h+='<div class="detail-line"><div class="dpt" onclick="speak(ARCHSAY['+k+'])">'+it.pt+'</div><div class="dru">'+it.ru+'</div></div>';}
+      else if(mode==="cloze"){const ans=it.opts[it.ok],k=ARCHSAY.push(it.q.replace("___",ans))-1;
+        h+='<div class="detail-line l-pre"><div class="dpt" onclick="speak(ARCHSAY['+k+'])">'+it.q.replace("___","<mark>"+ans+"</mark>")+'</div><div class="dru">'+stripTags(it.rule)+'</div></div>';}
+      else if(mode==="syn"){const k=ARCHSAY.push(it.apt)-1;
+        h+='<div class="detail-line"><div class="dpt" onclick="speak(ARCHSAY['+k+'])">'+it.qpt+' ≈ '+markHi(it.apt,[it.wa])+'</div><div class="dru">'+it.qru+' → '+it.aru+'</div></div>';}
+      else{const k=ARCHSAY.push(it.apt)-1;
+        h+='<div class="detail-line '+(it.grp==="fis"?"l-fut":"l-pre")+'"><div class="dpt" onclick="speak(ARCHSAY['+k+'])">'+it.qpt+' → '+markHi(it.apt,[it.wa])+'</div><div class="dru">'+it.qru+' → '+it.aru+'</div></div>';}
+    });
+  }
+  card.innerHTML=h;
+}
+function speakArch(){speak(ARCHSAY.join(" "));}
+function trainWeek(id){selWeek=id;archiveScreen=null;setMode("seq");}
+function closeArchive(){archiveScreen=null;applyView();}
+function openArchive(){archiveScreen="list";applyView();}
+
+/* ===== router ===== */
+function applyView(){refreshWeekbar();
+  if(archiveScreen==="list"){ renderArchMonths(); return; }
+  if(mode==="recall"){buildRQ();renderRecall();}
+  else if(mode==="cloze"){cI=0;renderCloze();}
+  else if(mode==="anton"){buildAQ();renderAnton();}
+  else if(mode==="syn"){buildSQ();renderSyn();}
+  else renderSeq();
+}
+function setMode(m){mode=m;archiveScreen=null;document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.mode===m));applyView();}
+
+function applyI18n(){
+  if(!L) L = I18N[(DATA.config&&DATA.config.ui)] || EMBEDDED_L;
+  applyDir(); applyFont();
+  var _lb=document.getElementById("langBtn"); if(_lb){_lb.onclick=function(){showPicker();};}
+  document.documentElement.lang=(DATA.config&&DATA.config.ui)||"en";
+  var _brand=(DATA.config&&DATA.config.brand)||L.brand;
+  var _flag=(DATA.config&&DATA.config.flag!=null)?DATA.config.flag:L.flag;
+  document.getElementById("wm").innerHTML=_brand+' <em>Treino</em>';
+  document.getElementById("flag").textContent=_flag||"";
+  document.querySelectorAll(".tab").forEach(t=>t.textContent=L.tabs[t.dataset.mode]||t.dataset.mode);
+  document.getElementById("archBtn").textContent=L.archBtn;
+  document.getElementById("footNote").textContent=L.footNote;
+  var c=DATA.config||{}, links=[], _ui=c.ui||"ru";
+  function _withLang(u){ return /^(https?:|mailto:|#)/.test(u)?u:(u.split("?")[0]+"?lang="+_ui); }
+  if(c.flyerUrl)links.push('<a href="'+_withLang(c.flyerUrl)+'">'+(c.flyerText||"How it works")+'</a>');
+  if(c.methodUrl)links.push('<a href="'+_withLang(c.methodUrl)+'">'+(c.methodText||"The method")+'</a>');
+  if(typeof MANIFEST!=="undefined"&&MANIFEST&&MANIFEST.hubUrl&&L.hub&&L.hub.hubLink){
+    var _hs=MANIFEST.hubUrl.indexOf("?")>=0?"&":"?";
+    links.push('<a href="'+MANIFEST.hubUrl+_hs+'lang='+_ui+'" target="_blank" rel="noopener">'+L.hub.hubLink+'</a>');
+  }
+  document.getElementById("appLinks").innerHTML=links.join('<span class="sep">·</span>');
+}
+
+/* ===== СВАЙП (нейтральный пропуск) + АВТО-ПОДЪЁМ КНОПОК =====
+   Свайп работает только в разделах с коробками: recall / anton / syn.
+   Влево = следующая карточка, вправо = предыдущая. Коробку НЕ трогает —
+   это просто навигация, прогресс остаётся честным (вариант А). */
+function swipeEnabled(){return !archiveScreen && (mode==="recall"||mode==="anton"||mode==="syn");}
+function swipeNav(dir){            // dir: +1 вперёд (следующая), -1 назад (предыдущая)
+  if(mode==="recall"){ if(dir>0){if(rI<rQ.length)rI++;}else{if(rI>0)rI--;} rRev=false; renderRecall(); }
+  else if(mode==="anton"){ if(dir>0){if(aI<aQ.length)aI++;}else{if(aI>0)aI--;} aRev=false; renderAnton(); }
+  else if(mode==="syn"){ if(dir>0){if(sI<sQ.length)sI++;}else{if(sI>0)sI--;} sRev=false; renderSyn(); }
+}
+let _tsX=0,_tsY=0,_tsT=0;
+function bindSwipe(){
+  card.addEventListener("touchstart",function(e){var t=e.changedTouches[0];_tsX=t.clientX;_tsY=t.clientY;_tsT=Date.now();},{passive:true});
+  card.addEventListener("touchend",function(e){
+    if(!swipeEnabled())return;
+    var t=e.changedTouches[0], dx=t.clientX-_tsX, dy=t.clientY-_tsY, dt=Date.now()-_tsT;
+    if(dt>700)return;                          // слишком медленно — не свайп
+    if(Math.abs(dx)<50)return;                 // короткое движение — это тап
+    if(Math.abs(dx)<Math.abs(dy)*1.4)return;   // движение вертикальное — это скролл
+    var dir = dx<0 ? 1 : -1;                   // палец справа налево = вперёд
+    card.classList.add(dir>0?"sw-l":"sw-r");
+    setTimeout(function(){card.classList.remove("sw-l","sw-r");swipeNav(dir);},130);
+  },{passive:true});
+}
+/* кнопка действия (Показать ответ / Дальше / Вспомнил) всегда в зоне видимости */
+var _fitTimer=null;
+function fitButtons(){
+  var rows=card.querySelectorAll(".row");
+  if(!rows.length)return;
+  var el=rows[rows.length-1], r=el.getBoundingClientRect();
+  if(r.bottom>window.innerHeight-8 || r.top<0){
+    el.scrollIntoView({block:"nearest",behavior:"smooth"});
+  }
+}
+function bindAutoFit(){
+  var obs=new MutationObserver(function(){clearTimeout(_fitTimer);_fitTimer=setTimeout(fitButtons,70);});
+  obs.observe(card,{childList:true,subtree:true});
+}
+
+function init(){
+  LANG=(DATA.config&&DATA.config.lang)||"pt-PT";
+  applyI18n();
+  PHRASES=(DATA.phrases||[]).map(p=>({pt:p.pt,ru:p.ru,sit:p.sit||"",cue:p.cue||deriveCue(p.pt),hi:p.hi||[],week:p.week||null}));
+  WEEKS=DATA.weeks||[];
+  CLOZE=(Array.isArray(DATA.cloze)&&DATA.cloze.length)?DATA.cloze:CLOZE_FALLBACK;
+  ANTONYMS=(Array.isArray(DATA.antonyms)&&DATA.antonyms.length)?DATA.antonyms:ANTONYMS_FALLBACK;
+  SYN=(Array.isArray(DATA.synonyms)&&DATA.synonyms.length)?DATA.synonyms:SYN_FALLBACK;
+  progress=loadProgress();
+  PHRASES.forEach(p=>{p.box=getRec(p.pt).b;});
+  ANTONYMS.forEach(p=>{p.box=getRec("A:"+p.qpt).b;});
+  SYN.forEach(p=>{p.box=getRec("S:"+p.qpt).b;});
+  if(WEEKS.length)selWeek=WEEKS[0].id;
+  document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>setMode(t.dataset.mode));
+  document.getElementById("archBtn").onclick=openArchive;
+  bindSwipe();
+  bindAutoFit();
+  setMode("recall");
+}
+
+/* загрузка контента: data.json → иначе встроенный */
+/* ===== УНИВЕРСАЛЬНЫЙ ЗАПУСК: manifest → выбор пары → локаль → контент ===== */
+let MANIFEST=null, PAIR=null;
+const PAIR_KEY="treino_pair";
+function qparam(n){return new URLSearchParams(location.search).get(n);}
+async function loadJSON(url){ const r=await fetch(url,{cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status+" "+url); return await r.json(); }
+function livePairs(){ return MANIFEST.pairs.filter(p=>p.live!==false); }
+function resolvePairId(){
+  var live=livePairs();
+  var qp=qparam("pair"); if(qp && live.some(p=>p.id===qp)) return qp;
+  var ql=qparam("lang"); if(ql){var m=live.find(p=>p.native===ql); if(m) return m.id;}
+  var saved=null; try{saved=localStorage.getItem(PAIR_KEY);}catch(e){}
+  if(saved && live.some(p=>p.id===saved)) return saved;
+  return null;
+}
+function showPicker(){
+  var live=livePairs();
+  var html='<div class="pick-card"><div class="pick-title">🌐 Choose your language · Выбери язык</div><div class="pick-list">';
+  live.forEach(function(p){ html+='<button class="pick-btn" data-pair="'+p.id+'"><span class="pf">'+(p.flag||"")+'</span><span class="pn">'+p.nativeName+' → '+p.targetName+'</span></button>'; });
+  html+='</div></div>';
+  var ov=document.getElementById("picker"); ov.innerHTML=html; ov.style.display="flex";
+  ov.querySelectorAll(".pick-btn").forEach(function(b){ b.onclick=function(){ choosePair(b.dataset.pair); }; });
+}
+async function choosePair(id){ try{localStorage.setItem(PAIR_KEY,id);}catch(e){} document.getElementById("picker").style.display="none"; await bootPair(id); }
+async function bootPair(id){
+  PAIR=id; var deck=qparam("d")||""; LS_KEY="treino_progress_v1_"+id+(deck?"_"+deck:"");
+  var entry=MANIFEST.pairs.find(p=>p.id===id);
+  try{ if(!I18N[entry.native]) I18N[entry.native]=await loadJSON("ui/ui."+entry.native+".json"); }catch(e){ I18N[entry.native]=EMBEDDED_L; }
+  L=I18N[entry.native]||EMBEDDED_L;
+  var dataUrl=deck?entry.data.replace(".json","."+deck+".json"):entry.data;
+  try{ var j=await loadJSON(dataUrl); DATA=(j&&Array.isArray(j.phrases)&&Array.isArray(j.weeks))?j:EMBEDDED; }catch(e){ DATA=EMBEDDED; }
+  init();
+}
+(async function(){
+  try{ MANIFEST=await loadJSON("manifest.json"); }catch(e){ MANIFEST=null; }
+  if(!MANIFEST){ L=EMBEDDED_L; DATA=EMBEDDED; init(); return; }
+  var id=resolvePairId();
+  if(id){ await bootPair(id); } else { showPicker(); }
 })();
 </script>
 </body>
