@@ -1,0 +1,288 @@
+{
+ "config": {
+  "lang": "en-GB",
+  "ui": "ru",
+  "neg": "No, …",
+  "brand": "Treino · Olga",
+  "flag": "🇬🇧",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Хочешь продолжение, собранное по твоей новой неделе?",
+  "subscribeBtn": "Получить продолжение →",
+  "flyerUrl": "start.html",
+  "flyerText": "Как это работает и цены",
+  "methodUrl": "method.html",
+  "methodText": "Метод"
+ },
+ "weeks": [
+  {
+   "id": "start1",
+   "label": "Старт / 1",
+   "date": "первая неделя",
+   "month": "Моя история",
+   "sentences": [
+    {
+     "pt": "This week I played golf with my husband and my son.",
+     "ru": "На этой неделе я играла в гольф с мужем и сыном.",
+     "t": "pas"
+    },
+    {
+     "pt": "We joined a golf programme supported by the government of Madeira.",
+     "ru": "Мы попали в гольф-программу, которую поддерживает правительство Мадейры.",
+     "t": "pas"
+    },
+    {
+     "pt": "We were very lucky.",
+     "ru": "Нам очень повезло.",
+     "t": "pas"
+    },
+    {
+     "pt": "My name is Olga and I love learning languages.",
+     "ru": "Меня зовут Ольга, и я люблю изучать языки.",
+     "t": "pre"
+    },
+    {
+     "pt": "I enjoy spending time with my family.",
+     "ru": "Мне нравится проводить время с семьёй.",
+     "t": "pre"
+    },
+    {
+     "pt": "We often go for walks together.",
+     "ru": "Мы часто гуляем вместе.",
+     "t": "pre"
+    },
+    {
+     "pt": "We do sport together.",
+     "ru": "Мы вместе занимаемся спортом.",
+     "t": "pre"
+    },
+    {
+     "pt": "Playing golf together makes us happy.",
+     "ru": "Игра в гольф вместе делает нас счастливыми.",
+     "t": "pre"
+    },
+    {
+     "pt": "After the programme we will continue playing golf.",
+     "ru": "После программы мы продолжим играть в гольф.",
+     "t": "fut"
+    },
+    {
+     "pt": "Next week we will go to the golf course again.",
+     "ru": "На следующей неделе мы снова поедем на гольф-поле.",
+     "t": "fut"
+    }
+   ]
+  }
+ ],
+ "phrases": [
+  {
+   "pt": "My name is Olga.",
+   "ru": "Меня зовут Ольга.",
+   "sit": "знакомство",
+   "cue": "My <span>name</span> is…",
+   "hi": [
+    "name is"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "I love learning languages.",
+   "ru": "Я люблю изучать языки.",
+   "sit": "о себе",
+   "cue": "I <span>love</span> learning…",
+   "hi": [
+    "love learning"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "I enjoy spending time with my family.",
+   "ru": "Мне нравится проводить время с семьёй.",
+   "sit": "семья",
+   "cue": "I <span>enjoy</span> spending…",
+   "hi": [
+    "enjoy"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "We often go for walks together.",
+   "ru": "Мы часто гуляем вместе.",
+   "sit": "прогулки",
+   "cue": "We often go for <span>walks</span>…",
+   "hi": [
+    "go for walks"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "We do sport together.",
+   "ru": "Мы вместе занимаемся спортом.",
+   "sit": "спорт",
+   "cue": "We <span>do</span> sport…",
+   "hi": [
+    "do sport"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "I play golf with my husband and my son.",
+   "ru": "Я играю в гольф с мужем и сыном.",
+   "sit": "гольф",
+   "cue": "I <span>play</span> golf with…",
+   "hi": [
+    "play golf"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "The government of Madeira supports this programme.",
+   "ru": "Правительство Мадейры поддерживает эту программу.",
+   "sit": "программа",
+   "cue": "The government <span>supports</span>…",
+   "hi": [
+    "supports"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "We are very lucky.",
+   "ru": "Нам очень повезло.",
+   "sit": "удача",
+   "cue": "We <span>are</span> very…",
+   "hi": [
+    "are very lucky"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "We will continue playing golf after the programme.",
+   "ru": "Мы продолжим играть в гольф после программы.",
+   "sit": "планы",
+   "cue": "We <span>will continue</span>…",
+   "hi": [
+    "will continue"
+   ],
+   "week": "start1"
+  },
+  {
+   "pt": "See you at the golf course!",
+   "ru": "Увидимся на гольф-поле!",
+   "sit": "прощание",
+   "cue": "<span>See you</span> at the…",
+   "hi": [
+    "See you"
+   ],
+   "week": "start1"
+  }
+ ],
+ "cloze": [
+  {
+   "q": "I ___ learning languages.",
+   "opts": [
+    "love",
+    "loves",
+    "loving"
+   ],
+   "ok": 0,
+   "rule": "<b>I</b> + глагол без окончания: <b>love</b>. loves = он/она, loving = форма на -ing (нужен be).",
+   "week": "start1"
+  },
+  {
+   "q": "We ___ golf together.",
+   "opts": [
+    "play",
+    "plays",
+    "playing"
+   ],
+   "ok": 0,
+   "rule": "<b>we → play</b>. plays = он/она (с -s), playing = форма на -ing (нужен be).",
+   "week": "start1"
+  },
+  {
+   "q": "The government ___ this programme.",
+   "opts": [
+    "supports",
+    "support",
+    "supporting"
+   ],
+   "ok": 0,
+   "rule": "<b>он/она/оно</b> + глагол с <b>-s</b>: government (оно) → <b>supports</b>.",
+   "week": "start1"
+  },
+  {
+   "q": "After the programme we ___ continue playing golf.",
+   "opts": [
+    "will",
+    "are",
+    "do"
+   ],
+   "ok": 0,
+   "rule": "Будущее = <b>will</b> + глагол: <b>will continue</b>. are/do здесь не работают.",
+   "week": "start1"
+  }
+ ],
+ "antonyms": [
+  {
+   "qpt": "Is golf boring?",
+   "apt": "No, it is exciting.",
+   "qru": "Гольф скучный?",
+   "aru": "Нет, он увлекательный.",
+   "wq": "boring",
+   "wa": "exciting",
+   "grp": "car"
+  },
+  {
+   "qpt": "Is she lazy?",
+   "apt": "No, she is active.",
+   "qru": "Она ленивая?",
+   "aru": "Нет, она активная.",
+   "wq": "lazy",
+   "wa": "active",
+   "grp": "car"
+  },
+  {
+   "qpt": "Is the golf course small?",
+   "apt": "No, it is big.",
+   "qru": "Гольф-поле маленькое?",
+   "aru": "Нет, оно большое.",
+   "wq": "small",
+   "wa": "big",
+   "grp": "fis"
+  },
+  {
+   "qpt": "Is the weather bad today?",
+   "apt": "No, it is good.",
+   "qru": "Сегодня плохая погода?",
+   "aru": "Нет, хорошая.",
+   "wq": "bad",
+   "wa": "good",
+   "grp": "fis"
+  }
+ ],
+ "synonyms": [
+  {
+   "qpt": "The walk was great.",
+   "apt": "The walk was wonderful.",
+   "qru": "Прогулка была классная.",
+   "aru": "Прогулка была чудесная.",
+   "wq": "great",
+   "wa": "wonderful"
+  },
+  {
+   "qpt": "Golf is fun.",
+   "apt": "Golf is enjoyable.",
+   "qru": "Гольф — это весело.",
+   "aru": "Гольф — это в удовольствие.",
+   "wq": "fun",
+   "wa": "enjoyable"
+  },
+  {
+   "qpt": "Our family is happy.",
+   "apt": "Our family is cheerful.",
+   "qru": "Наша семья счастливая.",
+   "aru": "Наша семья жизнерадостная.",
+   "wq": "happy",
+   "wa": "cheerful"
+  }
+ ]
+}
