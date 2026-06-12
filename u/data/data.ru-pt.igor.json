@@ -14,16 +14,107 @@
   "methodText": "Метод"
  },
  "phrases": [
-  {"pt": "Vivo em Portugal com a minha mulher e os meus filhos há mais de quatro anos.", "ru": "Я живу в Португалии с женой и детьми больше четырёх лет.", "sit": "о себе", "cue": "Vivo em Portugal <span>há</span>…", "hi": ["Vivo", "há mais de quatro anos"], "week": "jun2"},
-  {"pt": "Na semana passada fomos à serra.", "ru": "На прошлой неделе мы ездили в горы.", "sit": "прошлое, поездка", "cue": "Na semana passada <span>fomos</span>…", "hi": ["fomos"], "week": "jun2"},
-  {"pt": "Vimos os arbustos amarelos em flor.", "ru": "Мы видели цветущие жёлтые кусты.", "sit": "природа, прошлое", "cue": "<span>Vimos</span> os arbustos…", "hi": ["Vimos"], "week": "jun2"},
-  {"pt": "Os cumes das montanhas brilhavam como ouro.", "ru": "Верхушки гор сияли золотом.", "sit": "природа", "cue": "Os cumes <span>brilhavam</span>…", "hi": ["brilhavam"], "week": "jun2"},
-  {"pt": "Estava tudo muito bonito.", "ru": "Всё было очень красиво.", "sit": "впечатление", "cue": "<span>Estava</span> tudo…", "hi": ["Estava"], "week": "jun2"},
-  {"pt": "Esta semana jogo golfe com os meus amigos.", "ru": "На этой неделе я играю в гольф со знакомыми.", "sit": "хобби, настоящее", "cue": "Esta semana <span>jogo</span> golfe…", "hi": ["jogo"], "week": "jun2"},
-  {"pt": "Gosto muito de jogar golfe.", "ru": "Мне очень нравится играть в гольф.", "sit": "хобби", "cue": "<span>Gosto</span> de jogar…", "hi": ["Gosto de"], "week": "jun2"},
-  {"pt": "Em breve vamos a Lisboa visitar o meu filho mais novo.", "ru": "Скоро мы поедем в Лиссабон к младшему сыну.", "sit": "планы, будущее", "cue": "Em breve <span>vamos</span> a Lisboa…", "hi": ["vamos"], "week": "jun2"},
-  {"pt": "Vamos passear, ir ao teatro e ao Cabo.", "ru": "Будем гулять, сходим в театр и на Кабо.", "sit": "планы", "cue": "<span>Vamos</span> passear…", "hi": ["Vamos"], "week": "jun2"},
-  {"pt": "São estes os meus planos.", "ru": "Такие у меня планы.", "sit": "итог", "cue": "<span>São</span> estes os meus planos.", "hi": ["São"], "week": "jun2"}
+  {
+   "pt": "Vivo em Portugal com a minha mulher e os meus filhos há mais de quatro anos.",
+   "ru": "Я живу в Португалии с женой и детьми больше четырёх лет.",
+   "sit": "о себе",
+   "cue": "Vivo em Portugal <span>há</span>…",
+   "hi": [
+    "Vivo",
+    "há mais de quatro anos"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Na semana passada fomos à serra.",
+   "ru": "На прошлой неделе мы ездили в горы.",
+   "sit": "прошлое, поездка",
+   "cue": "Na semana passada <span>fomos</span>…",
+   "hi": [
+    "fomos"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Vimos os arbustos amarelos em flor.",
+   "ru": "Мы видели цветущие жёлтые кусты.",
+   "sit": "природа, прошлое",
+   "cue": "<span>Vimos</span> os arbustos…",
+   "hi": [
+    "Vimos"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Os cumes das montanhas brilhavam como ouro.",
+   "ru": "Верхушки гор сияли золотом.",
+   "sit": "природа",
+   "cue": "Os cumes <span>brilhavam</span>…",
+   "hi": [
+    "brilhavam"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Estava tudo muito bonito.",
+   "ru": "Всё было очень красиво.",
+   "sit": "впечатление",
+   "cue": "<span>Estava</span> tudo…",
+   "hi": [
+    "Estava"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Esta semana jogo golfe com os meus amigos.",
+   "ru": "На этой неделе я играю в гольф со знакомыми.",
+   "sit": "хобби, настоящее",
+   "cue": "Esta semana <span>jogo</span> golfe…",
+   "hi": [
+    "jogo"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Gosto muito de jogar golfe.",
+   "ru": "Мне очень нравится играть в гольф.",
+   "sit": "хобби",
+   "cue": "<span>Gosto</span> de jogar…",
+   "hi": [
+    "Gosto de"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Em breve vamos a Lisboa visitar o meu filho mais novo.",
+   "ru": "Скоро мы поедем в Лиссабон к младшему сыну.",
+   "sit": "планы, будущее",
+   "cue": "Em breve <span>vamos</span> a Lisboa…",
+   "hi": [
+    "vamos"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Vamos passear, ir ao teatro e ao Cabo.",
+   "ru": "Будем гулять, сходим в театр и на Кабо.",
+   "sit": "планы",
+   "cue": "<span>Vamos</span> passear…",
+   "hi": [
+    "Vamos"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "São estes os meus planos.",
+   "ru": "Такие у меня планы.",
+   "sit": "итог",
+   "cue": "<span>São</span> estes os meus planos.",
+   "hi": [
+    "São"
+   ],
+   "week": "jun2"
+  }
  ],
  "weeks": [
   {
@@ -32,17 +123,163 @@
    "date": "вторая неделя июня",
    "month": "Июнь",
    "sentences": [
-    {"pt": "Vivo em Portugal com a minha mulher e os meus filhos há mais de quatro anos.", "ru": "Я живу в Португалии с женой и детьми больше четырёх лет.", "t": "pre"},
-    {"pt": "Na semana passada fomos à serra.", "ru": "На прошлой неделе мы ездили в горы.", "t": "pas"},
-    {"pt": "Vimos os arbustos amarelos em flor.", "ru": "Мы видели цветущие жёлтые кусты.", "t": "pas"},
-    {"pt": "Os cumes das montanhas brilhavam como ouro.", "ru": "Верхушки гор сияли золотом.", "t": "pas"},
-    {"pt": "Estava tudo muito bonito.", "ru": "Всё было очень красиво.", "t": "pas"},
-    {"pt": "Esta semana jogo golfe com os meus amigos.", "ru": "На этой неделе я играю в гольф со знакомыми.", "t": "pre"},
-    {"pt": "Gosto muito de jogar golfe.", "ru": "Мне очень нравится играть в гольф.", "t": "pre"},
-    {"pt": "Em breve vamos a Lisboa visitar o meu filho mais novo.", "ru": "Скоро мы поедем в Лиссабон к младшему сыну.", "t": "fut"},
-    {"pt": "Vamos passear, ir ao teatro e ao Cabo.", "ru": "Будем гулять, сходим в театр и на Кабо.", "t": "fut"},
-    {"pt": "São estes os meus planos.", "ru": "Такие у меня планы.", "t": "pre"}
+    {
+     "pt": "Vivo em Portugal com a minha mulher e os meus filhos há mais de quatro anos.",
+     "ru": "Я живу в Португалии с женой и детьми больше четырёх лет.",
+     "t": "pre"
+    },
+    {
+     "pt": "Na semana passada fomos à serra.",
+     "ru": "На прошлой неделе мы ездили в горы.",
+     "t": "pas"
+    },
+    {
+     "pt": "Vimos os arbustos amarelos em flor.",
+     "ru": "Мы видели цветущие жёлтые кусты.",
+     "t": "pas"
+    },
+    {
+     "pt": "Os cumes das montanhas brilhavam como ouro.",
+     "ru": "Верхушки гор сияли золотом.",
+     "t": "pas"
+    },
+    {
+     "pt": "Estava tudo muito bonito.",
+     "ru": "Всё было очень красиво.",
+     "t": "pas"
+    },
+    {
+     "pt": "Esta semana jogo golfe com os meus amigos.",
+     "ru": "На этой неделе я играю в гольф со знакомыми.",
+     "t": "pre"
+    },
+    {
+     "pt": "Gosto muito de jogar golfe.",
+     "ru": "Мне очень нравится играть в гольф.",
+     "t": "pre"
+    },
+    {
+     "pt": "Em breve vamos a Lisboa visitar o meu filho mais novo.",
+     "ru": "Скоро мы поедем в Лиссабон к младшему сыну.",
+     "t": "fut"
+    },
+    {
+     "pt": "Vamos passear, ir ao teatro e ao Cabo.",
+     "ru": "Будем гулять, сходим в театр и на Кабо.",
+     "t": "fut"
+    },
+    {
+     "pt": "São estes os meus planos.",
+     "ru": "Такие у меня планы.",
+     "t": "pre"
+    }
    ]
+  }
+ ],
+ "cloze": [
+  {
+   "q": "Na semana passada ___ à serra.",
+   "opts": [
+    "vamos",
+    "fomos",
+    "vou"
+   ],
+   "ok": 1,
+   "rule": "<b>fomos</b> = мы ездили (завершённое, прошлое). 'Na semana passada' (на прошлой неделе) → завершено → fomos."
+  },
+  {
+   "q": "Vivo em Portugal ___ mais de quatro anos.",
+   "opts": [
+    "há",
+    "faz",
+    "desde"
+   ],
+   "ok": 0,
+   "rule": "<b>há</b> + срок = «уже … (времени)». Vivo aqui há quatro anos = живу здесь уже четыре года."
+  },
+  {
+   "q": "Em breve ___ a Lisboa.",
+   "opts": [
+    "fomos",
+    "vamos",
+    "íamos"
+   ],
+   "ok": 1,
+   "rule": "<b>vamos</b> = мы идём/едем (ближайшее будущее). 'Em breve' (скоро) → vamos a Lisboa."
+  },
+  {
+   "q": "Esta semana ___ golfe com os amigos.",
+   "opts": [
+    "joguei",
+    "jogo",
+    "jogava"
+   ],
+   "ok": 1,
+   "rule": "<b>jogo</b> = играю (настоящее, регулярно). 'Esta semana' + сейчас → presente."
+  }
+ ],
+ "antonyms": [
+  {
+   "qpt": "Estava tudo bonito?",
+   "apt": "Sim! O contrário seria feio.",
+   "qru": "Всё было красиво?",
+   "aru": "Да! Противоположное — некрасиво.",
+   "wq": "bonito",
+   "wa": "feio",
+   "grp": "впечатление"
+  },
+  {
+   "qpt": "Os cumes brilhavam?",
+   "apt": "Sim, o contrário é apagado.",
+   "qru": "Вершины сияли?",
+   "aru": "Да, противоположное — тусклый.",
+   "wq": "brilhante",
+   "wa": "apagado",
+   "grp": "свет"
+  },
+  {
+   "qpt": "Jogas golfe ativamente?",
+   "apt": "Sim, não de forma preguiçosa.",
+   "qru": "Активно играешь в гольф?",
+   "aru": "Да, не лениво.",
+   "wq": "ativo",
+   "wa": "preguiçoso",
+   "grp": "энергия"
+  },
+  {
+   "qpt": "O teu filho é mais novo?",
+   "apt": "Sim, não é mais velho.",
+   "qru": "Твой сын младший?",
+   "aru": "Да, не старший.",
+   "wq": "novo",
+   "wa": "velho",
+   "grp": "семья"
+  }
+ ],
+ "synonyms": [
+  {
+   "qpt": "Gosto de jogar golfe.",
+   "apt": "Adoro jogar golfe.",
+   "qru": "Мне нравится играть в гольф.",
+   "aru": "Обожаю играть в гольф.",
+   "wq": "gosto",
+   "wa": "adoro"
+  },
+  {
+   "qpt": "Estava tudo bonito.",
+   "apt": "Estava tudo lindo.",
+   "qru": "Всё было красиво.",
+   "aru": "Всё было прекрасно.",
+   "wq": "bonito",
+   "wa": "lindo"
+  },
+  {
+   "qpt": "Em breve vamos a Lisboa.",
+   "apt": "Brevemente vamos a Lisboa.",
+   "qru": "Скоро поедем в Лиссабон.",
+   "aru": "Вскоре поедем в Лиссабон.",
+   "wq": "em breve",
+   "wa": "brevemente"
   }
  ]
 }
