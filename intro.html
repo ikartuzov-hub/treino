@@ -29,9 +29,9 @@
     transition:background .4s ease,color .4s ease;
   }
   .topbar-bg{position:fixed;top:0;left:0;right:0;height:calc(52px + env(safe-area-inset-top,0px));background:var(--bg);z-index:9;transition:background .4s ease}
-  .brandmark{position:fixed;top:calc(13px + env(safe-area-inset-top,0px));left:16px;width:24px;height:24px;z-index:10}
+  .brandmark{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:18px;width:26px;height:26px;z-index:10}
   .brandmark img,.brandmark svg{width:100%;height:100%}
-  .topctrl{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:14px;z-index:10;display:flex;align-items:center;gap:8px}
+  .topctrl{position:fixed;top:calc(15px + env(safe-area-inset-top,0px));right:16px;z-index:10;display:flex;align-items:center;gap:10px}
   .themebtn{
     background:none;border:1px solid transparent;color:var(--dim);
     font-size:16px;line-height:1;padding:6px 9px;border-radius:999px;cursor:pointer;
@@ -126,15 +126,14 @@
 
 <div class="topbar-bg"></div>
 <a class="brandmark" id="brandLink" href="./" aria-label="Treino">
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 8 H26" stroke="#c89b6d" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <path d="M16 9 V20 Q16 25 11 25" stroke="#c89b6d" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <path d="M5 13 Q9 10 13 13 T21 13 T27 13" stroke="#c89b6d" stroke-width="2" fill="none" opacity="0.55" stroke-linecap="round"/>
+  <svg viewBox="0 0 100 100" fill="none" stroke="#c89b6d" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 32 Q31 19 43 31 Q50 38 57 31 Q69 19 82 32"/>
+    <path d="M50 33 V80"/>
   </svg>
 </a>
 <div class="topctrl">
-  <div class="langbar" id="langbar"></div>
   <button class="themebtn" id="themeBtn" aria-label="theme">☾</button>
+  <div class="langbar" id="langbar"></div>
 </div>
 
 <main>
@@ -176,7 +175,6 @@
   <!-- Экран 3: подтверждение -->
   <section class="step" id="s3">
     <div class="donetxt" id="done"></div>
-    <button class="btn hidden" id="btnDemo"></button>
   </section>
 </main>
 
@@ -185,7 +183,7 @@
   <a id="authorLink" target="_blank" rel="noopener">Igor Kartuzov</a>
   <span>·</span>
   <a id="hubLink">SeedWave</a>
-  <span style="opacity:.55">intro v13</span>
+  <span style="opacity:.55">intro v14</span>
 </footer>
 
 <script>
@@ -216,8 +214,7 @@ const LOCALES = {
     contactLabel:"Куда прислать ссылку на твой личный Treino?",
     contactPh:"Telegram / WhatsApp / email",
     send:"Отправить", sending:"Отправляю…",
-    done:"Рад знакомству! Собираю твой личный Treino — ссылка придёт туда, куда ты указал, уже скоро.",
-    demo:"А пока — открой демо",
+    done:"Поймал твой рассказ! Уже собираю из него твой личный Treino — пришлю ссылку на {c}. До скорого 🌊",
     needStory:"Расскажи что-нибудь — текстом или голосом.",
     needContact:"Укажи, куда прислать ссылку.",
     badContact:"Упс, кажется в контакте опечатка. Проверь и укажи корректный Telegram, WhatsApp или email.",
@@ -232,8 +229,7 @@ const LOCALES = {
     contactLabel:"Where should I send the link to your personal Treino?",
     contactPh:"Telegram / WhatsApp / email",
     send:"Send", sending:"Sending…",
-    done:"Nice to meet you! I'm building your personal Treino — the link will arrive where you told me, very soon.",
-    demo:"Meanwhile — open the demo",
+    done:"Got your story! I'm already building your personal Treino — I'll send the link to {c}. See you soon 🌊",
     needStory:"Tell me something — by text or voice.",
     needContact:"Tell me where to send the link.",
     badContact:"Oops, the contact looks off. Check it and enter a valid Telegram, WhatsApp or email.",
@@ -248,8 +244,7 @@ const LOCALES = {
     contactLabel:"Para onde envio o link do teu Treino pessoal?",
     contactPh:"Telegram / WhatsApp / email",
     send:"Enviar", sending:"A enviar…",
-    done:"Prazer em conhecer-te! Estou a construir o teu Treino pessoal — o link chega onde indicaste, muito em breve.",
-    demo:"Entretanto — abre a demo",
+    done:"Recebi a tua história! Já estou a construir o teu Treino pessoal — envio o link para {c}. Até já 🌊",
     needStory:"Conta-me algo — por texto ou por voz.",
     needContact:"Indica para onde enviar o link.",
     badContact:"Ups, o contacto parece ter um erro. Verifica e indica um Telegram, WhatsApp ou email válido.",
@@ -264,8 +259,7 @@ const LOCALES = {
     contactLabel:"¿Adónde envío el enlace de tu Treino personal?",
     contactPh:"Telegram / WhatsApp / email",
     send:"Enviar", sending:"Enviando…",
-    done:"¡Encantado de conocerte! Estoy creando tu Treino personal — el enlace llegará adonde indicaste, muy pronto.",
-    demo:"Mientras tanto — abre la demo",
+    done:"¡Recibí tu historia! Ya estoy creando tu Treino personal — te envío el enlace a {c}. Hasta pronto 🌊",
     needStory:"Cuéntame algo — por texto o por voz.",
     needContact:"Indica adónde enviar el enlace.",
     badContact:"Ups, el contacto parece tener un error. Revísalo e indica un Telegram, WhatsApp o email válido.",
@@ -280,8 +274,7 @@ const LOCALES = {
     contactLabel:"Wohin soll ich den Link zu deinem persönlichen Treino senden?",
     contactPh:"Telegram / WhatsApp / E-Mail",
     send:"Senden", sending:"Wird gesendet…",
-    done:"Schön, dich kennenzulernen! Ich baue dein persönliches Treino — der Link kommt bald dorthin, wo du es angegeben hast.",
-    demo:"Inzwischen — öffne die Demo",
+    done:"Deine Geschichte ist da! Ich baue schon dein persönliches Treino — den Link schicke ich an {c}. Bis bald 🌊",
     needStory:"Erzähl mir etwas — per Text oder Stimme.",
     needContact:"Gib an, wohin der Link gehen soll.",
     badContact:"Ups, der Kontakt sieht falsch aus. Prüfe ihn und gib ein gültiges Telegram, WhatsApp oder E-Mail an.",
@@ -322,7 +315,6 @@ function applyLocale(){
   $("contactLabel").textContent=L.ui.contactLabel;
   $("contact").placeholder=L.ui.contactPh;
   $("btnSend").textContent=L.ui.send;
-  $("btnDemo").textContent=L.ui.demo;
   $("authorLink").href=AUTHOR_URL;
   $("hubLink").href=withNav(HUB_URL);
 }
@@ -546,7 +538,7 @@ $("btnSend").onclick=async function(){
     };
     const r=await fetch(WEBHOOK_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
     if(!r.ok)throw new Error("http "+r.status);
-    enterS3();
+    enterS3(contact);
   }catch(e){
     $("err").textContent=L.ui.errSend;
     btn.disabled=false;btn.textContent=L.ui.send;
@@ -554,14 +546,11 @@ $("btnSend").onclick=async function(){
 };
 
 /* ===== ЭКРАН 3 ===== */
-function enterS3(){
+function enterS3(contact){
   show("s3");
-  typeLine($("done"),L.ui.done,function(){
-    const b=$("btnDemo");
-    b.classList.remove("hidden");pulseOn("btnDemo");
-  });
+  const txt=(L.ui.done||"").replace("{c}", contact||"");
+  typeLine($("done"),txt);
 }
-$("btnDemo").onclick=function(){location.href=withNav(APP_URL);};
 
 /* ---- Тема ---- */
 function setTheme(t){
