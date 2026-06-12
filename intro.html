@@ -112,6 +112,9 @@
     padding:12px;font-family:inherit;font-size:16px;color:var(--ink);
   }
   .fieldLabel{font-size:14px;color:var(--dim)}
+  .targetbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .targetbar button{background:none;border:1px solid var(--line);color:var(--ink);font-size:14px;padding:8px 14px;border-radius:999px;cursor:pointer;transition:border-color .2s ease,color .2s ease}
+  .targetbar button.on{color:var(--accent);border-color:var(--accent);font-weight:600}
   .err{font-size:14px;color:#c0392b;min-height:1.2em}
 
   footer{padding:18px;text-align:center;font-size:12px;color:var(--dim);display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
@@ -165,6 +168,8 @@
           <button class="btn small" id="btnDel"></button>
         </div>
       </details>
+      <div class="fieldLabel" id="targetLabel"></div>
+      <div class="targetbar" id="targetbar"></div>
       <div class="fieldLabel" id="contactLabel"></div>
       <input type="text" id="contact" autocomplete="off">
       <div class="err" id="err"></div>
@@ -183,7 +188,7 @@
   <a id="authorLink" target="_blank" rel="noopener">Igor Kartuzov</a>
   <span>·</span>
   <a id="hubLink">SeedWave</a>
-  <span style="opacity:.55">intro v14</span>
+  <span style="opacity:.55">intro v16</span>
 </footer>
 
 <script>
@@ -211,6 +216,7 @@ const LOCALES = {
     ph:"Напиши здесь…", orVoice:"…или расскажи голосом:",
     speak:"🎤 Говорить", speakStop:"⏹ Остановить", speakHint:"Говори — я запишу словами, потом сможешь поправить.",
     rec:"🎙 Записать", stop:"⏹ Стоп", redo:"↻ Перезаписать", del:"✕ Удалить",
+    targetLabel:"Какой язык учишь?",
     contactLabel:"Куда прислать ссылку на твой личный Treino?",
     contactPh:"Telegram / WhatsApp / email",
     send:"Отправить", sending:"Отправляю…",
@@ -226,6 +232,7 @@ const LOCALES = {
     ph:"Write here…", orVoice:"…or tell me by voice:",
     speak:"🎤 Speak", speakStop:"⏹ Stop", speakHint:"Speak — I'll write it down, then you can fix it.",
     rec:"🎙 Record", stop:"⏹ Stop", redo:"↻ Re-record", del:"✕ Delete",
+    targetLabel:"Which language are you learning?",
     contactLabel:"Where should I send the link to your personal Treino?",
     contactPh:"Telegram / WhatsApp / email",
     send:"Send", sending:"Sending…",
@@ -241,6 +248,7 @@ const LOCALES = {
     ph:"Escreve aqui…", orVoice:"…ou conta por voz:",
     speak:"🎤 Falar", speakStop:"⏹ Parar", speakHint:"Fala — eu escrevo, depois podes corrigir.",
     rec:"🎙 Gravar", stop:"⏹ Parar", redo:"↻ Regravar", del:"✕ Apagar",
+    targetLabel:"Que língua estás a aprender?",
     contactLabel:"Para onde envio o link do teu Treino pessoal?",
     contactPh:"Telegram / WhatsApp / email",
     send:"Enviar", sending:"A enviar…",
@@ -256,6 +264,7 @@ const LOCALES = {
     ph:"Escribe aquí…", orVoice:"…o cuéntalo con tu voz:",
     speak:"🎤 Hablar", speakStop:"⏹ Parar", speakHint:"Habla — yo lo escribo, luego puedes corregirlo.",
     rec:"🎙 Grabar", stop:"⏹ Parar", redo:"↻ Regrabar", del:"✕ Borrar",
+    targetLabel:"¿Qué idioma estás aprendiendo?",
     contactLabel:"¿Adónde envío el enlace de tu Treino personal?",
     contactPh:"Telegram / WhatsApp / email",
     send:"Enviar", sending:"Enviando…",
@@ -271,6 +280,7 @@ const LOCALES = {
     ph:"Schreib hier…", orVoice:"…oder erzähl es mit deiner Stimme:",
     speak:"🎤 Sprechen", speakStop:"⏹ Stopp", speakHint:"Sprich — ich schreibe mit, danach kannst du es korrigieren.",
     rec:"🎙 Aufnehmen", stop:"⏹ Stopp", redo:"↻ Neu aufnehmen", del:"✕ Löschen",
+    targetLabel:"Welche Sprache lernst du?",
     contactLabel:"Wohin soll ich den Link zu deinem persönlichen Treino senden?",
     contactPh:"Telegram / WhatsApp / E-Mail",
     send:"Senden", sending:"Wird gesendet…",
@@ -290,6 +300,27 @@ let L=LOCALES[lang];
 let theme=params.get("theme")==="dark"?"dark":"light";   /* светлая — по умолчанию */
 const $=id=>document.getElementById(id);
 const withNav=u=>u+(u.includes("?")?"&":"?")+"lang="+lang+"&theme="+theme;
+
+/* ===== Целевой язык (какой учит) ===== */
+const TARGETS={pt:"🇵🇹 Português",en:"🇬🇧 English",es:"🇪🇸 Español",de:"🇩🇪 Deutsch",ru:"🇷🇺 Русский",fr:"🇫🇷 Français",it:"🇮🇹 Italiano"};
+let target=(lang==="pt")?"ru":"pt";   /* дефолт: учим португальский; португальцам — русский */
+
+function buildTargetbar(){
+  const bar=$("targetbar");bar.innerHTML="";
+  Object.keys(TARGETS).forEach(code=>{
+    if(code===lang)return;            /* родной язык не предлагаем как целевой */
+    const b=document.createElement("button");
+    b.type="button";
+    b.textContent=TARGETS[code];
+    if(code===target)b.classList.add("on");
+    b.onclick=function(){
+      target=code;
+      bar.querySelectorAll("button").forEach(x=>x.classList.remove("on"));
+      b.classList.add("on");
+    };
+    bar.appendChild(b);
+  });
+}
 
 function buildLangbar(){
   const bar=$("langbar");bar.innerHTML="";
@@ -312,6 +343,8 @@ function applyLocale(){
   $("btnRec").textContent=L.ui.rec;
   $("btnRedo").textContent=L.ui.redo;
   $("btnDel").textContent=L.ui.del;
+  $("targetLabel").textContent=L.ui.targetLabel;
+  buildTargetbar();
   $("contactLabel").textContent=L.ui.contactLabel;
   $("contact").placeholder=L.ui.contactPh;
   $("btnSend").textContent=L.ui.send;
@@ -527,7 +560,7 @@ $("btnSend").onclick=async function(){
   try{
     const payload={
       type:"treino_intake",
-      lang:lang, theme:theme,
+      lang:lang, target:target, theme:theme,
       contact:contact,
       text:text||null,
       audio:audioBlob?await blobToBase64(audioBlob):null,
