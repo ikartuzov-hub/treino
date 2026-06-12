@@ -64,6 +64,24 @@
    "flag": "🇩🇪",
    "data": "data/data.ru-de.json",
    "live": true
+  },
+  {
+   "id": "ru-en",
+   "native": "ru",
+   "nativeName": "Русский",
+   "targetName": "English",
+   "flag": "🇬🇧",
+   "data": "data/data.ru-en.json",
+   "live": true
+  },
+  {
+   "id": "ru-es",
+   "native": "ru",
+   "nativeName": "Русский",
+   "targetName": "Español",
+   "flag": "🇪🇸",
+   "data": "data/data.ru-es.json",
+   "live": true
   }
  ],
  "hubUrl": "https://ikartuzov-hub.github.io/seedwave-catalog/hub/",
