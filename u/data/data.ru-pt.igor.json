@@ -220,39 +220,39 @@
  ],
  "antonyms": [
   {
-   "qpt": "Estava tudo bonito?",
-   "apt": "Sim! O contrário seria feio.",
-   "qru": "Всё было красиво?",
-   "aru": "Да! Противоположное — некрасиво.",
-   "wq": "bonito",
-   "wa": "feio",
-   "grp": "впечатление"
-  },
-  {
-   "qpt": "Os cumes brilhavam?",
-   "apt": "Sim, o contrário é apagado.",
-   "qru": "Вершины сияли?",
-   "aru": "Да, противоположное — тусклый.",
-   "wq": "brilhante",
-   "wa": "apagado",
+   "qpt": "Os cumes estavam apagados?",
+   "apt": "Não, estavam brilhantes.",
+   "qru": "Вершины были тусклыми?",
+   "aru": "Нет, они сияли.",
+   "wq": "apagado",
+   "wa": "brilhante",
    "grp": "свет"
   },
   {
-   "qpt": "Jogas golfe ativamente?",
-   "apt": "Sim, não de forma preguiçosa.",
-   "qru": "Активно играешь в гольф?",
-   "aru": "Да, не лениво.",
-   "wq": "ativo",
-   "wa": "preguiçoso",
+   "qpt": "A paisagem estava feia?",
+   "apt": "Não, estava bonita.",
+   "qru": "Пейзаж был некрасивым?",
+   "aru": "Нет, он был красивым.",
+   "wq": "feia",
+   "wa": "bonita",
+   "grp": "впечатление"
+  },
+  {
+   "qpt": "És preguiçoso no golfe?",
+   "apt": "Não, sou ativo.",
+   "qru": "Ты ленив в гольфе?",
+   "aru": "Нет, я активен.",
+   "wq": "preguiçoso",
+   "wa": "ativo",
    "grp": "энергия"
   },
   {
-   "qpt": "O teu filho é mais novo?",
-   "apt": "Sim, não é mais velho.",
-   "qru": "Твой сын младший?",
-   "aru": "Да, не старший.",
-   "wq": "novo",
-   "wa": "velho",
+   "qpt": "O teu filho é mais velho?",
+   "apt": "Não, é mais novo.",
+   "qru": "Твой сын старший?",
+   "aru": "Нет, он младший.",
+   "wq": "velho",
+   "wa": "novo",
    "grp": "семья"
   }
  ],
