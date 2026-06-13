@@ -1,45 +1,123 @@
+<style>
+  /* новые блоки листовки — лежат во фрагменте, движок start.html не трогаем */
+  .gift-pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;text-decoration:none;color:var(--azul-deep);background:rgba(194,135,46,.16);border:1px solid var(--gold);border-radius:99px;padding:7px 13px;animation:softpulse 2.6s ease-in-out 4}
+  .gift-pill:active{transform:translateY(1px)}
+  .gift-emoji{display:inline-block;transform-origin:center;animation:giftpop 2.6s ease-in-out 13s infinite}
+  @keyframes softpulse{0%,100%{box-shadow:0 0 0 0 rgba(194,135,46,.50);opacity:1}50%{box-shadow:0 0 0 8px rgba(194,135,46,0);opacity:.78}}
+  @keyframes giftpop{0%,68%,100%{transform:scale(1) rotate(0)}76%{transform:scale(1.40) rotate(-9deg)}84%{transform:scale(1.12) rotate(7deg)}92%{transform:scale(1.30) rotate(-4deg)}}
+
+  .ladder{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  .plan{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--soft-shadow)}
+  .plan.lead{border-color:var(--azul);border-width:1.5px}
+  .plan-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .plan-name{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+  .plan-price{font-family:"Fraunces",serif;font-size:32px;color:var(--azul-deep);line-height:1;white-space:nowrap}
+  .plan-price .per{font-size:14px;color:var(--ink-soft)}
+  .plan-price .old{font-size:15px;color:var(--ink-soft);text-decoration:line-through;margin-left:7px;font-family:"Hanken Grotesk",sans-serif}
+  .plan-desc{font-size:14px;color:var(--ink-soft);margin:11px 0 15px;line-height:1.5}
+  .plan .cta{margin:0}
+  .plan-badge{position:absolute;top:-11px;left:20px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--terra);padding:4px 11px;border-radius:99px}
+
+  /* карточка-подарок (первая, золотая, ведёт на страницу подарка) */
+  .gift{position:relative;background:linear-gradient(135deg,rgba(194,135,46,.16),rgba(188,75,47,.10));border:1.5px solid var(--gold);border-radius:18px;padding:22px 20px;box-shadow:var(--soft-shadow);text-decoration:none;display:block}
+  .gift:active{transform:translateY(1px)}
+  .gift-badge{position:absolute;top:-11px;left:20px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);padding:4px 11px;border-radius:99px}
+  .gift-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .gift-title{font-family:"Fraunces",serif;font-size:20px;color:var(--ink);line-height:1.2}
+  .gift-amt{font-family:"Fraunces",serif;font-size:28px;color:var(--terra);line-height:1;white-space:nowrap}
+  .gift-amt .as{display:block;font-family:"Hanken Grotesk";font-size:10.5px;color:var(--ink-soft);font-weight:600;text-align:right;margin-top:3px}
+  .gift-hook{font-size:13.5px;color:var(--ink);margin:12px 0 0;line-height:1.5}
+  .gift-go{display:inline-block;margin-top:14px;font-weight:700;font-size:14.5px;color:var(--terra)}
+
+  /* замок-блок подписки */
+  .soon{position:relative;background:linear-gradient(135deg,rgba(31,122,92,.07),rgba(194,135,46,.07));border:1px dashed var(--line);border-radius:18px;padding:22px 20px 18px}
+  .soon-badge{position:absolute;top:-11px;left:20px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:4px 11px;border-radius:99px}
+  .soon ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
+  .soon li{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--ink);line-height:1.45}
+  .soon li .ico{flex:0 0 auto;font-size:16px;line-height:1.4}
+  .soon li b{color:var(--azul-deep)}
+  .soon .vow{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-style:italic;line-height:1.5}
+  .paynote{font-size:13.5px;color:var(--ink);background:rgba(62,122,87,.08);border-left:3px solid var(--good);border-radius:0 12px 12px 0;padding:13px 16px;margin:18px 0 0}
+  .paynote b{color:var(--azul-deep)}
+</style>
+
 <div class="wrap">
-  <div class="brandbar reveal"><span class="wm">Portugal <em>Treino</em></span><span class="flag">🇷🇺</span></div>
+  <div class="brandbar reveal">
+    <span class="wm"><em>Treino</em></span>
+    <a class="gift-pill" href="gift.html"><span class="gift-emoji">🎁</span> Ideal para oferecer →</a>
+  </div>
 
-  <div class="kick reveal" style="animation-delay:.05s">Aprende a língua com o material da tua vida</div>
-  <h1 class="reveal" style="animation-delay:.08s">A tua <span class="it">semana real</span> — transformada num treino.</h1>
-  <p class="lede reveal" style="animation-delay:.12s">Nada de frases de manual sobre desconhecidos. Contas o que aconteceu mesmo na tua semana — e a língua assenta mais fundo, e dá vontade de voltar. Cinco a dez minutos por dia, direto no browser, sem instalar nada.</p>
-
-  <a class="cta primary reveal" style="animation-delay:.16s" href="./">Abrir a aplicação →</a>
-  <div class="sub reveal" style="animation-delay:.18s">Funciona no iPhone (Safari) e Android. Adiciona ao ecrã principal — abre como uma aplicação.</div>
+  <div class="kick reveal" style="animation-delay:.05s">Aprende uma língua com o material da tua própria vida</div>
+  <h1 class="reveal" style="animation-delay:.08s">A tua <span class="it">semana real</span> — transformada em treino.</h1>
+  <p class="lede reveal" style="animation-delay:.12s">Sem frases de manual. Contas o que aconteceu mesmo na tua semana — e a língua fixa-se mais fundo, e dá vontade de voltar. Cinco a dez minutos por dia, direto no navegador — não precisas de instalar nada.</p>
 
   <h2 class="reveal">Como funciona</h2>
   <div class="steps">
-    <div class="step reveal"><span class="num">1</span><div><h3>Abre o link</h3><p>Funciona no browser. No telemóvel: Partilhar → «Adicionar ao ecrã principal» — fica com ícone de aplicação normal e funciona offline.</p></div></div>
-    <div class="step reveal" style="animation-delay:.05s"><span class="num">2</span><div><h3>Pratica todos os dias</h3><p>Diz a frase em voz alta, depois confere. Marca «lembrei / não» — a aplicação decide quando a trazer de volta (repetição espaçada).</p></div></div>
-    <div class="step reveal" style="animation-delay:.1s"><span class="num">3</span><div><h3>Torna-a tua</h3><p>Envia a tua semana real — o que foi, o que fazes agora, o que planeias — e recebe até 8 frases novas dentro da aplicação.</p></div></div>
+    <div class="step reveal"><span class="num">1</span><div><h3>Abre o link</h3><p>Funciona no navegador. No telemóvel: Partilhar → “Adicionar ao ecrã principal” — fica um ícone como uma app normal, e funciona offline.</p></div></div>
+    <div class="step reveal" style="animation-delay:.05s"><span class="num">2</span><div><h3>Pratica todos os dias</h3><p>Diz a frase em voz alta e depois confirma. Marca “lembrei / não” — a app decide quando a trazer de volta (repetição espaçada).</p></div></div>
+    <div class="step reveal" style="animation-delay:.1s"><span class="num">3</span><div><h3>Torna-a tua</h3><p>Envia a tua semana real — o que aconteceu, o que estás a fazer, o que planeias — e recebe até 10 frases novas dentro da app.</p></div></div>
   </div>
 
-  <h2 class="reveal">Preços</h2>
-  <div class="prices">
-    <div class="price lead reveal">
-      <span class="badge">Preço de lançamento</span>
-      <div class="name">Início pessoal</div>
-      <div><span class="amt">€19</span><span class="old">€39</span></div>
-      <div class="desc">O primeiro conjunto pessoal completo, feito a partir da tua semana.</div>
+  <h2 class="reveal">Planos</h2>
+  <div class="ladder">
+
+    <a class="gift reveal" href="gift.html">
+      <span class="gift-badge">Uma ideia para alguém próximo</span>
+      <div class="gift-top">
+        <span class="gift-title">🎁 Oferecer uma semana<br>de russo</span>
+        <span class="gift-amt">€5<span class="as">mas sente-se como cem</span></span>
+      </div>
+      <p class="gift-hook">Não é uma subscrição sem rosto, mas um treino vivo feito a partir da semana real de alguém próximo. Isto não se compra por €5 numa app comum.</p>
+      <span class="gift-go">Abrir a oferta →</span>
+    </a>
+
+    <div class="plan reveal" style="animation-delay:.04s">
+      <div class="plan-top">
+        <span class="plan-name">Recarga</span>
+        <span class="plan-price">€5 <span class="old">€7</span></span>
+      </div>
+      <p class="plan-desc">Um conjunto novo de até 10 frases da tua nova semana — sempre que quiseres mais.</p>
+      <a class="cta primary" href="https://kartuzov.gumroad.com/l/fkfdbg" target="_blank" rel="noopener">Obter o conjunto →</a>
     </div>
-    <div class="price reveal" style="animation-delay:.06s">
-      <div class="name">Recarga</div>
-      <div><span class="amt">€5</span><span class="old">€6</span></div>
-      <div class="desc">Conjunto novo de até 8 frases — quando quiseres mais.</div>
+
+    <div class="plan lead reveal" style="animation-delay:.08s">
+      <span class="plan-badge">Início completo</span>
+      <div class="plan-top">
+        <span class="plan-name">Aplicação</span>
+        <span class="plan-price">€19 <span class="old">€39</span></span>
+      </div>
+      <p class="plan-desc">O teu primeiro conjunto pessoal completo, feito a partir da tua semana real. O teu treino desde o primeiro dia.</p>
+      <a class="cta primary" href="https://kartuzov.gumroad.com/l/ixvpus" target="_blank" rel="noopener">Obter a aplicação →</a>
     </div>
+
+    <div class="soon reveal" style="animation-delay:.1s">
+      <span class="soon-badge">Em breve 🔒</span>
+      <div class="plan-top">
+        <span class="plan-name">Subscrição</span>
+        <span class="plan-price">€5<span class="per">/mês</span> <span class="old">€7</span></span>
+      </div>
+      <p class="plan-desc" style="margin-bottom:4px">Para onde o Treino caminha — o próximo nível para além de repetir frases:</p>
+      <ul>
+        <li><span class="ico">🗣</span><div><b>Modo de diálogo.</b> Um parceiro de IA que fala contigo na língua que estás a aprender — com as tuas próprias frases das tuas histórias.</div></li>
+        <li><span class="ico">👥</span><div><b>Sala comum.</b> Colegas no mesmo espaço: um pergunta — todos veem a resposta na sua língua. Praticam juntos, não sozinhos.</div></li>
+        <li><span class="ico">🎧</span><div><b>Treino comunicativo.</b> De memorizar para falar a sério: conta o teu dia por voz, recebe uma lição dele e ouve-te a ti próprio.</div></li>
+      </ul>
+      <p class="vow">Um rumo honesto, não uma promessa: abrimos isto à medida que é testado com alunos reais.</p>
+    </div>
+
   </div>
-  <div class="free reveal"><b>Sem subscrição.</b> Pagas só quando queres um conjunto novo — uma vez, e pronto. O IVA é calculado automaticamente na caixa.</div>
-  <p class="sub reveal" style="margin-top:16px">Depois do pagamento, envia o teu texto para:</p>
+
+  <div class="paynote reveal"><b>Hoje — apenas pagamento único,</b> sem compromissos nem amarras. Pagas quando levas um conjunto novo. O IVA é calculado automaticamente na caixa.</div>
+
+  <p class="sub reveal" style="margin-top:18px">Depois do pagamento, envia o teu texto para:</p>
   <a class="email reveal" href="mailto:i.kartuzov@gmail.com">i.kartuzov@gmail.com</a>
 
-  <a class="cta primary reveal" style="margin-top:24px" href="https://kartuzov.gumroad.com/l/fkfdbg" target="_blank" rel="noopener">Obter o conjunto pessoal →</a>
-  <a class="cta ghost reveal" style="margin-top:11px" href="method.html">Como funciona o método e a ciência por trás →</a>
+  <a class="cta ghost reveal" style="margin-top:22px" href="method.html">Como funciona o método e a ciência por trás →</a>
 
-  <p class="fineprint reveal">Ferramenta para a língua e o ânimo — não substitui terapia. O progresso é guardado no teu dispositivo.</p>
+  <p class="fineprint reveal">Uma ferramenta para a língua e o ânimo — não substitui terapia. O teu progresso fica guardado no teu dispositivo.</p>
 
   <div class="foot reveal">
-    <a href="./">← aplicação</a>
+    <a href="./">← app</a>
     <span>treino · motor de línguas</span>
     <a href="method.html">método →</a>
   </div>
