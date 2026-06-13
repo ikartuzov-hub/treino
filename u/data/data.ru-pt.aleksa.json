@@ -1,0 +1,132 @@
+{
+ "config": {
+  "lang": "pt-PT",
+  "ui": "ru",
+  "neg": "Não, …",
+  "brand": "Aleksandra ·",
+  "flag": "🇵🇹",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Хочешь продолжение — свою следующую неделю?",
+  "subscribeBtn": "Пополнить набор →",
+  "flyerUrl": "start.html",
+  "flyerText": "Как это работает и цены",
+  "methodUrl": "method.html",
+  "methodText": "Метод"
+ },
+ "weeks": [
+  {
+   "id": "jun2",
+   "label": "Июнь / 2",
+   "date": "вторая неделя июня",
+   "month": "Июнь",
+   "sentences": [
+    {
+     "pt": "Todos os dias tenho aulas de português das 9 à 1.",
+     "ru": "Каждый день у меня уроки португальского с 9 до 13:00.",
+     "t": "pre"
+    },
+    {
+     "pt": "Depois preparo o almoço.",
+     "ru": "Потом я готовлю обед.",
+     "t": "pre"
+    },
+    {
+     "pt": "Às 3 vou buscar os meus filhos à escola.",
+     "ru": "В 15:00 я забираю детей из школы.",
+     "t": "pre"
+    },
+    {
+     "pt": "Na terça-feira encontrei-me com uma amiga.",
+     "ru": "Во вторник я встретилась с подругой.",
+     "t": "pas"
+    },
+    {
+     "pt": "Tomámos um chá da tarde na Casa Velha do Palheiro.",
+     "ru": "Мы пили послеобеденный чай в Каза Велья ду Палейру.",
+     "t": "pas"
+    },
+    {
+     "pt": "Na quarta-feira foi feriado, o Dia de Portugal.",
+     "ru": "В среду был выходной — День Португалии.",
+     "t": "pas"
+    },
+    {
+     "pt": "Passeámos no parque de Santo da Serra.",
+     "ru": "Мы гуляли в парке Санту-да-Серра.",
+     "t": "pas"
+    },
+    {
+     "pt": "Depois fomos à marginal da Machico.",
+     "ru": "Потом мы поехали на набережную в Машику.",
+     "t": "pas"
+    },
+    {
+     "pt": "Ao sábado vou às aulas de golfe.",
+     "ru": "По субботам я хожу на уроки гольфа.",
+     "t": "pre"
+    },
+    {
+     "pt": "Temos um treinador muito paciente e simpático.",
+     "ru": "У нас очень терпеливый и приятный тренер.",
+     "t": "pre"
+    },
+    {
+     "pt": "O sábado e o domingo são os meus dias preferidos.",
+     "ru": "Суббота и воскресенье — мои любимые дни.",
+     "t": "pre"
+    }
+   ]
+  }
+ ],
+ "phrases": [
+  {"pt": "Todos os dias tenho aulas de português.", "ru": "Каждый день у меня уроки португальского.", "sit": "распорядок", "cue": "Todos os dias <span>tenho</span> aulas…", "hi": ["tenho aulas"], "week": "jun2"},
+  {"pt": "Depois preparo o almoço.", "ru": "Потом я готовлю обед.", "sit": "дом, готовка", "cue": "Depois <span>preparo</span> o almoço.", "hi": ["preparo"], "week": "jun2"},
+  {"pt": "Vou buscar os meus filhos à escola.", "ru": "Я забираю детей из школы.", "sit": "дети, школа", "cue": "<span>Vou buscar</span> os meus filhos…", "hi": ["Vou buscar"], "week": "jun2"},
+  {"pt": "Encontrei-me com uma amiga.", "ru": "Я встретилась с подругой.", "sit": "встреча", "cue": "<span>Encontrei-me</span> com uma amiga.", "hi": ["Encontrei-me"], "week": "jun2"},
+  {"pt": "Tomámos um chá da tarde.", "ru": "Мы пили послеобеденный чай.", "sit": "кафе", "cue": "<span>Tomámos</span> um chá da tarde.", "hi": ["Tomámos", "chá da tarde"], "week": "jun2"},
+  {"pt": "Na quarta-feira foi feriado.", "ru": "В среду был выходной (праздник).", "sit": "календарь", "cue": "Na quarta-feira <span>foi</span> feriado.", "hi": ["foi feriado"], "week": "jun2"},
+  {"pt": "Passámos o dia todo juntos.", "ru": "Мы провели весь день вместе.", "sit": "семья", "cue": "<span>Passámos</span> o dia todo juntos.", "hi": ["Passámos", "o dia todo"], "week": "jun2"},
+  {"pt": "Passeámos no parque.", "ru": "Мы гуляли в парке.", "sit": "прогулка", "cue": "<span>Passeámos</span> no parque.", "hi": ["Passeámos"], "week": "jun2"},
+  {"pt": "Fomos à marginal.", "ru": "Мы поехали на набережную.", "sit": "поездка", "cue": "<span>Fomos</span> à marginal.", "hi": ["Fomos", "marginal"], "week": "jun2"},
+  {"pt": "Jantámos em família.", "ru": "Мы ужинали всей семьёй.", "sit": "ужин", "cue": "<span>Jantámos</span> em família.", "hi": ["Jantámos", "em família"], "week": "jun2"},
+  {"pt": "Ao sábado vou às aulas de golfe.", "ru": "По субботам я хожу на уроки гольфа.", "sit": "хобби, спорт", "cue": "Ao sábado <span>vou</span> às aulas de golfe.", "hi": ["vou às aulas"], "week": "jun2"},
+  {"pt": "O treinador é muito paciente.", "ru": "Тренер очень терпеливый.", "sit": "люди", "cue": "O treinador <span>é</span> muito paciente.", "hi": ["paciente"], "week": "jun2"},
+  {"pt": "São os meus dias preferidos.", "ru": "Это мои любимые дни.", "sit": "предпочтения", "cue": "<span>São</span> os meus dias <span>preferidos</span>.", "hi": ["preferidos"], "week": "jun2"}
+ ],
+ "cloze": [
+  {"q": "Todos os dias ___ aulas de português.", "opts": ["tenho", "tive", "ter"], "ok": 0, "rule": "<b>tenho</b> — presente глагола <b>ter</b>, 1-е лицо: «у меня есть / я имею». Регулярное действие — presente.", "week": "jun2"},
+  {"q": "Às 3 vou ___ os meus filhos à escola.", "opts": ["buscar", "busco", "buscando"], "ok": 0, "rule": "После <b>vou</b> идёт инфинитив: <b>vou buscar</b> — «иду забирать / заберу». Конструкция <b>ir + инфинитив</b>.", "week": "jun2"},
+  {"q": "Na terça-feira ___-me com uma amiga.", "opts": ["encontrei", "encontro", "encontrava"], "ok": 0, "rule": "<b>encontrei</b> — pretérito perfeito: завершённый факт в прошлом («встретилась»). <b>encontro</b> — настоящее. <b>encontrava</b> — фон/привычка.", "week": "jun2"},
+  {"q": "Nós ___ um chá da tarde na Casa Velha.", "opts": ["tomámos", "tomamos", "tomar"], "ok": 0, "rule": "<b>tomámos</b> (с ударением) — pretérito perfeito, прошлое. <b>tomamos</b> — настоящее. Действие уже произошло — нужен perfeito.", "week": "jun2"},
+  {"q": "Na quarta-feira ___ feriado.", "opts": ["foi", "era", "é"], "ok": 0, "rule": "<b>foi</b> — pretérito perfeito глагола <b>ser</b>: конкретный день был праздником. <b>era</b> — длительный фон. <b>é</b> — настоящее.", "week": "jun2"},
+  {"q": "___ no parque de Santo da Serra.", "opts": ["Passeámos", "Passeamos", "Passear"], "ok": 0, "rule": "<b>Passeámos</b> — pretérito perfeito, «мы погуляли». Ударение отличает прошедшее от настоящего (passeamos).", "week": "jun2"},
+  {"q": "Depois ___ à marginal da Machico.", "opts": ["fomos", "vamos", "íamos"], "ok": 0, "rule": "<b>fomos</b> — pretérito perfeito глагола <b>ir</b>: «мы поехали». <b>vamos</b> — настоящее/будущее. <b>íamos</b> — собирались/ездили (фон).", "week": "jun2"},
+  {"q": "Ao sábado ___ às aulas de golfe.", "opts": ["vou", "fui", "ir"], "ok": 0, "rule": "<b>vou</b> — presente глагола <b>ir</b> для регулярного действия: «по субботам я хожу».", "week": "jun2"},
+  {"q": "O treinador ___ muito paciente.", "opts": ["é", "está", "foi"], "ok": 0, "rule": "<b>é</b> (ser) — для постоянного качества характера. <b>está</b> (estar) — для временного состояния. Терпеливость — черта характера → <b>é</b>.", "week": "jun2"},
+  {"q": "O sábado e o domingo ___ os meus dias preferidos.", "opts": ["são", "é", "estão"], "ok": 0, "rule": "<b>são</b> — ser в 3-м лице мн. числа (два дня → множественное). <b>é</b> — единственное. <b>estão</b> — estar, тут не подходит.", "week": "jun2"}
+ ],
+ "antonyms": [
+  {"qpt": "A semana foi interessante?", "apt": "Não, a semana foi aborrecida.", "qru": "Неделя была интересной?", "aru": "Нет, неделя была скучной.", "wq": "interessante", "wa": "aborrecida", "grp": "emo"},
+  {"qpt": "O treinador é paciente?", "apt": "Não, o treinador é impaciente.", "qru": "Тренер терпеливый?", "aru": "Нет, тренер нетерпеливый.", "wq": "paciente", "wa": "impaciente", "grp": "car"},
+  {"qpt": "Preparas o almoço?", "apt": "Não, preparo o jantar.", "qru": "Ты готовишь обед?", "aru": "Нет, я готовлю ужин.", "wq": "almoço", "wa": "jantar", "grp": "comida"},
+  {"qpt": "Vais buscar os filhos?", "apt": "Não, vou levar os filhos.", "qru": "Ты идёшь забирать детей?", "aru": "Нет, я веду детей (отвожу).", "wq": "buscar", "wa": "levar", "grp": "acao"},
+  {"qpt": "Estás com tempo livre?", "apt": "Não, estou ocupada.", "qru": "У тебя есть свободное время?", "aru": "Нет, я занята.", "wq": "livre", "wa": "ocupada", "grp": "tempo"},
+  {"qpt": "O dia foi cheio?", "apt": "Não, o dia foi vazio.", "qru": "День был насыщенным (полным)?", "aru": "Нет, день был пустым.", "wq": "cheio", "wa": "vazio", "grp": "estado"},
+  {"qpt": "Foi feriado?", "apt": "Não, foi um dia de trabalho.", "qru": "Был праздник?", "aru": "Нет, был рабочий день.", "wq": "feriado", "wa": "dia de trabalho", "grp": "tempo"},
+  {"qpt": "Acordaste cedo?", "apt": "Não, acordei tarde.", "qru": "Ты встала рано?", "aru": "Нет, я встала поздно.", "wq": "cedo", "wa": "tarde", "grp": "tempo"},
+  {"qpt": "Jantaste sozinha?", "apt": "Não, jantei em família.", "qru": "Ты ужинала одна?", "aru": "Нет, я ужинала всей семьёй.", "wq": "sozinha", "wa": "em família", "grp": "social"},
+  {"qpt": "O grupo é simpático?", "apt": "Sim, o grupo é simpático, não é antipático.", "qru": "Группа приятная?", "aru": "Да, группа приятная, а не неприятная.", "wq": "simpático", "wa": "antipático", "grp": "car"}
+ ],
+ "synonyms": [
+  {"qpt": "A semana foi aborrecida.", "apt": "A semana foi monótona.", "qru": "Неделя была скучной.", "aru": "Неделя была однообразной.", "wq": "aborrecida", "wa": "monótona"},
+  {"qpt": "O treinador é simpático.", "apt": "O treinador é amável.", "qru": "Тренер приятный.", "aru": "Тренер любезный.", "wq": "simpático", "wa": "amável"},
+  {"qpt": "O treinador é muito paciente.", "apt": "O treinador é muito calmo.", "qru": "Тренер очень терпеливый.", "aru": "Тренер очень спокойный.", "wq": "paciente", "wa": "calmo"},
+  {"qpt": "Gosto da paisagem bonita.", "apt": "Gosto da paisagem linda.", "qru": "Мне нравится красивый вид.", "aru": "Мне нравится прекрасный вид.", "wq": "bonita", "wa": "linda"},
+  {"qpt": "Passeámos no parque.", "apt": "Caminhámos no parque.", "qru": "Мы гуляли в парке.", "aru": "Мы прохаживались в парке.", "wq": "passeámos", "wa": "caminhámos"},
+  {"qpt": "São os meus dias preferidos.", "apt": "São os meus dias favoritos.", "qru": "Это мои любимые дни.", "aru": "Это мои самые любимые дни.", "wq": "preferidos", "wa": "favoritos"},
+  {"qpt": "Encontrei-me com uma amiga.", "apt": "Reuni-me com uma amiga.", "qru": "Я встретилась с подругой.", "aru": "Я повидалась с подругой.", "wq": "encontrei-me", "wa": "reuni-me"},
+  {"qpt": "A tabela do treino é boa.", "apt": "O treino é ótimo.", "qru": "Тренировка хорошая.", "aru": "Тренировка отличная.", "wq": "boa", "wa": "ótimo"},
+  {"qpt": "Toda a gente é simpática.", "apt": "Todas as pessoas são simpáticas.", "qru": "Все люди приятные.", "aru": "Все люди симпатичные.", "wq": "toda a gente", "wa": "todas as pessoas"},
+  {"qpt": "Gosto da tarde de sábado.", "apt": "Adoro a tarde de sábado.", "qru": "Мне нравится субботний день.", "aru": "Я обожаю субботний день.", "wq": "gosto", "wa": "adoro"}
+ ]
+}
