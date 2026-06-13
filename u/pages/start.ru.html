@@ -1,40 +1,116 @@
+<style>
+  /* новые блоки листовки — лежат во фрагменте, движок start.html не трогаем */
+  .gift-pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;text-decoration:none;color:var(--azul-deep);background:rgba(194,135,46,.16);border:1px solid var(--gold);border-radius:99px;padding:7px 13px;animation:softpulse 2.8s ease-in-out infinite}
+  .gift-pill:active{transform:translateY(1px)}
+  @keyframes softpulse{0%,100%{box-shadow:0 0 0 0 rgba(194,135,46,.40);opacity:1}50%{box-shadow:0 0 0 7px rgba(194,135,46,0);opacity:.82}}
+
+  .ladder{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  .plan{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--soft-shadow)}
+  .plan.lead{border-color:var(--azul);border-width:1.5px}
+  .plan-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .plan-name{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+  .plan-price{font-family:"Fraunces",serif;font-size:32px;color:var(--azul-deep);line-height:1;white-space:nowrap}
+  .plan-price .per{font-size:14px;color:var(--ink-soft)}
+  .plan-price .old{font-size:15px;color:var(--ink-soft);text-decoration:line-through;margin-left:7px;font-family:"Hanken Grotesk",sans-serif}
+  .plan-desc{font-size:14px;color:var(--ink-soft);margin:11px 0 15px;line-height:1.5}
+  .plan .cta{margin:0}
+  .plan-badge{position:absolute;top:-11px;left:20px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--terra);padding:4px 11px;border-radius:99px}
+
+  /* карточка-подарок (первая, золотая, ведёт на страницу подарка) */
+  .gift{position:relative;background:linear-gradient(135deg,rgba(194,135,46,.16),rgba(188,75,47,.10));border:1.5px solid var(--gold);border-radius:18px;padding:22px 20px;box-shadow:var(--soft-shadow);text-decoration:none;display:block}
+  .gift:active{transform:translateY(1px)}
+  .gift-badge{position:absolute;top:-11px;left:20px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);padding:4px 11px;border-radius:99px}
+  .gift-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .gift-title{font-family:"Fraunces",serif;font-size:20px;color:var(--ink);line-height:1.2}
+  .gift-amt{font-family:"Fraunces",serif;font-size:28px;color:var(--terra);line-height:1;white-space:nowrap}
+  .gift-amt .as{display:block;font-family:"Hanken Grotesk";font-size:10.5px;color:var(--ink-soft);font-weight:600;text-align:right;margin-top:3px}
+  .gift-hook{font-size:13.5px;color:var(--ink);margin:12px 0 0;line-height:1.5}
+  .gift-go{display:inline-block;margin-top:14px;font-weight:700;font-size:14.5px;color:var(--terra)}
+
+  /* замок-блок подписки */
+  .soon{position:relative;background:linear-gradient(135deg,rgba(31,122,92,.07),rgba(194,135,46,.07));border:1px dashed var(--line);border-radius:18px;padding:22px 20px 18px}
+  .soon-badge{position:absolute;top:-11px;left:20px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:4px 11px;border-radius:99px}
+  .soon ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
+  .soon li{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--ink);line-height:1.45}
+  .soon li .ico{flex:0 0 auto;font-size:16px;line-height:1.4}
+  .soon li b{color:var(--azul-deep)}
+  .soon .vow{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-style:italic;line-height:1.5}
+  .paynote{font-size:13.5px;color:var(--ink);background:rgba(62,122,87,.08);border-left:3px solid var(--good);border-radius:0 12px 12px 0;padding:13px 16px;margin:18px 0 0}
+  .paynote b{color:var(--azul-deep)}
+</style>
+
 <div class="wrap">
-  <div class="brandbar reveal"><span class="wm"><em>Treino</em></span><span class="flag">🇵🇹</span></div>
+  <div class="brandbar reveal">
+    <span class="wm"><em>Treino</em></span>
+    <a class="gift-pill" href="gift.html">🎁 Идеально для подарка →</a>
+  </div>
 
   <div class="kick reveal" style="animation-delay:.05s">Учи язык на материале своей жизни</div>
   <h1 class="reveal" style="animation-delay:.08s">Твоя <span class="it">реальная неделя</span> — превращённая в тренажёр.</h1>
-  <p class="lede reveal" style="animation-delay:.12s">Никаких чужих учебных фраз. Ты рассказываешь, что на самом деле было за неделю — и язык ложится глубже, а возвращаться хочется. Пять–десять минут в день, прямо в браузере, ничего ставить не нужно.</p>
-
-  <a class="cta primary reveal" style="animation-delay:.16s" href="./">Открыть приложение →</a>
-  <div class="sub reveal" style="animation-delay:.18s">Работает на iPhone (Safari) и Android. Добавь на экран «Домой» — откроется как приложение.</div>
+  <p class="lede reveal" style="animation-delay:.12s">Никаких чужих учебных фраз. Ты рассказываешь, что на самом деле было за неделю — и язык ложится глубже, а возвращаться хочется. Пять–десять минут в день, прямо в браузере — ставить ничего не нужно.</p>
 
   <h2 class="reveal">Как это работает</h2>
   <div class="steps">
     <div class="step reveal"><span class="num">1</span><div><h3>Открой ссылку</h3><p>Работает в браузере. На телефоне: Поделиться → «На экран Домой» — теперь иконка как у обычного приложения, и работает офлайн.</p></div></div>
     <div class="step reveal" style="animation-delay:.05s"><span class="num">2</span><div><h3>Занимайся каждый день</h3><p>Скажи фразу вслух, потом проверь. Отметь «вспомнил / нет» — приложение само решит, когда её вернуть (интервальное повторение).</p></div></div>
-    <div class="step reveal" style="animation-delay:.1s"><span class="num">3</span><div><h3>Сделай своим</h3><p>Пришли свою реальную неделю — что было, что делаешь сейчас, что планируешь — и получи до 8 новых предложений прямо в приложении.</p></div></div>
+    <div class="step reveal" style="animation-delay:.1s"><span class="num">3</span><div><h3>Сделай своим</h3><p>Пришли свою реальную неделю — что было, что делаешь сейчас, что планируешь — и получи до 10 новых предложений прямо в приложении.</p></div></div>
   </div>
 
-  <h2 class="reveal">Цены</h2>
-  <div class="prices">
-    <div class="price lead reveal">
-      <span class="badge">Цена запуска</span>
-      <div class="name">Персональный старт</div>
-      <div><span class="amt">€19</span><span class="old">€39</span></div>
-      <div class="desc">Первый полный персональный набор, собранный по твоей неделе.</div>
+  <h2 class="reveal">Тарифы</h2>
+  <div class="ladder">
+
+    <a class="gift reveal" href="gift.html">
+      <span class="gift-badge">Идея для близкого</span>
+      <div class="gift-top">
+        <span class="gift-title">🎁 Подарить неделю<br>португальского</span>
+        <span class="gift-amt">€5<span class="as">а ощущается на сто</span></span>
+      </div>
+      <p class="gift-hook">Не безликая подписка, а живой тренажёр из реальной недели близкого человека. Такого не купить за €5 в обычном приложении.</p>
+      <span class="gift-go">Открыть подарок →</span>
+    </a>
+
+    <div class="plan reveal" style="animation-delay:.04s">
+      <div class="plan-top">
+        <span class="plan-name">Пополнение</span>
+        <span class="plan-price">€5 <span class="old">€7</span></span>
+      </div>
+      <p class="plan-desc">Свежий набор до 10 предложений из твоей новой недели — когда захочешь ещё.</p>
+      <a class="cta primary" href="https://kartuzov.gumroad.com/l/fkfdbg" target="_blank" rel="noopener">Получить набор →</a>
     </div>
-    <div class="price reveal" style="animation-delay:.06s">
-      <div class="name">Пополнение</div>
-      <div><span class="amt">€5</span><span class="old">€6</span></div>
-      <div class="desc">Свежий набор до 8 предложений — когда захочешь ещё.</div>
+
+    <div class="plan lead reveal" style="animation-delay:.08s">
+      <span class="plan-badge">Полный старт</span>
+      <div class="plan-top">
+        <span class="plan-name">Приложение</span>
+        <span class="plan-price">€19 <span class="old">€39</span></span>
+      </div>
+      <p class="plan-desc">Первый полный персональный набор, собранный по твоей реальной неделе. Твой личный тренажёр с первого дня.</p>
+      <a class="cta primary" href="REPLACE_URL_19" target="_blank" rel="noopener">Получить приложение →</a>
     </div>
+
+    <div class="soon reveal" style="animation-delay:.1s">
+      <span class="soon-badge">Скоро 🔒</span>
+      <div class="plan-top">
+        <span class="plan-name">Подписка</span>
+        <span class="plan-price">€5<span class="per">/мес</span> <span class="old">€7</span></span>
+      </div>
+      <p class="plan-desc" style="margin-bottom:4px">Куда движется Treino — следующий уровень за повторением фраз:</p>
+      <ul>
+        <li><span class="ico">🗣</span><div><b>Диалоговый режим.</b> ИИ-собеседник говорит с тобой на изучаемом языке — твоими же фразами из твоих рассказов.</div></li>
+        <li><span class="ico">👥</span><div><b>Общая комната.</b> Соученики в одном пространстве: один спросил — все увидели ответ на своём языке. Практикуете вместе, не поодиночке.</div></li>
+        <li><span class="ico">🎧</span><div><b>Коммуникативные тренировки.</b> От запоминания — к живому говорению: рассказал день голосом, получил из него урок и слушаешь себя.</div></li>
+      </ul>
+      <p class="vow">Честный вектор, а не обещание: открываем по мере проверки на живых учениках.</p>
+    </div>
+
   </div>
-  <div class="free reveal"><b>Без подписки.</b> Платишь только когда хочешь новый набор — разово, и всё. НДС считается автоматически на кассе.</div>
-  <p class="sub reveal" style="margin-top:16px">После оплаты пришли свой текст на:</p>
+
+  <div class="paynote reveal"><b>Сегодня — только разовая оплата,</b> без обязательств и привязок. Платишь, когда берёшь новый набор. НДС считается автоматически на кассе.</div>
+
+  <p class="sub reveal" style="margin-top:18px">После оплаты пришли свой текст на:</p>
   <a class="email reveal" href="mailto:i.kartuzov@gmail.com">i.kartuzov@gmail.com</a>
 
-  <a class="cta primary reveal" style="margin-top:24px" href="https://kartuzov.gumroad.com/l/fkfdbg" target="_blank" rel="noopener">Получить персональный набор →</a>
-  <a class="cta ghost reveal" style="margin-top:11px" href="method.html">Как работает метод и наука за ним →</a>
+  <a class="cta ghost reveal" style="margin-top:22px" href="method.html">Как работает метод и наука за ним →</a>
 
   <p class="fineprint reveal">Инструмент для языка и тонуса — не замена терапии. Прогресс хранится на твоём устройстве.</p>
 
