@@ -1,0 +1,311 @@
+{
+ "config": {
+  "lang": "pt-PT",
+  "ui": "en",
+  "brand": "Peter ·",
+  "flag": "🇵🇹",
+  "neg": "Não, …",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Like it? Make it yours. Send your real week — what happened, what you do now, what you plan — to i.kartuzov@gmail.com and get up to 8 new sentences built into your app. No subscription: pay only when you want a fresh pack. One top-up €5 (normally €6).",
+  "subscribeBtn": "Add a top-up · €5",
+  "flyerUrl": "start.html",
+  "flyerText": "How it works & pricing",
+  "methodUrl": "method.html",
+  "methodText": "The method"
+ },
+ "weeks": [
+  {
+   "id": "w1",
+   "label": "Week 1",
+   "date": "last week",
+   "month": "June",
+   "sentences": [
+    {
+     "pt": "Na semana passada apanhei o autocarro para a praia.",
+     "ru": "Last week I took the bus to the beach.",
+     "t": "pas"
+    },
+    {
+     "pt": "Passei o dia lá.",
+     "ru": "I spent the day there.",
+     "t": "pas"
+    },
+    {
+     "pt": "Depois de nadar, decidi ir a pé para casa.",
+     "ru": "After swimming, I decided to walk home.",
+     "t": "pas"
+    },
+    {
+     "pt": "A noite estava quente.",
+     "ru": "The evening was warm.",
+     "t": "pas"
+    },
+    {
+     "pt": "Fiquei com muito calor a subir a colina.",
+     "ru": "I got very hot climbing the hill.",
+     "t": "pas"
+    },
+    {
+     "pt": "No dia seguinte decidi ficar em casa.",
+     "ru": "The next day I decided to stay at home.",
+     "t": "pas"
+    },
+    {
+     "pt": "De manhã li um livro.",
+     "ru": "In the morning I read a book.",
+     "t": "pas"
+    },
+    {
+     "pt": "À noite vi um jogo de futebol na televisão.",
+     "ru": "In the evening I watched a football match on the television.",
+     "t": "pas"
+    }
+   ]
+  }
+ ],
+ "phrases": [
+  {
+   "pt": "Apanhei o autocarro para a praia.",
+   "ru": "I took the bus to the beach.",
+   "sit": "travel",
+   "cue": "<span>Apanhei</span> o autocarro…",
+   "hi": [
+    "Apanhei",
+    "autocarro"
+   ],
+   "week": "w1"
+  },
+  {
+   "pt": "Passei o dia lá.",
+   "ru": "I spent the day there.",
+   "sit": "leisure",
+   "cue": "<span>Passei</span> o dia lá.",
+   "hi": [
+    "Passei"
+   ],
+   "week": "w1"
+  },
+  {
+   "pt": "Depois de nadar, decidi ir a pé para casa.",
+   "ru": "After swimming, I decided to walk home.",
+   "sit": "activity",
+   "cue": "Depois de <span>nadar</span>, decidi <span>ir a pé</span>…",
+   "hi": [
+    "nadar",
+    "ir a pé"
+   ],
+   "week": "w1"
+  },
+  {
+   "pt": "A noite estava quente.",
+   "ru": "The evening was warm.",
+   "sit": "weather",
+   "cue": "A noite <span>estava</span> quente.",
+   "hi": [
+    "estava quente"
+   ],
+   "week": "w1"
+  },
+  {
+   "pt": "Fiquei com muito calor a subir a colina.",
+   "ru": "I got very hot climbing the hill.",
+   "sit": "feeling",
+   "cue": "<span>Fiquei com calor</span> a subir a colina.",
+   "hi": [
+    "Fiquei com calor",
+    "subir"
+   ],
+   "week": "w1"
+  },
+  {
+   "pt": "No dia seguinte decidi ficar em casa.",
+   "ru": "The next day I decided to stay at home.",
+   "sit": "routine",
+   "cue": "No dia seguinte <span>decidi ficar</span>…",
+   "hi": [
+    "decidi",
+    "ficar em casa"
+   ],
+   "week": "w1"
+  },
+  {
+   "pt": "De manhã li um livro.",
+   "ru": "In the morning I read a book.",
+   "sit": "leisure",
+   "cue": "De manhã <span>li</span> um livro.",
+   "hi": [
+    "li"
+   ],
+   "week": "w1"
+  },
+  {
+   "pt": "À noite vi um jogo de futebol na televisão.",
+   "ru": "In the evening I watched a football match on TV.",
+   "sit": "leisure",
+   "cue": "À noite <span>vi</span> um jogo de futebol…",
+   "hi": [
+    "vi",
+    "jogo de futebol"
+   ],
+   "week": "w1"
+  }
+ ],
+ "cloze": [
+  {
+   "q": "Na semana passada ___ o autocarro para a praia.",
+   "opts": [
+    "apanhei",
+    "apanho",
+    "apanhava"
+   ],
+   "ok": 0,
+   "rule": "<b>apanhei</b> = I caught/took (pretérito perfeito — a finished action). <b>apanho</b> = I take (present). <b>apanhava</b> = I used to take (imperfeito). 'Na semana passada' is finished → <b>apanhei</b>.",
+   "week": "w1"
+  },
+  {
+   "q": "Depois de nadar, ___ ir a pé para casa.",
+   "opts": [
+    "decidi",
+    "decido",
+    "decidia"
+   ],
+   "ok": 0,
+   "rule": "<b>decidi</b> = I decided (pretérito perfeito, one finished decision). <b>decido</b> = present. <b>decidia</b> = imperfeito (used to / was deciding).",
+   "week": "w1"
+  },
+  {
+   "q": "A noite ___ quente.",
+   "opts": [
+    "estava",
+    "esteve",
+    "é"
+   ],
+   "ok": 0,
+   "rule": "<b>estava</b> = imperfeito of estar: describes a state/background in the past ('was warm'). <b>esteve</b> = perfeito (a finished fact). For describing the weather/mood → imperfeito.",
+   "week": "w1"
+  },
+  {
+   "q": "De manhã ___ um livro.",
+   "opts": [
+    "li",
+    "leio",
+    "lia"
+   ],
+   "ok": 0,
+   "rule": "<b>li</b> = I read (pretérito perfeito of ler — a finished action). <b>leio</b> = I read (present). <b>lia</b> = I used to read (imperfeito).",
+   "week": "w1"
+  },
+  {
+   "q": "À noite ___ um jogo de futebol na televisão.",
+   "opts": [
+    "vi",
+    "vejo",
+    "via"
+   ],
+   "ok": 0,
+   "rule": "<b>vi</b> = I saw/watched (pretérito perfeito of ver). <b>vejo</b> = present. <b>via</b> = imperfeito (used to watch).",
+   "week": "w1"
+  },
+  {
+   "q": "No dia seguinte decidi ___ em casa.",
+   "opts": [
+    "ficar",
+    "fico",
+    "ficando"
+   ],
+   "ok": 0,
+   "rule": "After <b>decidi</b> comes the infinitive: <b>decidi ficar</b> = I decided to stay. <b>fico</b> = present. PT-PT avoids the gerund here.",
+   "week": "w1"
+  }
+ ],
+ "antonyms": [
+  {
+   "qpt": "A noite estava quente?",
+   "apt": "Não, a noite estava fria.",
+   "qru": "Was the evening warm?",
+   "aru": "No, the evening was cold.",
+   "wq": "quente",
+   "wa": "fria",
+   "grp": "cli",
+   "week": "w1"
+  },
+  {
+   "qpt": "Foste a pé?",
+   "apt": "Não, fui de autocarro.",
+   "qru": "Did you go on foot?",
+   "aru": "No, I went by bus.",
+   "wq": "a pé",
+   "wa": "de autocarro",
+   "grp": "travel",
+   "week": "w1"
+  },
+  {
+   "qpt": "Decidiste sair?",
+   "apt": "Não, decidi ficar em casa.",
+   "qru": "Did you decide to go out?",
+   "aru": "No, I decided to stay home.",
+   "wq": "sair",
+   "wa": "ficar",
+   "grp": "acao",
+   "week": "w1"
+  },
+  {
+   "qpt": "Subiste a colina?",
+   "apt": "Não, desci a colina.",
+   "qru": "Did you go up the hill?",
+   "aru": "No, I went down the hill.",
+   "wq": "subir",
+   "wa": "descer",
+   "grp": "acao",
+   "week": "w1"
+  },
+  {
+   "qpt": "Foi de manhã?",
+   "apt": "Não, foi à noite.",
+   "qru": "Was it in the morning?",
+   "aru": "No, it was in the evening.",
+   "wq": "de manhã",
+   "wa": "à noite",
+   "grp": "tempo",
+   "week": "w1"
+  }
+ ],
+ "synonyms": [
+  {
+   "qpt": "Apanhei o autocarro.",
+   "apt": "Apanhei o ónibus.",
+   "qru": "I took the bus.",
+   "aru": "I took the coach.",
+   "wq": "autocarro",
+   "wa": "ónibus",
+   "week": "w1"
+  },
+  {
+   "qpt": "Fiquei com muito calor.",
+   "apt": "Senti muito calor.",
+   "qru": "I got very hot.",
+   "aru": "I felt very hot.",
+   "wq": "fiquei com calor",
+   "wa": "senti calor",
+   "week": "w1"
+  },
+  {
+   "qpt": "Passei o dia na praia.",
+   "apt": "Estive o dia na praia.",
+   "qru": "I spent the day at the beach.",
+   "aru": "I was at the beach all day.",
+   "wq": "passei",
+   "wa": "estive",
+   "week": "w1"
+  },
+  {
+   "qpt": "Vi um jogo na televisão.",
+   "apt": "Assisti a um jogo na televisão.",
+   "qru": "I watched a match on TV.",
+   "aru": "I watched a game on TV.",
+   "wq": "vi",
+   "wa": "assisti",
+   "week": "w1"
+  }
+ ]
+}
