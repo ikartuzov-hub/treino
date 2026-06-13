@@ -1,0 +1,86 @@
+<!-- Treino © 2026 Igor Kartuzov. Метод открыт; перепубликация приложения как продукта без разрешения автора не допускается. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treino — Ваш подарок</title>
+<meta name="theme-color" content="#F2EBDA">
+<meta property="og:title" content="🎁 Тебе подарок — твой личный Treino">
+<meta property="og:description" content="Неделя языка, собранная из твоей реальной жизни. Открой и занимайся.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F2EBDA; --paper:#FBF7EC; --ink:#16302B; --ink-soft:#54655A;
+    --azul:#1F7A5C; --azul-deep:#0E5138; --terra:#BC4B2F; --gold:#C2872E;
+    --line:#DBD0B8; --good:#3E7A57; --soft-shadow:0 18px 40px -22px rgba(22,48,43,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--cream);color:var(--ink);font-family:"Hanken Grotesk",sans-serif;line-height:1.6;
+    padding:0 18px 48px;
+    background-image:radial-gradient(circle at 10% 4%,rgba(194,135,46,.12),transparent 46%),radial-gradient(circle at 92% 0%,rgba(188,75,47,.08),transparent 40%);}
+  .reveal{opacity:0;transform:translateY(12px);animation:rise .6s ease forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .gp{max-width:560px;margin:0 auto;padding:34px 4px 10px}
+  .gp-mark{display:flex;justify-content:center;margin-bottom:22px}
+  .gp-kick{text-align:center;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .gp h1{font-family:"Fraunces",serif;font-weight:600;font-size:34px;line-height:1.15;text-align:center;letter-spacing:-.015em;margin-bottom:14px}
+  .gp h1 .it{font-style:italic;color:var(--terra)}
+  .gp-sub{text-align:center;font-size:17px;color:var(--ink);line-height:1.5;max-width:42ch;margin:0 auto 20px}
+  .gp-worth{display:block;text-align:center;font-family:"Fraunces",serif;font-size:19px;color:var(--azul-deep);margin-bottom:28px}
+  .gp-how{display:flex;flex-direction:column;gap:13px;margin:0 0 26px}
+  .gp-step{display:flex;gap:13px;align-items:flex-start}
+  .gp-step .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:rgba(194,135,46,.16);color:var(--gold);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .gp-step p{font-size:15px;color:var(--ink);line-height:1.45;margin:0}
+  .gp-cta{display:block;text-align:center;font-family:inherit;font-weight:700;font-size:17px;text-decoration:none;border-radius:14px;padding:18px;background:var(--terra);color:#fff;box-shadow:var(--soft-shadow);border:1px solid var(--terra)}
+  .gp-cta:active{transform:translateY(1px)}
+  .gp-fine{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:11px}
+  .gp-code{margin-top:30px;padding-top:24px;border-top:1px dashed var(--line)}
+  .gp-code .lbl{text-align:center;font-size:14px;color:var(--ink);margin-bottom:13px;font-weight:600}
+  .code-box{display:flex;gap:9px;max-width:380px;margin:0 auto}
+  .code-box input{flex:1;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:15px;font-family:"Hanken Grotesk";color:var(--ink);background:#fff;letter-spacing:.1em;text-transform:uppercase}
+  .code-box button{border:none;border-radius:12px;padding:0 20px;background:var(--azul-deep);color:#fff;font-weight:700;font-size:14px;font-family:inherit;white-space:nowrap;cursor:pointer}
+  .gp-code .hint{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:11px;line-height:1.5}
+  .gp-back{display:block;text-align:center;margin-top:26px;color:var(--azul);font-weight:600;text-decoration:none;font-size:14px}
+  .gp-foot{text-align:center;margin-top:30px;font-size:11px;color:var(--ink-soft);opacity:.6}
+  .gp-foot a{color:var(--ink-soft);text-decoration:none}
+  @media(max-width:420px){.gp h1{font-size:29px}}
+</style>
+</head>
+<body>
+<div id="page"><p style="text-align:center;padding:48px 20px;color:#54655A">…</p></div>
+<script>
+const PAGE="gift";
+function qp(n){return new URLSearchParams(location.search).get(n);}
+async function J(u){const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw 0;return r.json();}
+async function T(u){const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw 0;return r.text();}
+(async function(){
+  let mf=null; try{mf=await J("manifest.json");}catch(e){}
+  let lang=qp("lang");
+  if(!lang&&mf){var pid=qp("pair"); if(pid){var e=mf.pairs.find(p=>p.id===pid); if(e)lang=e.native;}}
+  if(!lang&&mf){try{var sv=localStorage.getItem("treino_pair"); if(sv){var e2=mf.pairs.find(p=>p.id===sv); if(e2)lang=e2.native;}}catch(e){}}
+  if(!lang&&mf&&mf.defaultPair){var ed=mf.pairs.find(p=>p.id===mf.defaultPair); if(ed)lang=ed.native;}
+  if(!lang)lang="ru";
+  let frag="";
+  try{ frag=await T("pages/"+PAGE+"."+lang+".html"); }
+  catch(e){ lang="en"; try{frag=await T("pages/"+PAGE+".en.html");}catch(e2){frag="<div class='gp'><p style='text-align:center;padding:40px'>—</p></div>";} }
+  document.documentElement.lang=lang;
+  const page=document.getElementById("page");
+  page.innerHTML=frag;
+  if(!page.querySelector(".gp-foot")){
+    var f=document.createElement("p"); f.className="gp-foot"; f.textContent="© Igor Kartuzov · Treino";
+    (page.querySelector(".gp")||page).appendChild(f);
+  }
+  page.querySelectorAll("a[href]").forEach(function(a){
+    var hr=a.getAttribute("href");
+    if(/^(https?:|mailto:|tel:|#)/.test(hr))return;
+    a.setAttribute("href", hr.split("?")[0]+"?lang="+lang);
+  });
+})();
+</script>
+</body>
+</html>
