@@ -136,6 +136,27 @@
   .targetbar button.on{color:var(--accent);border-color:var(--accent);font-weight:600}
   .err{font-size:14px;color:#c0392b;min-height:1.2em}
 
+  /* Экран 2 — голос-первым */
+  .micWrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:14px 0 6px}
+  .micBtn{
+    width:96px;height:96px;border-radius:50%;cursor:pointer;
+    background:none;border:2px solid var(--accent);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    transition:background .25s,color .25s,border-color .25s;will-change:transform;
+    animation:softBlink 1.9s ease-in-out infinite;
+  }
+  .micBtn svg{width:40px;height:40px}
+  .micBtn:active{transform:scale(.96)}
+  .micBtn.live{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);animation:none}
+  .micHint{font-size:15px;color:var(--dim);text-align:center;min-height:1.3em}
+  textarea.storyHidden{display:none}
+  .altRow{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;padding-top:2px}
+  .altLink{background:none;border:none;color:var(--dim);font-family:inherit;font-size:13px;cursor:pointer;padding:4px 2px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+  .altLink:hover{color:var(--accent)}
+  .altSep{color:var(--line);font-size:13px}
+  .reveal{opacity:0;max-height:0;overflow:hidden;transition:opacity .5s ease,max-height .5s ease;display:flex;flex-direction:column;gap:14px}
+  .reveal.on{opacity:1;max-height:600px}
+
   footer{padding:18px;text-align:center;font-size:12px;color:var(--dim);display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
   footer a{color:var(--dim)}
   @media (prefers-reduced-motion: reduce){
@@ -170,32 +191,60 @@
   <!-- Экран 2: знакомство -->
   <section class="step" id="s2">
     <div class="meet" id="meet"></div>
+
     <div class="card" id="formCard" style="visibility:hidden">
-      <div class="voiceRow" id="speakRow">
-        <button class="btn small" id="btnSpeak"></button>
-        <span class="voiceHint" id="speakHint"></span>
+
+      <!-- Главное действие: голос -->
+      <div class="micWrap">
+        <button class="micBtn" id="btnMic" aria-label="record">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="2" width="6" height="12" rx="3"/>
+            <path d="M5 10v1a7 7 0 0 0 14 0v-1"/>
+            <line x1="12" y1="18" x2="12" y2="22"/>
+          </svg>
+        </button>
+        <div class="micHint" id="micHint"></div>
+        <div class="timer" id="timer"></div>
       </div>
-      <textarea id="storyText"></textarea>
-      <details class="voiceFold">
-        <summary id="orVoice"></summary>
-        <div class="voiceRow" style="margin-top:10px">
-          <button class="btn small" id="btnRec"></button>
-          <span class="timer" id="timer"></span>
-        </div>
-        <div class="voiceRow" id="playRow" style="display:none;margin-top:10px">
-          <audio id="player" controls></audio>
-          <button class="btn small" id="btnRedo"></button>
-          <button class="btn small" id="btnDel"></button>
-        </div>
-      </details>
-      <div class="fieldLabel" id="targetLabel"></div>
-      <div class="targetbar" id="targetbar"></div>
-      <div class="fieldLabel" id="contactLabel"></div>
-      <input type="text" id="contact" autocomplete="off">
-      <div class="err" id="err"></div>
-      <button class="btn primary" id="btnSend"></button>
+
+      <!-- Живой текст рассказа (виден когда что-то есть) -->
+      <textarea id="storyText" class="storyHidden"></textarea>
+
+      <!-- Аудио-плеер фолбэка (появляется после файловой записи) -->
+      <div class="voiceRow" id="playRow" style="display:none">
+        <audio id="player" controls></audio>
+        <button class="btn small" id="btnRedo"></button>
+        <button class="btn small" id="btnDel"></button>
+      </div>
+
+      <!-- Контакт + отправка: проявляется после записи -->
+      <div class="reveal" id="contactBlock">
+        <div class="fieldLabel" id="contactLabel"></div>
+        <input type="text" id="contact" autocomplete="off">
+        <div class="err" id="err"></div>
+        <button class="btn primary" id="btnSend"></button>
+      </div>
+
+      <!-- Тихие альтернативы -->
+      <div class="altRow">
+        <button type="button" class="altLink" id="altWrite"></button>
+        <span class="altSep">·</span>
+        <button type="button" class="altLink" id="altLang"></button>
+      </div>
+
+      <!-- Выбор изучаемого языка: скрыт, разворачивается ссылкой -->
+      <div class="reveal" id="targetBlock" style="display:none">
+        <div class="fieldLabel" id="targetLabel"></div>
+        <div class="targetbar" id="targetbar"></div>
+      </div>
+
     </div>
   </section>
+
+  <!-- невидимый дублёр для совместимости со старым кодом речи (не отображается) -->
+  <div id="speakRow" style="display:none"><button id="btnSpeak"></button><span id="speakHint"></span></div>
+  <details id="orVoiceFold" style="display:none"><summary id="orVoice"></summary></details>
+  <button id="btnRec" style="display:none"></button>
 
   <!-- Экран 3: подтверждение -->
   <section class="step" id="s3">
@@ -208,7 +257,7 @@
   <a id="authorLink" target="_blank" rel="noopener">Igor Kartuzov</a>
   <span>·</span>
   <a id="hubLink">SeedWave</a>
-  <span style="opacity:.55">intro v17</span>
+  <span style="opacity:.55">intro v18</span>
 </footer>
 
 <script>
@@ -245,7 +294,10 @@ const LOCALES = {
     needContact:"Укажи, куда прислать ссылку.",
     badContact:"Упс, кажется в контакте опечатка. Проверь и укажи корректный Telegram, WhatsApp или email.",
     errMic:"Нет доступа к микрофону. Разреши доступ или напиши текстом.",
-    errSend:"Не отправилось. Проверь интернет и нажми ещё раз."}},
+    errSend:"Не отправилось. Проверь интернет и нажми ещё раз.",
+    invite:"Расскажи о себе — пару слов, голосом. Я слушаю.",
+    micHint:"Нажми и говори", micStopHint:"Слушаю… нажми, чтобы остановить",
+    altWrite:"лучше напишу", altLang:"учу другой язык"}},
   en:{dir:"ltr",ui:{
     talk:"Shall we talk?", yes:"Yes!",
     meet:"Great! Let's get to know each other. Tell me a bit about yourself: who you are, how your week went, what brought you nice moments, what interesting things are coming up? Type or speak — and I'll build your personal Treino from your story.",
@@ -261,7 +313,10 @@ const LOCALES = {
     needContact:"Tell me where to send the link.",
     badContact:"Oops, the contact looks off. Check it and enter a valid Telegram, WhatsApp or email.",
     errMic:"No microphone access. Allow access or just type.",
-    errSend:"Sending failed. Check your connection and try again."}},
+    errSend:"Sending failed. Check your connection and try again.",
+    invite:"Tell me about yourself — a few words, by voice. I'm listening.",
+    micHint:"Tap and speak", micStopHint:"Listening… tap to stop",
+    altWrite:"I'd rather type", altLang:"I'm learning another language"}},
   pt:{dir:"ltr",ui:{
     talk:"Falamos?", yes:"Sim!",
     meet:"Boa! Vamos conhecer-nos? Conta um pouco de ti: quem és, como foi a tua semana, o que te trouxe bons momentos, o que planeias de interessante? Por texto ou por voz — e eu construo o teu Treino pessoal a partir da tua história.",
@@ -277,7 +332,10 @@ const LOCALES = {
     needContact:"Indica para onde enviar o link.",
     badContact:"Ups, o contacto parece ter um erro. Verifica e indica um Telegram, WhatsApp ou email válido.",
     errMic:"Sem acesso ao microfone. Permite o acesso ou escreve.",
-    errSend:"Não foi enviado. Verifica a internet e tenta de novo."}},
+    errSend:"Não foi enviado. Verifica a internet e tenta de novo.",
+    invite:"Conta-me sobre ti — umas palavras, por voz. Estou a ouvir.",
+    micHint:"Toca e fala", micStopHint:"A ouvir… toca para parar",
+    altWrite:"prefiro escrever", altLang:"aprendo outra língua"}},
   es:{dir:"ltr",ui:{
     talk:"¿Hablamos?", yes:"¡Sí!",
     meet:"¡Genial! ¿Nos conocemos? Cuéntame un poco de ti: quién eres, cómo fue tu semana, qué te trajo buenos momentos, qué planeas de interesante? Por texto o por voz — y construiré tu Treino personal a partir de tu historia.",
@@ -293,7 +351,10 @@ const LOCALES = {
     needContact:"Indica adónde enviar el enlace.",
     badContact:"Ups, el contacto parece tener un error. Revísalo e indica un Telegram, WhatsApp o email válido.",
     errMic:"Sin acceso al micrófono. Permite el acceso o escribe.",
-    errSend:"No se envió. Revisa tu conexión e inténtalo de nuevo."}},
+    errSend:"No se envió. Revisa tu conexión e inténtalo de nuevo.",
+    invite:"Cuéntame sobre ti — unas palabras, con tu voz. Te escucho.",
+    micHint:"Toca y habla", micStopHint:"Escuchando… toca para parar",
+    altWrite:"prefiero escribir", altLang:"aprendo otro idioma"}},
   de:{dir:"ltr",ui:{
     talk:"Reden wir?", yes:"Ja!",
     meet:"Super! Lernen wir uns kennen? Erzähl ein wenig von dir: wer du bist, wie deine Woche war, was dir schöne Momente gebracht hat, was du Interessantes vorhast? Per Text oder Stimme — und ich baue daraus dein persönliches Treino.",
@@ -309,7 +370,10 @@ const LOCALES = {
     needContact:"Gib an, wohin der Link gehen soll.",
     badContact:"Ups, der Kontakt sieht falsch aus. Prüfe ihn und gib ein gültiges Telegram, WhatsApp oder E-Mail an.",
     errMic:"Kein Mikrofonzugriff. Erlaube den Zugriff oder schreibe.",
-    errSend:"Senden fehlgeschlagen. Prüfe die Verbindung und versuche es erneut."}}
+    errSend:"Senden fehlgeschlagen. Prüfe die Verbindung und versuche es erneut.",
+    invite:"Erzähl mir von dir — ein paar Worte, per Stimme. Ich höre zu.",
+    micHint:"Tippen und sprechen", micStopHint:"Ich höre zu… zum Stoppen tippen",
+    altWrite:"lieber schreiben", altLang:"ich lerne eine andere Sprache"}}
 };
 
 /* ===== ДВИЖОК ===== */
@@ -368,6 +432,9 @@ function applyLocale(){
   $("contactLabel").textContent=L.ui.contactLabel;
   $("contact").placeholder=L.ui.contactPh;
   $("btnSend").textContent=L.ui.send;
+  $("micHint").textContent=L.ui.micHint;
+  $("altWrite").textContent=L.ui.altWrite;
+  $("altLang").textContent=L.ui.altLang;
   $("authorLink").href=AUTHOR_URL;
   $("hubLink").href=withNav(HUB_URL);
 }
@@ -438,9 +505,22 @@ function enterS2(){
   greetRunning=false;
   show("s2");
   pulseOff("btnYes");
-  typeLine($("meet"),L.ui.meet,function(){
+  typeLine($("meet"),L.ui.invite,function(){
     $("formCard").style.visibility="visible";
   });
+}
+
+/* ---- проявление блока контакта после первой записи ---- */
+let contactRevealed=false;
+function revealContact(){
+  if(contactRevealed)return;
+  contactRevealed=true;
+  $("contactBlock").classList.add("on");
+}
+/* ---- показать живой текст рассказа ---- */
+function showStory(){
+  const ta=$("storyText");
+  if(ta.classList.contains("storyHidden"))ta.classList.remove("storyHidden");
 }
 
 /* ---- Живая расшифровка речи (Web Speech API) ---- */
@@ -460,7 +540,9 @@ function initSpeech(){
       if(e.results[i].isFinal)fin+=t; else intr+=t;
     }
     if(fin)baseText=(baseText+" "+fin).trim();
-    $("storyText").value=(baseText+" "+intr).trim();
+    const full=(baseText+" "+intr).trim();
+    $("storyText").value=full;
+    if(full){ showStory(); revealContact(); }
   };
   recog.onerror=function(ev){
     if(ev.error==="not-allowed"||ev.error==="service-not-allowed"){ $("err").textContent=L.ui.errMic; }
@@ -474,19 +556,45 @@ function startSpeak(){
   baseText=$("storyText").value.trim();
   listening=true;
   try{recog.start();}catch(e){}
-  $("btnSpeak").textContent=L.ui.speakStop;
-  $("btnSpeak").classList.add("live");
-  pulseOn("btnSpeak");
+  $("btnMic").classList.add("live");
+  $("micHint").textContent=L.ui.micStopHint;
 }
 function stopSpeak(){
   listening=false;
   if(recog){try{recog.stop();}catch(e){}}
-  $("btnSpeak").textContent=L.ui.speak;
-  $("btnSpeak").classList.remove("live");
-  pulseOff("btnSpeak");
+  $("btnMic").classList.remove("live");
+  $("micHint").textContent=L.ui.micHint;
 }
 $("btnSpeak").onclick=function(){ listening?stopSpeak():startSpeak(); };
 initSpeech();
+
+/* ---- Главная мик-кнопка: Web Speech если есть, иначе файловая запись ---- */
+const useSpeech = !!SR;   // Chrome/Android — живая расшифровка; iOS Safari — файлом
+function micToggle(){
+  if(useSpeech){
+    listening ? stopSpeak() : startSpeak();
+  } else {
+    if(mediaRecorder && mediaRecorder.state==="recording"){
+      stopRec(); $("btnMic").classList.remove("live"); $("micHint").textContent=L.ui.micHint;
+    } else {
+      startRec(); $("btnMic").classList.add("live"); $("micHint").textContent=L.ui.micStopHint;
+    }
+  }
+}
+$("btnMic").onclick=micToggle;
+$("btnSpeak").onclick=micToggle;   // совместимость со скрытым дублёром
+
+/* ---- Тихие альтернативы ---- */
+$("altWrite").onclick=function(){
+  showStory();
+  $("storyText").focus();
+  revealContact();
+};
+$("altLang").onclick=function(){
+  const b=$("targetBlock");
+  if(b.style.display==="none"){ b.style.display="flex"; requestAnimationFrame(function(){b.classList.add("on");}); }
+  else { b.classList.remove("on"); setTimeout(function(){b.style.display="none";},500); }
+};
 
 /* ---- Запись голоса файлом (фолбэк) ---- */
 let mediaRecorder=null, chunks=[], audioBlob=null, audioMime="", recTimer=null, recSec=0;
@@ -506,8 +614,8 @@ async function startRec(){
       audioBlob=new Blob(chunks,{type:audioMime});
       $("player").src=URL.createObjectURL(audioBlob);
       $("playRow").style.display="flex";
-      $("btnRec").style.display="none";
       $("timer").textContent=fmt(recSec);
+      revealContact();
     };
     mediaRecorder.start();
     recSec=0;$("timer").textContent="0:00";
