@@ -20,67 +20,700 @@
    "date": "вторая неделя июня",
    "month": "Июнь",
    "sentences": [
-    {"pt": "Ontem o tempo estava ótimo.", "ru": "Вчера была классная погода.", "t": "pas"},
-    {"pt": "Eu fui visitar os meus amigos e nós passeámos.", "ru": "Я ездила в гости к друзьям, мы гуляли.", "t": "pas"},
-    {"pt": "Hoje chove o dia todo e estou com um humor triste.", "ru": "Сегодня весь день идёт дождь, у меня грустное настроение.", "t": "pre"},
-    {"pt": "Estou a preparar um frango delicioso e massa.", "ru": "Я готовлю вкусную курицу и пасту.", "t": "pre"},
-    {"pt": "No meu tempo livre eu danço e treino no ginásio.", "ru": "В моё свободное время я танцую и тренируюсь в зале.", "t": "pre"},
-    {"pt": "No ginásio já tenho amigos simpáticos e modestos.", "ru": "В зале у меня уже тоже есть милые и скромные друзья.", "t": "pre"},
-    {"pt": "Também nado na piscina.", "ru": "Я также плаваю в бассейне.", "t": "pre"},
-    {"pt": "Amanhã vou trabalhar.", "ru": "Завтра я буду работать.", "t": "fut"},
-    {"pt": "Adoro o bom tempo com sol.", "ru": "Я люблю хорошую солнечную погоду.", "t": "pre"},
-    {"pt": "Gosto de comer fora de casa.", "ru": "Я люблю есть на улице (вне дома).", "t": "pre"}
+    {
+     "pt": "Ontem o tempo estava ótimo.",
+     "ru": "Вчера была классная погода.",
+     "t": "pas"
+    },
+    {
+     "pt": "Eu fui visitar os meus amigos e nós passeámos.",
+     "ru": "Я ездила в гости к друзьям, мы гуляли.",
+     "t": "pas"
+    },
+    {
+     "pt": "Hoje chove o dia todo e estou com um humor triste.",
+     "ru": "Сегодня весь день идёт дождь, у меня грустное настроение.",
+     "t": "pre"
+    },
+    {
+     "pt": "Estou a preparar um frango delicioso e massa.",
+     "ru": "Я готовлю вкусную курицу и пасту.",
+     "t": "pre"
+    },
+    {
+     "pt": "No meu tempo livre eu danço e treino no ginásio.",
+     "ru": "В моё свободное время я танцую и тренируюсь в зале.",
+     "t": "pre"
+    },
+    {
+     "pt": "No ginásio já tenho amigos simpáticos e modestos.",
+     "ru": "В зале у меня уже тоже есть милые и скромные друзья.",
+     "t": "pre"
+    },
+    {
+     "pt": "Também nado na piscina.",
+     "ru": "Я также плаваю в бассейне.",
+     "t": "pre"
+    },
+    {
+     "pt": "Amanhã vou trabalhar.",
+     "ru": "Завтра я буду работать.",
+     "t": "fut"
+    },
+    {
+     "pt": "Adoro o bom tempo com sol.",
+     "ru": "Я люблю хорошую солнечную погоду.",
+     "t": "pre"
+    },
+    {
+     "pt": "Gosto de comer fora de casa.",
+     "ru": "Я люблю есть на улице (вне дома).",
+     "t": "pre"
+    }
+   ]
+  },
+  {
+   "id": "jun3",
+   "label": "Июнь / 3",
+   "date": "третья неделя июня",
+   "month": "Июнь",
+   "sentences": [
+    {
+     "pt": "Eu sou a Elena.",
+     "ru": "Я Елена.",
+     "t": "pre"
+    },
+    {
+     "pt": "Eu gosto de comer fora.",
+     "ru": "Я люблю есть вне дома.",
+     "t": "pre"
+    },
+    {
+     "pt": "Gosto de comer massa e carne.",
+     "ru": "Люблю есть пасту и мясо.",
+     "t": "pre"
+    },
+    {
+     "pt": "Eu treino no ginásio.",
+     "ru": "Я тренируюсь в зале.",
+     "t": "pre"
+    },
+    {
+     "pt": "Eu gosto de dançar.",
+     "ru": "Я люблю танцевать.",
+     "t": "pre"
+    },
+    {
+     "pt": "Eu tenho uma irmã.",
+     "ru": "У меня есть сестра.",
+     "t": "pre"
+    },
+    {
+     "pt": "Eu vou passear todos os dias.",
+     "ru": "Я хожу гулять каждый день.",
+     "t": "pre"
+    }
    ]
   }
  ],
  "phrases": [
-  {"pt": "Ontem o tempo estava ótimo.", "ru": "Вчера была классная погода.", "sit": "погода, прошлое", "cue": "Ontem o tempo <span>estava</span>…", "hi": ["estava ótimo"], "week": "jun2"},
-  {"pt": "Eu fui visitar os meus amigos.", "ru": "Я ездила в гости к друзьям.", "sit": "визит", "cue": "Eu <span>fui</span> visitar…", "hi": ["fui visitar"], "week": "jun2"},
-  {"pt": "Nós passeámos juntos.", "ru": "Мы гуляли вместе.", "sit": "прогулка", "cue": "Nós <span>passeámos</span>…", "hi": ["passeámos"], "week": "jun2"},
-  {"pt": "Hoje chove o dia todo.", "ru": "Сегодня весь день идёт дождь.", "sit": "погода, настоящее", "cue": "Hoje <span>chove</span> o dia…", "hi": ["chove"], "week": "jun2"},
-  {"pt": "Estou com um humor triste.", "ru": "У меня грустное настроение.", "sit": "эмоции", "cue": "Estou com um humor <span>triste</span>.", "hi": ["humor triste"], "week": "jun2"},
-  {"pt": "Estou a preparar frango e massa.", "ru": "Я готовлю курицу и пасту.", "sit": "кулинария", "cue": "Estou a <span>preparar</span>…", "hi": ["preparar"], "week": "jun2"},
-  {"pt": "No meu tempo livre eu danço.", "ru": "В моё свободное время я танцую.", "sit": "хобби", "cue": "No meu <span>tempo livre</span>…", "hi": ["tempo livre", "danço"], "week": "jun2"},
-  {"pt": "Eu treino no ginásio.", "ru": "Я тренируюсь в зале.", "sit": "спорт", "cue": "Eu <span>treino</span> no…", "hi": ["treino", "ginásio"], "week": "jun2"},
-  {"pt": "Também nado na piscina.", "ru": "Я также плаваю в бассейне.", "sit": "спорт", "cue": "Também <span>nado</span> na…", "hi": ["nado", "piscina"], "week": "jun2"},
-  {"pt": "Amanhã vou trabalhar.", "ru": "Завтра я буду работать.", "sit": "планы", "cue": "Amanhã <span>vou</span>…", "hi": ["vou trabalhar"], "week": "jun2"},
-  {"pt": "Adoro o bom tempo com sol.", "ru": "Я люблю хорошую солнечную погоду.", "sit": "предпочтения", "cue": "<span>Adoro</span> o bom tempo…", "hi": ["Adoro"], "week": "jun2"},
-  {"pt": "Gosto de comer fora de casa.", "ru": "Я люблю есть вне дома.", "sit": "предпочтения", "cue": "<span>Gosto de</span> comer…", "hi": ["Gosto de", "fora de casa"], "week": "jun2"}
+  {
+   "pt": "Ontem o tempo estava ótimo.",
+   "ru": "Вчера была классная погода.",
+   "sit": "погода, прошлое",
+   "cue": "Ontem o tempo <span>estava</span>…",
+   "hi": [
+    "estava ótimo"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Eu fui visitar os meus amigos.",
+   "ru": "Я ездила в гости к друзьям.",
+   "sit": "визит",
+   "cue": "Eu <span>fui</span> visitar…",
+   "hi": [
+    "fui visitar"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Nós passeámos juntos.",
+   "ru": "Мы гуляли вместе.",
+   "sit": "прогулка",
+   "cue": "Nós <span>passeámos</span>…",
+   "hi": [
+    "passeámos"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Hoje chove o dia todo.",
+   "ru": "Сегодня весь день идёт дождь.",
+   "sit": "погода, настоящее",
+   "cue": "Hoje <span>chove</span> o dia…",
+   "hi": [
+    "chove"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Estou com um humor triste.",
+   "ru": "У меня грустное настроение.",
+   "sit": "эмоции",
+   "cue": "Estou com um humor <span>triste</span>.",
+   "hi": [
+    "humor triste"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Estou a preparar frango e massa.",
+   "ru": "Я готовлю курицу и пасту.",
+   "sit": "кулинария",
+   "cue": "Estou a <span>preparar</span>…",
+   "hi": [
+    "preparar"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "No meu tempo livre eu danço.",
+   "ru": "В моё свободное время я танцую.",
+   "sit": "хобби",
+   "cue": "No meu <span>tempo livre</span>…",
+   "hi": [
+    "tempo livre",
+    "danço"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Eu treino no ginásio.",
+   "ru": "Я тренируюсь в зале.",
+   "sit": "спорт",
+   "cue": "Eu <span>treino</span> no…",
+   "hi": [
+    "treino",
+    "ginásio"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Também nado na piscina.",
+   "ru": "Я также плаваю в бассейне.",
+   "sit": "спорт",
+   "cue": "Também <span>nado</span> na…",
+   "hi": [
+    "nado",
+    "piscina"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Amanhã vou trabalhar.",
+   "ru": "Завтра я буду работать.",
+   "sit": "планы",
+   "cue": "Amanhã <span>vou</span>…",
+   "hi": [
+    "vou trabalhar"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Adoro o bom tempo com sol.",
+   "ru": "Я люблю хорошую солнечную погоду.",
+   "sit": "предпочтения",
+   "cue": "<span>Adoro</span> o bom tempo…",
+   "hi": [
+    "Adoro"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Gosto de comer fora de casa.",
+   "ru": "Я люблю есть вне дома.",
+   "sit": "предпочтения",
+   "cue": "<span>Gosto de</span> comer…",
+   "hi": [
+    "Gosto de",
+    "fora de casa"
+   ],
+   "week": "jun2"
+  },
+  {
+   "pt": "Eu gosto de comer fora.",
+   "ru": "Я люблю есть вне дома.",
+   "sit": "предпочтения, еда",
+   "cue": "<span>Gosto de</span> comer fora.",
+   "hi": [
+    "Gosto de",
+    "fora"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "Gosto de comer massa e carne.",
+   "ru": "Люблю есть пасту и мясо.",
+   "sit": "еда",
+   "cue": "Gosto de comer <span>massa</span> e <span>carne</span>.",
+   "hi": [
+    "massa",
+    "carne"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "Eu treino no ginásio.",
+   "ru": "Я тренируюсь в зале.",
+   "sit": "спорт",
+   "cue": "Eu <span>treino</span> no ginásio.",
+   "hi": [
+    "treino",
+    "ginásio"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "Eu gosto de dançar.",
+   "ru": "Я люблю танцевать.",
+   "sit": "хобби",
+   "cue": "Gosto de <span>dançar</span>.",
+   "hi": [
+    "dançar"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "Eu tenho uma irmã.",
+   "ru": "У меня есть сестра.",
+   "sit": "семья",
+   "cue": "Eu <span>tenho</span> uma <span>irmã</span>.",
+   "hi": [
+    "tenho",
+    "irmã"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "Eu vou passear todos os dias.",
+   "ru": "Я хожу гулять каждый день.",
+   "sit": "распорядок",
+   "cue": "Vou <span>passear</span> todos os dias.",
+   "hi": [
+    "passear",
+    "todos os dias"
+   ],
+   "week": "jun3"
+  }
  ],
  "cloze": [
-  {"q": "Ontem o tempo ___ ótimo.", "opts": ["estava", "esteve", "é"], "ok": 0, "rule": "<b>estava</b> — imperfeito: описывает состояние или фон в прошлом. <b>esteve</b> — pretérito perfeito, факт. Для погоды/настроения — imperfeito.", "week": "jun2"},
-  {"q": "Eu ___ visitar os meus amigos.", "opts": ["fui", "ia", "vou"], "ok": 0, "rule": "<b>fui</b> — pretérito perfeito глагола <b>ir</b>: я пошла/поехала. <b>ia</b> — собиралась. <b>vou</b> — настоящее/будущее.", "week": "jun2"},
-  {"q": "Hoje ___ o dia todo.", "opts": ["chove", "chovia", "choveu"], "ok": 0, "rule": "<b>chove</b> — безличный глагол в настоящем: дождь идёт сейчас. <b>chovia</b> — шёл (длительно). <b>choveu</b> — прошёл (завершённо).", "week": "jun2"},
-  {"q": "Estou ___ preparar frango.", "opts": ["a", "de", "por"], "ok": 0, "rule": "<b>estar a + infinitivo</b> — настоящее длительное в PT-PT: «я сейчас готовлю». Это португальский аналог герундия.", "week": "jun2"},
-  {"q": "Eu treino ___ ginásio.", "opts": ["no", "na", "em"], "ok": 0, "rule": "<b>no</b> = em + o (мужской род). <b>Ginásio</b> — мужской род, поэтому <b>no</b>. <b>Na</b> = em + a (женский).", "week": "jun2"},
-  {"q": "Também nado ___ piscina.", "opts": ["na", "no", "em a"], "ok": 0, "rule": "<b>na</b> = em + a (женский род). <b>Piscina</b> — женский род, поэтому <b>na</b>. В PT предлог всегда сливается с артиклем.", "week": "jun2"},
-  {"q": "Amanhã ___ trabalhar.", "opts": ["vou", "fui", "ia"], "ok": 0, "rule": "<b>ir + infinitivo</b> = ближайшее будущее: «я буду / собираюсь». <b>vou</b> — 1 лицо ед.ч. глагола <b>ir</b>.", "week": "jun2"},
-  {"q": "___ de comer fora de casa.", "opts": ["Gosto", "Gosta", "Gostam"], "ok": 0, "rule": "<b>Gosto</b> — eu (я). <b>Gosta</b> — ele/ela (он/она). <b>Gostar de</b> + infinitivo = нравится делать.", "week": "jun2"},
-  {"q": "No meu tempo ___ eu danço.", "opts": ["livre", "grátis", "liberto"], "ok": 0, "rule": "<b>tempo livre</b> — свободное время (fixed expression). <b>Grátis</b> — бесплатный (о товарах/услугах). <b>Liberto</b> — освобождённый.", "week": "jun2"},
-  {"q": "Estou com um humor ___.", "opts": ["triste", "trista", "tristemente"], "ok": 0, "rule": "<b>triste</b> — прилагательное, одна форма для м. и ж. рода. <b>Tristemente</b> — наречие «печально».", "week": "jun2"}
+  {
+   "q": "Ontem o tempo ___ ótimo.",
+   "opts": [
+    "estava",
+    "esteve",
+    "é"
+   ],
+   "ok": 0,
+   "rule": "<b>estava</b> — imperfeito: описывает состояние или фон в прошлом. <b>esteve</b> — pretérito perfeito, факт. Для погоды/настроения — imperfeito.",
+   "week": "jun2"
+  },
+  {
+   "q": "Eu ___ visitar os meus amigos.",
+   "opts": [
+    "fui",
+    "ia",
+    "vou"
+   ],
+   "ok": 0,
+   "rule": "<b>fui</b> — pretérito perfeito глагола <b>ir</b>: я пошла/поехала. <b>ia</b> — собиралась. <b>vou</b> — настоящее/будущее.",
+   "week": "jun2"
+  },
+  {
+   "q": "Hoje ___ o dia todo.",
+   "opts": [
+    "chove",
+    "chovia",
+    "choveu"
+   ],
+   "ok": 0,
+   "rule": "<b>chove</b> — безличный глагол в настоящем: дождь идёт сейчас. <b>chovia</b> — шёл (длительно). <b>choveu</b> — прошёл (завершённо).",
+   "week": "jun2"
+  },
+  {
+   "q": "Estou ___ preparar frango.",
+   "opts": [
+    "a",
+    "de",
+    "por"
+   ],
+   "ok": 0,
+   "rule": "<b>estar a + infinitivo</b> — настоящее длительное в PT-PT: «я сейчас готовлю». Это португальский аналог герундия.",
+   "week": "jun2"
+  },
+  {
+   "q": "Eu treino ___ ginásio.",
+   "opts": [
+    "no",
+    "na",
+    "em"
+   ],
+   "ok": 0,
+   "rule": "<b>no</b> = em + o (мужской род). <b>Ginásio</b> — мужской род, поэтому <b>no</b>. <b>Na</b> = em + a (женский).",
+   "week": "jun2"
+  },
+  {
+   "q": "Também nado ___ piscina.",
+   "opts": [
+    "na",
+    "no",
+    "em a"
+   ],
+   "ok": 0,
+   "rule": "<b>na</b> = em + a (женский род). <b>Piscina</b> — женский род, поэтому <b>na</b>. В PT предлог всегда сливается с артиклем.",
+   "week": "jun2"
+  },
+  {
+   "q": "Amanhã ___ trabalhar.",
+   "opts": [
+    "vou",
+    "fui",
+    "ia"
+   ],
+   "ok": 0,
+   "rule": "<b>ir + infinitivo</b> = ближайшее будущее: «я буду / собираюсь». <b>vou</b> — 1 лицо ед.ч. глагола <b>ir</b>.",
+   "week": "jun2"
+  },
+  {
+   "q": "___ de comer fora de casa.",
+   "opts": [
+    "Gosto",
+    "Gosta",
+    "Gostam"
+   ],
+   "ok": 0,
+   "rule": "<b>Gosto</b> — eu (я). <b>Gosta</b> — ele/ela (он/она). <b>Gostar de</b> + infinitivo = нравится делать.",
+   "week": "jun2"
+  },
+  {
+   "q": "No meu tempo ___ eu danço.",
+   "opts": [
+    "livre",
+    "grátis",
+    "liberto"
+   ],
+   "ok": 0,
+   "rule": "<b>tempo livre</b> — свободное время (fixed expression). <b>Grátis</b> — бесплатный (о товарах/услугах). <b>Liberto</b> — освобождённый.",
+   "week": "jun2"
+  },
+  {
+   "q": "Estou com um humor ___.",
+   "opts": [
+    "triste",
+    "trista",
+    "tristemente"
+   ],
+   "ok": 0,
+   "rule": "<b>triste</b> — прилагательное, одна форма для м. и ж. рода. <b>Tristemente</b> — наречие «печально».",
+   "week": "jun2"
+  },
+  {
+   "q": "Eu ___ de comer fora.",
+   "opts": [
+    "gosto",
+    "gostas",
+    "gostar"
+   ],
+   "ok": 0,
+   "rule": "<b>gosto</b> — presente, 1-е лицо: «мне нравится». Конструкция <b>gostar de</b> + (еда/действие). <b>gostas</b> — ты.",
+   "week": "jun3"
+  },
+  {
+   "q": "Gosto de comer massa ___ carne.",
+   "opts": [
+    "e",
+    "é",
+    "em"
+   ],
+   "ok": 0,
+   "rule": "<b>e</b> — союз «и» (без ударения). <b>é</b> — это глагол ser («есть/является»). Не путать: <b>massa e carne</b> = паста и мясо.",
+   "week": "jun3"
+  },
+  {
+   "q": "Eu ___ no ginásio.",
+   "opts": [
+    "treino",
+    "treinas",
+    "treinar"
+   ],
+   "ok": 0,
+   "rule": "<b>treino</b> — presente, 1-е лицо глагола <b>treinar</b>: «я тренируюсь». <b>treinas</b> — ты тренируешься.",
+   "week": "jun3"
+  },
+  {
+   "q": "Eu ___ uma irmã.",
+   "opts": [
+    "tenho",
+    "tens",
+    "ter"
+   ],
+   "ok": 0,
+   "rule": "<b>tenho</b> — presente глагола <b>ter</b>, 1-е лицо: «у меня есть». <b>tens</b> — у тебя есть. <b>ter</b> — инфинитив.",
+   "week": "jun3"
+  },
+  {
+   "q": "Eu vou ___ todos os dias.",
+   "opts": [
+    "passear",
+    "passeio",
+    "passeando"
+   ],
+   "ok": 0,
+   "rule": "После <b>vou</b> идёт инфинитив: <b>vou passear</b> — «(я) хожу/буду гулять». Конструкция <b>ir + инфинитив</b>.",
+   "week": "jun3"
+  }
  ],
  "antonyms": [
-  {"qpt": "O tempo está bom?", "apt": "Não, o tempo está mau.", "qru": "Погода хорошая?", "aru": "Нет, погода плохая.", "wq": "bom", "wa": "mau", "grp": "cli"},
-  {"qpt": "Estás triste?", "apt": "Não, estou alegre.", "qru": "Тебе грустно?", "aru": "Нет, мне весело.", "wq": "triste", "wa": "alegre", "grp": "emo"},
-  {"qpt": "Ela é preguiçosa?", "apt": "Não, ela é trabalhadora.", "qru": "Она ленивая?", "aru": "Нет, она трудолюбивая.", "wq": "preguiçosa", "wa": "trabalhadora", "grp": "car"},
-  {"qpt": "O frango está frio?", "apt": "Não, o frango está quente.", "qru": "Курица холодная?", "aru": "Нет, курица горячая.", "wq": "frio", "wa": "quente", "grp": "tmp"},
-  {"qpt": "A piscina é pequena?", "apt": "Não, a piscina é grande.", "qru": "Бассейн маленький?", "aru": "Нет, бассейн большой.", "wq": "pequena", "wa": "grande", "grp": "fis"},
-  {"qpt": "O dia foi curto?", "apt": "Não, o dia foi longo.", "qru": "День был коротким?", "aru": "Нет, день был длинным.", "wq": "curto", "wa": "longo", "grp": "fis"},
-  {"qpt": "A comida está má?", "apt": "Não, a comida está deliciosa.", "qru": "Еда плохая?", "aru": "Нет, еда вкусная.", "wq": "má", "wa": "deliciosa", "grp": "foo"},
-  {"qpt": "Eles são antipáticos?", "apt": "Não, eles são simpáticos.", "qru": "Они неприятные?", "aru": "Нет, они приятные.", "wq": "antipáticos", "wa": "simpáticos", "grp": "car"},
-  {"qpt": "Ela é arrogante?", "apt": "Não, ela é modesta.", "qru": "Она высокомерная?", "aru": "Нет, она скромная.", "wq": "arrogante", "wa": "modesta", "grp": "car"},
-  {"qpt": "Está calor?", "apt": "Não, está frio.", "qru": "Жарко?", "aru": "Нет, холодно.", "wq": "calor", "wa": "frio", "grp": "cli"}
+  {
+   "qpt": "O tempo está bom?",
+   "apt": "Não, o tempo está mau.",
+   "qru": "Погода хорошая?",
+   "aru": "Нет, погода плохая.",
+   "wq": "bom",
+   "wa": "mau",
+   "grp": "cli"
+  },
+  {
+   "qpt": "Estás triste?",
+   "apt": "Não, estou alegre.",
+   "qru": "Тебе грустно?",
+   "aru": "Нет, мне весело.",
+   "wq": "triste",
+   "wa": "alegre",
+   "grp": "emo"
+  },
+  {
+   "qpt": "Ela é preguiçosa?",
+   "apt": "Não, ela é trabalhadora.",
+   "qru": "Она ленивая?",
+   "aru": "Нет, она трудолюбивая.",
+   "wq": "preguiçosa",
+   "wa": "trabalhadora",
+   "grp": "car"
+  },
+  {
+   "qpt": "O frango está frio?",
+   "apt": "Não, o frango está quente.",
+   "qru": "Курица холодная?",
+   "aru": "Нет, курица горячая.",
+   "wq": "frio",
+   "wa": "quente",
+   "grp": "tmp"
+  },
+  {
+   "qpt": "A piscina é pequena?",
+   "apt": "Não, a piscina é grande.",
+   "qru": "Бассейн маленький?",
+   "aru": "Нет, бассейн большой.",
+   "wq": "pequena",
+   "wa": "grande",
+   "grp": "fis"
+  },
+  {
+   "qpt": "O dia foi curto?",
+   "apt": "Não, o dia foi longo.",
+   "qru": "День был коротким?",
+   "aru": "Нет, день был длинным.",
+   "wq": "curto",
+   "wa": "longo",
+   "grp": "fis"
+  },
+  {
+   "qpt": "A comida está má?",
+   "apt": "Não, a comida está deliciosa.",
+   "qru": "Еда плохая?",
+   "aru": "Нет, еда вкусная.",
+   "wq": "má",
+   "wa": "deliciosa",
+   "grp": "foo"
+  },
+  {
+   "qpt": "Eles são antipáticos?",
+   "apt": "Não, eles são simpáticos.",
+   "qru": "Они неприятные?",
+   "aru": "Нет, они приятные.",
+   "wq": "antipáticos",
+   "wa": "simpáticos",
+   "grp": "car"
+  },
+  {
+   "qpt": "Ela é arrogante?",
+   "apt": "Não, ela é modesta.",
+   "qru": "Она высокомерная?",
+   "aru": "Нет, она скромная.",
+   "wq": "arrogante",
+   "wa": "modesta",
+   "grp": "car"
+  },
+  {
+   "qpt": "Está calor?",
+   "apt": "Não, está frio.",
+   "qru": "Жарко?",
+   "aru": "Нет, холодно.",
+   "wq": "calor",
+   "wa": "frio",
+   "grp": "cli"
+  },
+  {
+   "qpt": "Gostas de comer fora?",
+   "apt": "Não, gosto de comer em casa.",
+   "qru": "Ты любишь есть вне дома?",
+   "aru": "Нет, я люблю есть дома.",
+   "wq": "fora",
+   "wa": "em casa",
+   "grp": "comida"
+  },
+  {
+   "qpt": "Gostas de dançar?",
+   "apt": "Não, gosto de descansar.",
+   "qru": "Ты любишь танцевать?",
+   "aru": "Нет, я люблю отдыхать.",
+   "wq": "dançar",
+   "wa": "descansar",
+   "grp": "acao"
+  },
+  {
+   "qpt": "Tens uma irmã?",
+   "apt": "Não, tenho um irmão.",
+   "qru": "У тебя есть сестра?",
+   "aru": "Нет, у меня есть брат.",
+   "wq": "irmã",
+   "wa": "irmão",
+   "grp": "familia"
+  },
+  {
+   "qpt": "Passeias todos os dias?",
+   "apt": "Não, fico em casa.",
+   "qru": "Ты гуляешь каждый день?",
+   "aru": "Нет, я остаюсь дома.",
+   "wq": "passear",
+   "wa": "ficar em casa",
+   "grp": "acao"
+  }
  ],
  "synonyms": [
-  {"qpt": "O tempo estava ótimo.", "apt": "O tempo estava excelente.", "qru": "Погода была классная.", "aru": "Погода была отличная.", "wq": "ótimo", "wa": "excelente"},
-  {"qpt": "Estou com um humor triste.", "apt": "Estou com um humor melancólico.", "qru": "У меня грустное настроение.", "aru": "У меня меланхоличное настроение.", "wq": "triste", "wa": "melancólico"},
-  {"qpt": "O frango está delicioso.", "apt": "O frango está saboroso.", "qru": "Курица вкусная.", "aru": "Курица аппетитная.", "wq": "delicioso", "wa": "saboroso"},
-  {"qpt": "Eles são simpáticos.", "apt": "Eles são amáveis.", "qru": "Они приятные.", "aru": "Они дружелюбные.", "wq": "simpáticos", "wa": "amáveis"},
-  {"qpt": "Eles são modestos.", "apt": "Eles são humildes.", "qru": "Они скромные.", "aru": "Они смиренные.", "wq": "modestos", "wa": "humildes"},
-  {"qpt": "Gosto de comer fora.", "apt": "Gosto de comer ao ar livre.", "qru": "Люблю есть на улице.", "aru": "Люблю есть на свежем воздухе.", "wq": "fora", "wa": "ao ar livre"},
-  {"qpt": "O tempo está bom.", "apt": "O tempo está agradável.", "qru": "Погода хорошая.", "aru": "Погода приятная.", "wq": "bom", "wa": "agradável"},
-  {"qpt": "Amanhã vou trabalhar.", "apt": "Amanhã tenho de trabalhar.", "qru": "Завтра буду работать.", "aru": "Завтра мне нужно работать.", "wq": "vou", "wa": "tenho de"},
-  {"qpt": "Nós passeámos.", "apt": "Nós caminhamos.", "qru": "Мы гуляли.", "aru": "Мы ходили.", "wq": "passeámos", "wa": "caminhamos"},
-  {"qpt": "Eu adoro sol.", "apt": "Eu amo sol.", "qru": "Я обожаю солнце.", "aru": "Я люблю солнце.", "wq": "adoro", "wa": "amo"}
+  {
+   "qpt": "O tempo estava ótimo.",
+   "apt": "O tempo estava excelente.",
+   "qru": "Погода была классная.",
+   "aru": "Погода была отличная.",
+   "wq": "ótimo",
+   "wa": "excelente"
+  },
+  {
+   "qpt": "Estou com um humor triste.",
+   "apt": "Estou com um humor melancólico.",
+   "qru": "У меня грустное настроение.",
+   "aru": "У меня меланхоличное настроение.",
+   "wq": "triste",
+   "wa": "melancólico"
+  },
+  {
+   "qpt": "O frango está delicioso.",
+   "apt": "O frango está saboroso.",
+   "qru": "Курица вкусная.",
+   "aru": "Курица аппетитная.",
+   "wq": "delicioso",
+   "wa": "saboroso"
+  },
+  {
+   "qpt": "Eles são simpáticos.",
+   "apt": "Eles são amáveis.",
+   "qru": "Они приятные.",
+   "aru": "Они дружелюбные.",
+   "wq": "simpáticos",
+   "wa": "amáveis"
+  },
+  {
+   "qpt": "Eles são modestos.",
+   "apt": "Eles são humildes.",
+   "qru": "Они скромные.",
+   "aru": "Они смиренные.",
+   "wq": "modestos",
+   "wa": "humildes"
+  },
+  {
+   "qpt": "Gosto de comer fora.",
+   "apt": "Gosto de comer ao ar livre.",
+   "qru": "Люблю есть на улице.",
+   "aru": "Люблю есть на свежем воздухе.",
+   "wq": "fora",
+   "wa": "ao ar livre"
+  },
+  {
+   "qpt": "O tempo está bom.",
+   "apt": "O tempo está agradável.",
+   "qru": "Погода хорошая.",
+   "aru": "Погода приятная.",
+   "wq": "bom",
+   "wa": "agradável"
+  },
+  {
+   "qpt": "Amanhã vou trabalhar.",
+   "apt": "Amanhã tenho de trabalhar.",
+   "qru": "Завтра буду работать.",
+   "aru": "Завтра мне нужно работать.",
+   "wq": "vou",
+   "wa": "tenho de"
+  },
+  {
+   "qpt": "Nós passeámos.",
+   "apt": "Nós caminhamos.",
+   "qru": "Мы гуляли.",
+   "aru": "Мы ходили.",
+   "wq": "passeámos",
+   "wa": "caminhamos"
+  },
+  {
+   "qpt": "Eu adoro sol.",
+   "apt": "Eu amo sol.",
+   "qru": "Я обожаю солнце.",
+   "aru": "Я люблю солнце.",
+   "wq": "adoro",
+   "wa": "amo"
+  },
+  {
+   "qpt": "Gosto de comer fora.",
+   "apt": "Adoro comer fora.",
+   "qru": "Я люблю есть вне дома.",
+   "aru": "Я обожаю есть вне дома.",
+   "wq": "gosto",
+   "wa": "adoro"
+  },
+  {
+   "qpt": "Eu treino no ginásio.",
+   "apt": "Eu faço exercício no ginásio.",
+   "qru": "Я тренируюсь в зале.",
+   "aru": "Я занимаюсь спортом в зале.",
+   "wq": "treino",
+   "wa": "faço exercício"
+  },
+  {
+   "qpt": "Eu gosto de dançar.",
+   "apt": "Eu adoro dançar.",
+   "qru": "Я люблю танцевать.",
+   "aru": "Я обожаю танцевать.",
+   "wq": "gosto",
+   "wa": "adoro"
+  },
+  {
+   "qpt": "Vou passear todos os dias.",
+   "apt": "Vou caminhar todos os dias.",
+   "qru": "Я хожу гулять каждый день.",
+   "aru": "Я хожу пешком каждый день.",
+   "wq": "passear",
+   "wa": "caminhar"
+  }
  ]
 }
