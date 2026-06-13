@@ -71,7 +71,8 @@
   .hello{
     font-family:'Caveat',cursive;
     font-size:clamp(40px,11vw,64px);line-height:1.2;color:var(--ink);
-    height:2.4em;overflow:hidden;opacity:0;transform:translateY(6px);
+    min-height:3.6em;display:flex;align-items:center;justify-content:center;
+    opacity:0;transform:translateY(6px);
     transition:opacity .9s ease,transform .9s ease;
   }
   .hello.show{opacity:1;transform:translateY(0)}
