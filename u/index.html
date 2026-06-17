@@ -136,6 +136,17 @@
   .langbtn:hover{border-color:var(--azul);color:var(--azul-deep)}
   .langbtn-globe{font-size:14px}
   .owner{text-align:center;margin-top:16px;font-size:11px;color:var(--ink-soft,#54655A);opacity:.6;letter-spacing:.02em}
+  /* ===== СВЯЗКИ (модуль contr) ===== */
+  .contr-head{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;margin-bottom:2px}
+  .contr-prep{font-family:"Fraunces",serif;font-size:30px;color:var(--terra);font-weight:600}
+  .contr-plus{font-size:19px;color:var(--ink-soft)}
+  .contr-art{font-family:"Fraunces",serif;font-size:30px;color:var(--azul-deep);font-weight:600}
+  .contr-noun{font-family:"Fraunces",serif;font-style:italic;font-size:18px;color:var(--ink-soft);align-self:center;margin-left:4px}
+  .matrix{width:100%;border-collapse:collapse;margin-top:10px;font-family:"Fraunces",serif}
+  .matrix th,.matrix td{border:1px solid var(--line);padding:8px 4px;text-align:center;font-size:15px}
+  .matrix th{font-family:"Hanken Grotesk";font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);background:rgba(31,122,92,.06)}
+  .matrix td.pp{font-family:"Hanken Grotesk";font-weight:700;color:var(--terra);background:rgba(188,75,47,.05)}
+  .matrix td b{color:var(--azul-deep)}
 </style>
 </head>
 <body>
@@ -148,6 +159,7 @@
   <div class="tabs" id="tabs">
     <button class="tab active" data-mode="recall"></button>
     <button class="tab" data-mode="cloze"></button>
+    <button class="tab" data-mode="contr"></button>
     <button class="tab" data-mode="seq"></button>
     <button class="tab" data-mode="anton"></button>
     <button class="tab" data-mode="syn"></button>
@@ -262,6 +274,17 @@ const EMBEDDED_L = {
  }
 };
 
+/* ===== Мини-словарь модуля «Связки» (живёт в движке, как EMBEDDED_L).
+   При следующем обновлении локалей блок переносится в ui.{lang}.json → L.contr. ===== */
+const CONTR_L = {
+ ru:{tab:"Связки",head:"связки · предлог + артикль",ex:"Пример из истории",matrix:"Таблица связок",arc:"архив · связки",done:"Связки закрыты ✓",empty:"Связок пока нет.",correct:"верно.",right:"правильная форма.",noJoin:"<b>com</b> и <b>para</b> в письме НЕ сливаются — пишем раздельно.",showMatrix:"Показать таблицу связок"},
+ en:{tab:"Contractions",head:"contractions · prep + article",ex:"Example",matrix:"Contractions table",arc:"archive · contractions",done:"Contractions done ✓",empty:"No contractions yet.",correct:"correct.",right:"correct form.",noJoin:"<b>com</b> and <b>para</b> don't contract in writing.",showMatrix:"Show contractions table"},
+ pt:{tab:"Contrações",head:"contrações · prep + artigo",ex:"Exemplo",matrix:"Tabela de contrações",arc:"arquivo · contrações",done:"Contrações feitas ✓",empty:"Ainda sem contrações.",correct:"correto.",right:"forma correta.",noJoin:"<b>com</b> e <b>para</b> não contraem na escrita.",showMatrix:"Ver tabela"},
+ es:{tab:"Contracciones",head:"contracciones · prep + artículo",ex:"Ejemplo",matrix:"Tabla",arc:"archivo · contracciones",done:"Contracciones hechas ✓",empty:"Aún sin contracciones.",correct:"correcto.",right:"forma correcta.",noJoin:"<b>com</b>/<b>para</b> no se contraen.",showMatrix:"Ver tabla"},
+ de:{tab:"Verschmelzungen",head:"Präposition + Artikel",ex:"Beispiel",matrix:"Tabelle",arc:"Archiv · Verschmelzungen",done:"Fertig ✓",empty:"Noch keine.",correct:"richtig.",right:"richtige Form.",noJoin:"com/para verschmelzen nicht.",showMatrix:"Tabelle anzeigen"}
+};
+function CL(){ return (L&&L.contr) || CONTR_L[(DATA.config&&DATA.config.ui)] || CONTR_L.en; }
+
 /* Склонение из данных локали (заменяет прежнюю функцию parts). */
 function pluralForm(n){
   var r=(L&&L.plural)||"one_other";
@@ -304,6 +327,7 @@ const EMBEDDED = {
 let CLOZE=[]; const CLOZE_FALLBACK=[];
 let ANTONYMS=[]; const ANTONYMS_FALLBACK=[];
 let SYN=[]; const SYN_FALLBACK=[];
+let CONTRACTIONS=[]; let CRULES={};        // ← модуль связок (контент из data)
 
 const TCLS={pas:"t-pas",pre:"t-pre",fut:"t-fut"};
 const LCLS={pas:"l-pas",pre:"l-pre",fut:"l-fut"};
@@ -354,6 +378,7 @@ const card=document.getElementById("card");
 const getWeek=id=>WEEKS.find(w=>w.id===id);
 function deriveCue(pt){const w=pt.split(" ");return (w.slice(0,2).join(" "))+"…";}
 function neg(){return (DATA.config&&DATA.config.neg)||"…";}
+function tabName(m){return (L&&L.tabs&&L.tabs[m])||(m==="contr"?CL().tab:m);}
 
 /* CTA подписки */
 function ctaHTML(){
@@ -367,7 +392,7 @@ function ctaHTML(){
 }
 
 function refreshWeekbar(){
-  document.getElementById("weekLabel").innerHTML=L.sectionArchive+' <b>'+(L.tabs[mode]||"")+'</b>';
+  document.getElementById("weekLabel").innerHTML=L.sectionArchive+' <b>'+(tabName(mode)||"")+'</b>';
 }
 function markHi(pt,hi){let o=pt;(hi||[]).forEach(h=>o=o.replace(h,"<mark>"+h+"</mark>"));return o;}
 function srcTag(week){if(!week)return '';const w=getWeek(week);return w?'<span class="src">'+L.fromStory+w.label+'</span>':'';}
@@ -389,7 +414,7 @@ function renderRecall(){
   card.innerHTML=h;
 }
 function rate(ok){const p=rQ[rI];p.box=rateKey(p.pt,ok);rI++;rRev=false;renderRecall();}
-function resetProgress(){progress={};saveProgress();PHRASES.forEach(p=>p.box=1);ANTONYMS.forEach(p=>p.box=1);SYN.forEach(p=>p.box=1);buildRQ();renderRecall();}
+function resetProgress(){progress={};saveProgress();PHRASES.forEach(p=>p.box=1);ANTONYMS.forEach(p=>p.box=1);SYN.forEach(p=>p.box=1);CONTRACTIONS.forEach(p=>p.box=1);buildRQ();renderRecall();}
 
 /* ===== CLOZE ===== */
 let cI=0,cAns=false;
@@ -401,6 +426,59 @@ function renderCloze(){
 }
 function ansCloze(i){if(cAns)return;cAns=true;const it=CLOZE[cI];card.querySelectorAll(".opt").forEach((b,bi)=>{if(bi===it.ok)b.classList.add("correct");if(bi===i&&i!==it.ok)b.classList.add("wrong");});
   document.getElementById("fb").innerHTML='<div class="rule">'+it.rule+'</div><div class="row"><button class="act primary" onclick="cI++;renderCloze()">'+L.next+'</button></div>';}
+
+/* ===== CONTRACTIONS (связки: предлог + артикль) ===== */
+let kQ=[],kI=0,kAns=false,kOpts=null,kCorrect="";
+const kId=c=>c.prep+"|"+c.art+"|"+c.noun;
+const OPP_G={o:'a',a:'o',os:'as',as:'os'}, OPP_N={o:'os',a:'as',os:'o',as:'a'};
+function contrCorrect(it){const r=CRULES[it.prep]||{};return (r.joins&&r.forms)?(r.forms[it.art]+" "+it.noun):(it.prep+" "+it.art+" "+it.noun);}
+function buildContrOpts(it){
+  const r=CRULES[it.prep]||{}, noun=it.noun; let correct,pool=[];
+  if(r.joins&&r.forms){
+    correct=r.forms[it.art]+" "+noun;
+    pool=[it.prep+" "+it.art+" "+noun, r.forms[OPP_G[it.art]]+" "+noun, r.forms[OPP_N[it.art]]+" "+noun];
+  } else {
+    correct=it.prep+" "+it.art+" "+noun;
+    ['em','a','por'].forEach(p=>{if(CRULES[p]&&CRULES[p].forms)pool.push(CRULES[p].forms[it.art]+" "+noun);});
+  }
+  pool=[...new Set(pool)].filter(x=>x!==correct);
+  pool=pool.sort(()=>Math.random()-.5).slice(0,3);
+  return {correct, opts:[correct,...pool].sort(()=>Math.random()-.5)};
+}
+function buildKQ(){kQ=CONTRACTIONS.filter(c=>isActive("C:"+kId(c))).sort((a,b)=>a.box-b.box);kI=0;kAns=false;}
+function renderContr(){
+  if(!CONTRACTIONS.length){card.innerHTML='<div class="done"><p>'+CL().empty+'</p></div>';return;}
+  if(kI>=kQ.length){const avg=CONTRACTIONS.length?(CONTRACTIONS.reduce((s,p)=>s+p.box,0)/CONTRACTIONS.length).toFixed(1):'—';
+    let h='<div class="done"><h2>'+CL().done+'</h2><p>'+L.avgBoxShort+'<b>'+avg+'</b>/5.</p>';
+    if(Object.keys(CRULES).some(k=>CRULES[k]&&CRULES[k].forms))h+='<button class="act ghost" onclick="showMatrix()">'+CL().showMatrix+'</button>';
+    h+='<div class="row"><button class="act primary" onclick="buildKQ();renderContr()">'+L.nextRound+'</button></div>'+ctaHTML()+'</div>';
+    card.innerHTML=h;return;}
+  const it=kQ[kI], b=buildContrOpts(it);kOpts=b.opts;kCorrect=b.correct;
+  let h=head(CL().head,it.week);
+  h+='<div class="contr-head"><span class="contr-prep">'+it.prep+'</span><span class="contr-plus">+</span><span class="contr-art">'+it.art+'</span><span class="contr-noun">'+it.noun+'</span></div><div class="cue" style="margin-top:6px">'+it.ru+'</div>';
+  h+='<div class="opts">';
+  kOpts.forEach((o,i)=>h+='<button class="opt" onclick="ansContr('+i+')">'+o+'</button>');
+  h+='</div><div id="fb"></div>';
+  h+='<div class="spacer"></div><div class="meta"><span>'+L.box+'</span>'+boxesHTML(it.box)+'<span class="count">'+(kI+1)+' / '+kQ.length+'</span></div>';
+  card.innerHTML=h;kAns=false;
+}
+function ansContr(i){
+  if(kAns)return;kAns=true;const it=kQ[kI],chosen=kOpts[i],ok=(chosen===kCorrect);
+  card.querySelectorAll(".opt").forEach((b,bi)=>{if(kOpts[bi]===kCorrect)b.classList.add("correct");if(bi===i&&!ok)b.classList.add("wrong");});
+  it.box=rateKey("C:"+kId(it),ok);
+  const rule=(CRULES[it.prep]&&CRULES[it.prep].rule)||CL().noJoin;
+  const ex=it.ex?'<div class="lbl">'+CL().ex+'</div><div class="pt" style="font-size:19px;cursor:pointer" onclick="speakContrEx()">'+markHi(it.ex,[kCorrect])+'</div><div class="dru" style="color:var(--ink-soft);font-size:14px;margin-top:4px">'+(it.exru||"")+'</div>':'';
+  document.getElementById("fb").innerHTML='<div class="rule"><b>'+kCorrect+'</b> — '+(ok?CL().correct:CL().right)+'<br>'+rule+'</div>'+ex+'<div class="row"><button class="act listen" onclick="speakContrEx()">🔊</button><button class="act primary" onclick="kI++;renderContr()">'+L.next+'</button></div>';
+}
+function speakContrEx(){const it=kQ[kI];speak((it&&it.ex)||kCorrect);}
+function showMatrix(){
+  const ord=["em","de","a","por"].filter(p=>CRULES[p]&&CRULES[p].forms),cols=["o","a","os","as"];
+  let h='<button class="back" onclick="renderContr()">'+L.toTraining+'</button><span class="sit">'+CL().matrix+'</span>';
+  h+='<table class="matrix"><tr><th></th>'+cols.map(c=>'<th>+ '+c+'</th>').join('')+'</tr>';
+  ord.forEach(p=>{const f=CRULES[p].forms;h+='<tr><td class="pp">'+p+'</td>'+cols.map(c=>'<td><b>'+f[c]+'</b></td>').join('')+'</tr>';});
+  h+='</table><div class="rule" style="margin-top:14px">'+CL().noJoin+'</div>';
+  card.innerHTML=h;
+}
 
 /* ===== ANTONYMS ===== */
 let aQ=[],aI=0,aRev=false,aFilter="all";
@@ -484,9 +562,9 @@ function checkSeq(){
 function speakWeek(){speak(getWeek(selWeek).sentences.map(s=>s.pt).join(" "));}
 
 /* ===== ARCHIVE ===== */
-function modeList(){return mode==="recall"?PHRASES:mode==="cloze"?CLOZE:mode==="syn"?SYN:ANTONYMS;}
-function secTitleAll(){return L.arc[mode]||L.arc.recall;}
-function previewOf(it){return mode==="recall"?it.pt:mode==="cloze"?it.q.replace("___","…"):it.qpt;}
+function modeList(){return mode==="recall"?PHRASES:mode==="cloze"?CLOZE:mode==="contr"?CONTRACTIONS:mode==="syn"?SYN:ANTONYMS;}
+function secTitleAll(){return (L.arc&&L.arc[mode])||(mode==="contr"?CL().arc:L.arc.recall);}
+function previewOf(it){return mode==="recall"?it.pt:mode==="cloze"?it.q.replace("___","…"):mode==="contr"?contrCorrect(it):it.qpt;}
 function weeksForMode(){
   if(mode==="seq")return WEEKS.map(w=>({key:w.id,label:w.label,date:w.date,month:w.month,items:w.sentences,preview:w.sentences.length?w.sentences[0].pt:""}));
   const list=modeList(),map={};
@@ -525,6 +603,8 @@ function openArchWeek(i,wi){const m=ARCHM[i],w=m.weeks[wi];ARCHSAY=[];
         h+='<div class="detail-line"><div class="dpt" onclick="speak(ARCHSAY['+k+'])">'+it.pt+'</div><div class="dru">'+it.ru+'</div></div>';}
       else if(mode==="cloze"){const ans=it.opts[it.ok],k=ARCHSAY.push(it.q.replace("___",ans))-1;
         h+='<div class="detail-line l-pre"><div class="dpt" onclick="speak(ARCHSAY['+k+'])">'+it.q.replace("___","<mark>"+ans+"</mark>")+'</div><div class="dru">'+stripTags(it.rule)+'</div></div>';}
+      else if(mode==="contr"){const corr=contrCorrect(it),k=ARCHSAY.push(it.ex||corr)-1;
+        h+='<div class="detail-line l-pre"><div class="dpt" onclick="speak(ARCHSAY['+k+'])">'+it.prep+' + '+it.art+' → <mark>'+corr+'</mark></div><div class="dru">'+(it.ex||"")+(it.exru?' — '+it.exru:'')+'</div></div>';}
       else if(mode==="syn"){const k=ARCHSAY.push(it.apt)-1;
         h+='<div class="detail-line"><div class="dpt" onclick="speak(ARCHSAY['+k+'])">'+it.qpt+' ≈ '+markHi(it.apt,[it.wa])+'</div><div class="dru">'+it.qru+' → '+it.aru+'</div></div>';}
       else{const k=ARCHSAY.push(it.apt)-1;
@@ -543,6 +623,7 @@ function applyView(){refreshWeekbar();
   if(archiveScreen==="list"){ renderArchMonths(); return; }
   if(mode==="recall"){buildRQ();renderRecall();}
   else if(mode==="cloze"){cI=0;renderCloze();}
+  else if(mode==="contr"){buildKQ();renderContr();}
   else if(mode==="anton"){buildAQ();renderAnton();}
   else if(mode==="syn"){buildSQ();renderSyn();}
   else renderSeq();
@@ -558,7 +639,7 @@ function applyI18n(){
   var _flag=(DATA.config&&DATA.config.flag!=null)?DATA.config.flag:L.flag;
   document.getElementById("wm").innerHTML=_brand+' <em>Treino</em>';
   document.getElementById("flag").textContent=_flag||"";
-  document.querySelectorAll(".tab").forEach(t=>t.textContent=L.tabs[t.dataset.mode]||t.dataset.mode);
+  document.querySelectorAll(".tab").forEach(t=>t.textContent=tabName(t.dataset.mode));
   document.getElementById("archBtn").textContent=L.archBtn;
   document.getElementById("footNote").textContent=L.footNote;
   var c=DATA.config||{}, links=[], _ui=c.ui||"ru";
@@ -619,10 +700,14 @@ function init(){
   CLOZE=(Array.isArray(DATA.cloze)&&DATA.cloze.length)?DATA.cloze:CLOZE_FALLBACK;
   ANTONYMS=(Array.isArray(DATA.antonyms)&&DATA.antonyms.length)?DATA.antonyms:ANTONYMS_FALLBACK;
   SYN=(Array.isArray(DATA.synonyms)&&DATA.synonyms.length)?DATA.synonyms:SYN_FALLBACK;
+  CONTRACTIONS=(Array.isArray(DATA.contractions)?DATA.contractions:[]).map(c=>({prep:c.prep,art:c.art,noun:c.noun,ru:c.ru||"",ex:c.ex||"",exru:c.exru||"",week:c.week||null}));
+  CRULES=DATA.contractionRules||{};
   progress=loadProgress();
   PHRASES.forEach(p=>{p.box=getRec(p.pt).b;});
   ANTONYMS.forEach(p=>{p.box=getRec("A:"+p.qpt).b;});
   SYN.forEach(p=>{p.box=getRec("S:"+p.qpt).b;});
+  CONTRACTIONS.forEach(c=>{c.box=getRec("C:"+kId(c)).b;});
+  var ctab=document.querySelector('.tab[data-mode="contr"]'); if(ctab)ctab.style.display=CONTRACTIONS.length?'':'none';
   if(WEEKS.length)selWeek=WEEKS[0].id;
   document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>setMode(t.dataset.mode));
   document.getElementById("archBtn").onclick=openArchive;
