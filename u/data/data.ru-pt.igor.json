@@ -218,6 +218,24 @@
    "rule": "<b>jogo</b> = играю (настоящее, регулярно). 'Esta semana' + сейчас → presente."
   }
  ],
+ "contractionRules": {
+  "em":   { "joins": true,  "forms": { "o": "no",   "a": "na",   "os": "nos",  "as": "nas"  }, "rule": "<b>em</b> + артикль → добавляем <b>n</b>: em+o=<b>no</b>, em+a=<b>na</b>, em+os=nos, em+as=nas." },
+  "de":   { "joins": true,  "forms": { "o": "do",   "a": "da",   "os": "dos",  "as": "das"  }, "rule": "<b>de</b> + артикль → добавляем <b>d</b>: de+o=<b>do</b>, de+a=<b>da</b>, de+os=dos, de+as=das." },
+  "a":    { "joins": true,  "forms": { "o": "ao",   "a": "à",    "os": "aos",  "as": "às"   }, "rule": "<b>a</b> + артикль → слияние: a+o=<b>ao</b>, a+a=<b>à</b> (грависный акцент!), a+os=aos, a+as=às." },
+  "por":  { "joins": true,  "forms": { "o": "pelo", "a": "pela", "os": "pelos","as": "pelas"}, "rule": "<b>por</b> + артикль → <b>pel-</b>: por+o=<b>pelo</b>, por+a=<b>pela</b>, por+os=pelos, por+as=pelas." },
+  "com":  { "joins": false, "rule": "<b>com</b> НЕ сливается с артиклем — пишем раздельно: <b>com a</b>, <b>com os</b>. (Не «coma», не «cos».)" },
+  "para": { "joins": false, "rule": "<b>para</b> в письме НЕ сливается: <b>para a</b>, <b>para o</b>. Слитое <i>pra</i> — только разговорная речь, не для письма." }
+ },
+ "contractions": [
+  { "prep": "a",    "art": "a",  "noun": "serra",     "ru": "в горы / на гору",   "ex": "Na semana passada fomos à serra.",              "exru": "На прошлой неделе мы ездили в горы.",    "week": "jun2" },
+  { "prep": "de",   "art": "as", "noun": "montanhas", "ru": "гор (чьи вершины)",  "ex": "Os cumes das montanhas brilhavam como ouro.",   "exru": "Вершины гор сияли золотом.",             "week": "jun2" },
+  { "prep": "a",    "art": "o",  "noun": "teatro",    "ru": "в театр",            "ex": "Vamos ao teatro e ao Cabo.",                    "exru": "Сходим в театр и на Кабо.",              "week": "jun2" },
+  { "prep": "a",    "art": "o",  "noun": "Cabo",      "ru": "на Кабо",            "ex": "Depois vamos ao Cabo.",                         "exru": "Потом сходим на Кабо.",                  "week": "jun2" },
+  { "prep": "com",  "art": "os", "noun": "amigos",    "ru": "с друзьями",         "ex": "Jogo golfe com os amigos.",                     "exru": "Играю в гольф с друзьями.",              "week": "jun2" },
+  { "prep": "em",   "art": "a",  "noun": "Madeira",   "ru": "на Мадейре",         "ex": "Vivo na Madeira há muitos anos.",               "exru": "Живу на Мадейре много лет.",             "week": "core" },
+  { "prep": "por",  "art": "a",  "noun": "manhã",     "ru": "утром",              "ex": "Faço uma caminhada pela manhã.",                "exru": "Гуляю по утрам.",                        "week": "core" },
+  { "prep": "para", "art": "o",  "noun": "filho",     "ru": "сыну (для сына)",    "ex": "Levo um presente para o filho.",                "exru": "Несу подарок сыну.",                     "week": "core" }
+ ],
  "antonyms": [
   {
    "qpt": "Os cumes estavam apagados?",
