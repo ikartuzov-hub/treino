@@ -1,314 +1,51 @@
 {
  "config": {
-  "lang": "pt-PT",
-  "ui": "es",
-  "neg": "Não, é…",
-  "brand": "España",
-  "flag": "🇵🇹",
+  "lang": "pt-PT", "ui": "es", "neg": "Não, é…", "brand": "España", "flag": "🇵🇹",
   "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
   "subscribeText": "¿Quieres tu propio set, hecho con tu semana?",
   "subscribeBtn": "Conseguir mi set →",
-  "flyerUrl": "start.html",
-  "flyerText": "Cómo funciona y precios",
-  "methodUrl": "method.html",
-  "methodText": "El método"
+  "flyerUrl": "start.html", "flyerText": "Cómo funciona y precios", "methodUrl": "method.html", "methodText": "El método"
  },
  "phrases": [
-  {
-   "pt": "Gosto muito do meu gato.",
-   "ru": "Quiero mucho a mi gato.",
-   "sit": "día a día",
-   "cue": "Gosto muito do <span>meu gato</span>…",
-   "hi": [
-    "meu gato"
-   ]
-  },
-  {
-   "pt": "Todas as manhãs bebo um café.",
-   "ru": "Todas las mañanas bebo un café.",
-   "sit": "día a día",
-   "cue": "Todas as manhãs <span>bebo</span>…",
-   "hi": [
-    "bebo"
-   ]
-  },
-  {
-   "pt": "Vivo aqui há dois anos.",
-   "ru": "Vivo aquí desde hace dos años.",
-   "sit": "encuentro",
-   "cue": "Vivo aqui <span>há</span>…",
-   "hi": [
-    "há"
-   ]
-  },
-  {
-   "pt": "Foi um prazer!",
-   "ru": "¡Fue un placer!",
-   "sit": "encuentro",
-   "cue": "Foi um…!",
-   "hi": []
-  },
-  {
-   "pt": "passeei pela cidade velha",
-   "ru": "paseé por la ciudad vieja",
-   "sit": "test",
-   "cue": "passeei pela <span>cidade velha</span>",
-   "hi": [
-    "cidade velha"
-   ],
-   "week": "test"
-  },
-  {
-   "pt": "bebo um café forte",
-   "ru": "tomo un café fuerte",
-   "sit": "test",
-   "cue": "bebo um café <span>forte</span>",
-   "hi": [
-    "forte"
-   ],
-   "week": "test"
-  },
-  {
-   "pt": "fiz um jantar saboroso",
-   "ru": "hice una cena sabrosa",
-   "sit": "test",
-   "cue": "fiz um jantar <span>saboroso</span>",
-   "hi": [
-    "saboroso"
-   ],
-   "week": "test"
-  },
-  {
-   "pt": "vou visitar a minha irmã mais velha",
-   "ru": "visitaré a mi hermana mayor",
-   "sit": "test",
-   "cue": "vou visitar a minha <span>irmã</span> mais velha",
-   "hi": [
-    "irmã"
-   ],
-   "week": "test"
-  }
+  { "pt": "Gosto muito do meu gato.", "ru": "Quiero mucho a mi gato.", "sit": "día a día", "cue": "Gosto muito do <span>meu gato</span>…", "hi": ["meu gato"] },
+  { "pt": "Todas as manhãs bebo um café.", "ru": "Todas las mañanas bebo un café.", "sit": "día a día", "cue": "Todas as manhãs <span>bebo</span>…", "hi": ["bebo"] },
+  { "pt": "Vivo aqui há dois anos.", "ru": "Vivo aquí desde hace dos años.", "sit": "encuentro", "cue": "Vivo aqui <span>há</span>…", "hi": ["há"] },
+  { "pt": "Foi um prazer!", "ru": "¡Fue un placer!", "sit": "encuentro", "cue": "Foi um…!", "hi": [] }
  ],
  "weeks": [
-  {
-   "id": "w1",
-   "label": "Semana 1",
-   "date": "esta semana",
-   "month": "Base",
-   "sentences": [
-    {
-     "pt": "Ontem fiz o jantar em casa.",
-     "ru": "Ayer hice la cena en casa.",
-     "t": "pas"
-    },
-    {
-     "pt": "Todas as manhãs bebo um café.",
-     "ru": "Todas las mañanas bebo un café.",
-     "t": "pre"
-    },
-    {
-     "pt": "Para a semana vou visitar uma amiga.",
-     "ru": "La semana que viene voy a visitar a una amiga.",
-     "t": "fut"
-    }
-   ]
-  },
-  {
-   "id": "test",
-   "label": "Test",
-   "date": "ejemplo",
-   "month": "Test",
-   "sentences": [
-    {
-     "pt": "No sábado passado passeei pela cidade velha com a minha amiga alegre.",
-     "ru": "El sábado pasado paseé por la ciudad vieja con mi amiga alegre.",
-     "t": "pas"
-    },
-    {
-     "pt": "A manhã estava soalheira e quente, e as ruas estreitas estavam calmas e acolhedoras.",
-     "ru": "La mañana estaba soleada y cálida, y las calles estrechas estaban tranquilas y acogedoras.",
-     "t": "pas"
-    },
-    {
-     "pt": "Todas as manhãs bebo um café forte na minha pequena varanda.",
-     "ru": "Cada mañana tomo un café fuerte en mi pequeño balcón.",
-     "t": "pre"
-    },
-    {
-     "pt": "O meu vizinho é uma pessoa calma e simpática; cumprimenta-me sempre primeiro.",
-     "ru": "Mi vecino es una persona tranquila y amable; siempre me saluda primero.",
-     "t": "pre"
-    },
-    {
-     "pt": "Agora vivo num apartamento luminoso ao lado de um mercado barulhento.",
-     "ru": "Ahora vivo en un piso luminoso al lado de un mercado ruidoso.",
-     "t": "pre"
-    },
-    {
-     "pt": "Ontem fiz um jantar saboroso e convidei duas amigas próximas.",
-     "ru": "Ayer hice una cena sabrosa e invité a dos amigas cercanas.",
-     "t": "pas"
-    },
-    {
-     "pt": "À noite leio um livro interessante ou oiço música lenta.",
-     "ru": "Por las noches leo un libro interesante o escucho música lenta.",
-     "t": "pre"
-    },
-    {
-     "pt": "Para a semana vou visitar a minha irmã mais velha.",
-     "ru": "La semana que viene visitaré a mi hermana mayor.",
-     "t": "fut"
-    },
-    {
-     "pt": "Em breve vou começar um projeto novo e mais fácil.",
-     "ru": "Pronto empezaré un proyecto nuevo y más fácil.",
-     "t": "fut"
-    },
-    {
-     "pt": "Daqui a um mês vamos ao mar, e finalmente vou descansar.",
-     "ru": "Dentro de un mes iremos al mar, y por fin descansaré.",
-     "t": "fut"
-    }
-   ]
-  }
+  { "id": "w1", "label": "Semana 1", "date": "esta semana", "month": "Base", "sentences": [
+    { "pt": "Ontem fiz o jantar em casa.", "ru": "Ayer hice la cena en casa.", "t": "pas" },
+    { "pt": "Todas as manhãs bebo um café.", "ru": "Todas las mañanas bebo un café.", "t": "pre" },
+    { "pt": "Para a semana vou visitar uma amiga.", "ru": "La semana que viene voy a visitar a una amiga.", "t": "fut" }
+  ] }
  ],
  "cloze": [
-  {
-   "q": "Ontem ___ o jantar em casa.",
-   "opts": [
-    "faço",
-    "fiz",
-    "fazia"
-   ],
-   "ok": 1,
-   "rule": "<b>fiz</b> = hice (acción terminada). 'Ontem' (ayer) → acción terminada → fiz."
-  },
-  {
-   "q": "Todas as manhãs ___ um café.",
-   "opts": [
-    "bebo",
-    "bebi",
-    "beberei"
-   ],
-   "ok": 0,
-   "rule": "<b>bebo</b> = bebo (presente, hábito). 'Todas as manhãs' (todas las mañanas) → hábito → presente: bebo."
-  },
-  {
-   "q": "Ontem ___ um jantar saboroso.",
-   "opts": [
-    "faço",
-    "fiz",
-    "farei"
-   ],
-   "ok": 1,
-   "rule": "<b>fiz</b> = hice (pasado, acción terminada). «Ontem» (ayer) → la acción está concluida.",
-   "week": "test"
-  }
+  { "q": "Ontem ___ o jantar em casa.", "opts": ["faço", "fiz", "fazia"], "ok": 1, "rule": "<b>fiz</b> = hice (acción terminada). 'Ontem' (ayer) → acción terminada → fiz." },
+  { "q": "Todas as manhãs ___ um café.", "opts": ["bebo", "bebi", "beberei"], "ok": 0, "rule": "<b>bebo</b> = bebo (presente, hábito). 'Todas as manhãs' (todas las mañanas) → hábito → presente: bebo." }
+ ],
+ "contractionRules": {
+  "em":   { "joins": true,  "forms": { "o": "no",   "a": "na",   "os": "nos",  "as": "nas"  }, "rule": "<b>em</b> + artículo → añade <b>n</b>: em+o=<b>no</b>, em+a=<b>na</b>, em+os=nos, em+as=nas." },
+  "de":   { "joins": true,  "forms": { "o": "do",   "a": "da",   "os": "dos",  "as": "das"  }, "rule": "<b>de</b> + artículo → añade <b>d</b>: de+o=<b>do</b>, de+a=<b>da</b>, de+os=dos, de+as=das. (Como <i>del</i>, pero también en femenino.)" },
+  "a":    { "joins": true,  "forms": { "o": "ao",   "a": "à",    "os": "aos",  "as": "às"   }, "rule": "<b>a</b> + artículo se funde: a+o=<b>ao</b>, a+a=<b>à</b> (¡acento grave!), a+os=aos, a+as=às. (Como <i>al</i>, pero el portugués lo hace también en femenino y plural.)" },
+  "por":  { "joins": true,  "forms": { "o": "pelo", "a": "pela", "os": "pelos","as": "pelas"}, "rule": "<b>por</b> + artículo → <b>pel-</b>: por+o=<b>pelo</b>, por+a=<b>pela</b>, por+os=pelos, por+as=pelas." },
+  "com":  { "joins": false, "rule": "<b>com</b> NO se funde con el artículo — se escribe separado: <b>com a</b>, <b>com os</b>." },
+  "para": { "joins": false, "rule": "<b>para</b> NO se funde por escrito: <b>para a</b>, <b>para o</b>." }
+ },
+ "contractions": [
+  { "prep": "de",  "art": "o",  "noun": "gato",      "ru": "de mi (gato)",   "ex": "Gosto muito do meu gato.",          "exru": "Quiero mucho a mi gato.",        "week": "w1" },
+  { "prep": "para","art": "a",  "noun": "semana",    "ru": "para la semana", "ex": "Para a semana vou visitar uma amiga.","exru": "La semana que viene voy a visitar a una amiga.", "week": "w1" },
+  { "prep": "a",   "art": "o",  "noun": "mar",       "ru": "al mar",         "ex": "Vamos ao mar no domingo.",          "exru": "Vamos al mar el domingo.",       "week": "core" },
+  { "prep": "de",  "art": "a",  "noun": "cidade",    "ru": "de la ciudad",   "ex": "Passeei pela parte velha da cidade.","exru": "Paseé por la parte vieja de la ciudad.", "week": "core" },
+  { "prep": "em",  "art": "a",  "noun": "praia",     "ru": "en la playa",    "ex": "Passei o dia na praia.",            "exru": "Pasé el día en la playa.",       "week": "core" },
+  { "prep": "por", "art": "a",  "noun": "manhã",     "ru": "por la mañana",  "ex": "Faço uma caminhada pela manhã.",    "exru": "Doy un paseo por la mañana.",    "week": "core" },
+  { "prep": "com", "art": "os", "noun": "amigos",    "ru": "con los amigos", "ex": "Jantei com os amigos.",             "exru": "Cené con los amigos.",           "week": "core" },
+  { "prep": "a",   "art": "as", "noun": "montanhas", "ru": "a las montañas", "ex": "Fui às montanhas no sábado.",        "exru": "Fui a las montañas el sábado.",  "week": "core" }
  ],
  "antonyms": [
-  {
-   "qpt": "É preguiçoso?",
-   "apt": "Não, é trabalhador.",
-   "qru": "¿Es perezoso?",
-   "aru": "No, es trabajador.",
-   "wq": "preguiçoso",
-   "wa": "trabalhador",
-   "grp": "car"
-  },
-  {
-   "qpt": "É alto?",
-   "apt": "Não, é baixo.",
-   "qru": "¿Es alto?",
-   "aru": "No, es bajo.",
-   "wq": "alto",
-   "wa": "baixo",
-   "grp": "fis"
-  },
-  {
-   "qpt": "É alegre?",
-   "apt": "Não, é triste.",
-   "qru": "¿Es alegre?",
-   "aru": "No, está triste.",
-   "wq": "alegre",
-   "wa": "triste",
-   "grp": "car",
-   "week": "test"
-  },
-  {
-   "qpt": "Está quente?",
-   "apt": "Não, está frio.",
-   "qru": "¿Está cálido?",
-   "aru": "No, está frío.",
-   "wq": "quente",
-   "wa": "frio",
-   "grp": "fis",
-   "week": "test"
-  },
-  {
-   "qpt": "É barulhento?",
-   "apt": "Não, é silencioso.",
-   "qru": "¿Es ruidoso?",
-   "aru": "No, es silencioso.",
-   "wq": "barulhento",
-   "wa": "silencioso",
-   "grp": "fis",
-   "week": "test"
-  },
-  {
-   "qpt": "É fácil?",
-   "apt": "Não, é difícil.",
-   "qru": "¿Es fácil?",
-   "aru": "No, es difícil.",
-   "wq": "fácil",
-   "wa": "difícil",
-   "grp": "car",
-   "week": "test"
-  }
+  { "qpt": "É preguiçoso?", "apt": "Não, é trabalhador.", "qru": "¿Es perezoso?", "aru": "No, es trabajador.", "wq": "preguiçoso", "wa": "trabalhador", "grp": "car" },
+  { "qpt": "É alto?", "apt": "Não, é baixo.", "qru": "¿Es alto?", "aru": "No, es bajo.", "wq": "alto", "wa": "baixo", "grp": "fis" }
  ],
  "synonyms": [
-  {
-   "qpt": "Estou cansada.",
-   "apt": "Estou exausta.",
-   "qru": "Estoy cansada.",
-   "aru": "Estoy agotada.",
-   "wq": "cansada",
-   "wa": "exausta"
-  },
-  {
-   "qpt": "É acolhedor.",
-   "apt": "É confortável.",
-   "qru": "Es acogedor.",
-   "aru": "Es confortable.",
-   "wq": "acolhedor",
-   "wa": "confortável",
-   "week": "test"
-  },
-  {
-   "qpt": "O café é forte.",
-   "apt": "O café é intenso.",
-   "qru": "El café es fuerte.",
-   "aru": "El café es intenso.",
-   "wq": "forte",
-   "wa": "intenso",
-   "week": "test"
-  },
-  {
-   "qpt": "O jantar é saboroso.",
-   "apt": "O jantar é delicioso.",
-   "qru": "La cena es sabrosa.",
-   "aru": "La cena es deliciosa.",
-   "wq": "saboroso",
-   "wa": "delicioso",
-   "week": "test"
-  },
-  {
-   "qpt": "Ele é calmo.",
-   "apt": "Ele é sereno.",
-   "qru": "Es tranquilo.",
-   "aru": "Es sereno.",
-   "wq": "calmo",
-   "wa": "sereno",
-   "week": "test"
-  }
+  { "qpt": "Estou cansada.", "apt": "Estou exausta.", "qru": "Estoy cansada.", "aru": "Estoy agotada.", "wq": "cansada", "wa": "exausta" }
  ]
 }
