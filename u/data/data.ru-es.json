@@ -1,176 +1,54 @@
 {
  "config": {
-  "lang": "es-ES",
-  "ui": "ru",
-  "neg": "No, …",
-  "brand": "",
-  "flag": "🇪🇸",
+  "lang": "es-ES", "ui": "ru", "neg": "No, …", "brand": "", "flag": "🇪🇸",
   "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
   "subscribeText": "Хочешь свой набор, собранный по твоей реальной неделе?",
   "subscribeBtn": "Получить мой набор →",
-  "flyerUrl": "start.html",
-  "flyerText": "Как это работает и цены",
-  "methodUrl": "method.html",
-  "methodText": "Метод"
+  "flyerUrl": "start.html", "flyerText": "Как это работает и цены", "methodUrl": "method.html", "methodText": "Метод"
  },
  "weeks": [
-  {
-   "id": "start1",
-   "label": "Старт / 1",
-   "date": "первая неделя",
-   "month": "Затравка",
-   "sentences": [
-    {
-     "pt": "Esta semana estudié español todos los días.",
-     "ru": "На этой неделе я учил испанский каждый день.",
-     "t": "pas"
-    },
-    {
-     "pt": "Practiqué en la tienda y con los vecinos.",
-     "ru": "Я практиковал в магазине и с соседями.",
-     "t": "pas"
-    },
-    {
-     "pt": "Hoy quedo con amigos en el café.",
-     "ru": "Сегодня я встречаюсь с друзьями в кафе.",
-     "t": "pre"
-    },
-    {
-     "pt": "Ahora ya hablo un poco.",
-     "ru": "Сейчас я уже немного говорю.",
-     "t": "pre"
-    },
-    {
-     "pt": "La próxima semana iré a Madrid.",
-     "ru": "На следующей неделе я поеду в Мадрид.",
-     "t": "fut"
-    }
-   ]
-  }
+  { "id": "start1", "label": "Старт / 1", "date": "первая неделя", "month": "Затравка", "sentences": [
+    { "pt": "Esta semana estudié español todos los días.", "ru": "На этой неделе я учил испанский каждый день.", "t": "pas" },
+    { "pt": "Practiqué en la tienda y con los vecinos.", "ru": "Я практиковал в магазине и с соседями.", "t": "pas" },
+    { "pt": "Hoy quedo con amigos en el café.", "ru": "Сегодня я встречаюсь с друзьями в кафе.", "t": "pre" },
+    { "pt": "Ahora ya hablo un poco.", "ru": "Сейчас я уже немного говорю.", "t": "pre" },
+    { "pt": "La próxima semana iré a Madrid.", "ru": "На следующей неделе я поеду в Мадрид.", "t": "fut" }
+  ] }
  ],
  "phrases": [
-  {
-   "pt": "¡Buenos días! ¿Cómo estás?",
-   "ru": "Доброе утро! Как у тебя дела?",
-   "sit": "приветствие",
-   "cue": "¡Buenos días! ¿Cómo <span>estás</span>…",
-   "hi": [
-    "Cómo estás"
-   ],
-   "week": "start1"
-  },
-  {
-   "pt": "Estudio español todos los días.",
-   "ru": "Я учу испанский каждый день.",
-   "sit": "ежедневно",
-   "cue": "<span>Estudio</span> español…",
-   "hi": [
-    "Estudio"
-   ],
-   "week": "start1"
-  },
-  {
-   "pt": "Vivo aquí desde hace dos años.",
-   "ru": "Я живу здесь два года.",
-   "sit": "знакомство",
-   "cue": "Vivo aquí <span>desde hace</span>…",
-   "hi": [
-    "desde hace dos años"
-   ],
-   "week": "start1"
-  },
-  {
-   "pt": "El fin de semana quedo con mis amigos.",
-   "ru": "На выходных я встречаюсь с друзьями.",
-   "sit": "досуг",
-   "cue": "El fin de semana <span>quedo</span>…",
-   "hi": [
-    "quedo"
-   ],
-   "week": "start1"
-  },
-  {
-   "pt": "Fue un día precioso.",
-   "ru": "Это был прекрасный день.",
-   "sit": "итог",
-   "cue": "<span>Fue</span> un día…",
-   "hi": [
-    "Fue"
-   ],
-   "week": "start1"
-  }
+  { "pt": "¡Buenos días! ¿Cómo estás?", "ru": "Доброе утро! Как у тебя дела?", "sit": "приветствие", "cue": "¡Buenos días! ¿Cómo <span>estás</span>…", "hi": ["Cómo estás"], "week": "start1" },
+  { "pt": "Estudio español todos los días.", "ru": "Я учу испанский каждый день.", "sit": "ежедневно", "cue": "<span>Estudio</span> español…", "hi": ["Estudio"], "week": "start1" },
+  { "pt": "Vivo aquí desde hace dos años.", "ru": "Я живу здесь два года.", "sit": "знакомство", "cue": "Vivo aquí <span>desde hace</span>…", "hi": ["desde hace dos años"], "week": "start1" },
+  { "pt": "El fin de semana quedo con mis amigos.", "ru": "На выходных я встречаюсь с друзьями.", "sit": "досуг", "cue": "El fin de semana <span>quedo</span>…", "hi": ["quedo"], "week": "start1" },
+  { "pt": "Fue un día precioso.", "ru": "Это был прекрасный день.", "sit": "итог", "cue": "<span>Fue</span> un día…", "hi": ["Fue"], "week": "start1" }
  ],
  "cloze": [
-  {
-   "q": "___ español todos los días.",
-   "opts": [
-    "Estudio",
-    "Estudias",
-    "Estudian"
-   ],
-   "ok": 0,
-   "rule": "<b>yo</b> + глагол на <b>-o</b>: <b>estudio</b>. estudias = ты, estudian = они.",
-   "week": "start1"
-  },
-  {
-   "q": "Vivo aquí ___ dos años.",
-   "opts": [
-    "desde hace",
-    "por",
-    "en"
-   ],
-   "ok": 0,
-   "rule": "<b>desde hace</b> + период = «уже … (как)» — длится с прошлого до сейчас.",
-   "week": "start1"
-  },
-  {
-   "q": "El fin de semana ___ con mis amigos.",
-   "opts": [
-    "quedo",
-    "quedas",
-    "queda"
-   ],
-   "ok": 0,
-   "rule": "<b>yo → quedo</b>. quedas = ты, queda = он/она.",
-   "week": "start1"
-  }
+  { "q": "___ español todos los días.", "opts": ["Estudio", "Estudias", "Estudian"], "ok": 0, "rule": "<b>yo</b> + глагол на <b>-o</b>: <b>estudio</b>. estudias = ты, estudian = они.", "week": "start1" },
+  { "q": "Vivo aquí ___ dos años.", "opts": ["desde hace", "por", "en"], "ok": 0, "rule": "<b>desde hace</b> + период = «уже … (как)» — длится с прошлого до сейчас.", "week": "start1" },
+  { "q": "El fin de semana ___ con mis amigos.", "opts": ["quedo", "quedas", "queda"], "ok": 0, "rule": "<b>yo → quedo</b>. quedas = ты, queda = он/она.", "week": "start1" }
+ ],
+ "contractionRules": {
+  "a":   { "joins": true,  "forms": { "el": "al",  "la": "a la",  "los": "a los",  "las": "a las"  }, "rule": "<b>a</b> сливается ТОЛЬКО с мужским <b>el</b>: a+el=<b>al</b>. С la/los/las — раздельно: a la, a los, a las." },
+  "de":  { "joins": true,  "forms": { "el": "del", "la": "de la", "los": "de los", "las": "de las" }, "rule": "<b>de</b> + <b>el</b> = <b>del</b>. С la/los/las — раздельно: de la, de los, de las." },
+  "en":  { "joins": false, "rule": "<b>en</b> НЕ сливается с артиклем: <b>en el</b>, <b>en la</b>. (В испанском слияний всего два — al и del.)" },
+  "con": { "joins": false, "rule": "<b>con</b> НЕ сливается: <b>con el</b>, <b>con los</b>." }
+ },
+ "contractions": [
+  { "prep": "a",   "art": "el",  "noun": "parque",  "ru": "в парк",        "ex": "Por la mañana voy al parque.",        "exru": "Утром иду в парк.",            "week": "core" },
+  { "prep": "de",  "art": "el",  "noun": "café",    "ru": "о/из кафе",     "ex": "Hablamos del café nuevo.",            "exru": "Говорим о новом кафе.",        "week": "start1" },
+  { "prep": "a",   "art": "la",  "noun": "tienda",  "ru": "в магазин",     "ex": "Voy a la tienda.",                    "exru": "Иду в магазин.",               "week": "start1" },
+  { "prep": "de",  "art": "los", "noun": "vecinos", "ru": "соседей (чей)", "ex": "La casa de los vecinos es bonita.",    "exru": "Дом соседей красивый.",        "week": "start1" },
+  { "prep": "a",   "art": "los", "noun": "amigos",  "ru": "к друзьям",     "ex": "Veo a los amigos el fin de semana.",  "exru": "Вижу друзей на выходных.",      "week": "core" },
+  { "prep": "de",  "art": "la",  "noun": "semana",  "ru": "недели (чьи)",  "ex": "Estos son los planes de la semana.",  "exru": "Это планы недели.",            "week": "core" },
+  { "prep": "a",   "art": "el",  "noun": "mercado", "ru": "на рынок",      "ex": "Voy al mercado los sábados.",         "exru": "Хожу на рынок по субботам.",    "week": "core" },
+  { "prep": "en",  "art": "el",  "noun": "café",    "ru": "в кафе",        "ex": "Quedo con amigos en el café.",        "exru": "Встречаюсь с друзьями в кафе.", "week": "start1" }
  ],
  "antonyms": [
-  {
-   "qpt": "¿Es perezoso?",
-   "apt": "No, es trabajador.",
-   "qru": "Он ленивый?",
-   "aru": "Нет, он трудолюбивый.",
-   "wq": "perezoso",
-   "wa": "trabajador",
-   "grp": "car"
-  },
-  {
-   "qpt": "¿Es grande?",
-   "apt": "No, es pequeño.",
-   "qru": "Оно большое?",
-   "aru": "Нет, оно маленькое.",
-   "wq": "grande",
-   "wa": "pequeño",
-   "grp": "fis"
-  }
+  { "qpt": "¿Es perezoso?", "apt": "No, es trabajador.", "qru": "Он ленивый?", "aru": "Нет, он трудолюбивый.", "wq": "perezoso", "wa": "trabajador", "grp": "car" },
+  { "qpt": "¿Es grande?", "apt": "No, es pequeño.", "qru": "Оно большое?", "aru": "Нет, оно маленькое.", "wq": "grande", "wa": "pequeño", "grp": "fis" }
  ],
  "synonyms": [
-  {
-   "qpt": "El día fue genial.",
-   "apt": "El día fue maravilloso.",
-   "qru": "День был классный.",
-   "aru": "День был чудесный.",
-   "wq": "genial",
-   "wa": "maravilloso"
-  },
-  {
-   "qpt": "Eso está bien.",
-   "apt": "Eso está estupendo.",
-   "qru": "Это хорошо.",
-   "aru": "Это здорово.",
-   "wq": "bien",
-   "wa": "estupendo"
-  }
+  { "qpt": "El día fue genial.", "apt": "El día fue maravilloso.", "qru": "День был классный.", "aru": "День был чудесный.", "wq": "genial", "wa": "maravilloso" },
+  { "qpt": "Eso está bien.", "apt": "Eso está estupendo.", "qru": "Это хорошо.", "aru": "Это здорово.", "wq": "bien", "wa": "estupendo" }
  ]
 }

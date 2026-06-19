@@ -1,176 +1,58 @@
 {
  "config": {
-  "lang": "de-DE",
-  "ui": "ru",
-  "neg": "Nein, …",
-  "brand": "",
-  "flag": "🇩🇪",
+  "lang": "de-DE", "ui": "ru", "neg": "Nein, …", "brand": "", "flag": "🇩🇪",
   "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
   "subscribeText": "Хочешь свой набор, собранный по твоей реальной неделе?",
   "subscribeBtn": "Получить мой набор →",
-  "flyerUrl": "start.html",
-  "flyerText": "Как это работает и цены",
-  "methodUrl": "method.html",
-  "methodText": "Метод"
+  "flyerUrl": "start.html", "flyerText": "Как это работает и цены", "methodUrl": "method.html", "methodText": "Метод"
  },
  "weeks": [
-  {
-   "id": "start1",
-   "label": "Старт / 1",
-   "date": "первая неделя",
-   "month": "Затравка",
-   "sentences": [
-    {
-     "pt": "Diese Woche habe ich jeden Tag Deutsch gelernt.",
-     "ru": "На этой неделе я учил немецкий каждый день.",
-     "t": "pas"
-    },
-    {
-     "pt": "Ich habe im Laden und mit Nachbarn geübt.",
-     "ru": "Я практиковал в магазине и с соседями.",
-     "t": "pas"
-    },
-    {
-     "pt": "Heute treffe ich Freunde im Café.",
-     "ru": "Сегодня я встречаюсь с друзьями в кафе.",
-     "t": "pre"
-    },
-    {
-     "pt": "Jetzt spreche ich schon ein bisschen.",
-     "ru": "Сейчас я уже немного говорю.",
-     "t": "pre"
-    },
-    {
-     "pt": "Nächste Woche fahre ich nach Berlin.",
-     "ru": "На следующей неделе я поеду в Берлин.",
-     "t": "fut"
-    }
-   ]
-  }
+  { "id": "start1", "label": "Старт / 1", "date": "первая неделя", "month": "Затравка", "sentences": [
+    { "pt": "Diese Woche habe ich jeden Tag Deutsch gelernt.", "ru": "На этой неделе я учил немецкий каждый день.", "t": "pas" },
+    { "pt": "Ich habe im Laden und mit Nachbarn geübt.", "ru": "Я практиковал в магазине и с соседями.", "t": "pas" },
+    { "pt": "Heute treffe ich Freunde im Café.", "ru": "Сегодня я встречаюсь с друзьями в кафе.", "t": "pre" },
+    { "pt": "Jetzt spreche ich schon ein bisschen.", "ru": "Сейчас я уже немного говорю.", "t": "pre" },
+    { "pt": "Nächste Woche fahre ich nach Berlin.", "ru": "На следующей неделе я поеду в Берлин.", "t": "fut" }
+  ] }
  ],
  "phrases": [
-  {
-   "pt": "Guten Morgen! Wie geht es dir?",
-   "ru": "Доброе утро! Как у тебя дела?",
-   "sit": "приветствие",
-   "cue": "Guten Morgen! Wie <span>geht</span>…",
-   "hi": [
-    "Wie geht es dir"
-   ],
-   "week": "start1"
-  },
-  {
-   "pt": "Ich lerne jeden Tag Deutsch.",
-   "ru": "Я учу немецкий каждый день.",
-   "sit": "ежедневно",
-   "cue": "Ich <span>lerne</span> jeden Tag…",
-   "hi": [
-    "lerne"
-   ],
-   "week": "start1"
-  },
-  {
-   "pt": "Ich wohne seit zwei Jahren hier.",
-   "ru": "Я живу здесь два года.",
-   "sit": "знакомство",
-   "cue": "Ich wohne <span>seit</span>…",
-   "hi": [
-    "seit zwei Jahren"
-   ],
-   "week": "start1"
-  },
-  {
-   "pt": "Am Wochenende treffe ich Freunde.",
-   "ru": "На выходных я встречаюсь с друзьями.",
-   "sit": "досуг",
-   "cue": "Am Wochenende <span>treffe</span>…",
-   "hi": [
-    "treffe"
-   ],
-   "week": "start1"
-  },
-  {
-   "pt": "Das war ein schöner Tag.",
-   "ru": "Это был прекрасный день.",
-   "sit": "итог",
-   "cue": "Das <span>war</span>…",
-   "hi": [
-    "war"
-   ],
-   "week": "start1"
-  }
+  { "pt": "Guten Morgen! Wie geht es dir?", "ru": "Доброе утро! Как у тебя дела?", "sit": "приветствие", "cue": "Guten Morgen! Wie <span>geht</span>…", "hi": ["Wie geht es dir"], "week": "start1" },
+  { "pt": "Ich lerne jeden Tag Deutsch.", "ru": "Я учу немецкий каждый день.", "sit": "ежедневно", "cue": "Ich <span>lerne</span> jeden Tag…", "hi": ["lerne"], "week": "start1" },
+  { "pt": "Ich wohne seit zwei Jahren hier.", "ru": "Я живу здесь два года.", "sit": "знакомство", "cue": "Ich wohne <span>seit</span>…", "hi": ["seit zwei Jahren"], "week": "start1" },
+  { "pt": "Am Wochenende treffe ich Freunde.", "ru": "На выходных я встречаюсь с друзьями.", "sit": "досуг", "cue": "Am Wochenende <span>treffe</span>…", "hi": ["treffe"], "week": "start1" },
+  { "pt": "Das war ein schöner Tag.", "ru": "Это был прекрасный день.", "sit": "итог", "cue": "Das <span>war</span>…", "hi": ["war"], "week": "start1" }
  ],
  "cloze": [
-  {
-   "q": "Ich ___ jeden Tag Deutsch.",
-   "opts": [
-    "lerne",
-    "lernst",
-    "lernen"
-   ],
-   "ok": 0,
-   "rule": "<b>ich</b> + глагол на <b>-e</b>: <b>lerne</b>. lernst = ты, lernen = мы/они.",
-   "week": "start1"
-  },
-  {
-   "q": "Ich wohne ___ zwei Jahren hier.",
-   "opts": [
-    "seit",
-    "für",
-    "ab"
-   ],
-   "ok": 0,
-   "rule": "<b>seit</b> + период = «уже … (как)» — длится с прошлого до сейчас.",
-   "week": "start1"
-  },
-  {
-   "q": "Am Wochenende ___ ich Freunde.",
-   "opts": [
-    "treffe",
-    "triffst",
-    "trifft"
-   ],
-   "ok": 0,
-   "rule": "<b>ich → treffe</b>. triffst = ты, trifft = он/она.",
-   "week": "start1"
-  }
+  { "q": "Ich ___ jeden Tag Deutsch.", "opts": ["lerne", "lernst", "lernen"], "ok": 0, "rule": "<b>ich</b> + глагол на <b>-e</b>: <b>lerne</b>. lernst = ты, lernen = мы/они.", "week": "start1" },
+  { "q": "Ich wohne ___ zwei Jahren hier.", "opts": ["seit", "für", "ab"], "ok": 0, "rule": "<b>seit</b> + период = «уже … (как)» — длится с прошлого до сейчас.", "week": "start1" },
+  { "q": "Am Wochenende ___ ich Freunde.", "opts": ["treffe", "triffst", "trifft"], "ok": 0, "rule": "<b>ich → treffe</b>. triffst = ты, trifft = он/она.", "week": "start1" }
+ ],
+ "contractionRules": {
+  "in":  { "joins": true,  "forms": { "dem": "im",   "das": "ins" }, "rule": "<b>in</b> + <b>dem</b> = <b>im</b> (где? Dativ). <b>in</b> + <b>das</b> = <b>ins</b> (куда? Akkusativ)." },
+  "an":  { "joins": true,  "forms": { "dem": "am",   "das": "ans" }, "rule": "<b>an</b> + <b>dem</b> = <b>am</b>. <b>an</b> + <b>das</b> = <b>ans</b>." },
+  "zu":  { "joins": true,  "forms": { "dem": "zum",  "der": "zur" }, "rule": "<b>zu</b> + <b>dem</b> = <b>zum</b>. <b>zu</b> + <b>der</b> = <b>zur</b> (женский род, Dativ)." },
+  "von": { "joins": true,  "forms": { "dem": "vom" },                "rule": "<b>von</b> + <b>dem</b> = <b>vom</b>." },
+  "bei": { "joins": true,  "forms": { "dem": "beim" },               "rule": "<b>bei</b> + <b>dem</b> = <b>beim</b>." },
+  "mit": { "joins": false, "rule": "<b>mit</b> в стандартном письме НЕ сливается: <b>mit dem</b>, <b>mit der</b>." }
+ },
+ "contractions": [
+  { "prep": "in",  "art": "dem", "noun": "Café",       "ru": "в кафе (где)",     "ex": "Heute treffe ich Freunde im Café.", "exru": "Сегодня встречаюсь с друзьями в кафе.", "week": "start1" },
+  { "prep": "an",  "art": "dem", "noun": "Wochenende", "ru": "на выходных",      "ex": "Am Wochenende treffe ich Freunde.", "exru": "На выходных встречаюсь с друзьями.",   "week": "start1" },
+  { "prep": "in",  "art": "dem", "noun": "Laden",      "ru": "в магазине (где)", "ex": "Ich habe im Laden geübt.",          "exru": "Я практиковал в магазине.",            "week": "start1" },
+  { "prep": "zu",  "art": "dem", "noun": "Arzt",       "ru": "к врачу",          "ex": "Morgen gehe ich zum Arzt.",         "exru": "Завтра иду к врачу.",                  "week": "core" },
+  { "prep": "zu",  "art": "der", "noun": "Schule",     "ru": "в школу",          "ex": "Das Kind geht zur Schule.",         "exru": "Ребёнок идёт в школу.",                "week": "core" },
+  { "prep": "von", "art": "dem", "noun": "Markt",      "ru": "с рынка",          "ex": "Ich komme gerade vom Markt.",       "exru": "Я как раз иду с рынка.",               "week": "core" },
+  { "prep": "bei", "art": "dem", "noun": "Freund",     "ru": "у друга",          "ex": "Heute bin ich beim Freund.",        "exru": "Сегодня я у друга.",                   "week": "core" },
+  { "prep": "in",  "art": "das", "noun": "Kino",       "ru": "в кино (куда)",    "ex": "Am Freitag gehen wir ins Kino.",    "exru": "В пятницу идём в кино.",               "week": "core" },
+  { "prep": "an",  "art": "das", "noun": "Meer",       "ru": "на море (куда)",   "ex": "Im Sommer fahren wir ans Meer.",    "exru": "Летом едем на море.",                  "week": "core" },
+  { "prep": "mit", "art": "dem", "noun": "Bus",        "ru": "на автобусе",      "ex": "Ich fahre mit dem Bus.",            "exru": "Я еду на автобусе.",                   "week": "core" }
  ],
  "antonyms": [
-  {
-   "qpt": "Ist er faul?",
-   "apt": "Nein, er ist fleißig.",
-   "qru": "Он ленивый?",
-   "aru": "Нет, он трудолюбивый.",
-   "wq": "faul",
-   "wa": "fleißig",
-   "grp": "car"
-  },
-  {
-   "qpt": "Ist es groß?",
-   "apt": "Nein, es ist klein.",
-   "qru": "Оно большое?",
-   "aru": "Нет, оно маленькое.",
-   "wq": "groß",
-   "wa": "klein",
-   "grp": "fis"
-  }
+  { "qpt": "Ist er faul?", "apt": "Nein, er ist fleißig.", "qru": "Он ленивый?", "aru": "Нет, он трудолюбивый.", "wq": "faul", "wa": "fleißig", "grp": "car" },
+  { "qpt": "Ist es groß?", "apt": "Nein, es ist klein.", "qru": "Оно большое?", "aru": "Нет, оно маленькое.", "wq": "groß", "wa": "klein", "grp": "fis" }
  ],
  "synonyms": [
-  {
-   "qpt": "Der Tag war toll.",
-   "apt": "Der Tag war wunderbar.",
-   "qru": "День был классный.",
-   "aru": "День был чудесный.",
-   "wq": "toll",
-   "wa": "wunderbar"
-  },
-  {
-   "qpt": "Das ist gut.",
-   "apt": "Das ist prima.",
-   "qru": "Это хорошо.",
-   "aru": "Это здорово.",
-   "wq": "gut",
-   "wa": "prima"
-  }
+  { "qpt": "Der Tag war toll.", "apt": "Der Tag war wunderbar.", "qru": "День был классный.", "aru": "День был чудесный.", "wq": "toll", "wa": "wunderbar" },
+  { "qpt": "Das ist gut.", "apt": "Das ist prima.", "qru": "Это хорошо.", "aru": "Это здорово.", "wq": "gut", "wa": "prima" }
  ]
 }
