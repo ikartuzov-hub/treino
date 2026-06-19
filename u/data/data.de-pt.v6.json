@@ -1,0 +1,56 @@
+{
+ "config": {
+  "lang": "pt-PT", "ui": "de", "neg": "Não, é…", "brand": "", "flag": "🇵🇹",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Möchtest du dein eigenes Set, gebaut aus deiner echten Woche?",
+  "subscribeBtn": "Mein Set holen →",
+  "flyerUrl": "start.html", "flyerText": "Wie es funktioniert & Preise", "methodUrl": "method.html", "methodText": "Die Methode"
+ },
+ "weeks": [
+  { "id": "start1", "label": "Start / 1", "date": "erste Woche", "month": "Startpaket", "sentences": [
+    { "pt": "Esta semana, estudei português todos os dias.", "ru": "Diese Woche habe ich jeden Tag Portugiesisch gelernt.", "t": "pas" },
+    { "pt": "Pratiquei na loja e com os vizinhos.", "ru": "Ich habe im Laden und mit Nachbarn geübt.", "t": "pas" },
+    { "pt": "Hoje encontro amigos no café.", "ru": "Heute treffe ich Freunde im Café.", "t": "pre" },
+    { "pt": "Agora já falo um pouco.", "ru": "Jetzt spreche ich schon ein bisschen.", "t": "pre" },
+    { "pt": "Na próxima semana, vou a Lisboa.", "ru": "Nächste Woche fahre ich nach Lissabon.", "t": "fut" }
+  ] }
+ ],
+ "phrases": [
+  { "pt": "Bom dia! Como está?", "ru": "Guten Morgen! Wie geht es Ihnen?", "sit": "Begrüßung", "cue": "Bom dia! <span>Como</span>…", "hi": ["Como está"], "week": "start1" },
+  { "pt": "Estudo português todos os dias.", "ru": "Ich lerne jeden Tag Portugiesisch.", "sit": "täglich", "cue": "<span>Estudo</span> português…", "hi": ["Estudo"], "week": "start1" },
+  { "pt": "Vivo cá há dois anos.", "ru": "Ich wohne seit zwei Jahren hier.", "sit": "Vorstellung", "cue": "Vivo cá <span>há</span>…", "hi": ["há dois anos"], "week": "start1" },
+  { "pt": "Ao fim de semana, encontro amigos.", "ru": "Am Wochenende treffe ich Freunde.", "sit": "Freizeit", "cue": "Ao fim de semana, <span>encontro</span>…", "hi": ["encontro"], "week": "start1" },
+  { "pt": "Foi um dia bonito.", "ru": "Es war ein schöner Tag.", "sit": "Fazit", "cue": "<span>Foi</span> um dia…", "hi": ["Foi"], "week": "start1" }
+ ],
+ "cloze": [
+  { "q": "___ português todos os dias.", "opts": ["Estudo", "Estudas", "Estudei"], "ok": 0, "rule": "<b>eu → Estudo</b> (Präsens). Estudas = du, Estudei = ich lernte (Perfekt).", "week": "start1" },
+  { "q": "Vivo cá ___ dois anos.", "opts": ["há", "por", "desde"], "ok": 0, "rule": "<b>há</b> + Zeitraum = «seit». Dauer von der Vergangenheit bis jetzt.", "week": "start1" },
+  { "q": "Ao fim de semana, ___ amigos.", "opts": ["encontro", "encontras", "encontra"], "ok": 0, "rule": "<b>eu → encontro</b>. encontras = du, encontra = er/sie.", "week": "start1" }
+ ],
+ "contractionRules": {
+  "em":   { "joins": true,  "forms": { "o": "no",   "a": "na",   "os": "nos",  "as": "nas"  }, "rule": "<b>em</b> + Artikel → <b>n</b> davor: em+o=<b>no</b>, em+a=<b>na</b>, em+os=nos, em+as=nas. (Wie <i>im</i> = in dem.)" },
+  "de":   { "joins": true,  "forms": { "o": "do",   "a": "da",   "os": "dos",  "as": "das"  }, "rule": "<b>de</b> + Artikel → <b>d</b> davor: de+o=<b>do</b>, de+a=<b>da</b>, de+os=dos, de+as=das. (Wie <i>vom</i> = von dem.)" },
+  "a":    { "joins": true,  "forms": { "o": "ao",   "a": "à",    "os": "aos",  "as": "às"   }, "rule": "<b>a</b> + Artikel verschmilzt: a+o=<b>ao</b>, a+a=<b>à</b> (Gravis-Akzent!), a+os=aos, a+as=às. (Wie <i>zum/zur</i>.)" },
+  "por":  { "joins": true,  "forms": { "o": "pelo", "a": "pela", "os": "pelos","as": "pelas"}, "rule": "<b>por</b> + Artikel → <b>pel-</b>: por+o=<b>pelo</b>, por+a=<b>pela</b>, por+os=pelos, por+as=pelas." },
+  "com":  { "joins": false, "rule": "<b>com</b> verschmilzt NICHT mit dem Artikel — getrennt schreiben: <b>com a</b>, <b>com os</b>." },
+  "para": { "joins": false, "rule": "<b>para</b> verschmilzt NICHT in der Schrift: <b>para a</b>, <b>para o</b>." }
+ },
+ "contractions": [
+  { "prep": "em",  "art": "o",  "noun": "café",          "ru": "im Café",         "ex": "Hoje encontro amigos no café.",      "exru": "Heute treffe ich Freunde im Café.", "week": "start1" },
+  { "prep": "a",   "art": "o",  "noun": "fim de semana", "ru": "am Wochenende",   "ex": "Ao fim de semana, encontro amigos.", "exru": "Am Wochenende treffe ich Freunde.", "week": "start1" },
+  { "prep": "em",  "art": "a",  "noun": "loja",          "ru": "im Laden",        "ex": "Pratiquei na loja.",                  "exru": "Ich habe im Laden geübt.",          "week": "start1" },
+  { "prep": "com", "art": "os", "noun": "vizinhos",      "ru": "mit den Nachbarn","ex": "Pratiquei com os vizinhos.",          "exru": "Ich habe mit den Nachbarn geübt.",  "week": "start1" },
+  { "prep": "de",  "art": "a",  "noun": "cidade",        "ru": "von der Stadt",   "ex": "Gosto da parte velha da cidade.",     "exru": "Ich mag den alten Teil der Stadt.", "week": "core" },
+  { "prep": "a",   "art": "as", "noun": "montanhas",     "ru": "in die Berge",    "ex": "Fui às montanhas no sábado.",         "exru": "Am Samstag bin ich in die Berge gefahren.", "week": "core" },
+  { "prep": "por", "art": "a",  "noun": "manhã",         "ru": "am Morgen",       "ex": "Faço uma caminhada pela manhã.",      "exru": "Ich mache morgens einen Spaziergang.", "week": "core" },
+  { "prep": "para","art": "o",  "noun": "filho",         "ru": "für den Sohn",    "ex": "Levo um presente para o filho.",      "exru": "Ich bringe dem Sohn ein Geschenk.", "week": "core" }
+ ],
+ "antonyms": [
+  { "qpt": "É preguiçoso?", "apt": "Não, é trabalhador.", "qru": "Ist er faul?", "aru": "Nein, er ist fleißig.", "wq": "preguiçoso", "wa": "trabalhador", "grp": "car" },
+  { "qpt": "É grande?", "apt": "Não, é pequeno.", "qru": "Ist es groß?", "aru": "Nein, es ist klein.", "wq": "grande", "wa": "pequeno", "grp": "fis" }
+ ],
+ "synonyms": [
+  { "qpt": "O dia foi ótimo.", "apt": "O dia foi excelente.", "qru": "Der Tag war toll.", "aru": "Der Tag war hervorragend.", "wq": "ótimo", "wa": "excelente" },
+  { "qpt": "Isto é bom.", "apt": "Isto é excelente.", "qru": "Das ist gut.", "aru": "Das ist ausgezeichnet.", "wq": "bom", "wa": "excelente" }
+ ]
+}

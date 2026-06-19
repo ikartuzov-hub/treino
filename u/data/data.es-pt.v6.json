@@ -1,0 +1,51 @@
+{
+ "config": {
+  "lang": "pt-PT", "ui": "es", "neg": "Não, é…", "brand": "España", "flag": "🇵🇹",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "¿Quieres tu propio set, hecho con tu semana?",
+  "subscribeBtn": "Conseguir mi set →",
+  "flyerUrl": "start.html", "flyerText": "Cómo funciona y precios", "methodUrl": "method.html", "methodText": "El método"
+ },
+ "phrases": [
+  { "pt": "Gosto muito do meu gato.", "ru": "Quiero mucho a mi gato.", "sit": "día a día", "cue": "Gosto muito do <span>meu gato</span>…", "hi": ["meu gato"] },
+  { "pt": "Todas as manhãs bebo um café.", "ru": "Todas las mañanas bebo un café.", "sit": "día a día", "cue": "Todas as manhãs <span>bebo</span>…", "hi": ["bebo"] },
+  { "pt": "Vivo aqui há dois anos.", "ru": "Vivo aquí desde hace dos años.", "sit": "encuentro", "cue": "Vivo aqui <span>há</span>…", "hi": ["há"] },
+  { "pt": "Foi um prazer!", "ru": "¡Fue un placer!", "sit": "encuentro", "cue": "Foi um…!", "hi": [] }
+ ],
+ "weeks": [
+  { "id": "w1", "label": "Semana 1", "date": "esta semana", "month": "Base", "sentences": [
+    { "pt": "Ontem fiz o jantar em casa.", "ru": "Ayer hice la cena en casa.", "t": "pas" },
+    { "pt": "Todas as manhãs bebo um café.", "ru": "Todas las mañanas bebo un café.", "t": "pre" },
+    { "pt": "Para a semana vou visitar uma amiga.", "ru": "La semana que viene voy a visitar a una amiga.", "t": "fut" }
+  ] }
+ ],
+ "cloze": [
+  { "q": "Ontem ___ o jantar em casa.", "opts": ["faço", "fiz", "fazia"], "ok": 1, "rule": "<b>fiz</b> = hice (acción terminada). 'Ontem' (ayer) → acción terminada → fiz." },
+  { "q": "Todas as manhãs ___ um café.", "opts": ["bebo", "bebi", "beberei"], "ok": 0, "rule": "<b>bebo</b> = bebo (presente, hábito). 'Todas as manhãs' (todas las mañanas) → hábito → presente: bebo." }
+ ],
+ "contractionRules": {
+  "em":   { "joins": true,  "forms": { "o": "no",   "a": "na",   "os": "nos",  "as": "nas"  }, "rule": "<b>em</b> + artículo → añade <b>n</b>: em+o=<b>no</b>, em+a=<b>na</b>, em+os=nos, em+as=nas." },
+  "de":   { "joins": true,  "forms": { "o": "do",   "a": "da",   "os": "dos",  "as": "das"  }, "rule": "<b>de</b> + artículo → añade <b>d</b>: de+o=<b>do</b>, de+a=<b>da</b>, de+os=dos, de+as=das. (Como <i>del</i>, pero también en femenino.)" },
+  "a":    { "joins": true,  "forms": { "o": "ao",   "a": "à",    "os": "aos",  "as": "às"   }, "rule": "<b>a</b> + artículo se funde: a+o=<b>ao</b>, a+a=<b>à</b> (¡acento grave!), a+os=aos, a+as=às. (Como <i>al</i>, pero el portugués lo hace también en femenino y plural.)" },
+  "por":  { "joins": true,  "forms": { "o": "pelo", "a": "pela", "os": "pelos","as": "pelas"}, "rule": "<b>por</b> + artículo → <b>pel-</b>: por+o=<b>pelo</b>, por+a=<b>pela</b>, por+os=pelos, por+as=pelas." },
+  "com":  { "joins": false, "rule": "<b>com</b> NO se funde con el artículo — se escribe separado: <b>com a</b>, <b>com os</b>." },
+  "para": { "joins": false, "rule": "<b>para</b> NO se funde por escrito: <b>para a</b>, <b>para o</b>." }
+ },
+ "contractions": [
+  { "prep": "de",  "art": "o",  "noun": "gato",      "ru": "de mi (gato)",   "ex": "Gosto muito do meu gato.",          "exru": "Quiero mucho a mi gato.",        "week": "w1" },
+  { "prep": "para","art": "a",  "noun": "semana",    "ru": "para la semana", "ex": "Para a semana vou visitar uma amiga.","exru": "La semana que viene voy a visitar a una amiga.", "week": "w1" },
+  { "prep": "a",   "art": "o",  "noun": "mar",       "ru": "al mar",         "ex": "Vamos ao mar no domingo.",          "exru": "Vamos al mar el domingo.",       "week": "core" },
+  { "prep": "de",  "art": "a",  "noun": "cidade",    "ru": "de la ciudad",   "ex": "Passeei pela parte velha da cidade.","exru": "Paseé por la parte vieja de la ciudad.", "week": "core" },
+  { "prep": "em",  "art": "a",  "noun": "praia",     "ru": "en la playa",    "ex": "Passei o dia na praia.",            "exru": "Pasé el día en la playa.",       "week": "core" },
+  { "prep": "por", "art": "a",  "noun": "manhã",     "ru": "por la mañana",  "ex": "Faço uma caminhada pela manhã.",    "exru": "Doy un paseo por la mañana.",    "week": "core" },
+  { "prep": "com", "art": "os", "noun": "amigos",    "ru": "con los amigos", "ex": "Jantei com os amigos.",             "exru": "Cené con los amigos.",           "week": "core" },
+  { "prep": "a",   "art": "as", "noun": "montanhas", "ru": "a las montañas", "ex": "Fui às montanhas no sábado.",        "exru": "Fui a las montañas el sábado.",  "week": "core" }
+ ],
+ "antonyms": [
+  { "qpt": "É preguiçoso?", "apt": "Não, é trabalhador.", "qru": "¿Es perezoso?", "aru": "No, es trabajador.", "wq": "preguiçoso", "wa": "trabalhador", "grp": "car" },
+  { "qpt": "É alto?", "apt": "Não, é baixo.", "qru": "¿Es alto?", "aru": "No, es bajo.", "wq": "alto", "wa": "baixo", "grp": "fis" }
+ ],
+ "synonyms": [
+  { "qpt": "Estou cansada.", "apt": "Estou exausta.", "qru": "Estoy cansada.", "aru": "Estoy agotada.", "wq": "cansada", "wa": "exausta" }
+ ]
+}
