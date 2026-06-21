@@ -284,7 +284,7 @@ function pickVoice(){
   if(!v)v=voices.find(x=>x.lang&&x.lang.toLowerCase().startsWith(base.split("-")[0]));
   return v;
 }
-function speak(text){if(!window.speechSynthesis)return;const u=new SpeechSynthesisUtterance(text);u.lang=LANG;u.rate=.85;const v=pickVoice();if(v){u.voice=v;u.lang=v.lang;}speechSynthesis.cancel();speechSynthesis.speak(u);}
+function speak(text){if(!window.speechSynthesis)return;const u=new SpeechSynthesisUtterance(text);u.lang=LANG;u.rate=.75;const v=pickVoice();if(v){u.voice=v;u.lang=v.lang;}speechSynthesis.cancel();speechSynthesis.speak(u);}
 let DATA=EMBEDDED, PHRASES=[], WEEKS=[], progress={};
 let mode="recall", archiveScreen=null, selWeek=null;
 const card=document.getElementById("card");
