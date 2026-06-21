@@ -1,0 +1,126 @@
+<meta charset="utf-8">
+<!-- АРХИВ: акционная (priced) версия start.de — бэкап на возврат при наплыве. Для возврата: переименовать в start.de.html и залить в u/pages/ -->
+<style>
+  /* новые блоки листовки — лежат во фрагменте, движок start.html не трогаем */
+  .gift-pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;text-decoration:none;color:var(--azul-deep);background:rgba(194,135,46,.16);border:1px solid var(--gold);border-radius:99px;padding:7px 13px;animation:softpulse 2.6s ease-in-out 4}
+  .gift-pill:active{transform:translateY(1px)}
+  .gift-emoji{display:inline-block;transform-origin:center;animation:giftpop 2.6s ease-in-out 13s infinite}
+  @keyframes softpulse{0%,100%{box-shadow:0 0 0 0 rgba(194,135,46,.50);opacity:1}50%{box-shadow:0 0 0 8px rgba(194,135,46,0);opacity:.78}}
+  @keyframes giftpop{0%,68%,100%{transform:scale(1) rotate(0)}76%{transform:scale(1.40) rotate(-9deg)}84%{transform:scale(1.12) rotate(7deg)}92%{transform:scale(1.30) rotate(-4deg)}}
+
+  .ladder{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  .plan{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--soft-shadow)}
+  .plan.lead{border-color:var(--azul);border-width:1.5px}
+  .plan-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .plan-name{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+  .plan-price{font-family:"Fraunces",serif;font-size:32px;color:var(--azul-deep);line-height:1;white-space:nowrap}
+  .plan-price .per{font-size:14px;color:var(--ink-soft)}
+  .plan-price .old{font-size:15px;color:var(--ink-soft);text-decoration:line-through;margin-left:7px;font-family:"Hanken Grotesk",sans-serif}
+  .plan-desc{font-size:14px;color:var(--ink-soft);margin:11px 0 15px;line-height:1.5}
+  .plan .cta{margin:0}
+  .plan-badge{position:absolute;top:-11px;left:20px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--terra);padding:4px 11px;border-radius:99px}
+
+  /* карточка-подарок (первая, золотая, ведёт на страницу подарка) */
+  .gift{position:relative;background:linear-gradient(135deg,rgba(194,135,46,.16),rgba(188,75,47,.10));border:1.5px solid var(--gold);border-radius:18px;padding:22px 20px;box-shadow:var(--soft-shadow);text-decoration:none;display:block}
+  .gift:active{transform:translateY(1px)}
+  .gift-badge{position:absolute;top:-11px;left:20px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);padding:4px 11px;border-radius:99px}
+  .gift-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .gift-title{font-family:"Fraunces",serif;font-size:20px;color:var(--ink);line-height:1.2}
+  .gift-amt{font-family:"Fraunces",serif;font-size:28px;color:var(--terra);line-height:1;white-space:nowrap}
+  .gift-amt .as{display:block;font-family:"Hanken Grotesk";font-size:10.5px;color:var(--ink-soft);font-weight:600;text-align:right;margin-top:3px}
+  .gift-hook{font-size:13.5px;color:var(--ink);margin:12px 0 0;line-height:1.5}
+  .gift-go{display:inline-block;margin-top:14px;font-weight:700;font-size:14.5px;color:var(--terra)}
+
+  /* замок-блок подписки */
+  .soon{position:relative;background:linear-gradient(135deg,rgba(31,122,92,.07),rgba(194,135,46,.07));border:1px dashed var(--line);border-radius:18px;padding:22px 20px 18px}
+  .soon-badge{position:absolute;top:-11px;left:20px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:4px 11px;border-radius:99px}
+  .soon ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
+  .soon li{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--ink);line-height:1.45}
+  .soon li .ico{flex:0 0 auto;font-size:16px;line-height:1.4}
+  .soon li b{color:var(--azul-deep)}
+  .soon .vow{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-style:italic;line-height:1.5}
+  .paynote{font-size:13.5px;color:var(--ink);background:rgba(62,122,87,.08);border-left:3px solid var(--good);border-radius:0 12px 12px 0;padding:13px 16px;margin:18px 0 0}
+  .paynote b{color:var(--azul-deep)}
+</style>
+
+<div class="wrap">
+  <div class="brandbar reveal">
+    <span class="wm"><em>Treino</em></span>
+    <a class="gift-pill" href="gift.html"><span class="gift-emoji">🎁</span> Ideal zum Verschenken →</a>
+  </div>
+
+  <div class="kick reveal" style="animation-delay:.05s">Lerne eine Sprache mit dem Stoff deines eigenen Lebens</div>
+  <h1 class="reveal" style="animation-delay:.08s">Deine <span class="it">echte Woche</span> — zum Trainer gemacht.</h1>
+  <p class="lede reveal" style="animation-delay:.12s">Keine Lehrbuchsätze. Du erzählst, was in deiner Woche wirklich war — und die Sprache sitzt tiefer, und man kommt gern zurück. Fünf bis zehn Minuten am Tag, direkt im Browser — nichts zu installieren.</p>
+
+  <h2 class="reveal">So funktioniert’s</h2>
+  <div class="steps">
+    <div class="step reveal"><span class="num">1</span><div><h3>Öffne den Link</h3><p>Läuft im Browser. Am Handy: Teilen → „Zum Home-Bildschirm“ — jetzt ein Icon wie eine echte App, und offline nutzbar.</p></div></div>
+    <div class="step reveal" style="animation-delay:.05s"><span class="num">2</span><div><h3>Übe jeden Tag</h3><p>Sag den Satz laut, dann prüfe. Markiere „erinnert / nicht“ — die App entscheidet, wann sie ihn zurückbringt (verteiltes Wiederholen).</p></div></div>
+    <div class="step reveal" style="animation-delay:.1s"><span class="num">3</span><div><h3>Mach sie zu deiner</h3><p>Schick deine echte Woche — was war, was du gerade tust, was du planst — und bekomme bis zu 10 neue Sätze direkt in der App.</p></div></div>
+  </div>
+
+  <h2 class="reveal">Tarife</h2>
+  <div class="ladder">
+
+    <a class="gift reveal" href="gift.html">
+      <span class="gift-badge">Eine Idee für einen lieben Menschen</span>
+      <div class="gift-top">
+        <span class="gift-title">🎁 Eine Sprache<br>schenken</span>
+        <span class="gift-amt">€5<span class="as">fühlt sich an wie hundert</span></span>
+      </div>
+      <p class="gift-hook">Kein gesichtsloses Abo, sondern ein lebendiger Trainer aus dem echten Leben eines lieben Menschen — in jeder Sprache und in jedem Umfang: ein erster Satz oder ein ganzer Kurs. Das gibt’s nicht für €5 in einer gewöhnlichen App.</p>
+      <span class="gift-go">Geschenk öffnen →</span>
+    </a>
+
+    <div class="plan reveal" style="animation-delay:.04s">
+      <div class="plan-top">
+        <span class="plan-name">Aufladung</span>
+        <span class="plan-price">€5 <span class="old">€7</span></span>
+      </div>
+      <p class="plan-desc">Ein frischer Satz mit bis zu 10 Sätzen aus deiner neuen Woche — wann immer du mehr willst.</p>
+      <a class="cta primary" href="https://kartuzov.gumroad.com/l/fkfdbg" target="_blank" rel="noopener">Satz holen →</a>
+    </div>
+
+    <div class="plan lead reveal" style="animation-delay:.08s">
+      <span class="plan-badge">Voller Start</span>
+      <div class="plan-top">
+        <span class="plan-name">App</span>
+        <span class="plan-price">€19 <span class="old">€39</span></span>
+      </div>
+      <p class="plan-desc">Dein erster vollständiger persönlicher Satz, aus deiner echten Woche gebaut. Dein eigener Trainer ab dem ersten Tag.</p>
+      <a class="cta primary" href="https://kartuzov.gumroad.com/l/ixvpus" target="_blank" rel="noopener">App holen →</a>
+    </div>
+
+    <div class="soon reveal" style="animation-delay:.1s">
+      <span class="soon-badge">Bald 🔒</span>
+      <div class="plan-top">
+        <span class="plan-name">Abo</span>
+        <span class="plan-price">€5<span class="per">/Mon.</span> <span class="old">€7</span></span>
+      </div>
+      <p class="plan-desc" style="margin-bottom:4px">Wohin Treino geht — die nächste Stufe nach dem Wiederholen von Sätzen:</p>
+      <ul>
+        <li><span class="ico">🗣</span><div><b>Dialogmodus.</b> Ein KI-Gesprächspartner, der mit dir in der Lernsprache spricht — mit deinen eigenen Sätzen aus deinen Geschichten.</div></li>
+        <li><span class="ico">👥</span><div><b>Gemeinsamer Raum.</b> Mitlernende in einem Raum: einer fragt — alle sehen die Antwort in ihrer Sprache. Ihr übt zusammen, nicht allein.</div></li>
+        <li><span class="ico">🎧</span><div><b>Kommunikatives Training.</b> Vom Auswendiglernen zum echten Sprechen: erzähl deinen Tag per Stimme, bekomme daraus eine Lektion und hör dir selbst zu.</div></li>
+      </ul>
+      <p class="vow">Eine ehrliche Richtung, kein Versprechen: wir schalten es frei, sobald es mit echten Lernenden getestet ist.</p>
+    </div>
+
+  </div>
+
+  <div class="paynote reveal"><b>Heute — nur Einmalzahlung,</b> ohne Bindung, ohne Haken. Du zahlst, wenn du einen neuen Satz nimmst. Die MwSt. wird an der Kasse automatisch berechnet.</div>
+
+  <p class="sub reveal" style="margin-top:18px">Schick nach der Zahlung deinen Text an:</p>
+  <a class="email reveal" href="mailto:i.kartuzov@gmail.com">i.kartuzov@gmail.com</a>
+
+  <a class="cta ghost reveal" style="margin-top:22px" href="method.html">Wie die Methode funktioniert und die Wissenschaft dahinter →</a>
+
+  <p class="fineprint reveal">Ein Werkzeug für Sprache und Tonus — kein Ersatz für Therapie. Dein Fortschritt bleibt auf deinem Gerät.</p>
+
+  <div class="foot reveal">
+    <a href="./">← App</a>
+    <span>treino · Sprach-Engine</span>
+    <a href="method.html">Methode →</a>
+  </div>
+</div>
