@@ -1,0 +1,492 @@
+{
+ "config": {
+  "lang": "en-GB",
+  "ui": "ru",
+  "neg": "No, …",
+  "brand": "Olga ·",
+  "flag": "🇬🇧",
+  "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg",
+  "subscribeText": "Хочешь продолжение — свою следующую неделю?",
+  "subscribeBtn": "Пополнить набор →",
+  "flyerUrl": "start.html",
+  "flyerText": "Как это работает и цены",
+  "methodUrl": "method.html",
+  "methodText": "Метод"
+ },
+ "weeks": [
+  {
+   "id": "jun3",
+   "label": "Июнь / 3",
+   "date": "третья неделя июня",
+   "month": "Июнь",
+   "sentences": [
+    {
+     "pt": "I am a real estate agent.",
+     "ru": "Я агент по недвижимости.",
+     "t": "pre"
+    },
+    {
+     "pt": "I have sixteen years of experience.",
+     "ru": "У меня шестнадцать лет опыта.",
+     "t": "pre"
+    },
+    {
+     "pt": "I love my work very much.",
+     "ru": "Я очень люблю свою работу.",
+     "t": "pre"
+    },
+    {
+     "pt": "Next week I will have a deal.",
+     "ru": "На следующей неделе у меня будет сделка.",
+     "t": "fut"
+    },
+    {
+     "pt": "I really enjoy talking to people.",
+     "ru": "Я очень люблю общаться с людьми.",
+     "t": "pre"
+    },
+    {
+     "pt": "I love to bargain.",
+     "ru": "Обожаю торговаться.",
+     "t": "pre"
+    },
+    {
+     "pt": "This helps me save my clients' money.",
+     "ru": "Это помогает экономить деньги клиентов.",
+     "t": "pre"
+    },
+    {
+     "pt": "I love travelling and taking photos.",
+     "ru": "Люблю путешествовать и фотографировать.",
+     "t": "pre"
+    },
+    {
+     "pt": "I am afraid of flying.",
+     "ru": "Я боюсь летать на самолётах.",
+     "t": "pre"
+    },
+    {
+     "pt": "So I prefer to travel by car.",
+     "ru": "Поэтому я предпочитаю путешествовать на машине.",
+     "t": "pre"
+    }
+   ]
+  }
+ ],
+ "phrases": [
+  {
+   "pt": "I am a real estate agent.",
+   "ru": "Я агент по недвижимости.",
+   "sit": "профессия",
+   "cue": "I am a <span>real estate</span> agent.",
+   "hi": [
+    "real estate agent"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "I have sixteen years of experience.",
+   "ru": "У меня шестнадцать лет опыта.",
+   "sit": "опыт",
+   "cue": "I <span>have</span> sixteen years of <span>experience</span>.",
+   "hi": [
+    "have",
+    "experience"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "I love my work very much.",
+   "ru": "Я очень люблю свою работу.",
+   "sit": "отношение к работе",
+   "cue": "I <span>love</span> my work very much.",
+   "hi": [
+    "love"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "Next week I will have a deal.",
+   "ru": "На следующей неделе у меня будет сделка.",
+   "sit": "планы, будущее",
+   "cue": "Next week I <span>will have</span> a deal.",
+   "hi": [
+    "will have",
+    "deal"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "I really enjoy talking to people.",
+   "ru": "Я очень люблю общаться с людьми.",
+   "sit": "общение",
+   "cue": "I really <span>enjoy</span> talking to people.",
+   "hi": [
+    "enjoy",
+    "talking"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "I love to bargain.",
+   "ru": "Обожаю торговаться.",
+   "sit": "переговоры",
+   "cue": "I love to <span>bargain</span>.",
+   "hi": [
+    "bargain"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "This helps me save my clients' money.",
+   "ru": "Это помогает экономить деньги клиентов.",
+   "sit": "выгода клиента",
+   "cue": "This helps me <span>save</span> money.",
+   "hi": [
+    "save",
+    "money"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "I love travelling and taking photos.",
+   "ru": "Люблю путешествовать и фотографировать.",
+   "sit": "хобби",
+   "cue": "I love <span>travelling</span> and <span>taking photos</span>.",
+   "hi": [
+    "travelling",
+    "taking photos"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "I am afraid of flying.",
+   "ru": "Я боюсь летать на самолётах.",
+   "sit": "страх",
+   "cue": "I am <span>afraid of</span> flying.",
+   "hi": [
+    "afraid of",
+    "flying"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "So I prefer to travel by car.",
+   "ru": "Поэтому я предпочитаю путешествовать на машине.",
+   "sit": "предпочтения",
+   "cue": "I <span>prefer</span> to travel <span>by car</span>.",
+   "hi": [
+    "prefer",
+    "by car"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "I enjoy meeting new clients.",
+   "ru": "Мне нравится знакомиться с новыми клиентами.",
+   "sit": "работа",
+   "cue": "I <span>enjoy</span> meeting new <span>clients</span>.",
+   "hi": [
+    "enjoy",
+    "clients"
+   ],
+   "week": "jun3"
+  },
+  {
+   "pt": "Travelling by car is comfortable for me.",
+   "ru": "Путешествовать на машине для меня комфортно.",
+   "sit": "предпочтения",
+   "cue": "Travelling by car is <span>comfortable</span> for me.",
+   "hi": [
+    "comfortable"
+   ],
+   "week": "jun3"
+  }
+ ],
+ "cloze": [
+  {
+   "q": "I ___ a real estate agent.",
+   "opts": [
+    "am",
+    "is",
+    "are"
+   ],
+   "ok": 0,
+   "rule": "<b>I → am</b>. is = он/она/оно, are = you/we/they. Глагол <b>to be</b> в 1-м лице — <b>am</b>.",
+   "week": "jun3"
+  },
+  {
+   "q": "I ___ sixteen years of experience.",
+   "opts": [
+    "have",
+    "has",
+    "having"
+   ],
+   "ok": 0,
+   "rule": "<b>I → have</b>. has = он/она/оно. having = форма на -ing (нужен be).",
+   "week": "jun3"
+  },
+  {
+   "q": "I love ___ my work.",
+   "opts": [
+    "doing",
+    "do",
+    "does"
+   ],
+   "ok": 0,
+   "rule": "После <b>love</b> часто идёт форма на <b>-ing</b>: <b>love doing</b>. Можно и <b>love to do</b>, но не голый do.",
+   "week": "jun3"
+  },
+  {
+   "q": "Next week I ___ have a deal.",
+   "opts": [
+    "will",
+    "am",
+    "did"
+   ],
+   "ok": 0,
+   "rule": "Будущее: <b>will + глагол</b>. <b>will have</b> — «будет». did = прошлое, am — настоящее be.",
+   "week": "jun3"
+  },
+  {
+   "q": "I really ___ talking to people.",
+   "opts": [
+    "enjoy",
+    "enjoys",
+    "enjoying"
+   ],
+   "ok": 0,
+   "rule": "<b>I → enjoy</b>. enjoys = он/она. После enjoy — форма на -ing: <b>enjoy talking</b>.",
+   "week": "jun3"
+  },
+  {
+   "q": "This helps me ___ money.",
+   "opts": [
+    "save",
+    "to saving",
+    "saved"
+   ],
+   "ok": 0,
+   "rule": "<b>help (me) + инфинитив без to</b>: <b>help me save</b>. Также допустимо help me to save, но не «to saving».",
+   "week": "jun3"
+  },
+  {
+   "q": "I love ___ and taking photos.",
+   "opts": [
+    "travelling",
+    "travel",
+    "travelled"
+   ],
+   "ok": 0,
+   "rule": "После <b>love</b> — форма на -ing: <b>travelling</b> (BrE удваивает l). travel — голый инфинитив, travelled — прошлое.",
+   "week": "jun3"
+  },
+  {
+   "q": "I am afraid ___ flying.",
+   "opts": [
+    "of",
+    "to",
+    "from"
+   ],
+   "ok": 0,
+   "rule": "Устойчивое: <b>afraid of + -ing</b> — «боюсь делать». <b>afraid of flying</b> — боюсь летать.",
+   "week": "jun3"
+  },
+  {
+   "q": "So I prefer to travel ___ car.",
+   "opts": [
+    "by",
+    "on",
+    "with"
+   ],
+   "ok": 0,
+   "rule": "Транспорт: <b>by car</b>, <b>by train</b>, <b>by plane</b>. Предлог <b>by</b> без артикля.",
+   "week": "jun3"
+  },
+  {
+   "q": "I enjoy ___ new clients.",
+   "opts": [
+    "meeting",
+    "meet",
+    "to meet"
+   ],
+   "ok": 0,
+   "rule": "После <b>enjoy</b> всегда форма на -ing: <b>enjoy meeting</b>. Не «enjoy to meet».",
+   "week": "jun3"
+  }
+ ],
+ "antonyms": [
+  {
+   "qpt": "Do you love your work?",
+   "apt": "No, I hate my work.",
+   "qru": "Ты любишь свою работу?",
+   "aru": "Нет, я ненавижу свою работу.",
+   "wq": "love",
+   "wa": "hate",
+   "grp": "emo"
+  },
+  {
+   "qpt": "Are you an experienced agent?",
+   "apt": "No, I am a new agent.",
+   "qru": "Ты опытный агент?",
+   "aru": "Нет, я новый агент.",
+   "wq": "experienced",
+   "wa": "new",
+   "grp": "car"
+  },
+  {
+   "qpt": "Is the deal big?",
+   "apt": "No, the deal is small.",
+   "qru": "Сделка крупная?",
+   "aru": "Нет, сделка мелкая.",
+   "wq": "big",
+   "wa": "small",
+   "grp": "fis"
+  },
+  {
+   "qpt": "Do you want to save money?",
+   "apt": "No, I want to spend money.",
+   "qru": "Хочешь экономить деньги?",
+   "aru": "Нет, я хочу тратить деньги.",
+   "wq": "save",
+   "wa": "spend",
+   "grp": "acao"
+  },
+  {
+   "qpt": "Do you like flying?",
+   "apt": "No, I am afraid of flying.",
+   "qru": "Тебе нравится летать?",
+   "aru": "Нет, я боюсь летать.",
+   "wq": "like",
+   "wa": "afraid",
+   "grp": "emo"
+  },
+  {
+   "qpt": "Is the car fast?",
+   "apt": "No, the car is slow.",
+   "qru": "Машина быстрая?",
+   "aru": "Нет, машина медленная.",
+   "wq": "fast",
+   "wa": "slow",
+   "grp": "fis"
+  },
+  {
+   "qpt": "Are the clients happy?",
+   "apt": "No, the clients are sad.",
+   "qru": "Клиенты довольны?",
+   "aru": "Нет, клиенты расстроены.",
+   "wq": "happy",
+   "wa": "sad",
+   "grp": "emo"
+  },
+  {
+   "qpt": "Is travelling difficult?",
+   "apt": "No, travelling is easy.",
+   "qru": "Путешествовать сложно?",
+   "aru": "Нет, путешествовать легко.",
+   "wq": "difficult",
+   "wa": "easy",
+   "grp": "car"
+  },
+  {
+   "qpt": "Do you talk a lot?",
+   "apt": "No, I stay quiet.",
+   "qru": "Ты много говоришь?",
+   "aru": "Нет, я молчу.",
+   "wq": "talk",
+   "wa": "quiet",
+   "grp": "acao"
+  },
+  {
+   "qpt": "Is the price high?",
+   "apt": "No, the price is low.",
+   "qru": "Цена высокая?",
+   "aru": "Нет, цена низкая.",
+   "wq": "high",
+   "wa": "low",
+   "grp": "fis"
+  }
+ ],
+ "synonyms": [
+  {
+   "qpt": "I love my work.",
+   "apt": "I adore my work.",
+   "qru": "Я люблю свою работу.",
+   "aru": "Я обожаю свою работу.",
+   "wq": "love",
+   "wa": "adore"
+  },
+  {
+   "qpt": "I really enjoy talking to people.",
+   "apt": "I really like talking to people.",
+   "qru": "Я очень люблю общаться с людьми.",
+   "aru": "Мне очень нравится общаться с людьми.",
+   "wq": "enjoy",
+   "wa": "like"
+  },
+  {
+   "qpt": "Next week I will have a deal.",
+   "apt": "Next week I will have a sale.",
+   "qru": "На следующей неделе у меня будет сделка.",
+   "aru": "На следующей неделе у меня будет продажа.",
+   "wq": "deal",
+   "wa": "sale"
+  },
+  {
+   "qpt": "This helps me save money.",
+   "apt": "This helps me keep money.",
+   "qru": "Это помогает экономить деньги.",
+   "aru": "Это помогает сберегать деньги.",
+   "wq": "save",
+   "wa": "keep"
+  },
+  {
+   "qpt": "I love travelling.",
+   "apt": "I love journeys.",
+   "qru": "Я люблю путешествовать.",
+   "aru": "Я люблю поездки.",
+   "wq": "travelling",
+   "wa": "journeys"
+  },
+  {
+   "qpt": "I am afraid of flying.",
+   "apt": "I am scared of flying.",
+   "qru": "Я боюсь летать.",
+   "aru": "Я страшусь летать.",
+   "wq": "afraid",
+   "wa": "scared"
+  },
+  {
+   "qpt": "I prefer to travel by car.",
+   "apt": "I choose to travel by car.",
+   "qru": "Я предпочитаю ездить на машине.",
+   "aru": "Я выбираю ездить на машине.",
+   "wq": "prefer",
+   "wa": "choose"
+  },
+  {
+   "qpt": "Travelling by car is comfortable.",
+   "apt": "Travelling by car is cosy.",
+   "qru": "Ездить на машине комфортно.",
+   "aru": "Ездить на машине уютно.",
+   "wq": "comfortable",
+   "wa": "cosy"
+  },
+  {
+   "qpt": "I have a lot of experience.",
+   "apt": "I have a lot of practice.",
+   "qru": "У меня много опыта.",
+   "aru": "У меня много практики.",
+   "wq": "experience",
+   "wa": "practice"
+  },
+  {
+   "qpt": "I enjoy meeting new clients.",
+   "apt": "I enjoy meeting new customers.",
+   "qru": "Мне нравится знакомиться с новыми клиентами.",
+   "aru": "Мне нравится знакомиться с новыми покупателями.",
+   "wq": "clients",
+   "wa": "customers"
+  }
+ ]
+}
