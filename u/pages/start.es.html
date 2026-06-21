@@ -39,6 +39,14 @@
   .soon .vow{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-style:italic;line-height:1.5}
   .paynote{font-size:13.5px;color:var(--ink);background:rgba(62,122,87,.08);border-left:3px solid var(--good);border-radius:0 12px 12px 0;padding:13px 16px;margin:18px 0 0}
   .paynote b{color:var(--azul-deep)}
+
+  /* === ТЕСТОВЫЙ РЕЖИМ === */
+  .testnote{position:relative;background:linear-gradient(135deg,rgba(31,122,92,.12),rgba(194,135,46,.12));border:1px solid var(--azul);border-radius:16px;padding:16px 18px;margin:0 0 18px;font-size:14.5px;color:var(--ink);line-height:1.55}
+  .testnote b{color:var(--azul-deep)}
+  .testnote .tt{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:#fff;background:var(--azul-deep);padding:4px 11px;border-radius:99px;margin-bottom:9px}
+  .plan-price s,.gift-amt s{color:var(--ink-soft);opacity:.7;text-decoration-thickness:2px;font-weight:inherit}
+  .now{color:var(--good);font-family:"Fraunces",serif;margin-right:8px}
+  .now-as{display:block;font-family:"Hanken Grotesk";font-size:10.5px;color:var(--good);font-weight:600;text-align:right;margin-top:3px}
 </style>
 
 <div class="wrap">
@@ -59,22 +67,28 @@
   </div>
 
   <h2 class="reveal">Planes</h2>
+
+  <div class="testnote reveal">
+    <span class="tt">🧪 En pruebas</span><br>
+    <b>Treino es gratis ahora.</b> Los precios de abajo son orientativos y <b>aún no se aplican</b> — nada que pagar durante la prueba. Se activarán más tarde, cuando terminemos el periodo de pruebas y lancemos los nuevos módulos.
+  </div>
+
   <div class="ladder">
 
     <a class="gift reveal" href="gift.html">
       <span class="gift-badge">Una idea para alguien cercano</span>
       <div class="gift-top">
-        <span class="gift-title">🎁 Regala una semana<br>de portugués</span>
-        <span class="gift-amt">€5<span class="as">pero se siente como cien</span></span>
+        <span class="gift-title">🎁 Regala un idioma<br>a alguien cercano</span>
+        <span class="gift-amt"><span class="now">€0</span><s>€5</s><span class="now-as">durante la prueba</span></span>
       </div>
-      <p class="gift-hook">No es una suscripción sin rostro, sino un entrenamiento vivo hecho con la semana real de alguien cercano. Eso no se compra por €5 en una app común.</p>
+      <p class="gift-hook">No es una suscripción sin rostro, sino un entrenamiento vivo hecho de la vida real de alguien cercano — en cualquier idioma y de cualquier tamaño: un primer set o un curso entero. Eso no se compra en una app común.</p>
       <span class="gift-go">Abrir el regalo →</span>
     </a>
 
     <div class="plan reveal" style="animation-delay:.04s">
       <div class="plan-top">
         <span class="plan-name">Recarga</span>
-        <span class="plan-price">€5 <span class="old">€7</span></span>
+        <span class="plan-price"><span class="now">€0</span><s>€5</s></span>
       </div>
       <p class="plan-desc">Un set nuevo de hasta 10 frases de tu nueva semana — cuando quieras más.</p>
       <a class="cta primary" href="https://kartuzov.gumroad.com/l/fkfdbg" target="_blank" rel="noopener">Obtener el set →</a>
@@ -84,7 +98,7 @@
       <span class="plan-badge">Inicio completo</span>
       <div class="plan-top">
         <span class="plan-name">Aplicación</span>
-        <span class="plan-price">€19 <span class="old">€39</span></span>
+        <span class="plan-price"><span class="now">€0</span><s>€19</s></span>
       </div>
       <p class="plan-desc">Tu primer set personal completo, hecho con tu semana real. Tu propio entrenamiento desde el primer día.</p>
       <a class="cta primary" href="https://kartuzov.gumroad.com/l/ixvpus" target="_blank" rel="noopener">Obtener la app →</a>
@@ -94,7 +108,7 @@
       <span class="soon-badge">Pronto 🔒</span>
       <div class="plan-top">
         <span class="plan-name">Suscripción</span>
-        <span class="plan-price">€5<span class="per">/mes</span> <span class="old">€7</span></span>
+        <span class="plan-price"><span class="now">€0</span><s>€5<span class="per">/mes</span></s></span>
       </div>
       <p class="plan-desc" style="margin-bottom:4px">Hacia dónde va Treino — el siguiente nivel más allá de repetir frases:</p>
       <ul>
@@ -107,9 +121,9 @@
 
   </div>
 
-  <div class="paynote reveal"><b>Hoy — solo pago único,</b> sin compromisos ni ataduras. Pagas cuando tomas un set nuevo. El IVA se calcula automáticamente en la caja.</div>
+  <div class="paynote reveal"><b>Durante la prueba — todo gratis,</b> sin pagos ni ataduras. Cuando termine la prueba, vuelve el pago único por cada set nuevo (IVA en la caja).</div>
 
-  <p class="sub reveal" style="margin-top:18px">Tras el pago, envía tu texto a:</p>
+  <p class="sub reveal" style="margin-top:18px">Para recibir un set, envía tu texto a:</p>
   <a class="email reveal" href="mailto:i.kartuzov@gmail.com">i.kartuzov@gmail.com</a>
 
   <a class="cta ghost reveal" style="margin-top:22px" href="method.html">Cómo funciona el método y la ciencia detrás →</a>

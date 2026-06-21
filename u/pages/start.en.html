@@ -39,6 +39,14 @@
   .soon .vow{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-style:italic;line-height:1.5}
   .paynote{font-size:13.5px;color:var(--ink);background:rgba(62,122,87,.08);border-left:3px solid var(--good);border-radius:0 12px 12px 0;padding:13px 16px;margin:18px 0 0}
   .paynote b{color:var(--azul-deep)}
+
+  /* === ТЕСТОВЫЙ РЕЖИМ === */
+  .testnote{position:relative;background:linear-gradient(135deg,rgba(31,122,92,.12),rgba(194,135,46,.12));border:1px solid var(--azul);border-radius:16px;padding:16px 18px;margin:0 0 18px;font-size:14.5px;color:var(--ink);line-height:1.55}
+  .testnote b{color:var(--azul-deep)}
+  .testnote .tt{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:#fff;background:var(--azul-deep);padding:4px 11px;border-radius:99px;margin-bottom:9px}
+  .plan-price s,.gift-amt s{color:var(--ink-soft);opacity:.7;text-decoration-thickness:2px;font-weight:inherit}
+  .now{color:var(--good);font-family:"Fraunces",serif;margin-right:8px}
+  .now-as{display:block;font-family:"Hanken Grotesk";font-size:10.5px;color:var(--good);font-weight:600;text-align:right;margin-top:3px}
 </style>
 
 <div class="wrap">
@@ -59,22 +67,28 @@
   </div>
 
   <h2 class="reveal">Plans</h2>
+
+  <div class="testnote reveal">
+    <span class="tt">🧪 Testing in progress</span><br>
+    <b>Treino is free right now.</b> The prices below are shown for reference and <b>don’t apply yet</b> — nothing to pay during the test. They’ll switch on later, once we finish the testing period and launch the new modules.
+  </div>
+
   <div class="ladder">
 
     <a class="gift reveal" href="gift.html">
       <span class="gift-badge">An idea for someone close</span>
       <div class="gift-top">
-        <span class="gift-title">🎁 Gift a week of<br>Portuguese</span>
-        <span class="gift-amt">€5<span class="as">feels like a hundred</span></span>
+        <span class="gift-title">🎁 Gift a language<br>to someone close</span>
+        <span class="gift-amt"><span class="now">€0</span><s>€5</s><span class="now-as">during the test</span></span>
       </div>
-      <p class="gift-hook">Not a faceless subscription, but a living trainer built from a close person’s real week. You can’t buy that for €5 in an ordinary app.</p>
+      <p class="gift-hook">Not a faceless subscription, but a living trainer built from a close person’s real life — in any language and any size: a first set or a whole course. You can’t buy that in an ordinary app.</p>
       <span class="gift-go">Open the gift →</span>
     </a>
 
     <div class="plan reveal" style="animation-delay:.04s">
       <div class="plan-top">
         <span class="plan-name">Top-up</span>
-        <span class="plan-price">€5 <span class="old">€7</span></span>
+        <span class="plan-price"><span class="now">€0</span><s>€5</s></span>
       </div>
       <p class="plan-desc">A fresh set of up to 10 sentences from your new week — whenever you want more.</p>
       <a class="cta primary" href="https://kartuzov.gumroad.com/l/fkfdbg" target="_blank" rel="noopener">Get the set →</a>
@@ -84,7 +98,7 @@
       <span class="plan-badge">Full start</span>
       <div class="plan-top">
         <span class="plan-name">App</span>
-        <span class="plan-price">€19 <span class="old">€39</span></span>
+        <span class="plan-price"><span class="now">€0</span><s>€19</s></span>
       </div>
       <p class="plan-desc">Your first full personal set, built from your real week. Your own trainer from day one.</p>
       <a class="cta primary" href="https://kartuzov.gumroad.com/l/ixvpus" target="_blank" rel="noopener">Get the app →</a>
@@ -94,7 +108,7 @@
       <span class="soon-badge">Soon 🔒</span>
       <div class="plan-top">
         <span class="plan-name">Subscription</span>
-        <span class="plan-price">€5<span class="per">/mo</span> <span class="old">€7</span></span>
+        <span class="plan-price"><span class="now">€0</span><s>€5<span class="per">/mo</span></s></span>
       </div>
       <p class="plan-desc" style="margin-bottom:4px">Where Treino is heading — the next level beyond repeating phrases:</p>
       <ul>
@@ -107,9 +121,9 @@
 
   </div>
 
-  <div class="paynote reveal"><b>Today — one-time payment only,</b> no commitments, no strings. You pay when you take a new set. VAT is calculated automatically at checkout.</div>
+  <div class="paynote reveal"><b>During the test — everything is free,</b> no payments, no strings. When the test ends, a one-time payment per new set returns (VAT at checkout).</div>
 
-  <p class="sub reveal" style="margin-top:18px">After payment, send your text to:</p>
+  <p class="sub reveal" style="margin-top:18px">To get a set, send your text to:</p>
   <a class="email reveal" href="mailto:i.kartuzov@gmail.com">i.kartuzov@gmail.com</a>
 
   <a class="cta ghost reveal" style="margin-top:22px" href="method.html">How the method works and the science behind it →</a>
