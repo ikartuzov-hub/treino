@@ -39,6 +39,14 @@
   .soon .vow{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-style:italic;line-height:1.5}
   .paynote{font-size:13.5px;color:var(--ink);background:rgba(62,122,87,.08);border-left:3px solid var(--good);border-radius:0 12px 12px 0;padding:13px 16px;margin:18px 0 0}
   .paynote b{color:var(--azul-deep)}
+
+  /* === ТЕСТОВЫЙ РЕЖИМ (на время проверки) === */
+  .testnote{position:relative;background:linear-gradient(135deg,rgba(31,122,92,.12),rgba(194,135,46,.12));border:1px solid var(--azul);border-radius:16px;padding:16px 18px;margin:0 0 18px;font-size:14.5px;color:var(--ink);line-height:1.55}
+  .testnote b{color:var(--azul-deep)}
+  .testnote .tt{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:#fff;background:var(--azul-deep);padding:4px 11px;border-radius:99px;margin-bottom:9px}
+  .plan-price s,.gift-amt s{color:var(--ink-soft);opacity:.7;text-decoration-thickness:2px;font-weight:inherit}
+  .now{color:var(--good);font-family:"Fraunces",serif;margin-right:8px}
+  .now-as{display:block;font-family:"Hanken Grotesk";font-size:10.5px;color:var(--good);font-weight:600;text-align:right;margin-top:3px}
 </style>
 
 <div class="wrap">
@@ -59,22 +67,28 @@
   </div>
 
   <h2 class="reveal">Тарифы</h2>
+
+  <div class="testnote reveal">
+    <span class="tt">🧪 Идёт тестирование</span><br>
+    <b>Сейчас Treino бесплатен.</b> Цены ниже показаны для ориентира и <b>пока не действуют</b> — на время теста платить ничего не нужно. Они включатся позже, когда мы закончим период тестирования и запустим новые модули.
+  </div>
+
   <div class="ladder">
 
     <a class="gift reveal" href="gift.html">
       <span class="gift-badge">Идея для близкого</span>
       <div class="gift-top">
-        <span class="gift-title">🎁 Подарить неделю<br>португальского</span>
-        <span class="gift-amt">€5<span class="as">а ощущается на сто</span></span>
+        <span class="gift-title">🎁 Подарить язык<br>близкому человеку</span>
+        <span class="gift-amt"><span class="now">€0</span><s>€5</s><span class="now-as">на время теста</span></span>
       </div>
-      <p class="gift-hook">Не безликая подписка, а живой тренажёр из реальной недели близкого человека. Такого не купить за €5 в обычном приложении.</p>
+      <p class="gift-hook">Не безликая подписка, а живой тренажёр из реальной жизни близкого — на любом языке и в любом объёме: хоть первый набор, хоть целый курс. Такого не купить в обычном приложении.</p>
       <span class="gift-go">Открыть подарок →</span>
     </a>
 
     <div class="plan reveal" style="animation-delay:.04s">
       <div class="plan-top">
         <span class="plan-name">Пополнение</span>
-        <span class="plan-price">€5 <span class="old">€7</span></span>
+        <span class="plan-price"><span class="now">€0</span><s>€5</s></span>
       </div>
       <p class="plan-desc">Свежий набор до 10 предложений из твоей новой недели — когда захочешь ещё.</p>
       <a class="cta primary" href="https://kartuzov.gumroad.com/l/fkfdbg" target="_blank" rel="noopener">Получить набор →</a>
@@ -84,7 +98,7 @@
       <span class="plan-badge">Полный старт</span>
       <div class="plan-top">
         <span class="plan-name">Приложение</span>
-        <span class="plan-price">€19 <span class="old">€39</span></span>
+        <span class="plan-price"><span class="now">€0</span><s>€19</s></span>
       </div>
       <p class="plan-desc">Первый полный персональный набор, собранный по твоей реальной неделе. Твой личный тренажёр с первого дня.</p>
       <a class="cta primary" href="https://kartuzov.gumroad.com/l/ixvpus" target="_blank" rel="noopener">Получить приложение →</a>
@@ -94,7 +108,7 @@
       <span class="soon-badge">Скоро 🔒</span>
       <div class="plan-top">
         <span class="plan-name">Подписка</span>
-        <span class="plan-price">€5<span class="per">/мес</span> <span class="old">€7</span></span>
+        <span class="plan-price"><span class="now">€0</span><s>€5<span class="per">/мес</span></s></span>
       </div>
       <p class="plan-desc" style="margin-bottom:4px">Куда движется Treino — следующий уровень за повторением фраз:</p>
       <ul>
@@ -107,9 +121,9 @@
 
   </div>
 
-  <div class="paynote reveal"><b>Сегодня — только разовая оплата,</b> без обязательств и привязок. Платишь, когда берёшь новый набор. НДС считается автоматически на кассе.</div>
+  <div class="paynote reveal"><b>На время теста — всё бесплатно,</b> без оплат и привязок. Когда тест завершится, вернётся разовая оплата за каждый новый набор (НДС посчитается на кассе).</div>
 
-  <p class="sub reveal" style="margin-top:18px">После оплаты пришли свой текст на:</p>
+  <p class="sub reveal" style="margin-top:18px">Чтобы получить набор, пришли свой текст на:</p>
   <a class="email reveal" href="mailto:i.kartuzov@gmail.com">i.kartuzov@gmail.com</a>
 
   <a class="cta ghost reveal" style="margin-top:22px" href="method.html">Как работает метод и наука за ним →</a>
