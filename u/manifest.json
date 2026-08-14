@@ -84,6 +84,6 @@
    "live": true
   }
  ],
- "hubUrl": "https://ikartuzov-hub.github.io/seedwave-catalog/hub/",
+ "hubUrl": "https://seedwave.pt/hub/",
  "_hubNote": "Ссылка на Хаб. Движок сам подставит ?lang=. Поменять здесь — обновится везде."
 }

@@ -6,8 +6,8 @@
 
 <p align="center">
   <em>A language trainer that speaks your language — and your partner's.</em><br>
-  <a href="https://ikartuzov-hub.github.io/treino/u/?pair=ru-en&lang=ru">Live demo</a> ·
-  <a href="https://ikartuzov-hub.github.io/seedwave-catalog/hub">SeedWave Hub</a> ·
+  <a href="https://t.seedwave.pt/u/?pair=ru-en&lang=ru">Live demo</a> ·
+  <a href="https://seedwave.pt/hub/">SeedWave Hub</a> ·
   <a href="https://www.linkedin.com/in/igor-kartuzov">Built by Igor Kartuzov</a>
 </p>
 
@@ -23,7 +23,7 @@ Treino is a multilingual trainer built on the SeedWave **three-layer architectur
 `SeedWave three-layer engine` · `URL-param personal decks` · `GitHub Pages` · `multilingual (RU/EN/PT/ES/DE)`
 
 ## See it live
-- **Demo:** https://ikartuzov-hub.github.io/treino/u/?pair=ru-en&lang=ru
+- **Demo:** https://t.seedwave.pt/u/?pair=ru-en&lang=ru
 - **Personal deck:** `/u/?pair=ru-en&d=olga&lang=ru` — one link, one learner.
 
 ## Screenshots
@@ -44,5 +44,5 @@ Treino is a multilingual trainer built on the SeedWave **three-layer architectur
 ---
 
 <p align="center">
-  <sub>© Igor Kartuzov · <a href="https://ikartuzov-hub.github.io/seedwave-catalog/hub">SeedWave</a> — AI-first studio · Madeira, EU</sub>
+  <sub>© Igor Kartuzov · <a href="https://seedwave.pt/hub/">SeedWave</a> — AI-first studio · Madeira, EU</sub>
 </p>
