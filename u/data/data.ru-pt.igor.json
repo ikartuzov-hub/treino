@@ -1,6 +1,18 @@
 {
  "config": {"lang": "pt-PT", "ui": "ru", "neg": "Não, …", "brand": "Igor ·", "flag": "🇵🇹", "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg", "subscribeText": "Хочешь продолжение — свою следующую неделю?", "subscribeBtn": "Пополнить набор →", "flyerUrl": "start.html", "flyerText": "Как это работает и цены", "methodUrl": "method.html", "methodText": "Метод"},
  "phrases": [
+  {"pt": "Temos evitado produtos com demasiado sal.", "ru": "В последнее время мы избегаем слишком солёных продуктов.", "sit": "ter + particípio · nós · temos", "cue": "<span>Temos evitado</span> produtos com demasiado sal.", "hi": ["Temos evitado"], "week": "ppc2"},
+  {"pt": "Temos encomendado algumas compras pela Internet.", "ru": "В последнее время мы заказываем часть покупок через интернет.", "sit": "ter + particípio · nós · temos", "cue": "<span>Temos encomendado</span> algumas compras pela Internet.", "hi": ["Temos encomendado"], "week": "ppc2"},
+  {"pt": "Tenho pago as compras com cartão.", "ru": "В последнее время я плачу за покупки картой.", "sit": "ter + particípio · eu · pago (непр.)", "cue": "<span>Tenho pago</span> as compras com cartão.", "hi": ["Tenho pago"], "week": "ppc2"},
+  {"pt": "Tenho guardado os talões para controlar as despesas.", "ru": "В последнее время я сохраняю чеки, чтобы следить за расходами.", "sit": "ter + particípio · eu · tenho", "cue": "<span>Tenho guardado</span> os talões para controlar as despesas.", "hi": ["Tenho guardado"], "week": "ppc2"},
+  {"pt": "Tens apanhado muitas filas nas caixas?", "ru": "Ты в последнее время часто стоишь в очередях на кассах?", "sit": "ter + particípio · tu · tens", "cue": "<span>Tens apanhado</span> muitas filas nas caixas?", "hi": ["Tens apanhado"], "week": "ppc2"},
+  {"pt": "Tenho perguntado aos vendedores de onde vêm os produtos.", "ru": "В последнее время я спрашиваю продавцов, откуда продукты.", "sit": "ter + particípio · eu · tenho", "cue": "<span>Tenho perguntado</span> aos vendedores de onde vêm os produtos.", "hi": ["Tenho perguntado"], "week": "ppc2"},
+  {"pt": "Os supermercados têm feito muitas promoções.", "ru": "В последнее время супермаркеты делают много акций.", "sit": "ter + particípio · eles · têm + feito", "cue": "Os supermercados <span>têm feito</span> muitas promoções.", "hi": ["têm feito"], "week": "ppc2"},
+  {"pt": "Tenho cozinhado mais em casa.", "ru": "В последнее время я больше готовлю дома.", "sit": "ter + particípio · eu · tenho", "cue": "<span>Tenho cozinhado</span> mais em casa.", "hi": ["Tenho cozinhado"], "week": "ppc2"},
+  {"pt": "Temos temperado as saladas com azeite e limão.", "ru": "В последнее время мы заправляем салаты оливковым маслом и лимоном.", "sit": "ter + particípio · nós · temos", "cue": "<span>Temos temperado</span> as saladas com azeite e limão.", "hi": ["Temos temperado"], "week": "ppc2"},
+  {"pt": "Tenho posto salsa picada na sopa.", "ru": "В последнее время я кладу рубленую петрушку в суп.", "sit": "ter + particípio · eu · posto (непр.!)", "cue": "<span>Tenho posto</span> salsa picada na sopa.", "hi": ["Tenho posto"], "week": "ppc2"},
+  {"pt": "Temos substituído as natas por iogurte natural.", "ru": "В последнее время мы заменяем сливки натуральным йогуртом.", "sit": "ter + particípio · nós · temos", "cue": "<span>Temos substituído</span> as natas por iogurte natural.", "hi": ["Temos substituído"], "week": "ppc2"},
+  {"pt": "Temos cozido os legumes a vapor.", "ru": "В последнее время мы готовим овощи на пару.", "sit": "ter + particípio · nós · temos", "cue": "<span>Temos cozido</span> os legumes a vapor.", "hi": ["Temos cozido"], "week": "ppc2"},
   {"pt": "Tenho feito compras neste supermercado.", "ru": "В последнее время я делаю покупки в этом супермаркете.", "sit": "ter + particípio · eu · tenho + feito (непр.)", "cue": "<span>Tenho feito</span> compras neste supermercado.", "hi": ["Tenho feito"], "week": "ppc"},
   {"pt": "Tenho comprado pão fresco todas as manhãs.", "ru": "В последнее время я каждое утро покупаю свежий хлеб.", "sit": "ter + particípio · eu · tenho", "cue": "<span>Tenho comprado</span> pão fresco todas as manhãs.", "hi": ["Tenho comprado"], "week": "ppc"},
   {"pt": "Temos ido ao mercado aos sábados.", "ru": "В последнее время мы ходим на рынок по субботам.", "sit": "ter + particípio · nós · temos", "cue": "<span>Temos ido</span> ao mercado aos sábados.", "hi": ["Temos ido"], "week": "ppc"},
@@ -49,6 +61,18 @@
   {"pt": "São estes os meus planos.", "ru": "Такие у меня планы.", "sit": "итог", "cue": "<span>São</span> estes os meus planos.", "hi": ["São"], "week": "jun2"}
  ],
  "weeks": [
+  {"id": "ppc2", "label": "Тема · ter + particípio (2) · кухня", "date": "«в последнее время» · покупки и кухня · 05.11", "month": "Темы B1", "sentences": [
+   {"pt": "Ultimamente tenho cozinhado mais em casa.", "ru": "В последнее время я больше готовлю дома.", "t": "pre"},
+   {"pt": "Temos planeado as refeições antes de ir às compras.", "ru": "В последнее время мы планируем еду, прежде чем идти за покупками.", "t": "pre"},
+   {"pt": "Tenho guardado os talões para controlar as despesas.", "ru": "В последнее время я сохраняю чеки, чтобы следить за расходами.", "t": "pre"},
+   {"pt": "Temos encontrado quase tudo na mercearia do bairro.", "ru": "В последнее время мы находим почти всё в магазинчике нашего района.", "t": "pre"},
+   {"pt": "Tenho usado mais azeite e menos manteiga.", "ru": "В последнее время я использую больше оливкового масла и меньше сливочного.", "t": "pre"},
+   {"pt": "Tenho posto salsa picada na sopa.", "ru": "В последнее время я кладу рубленую петрушку в суп.", "t": "pre"},
+   {"pt": "A minha mulher tem assado peixe no forno com batatas.", "ru": "Жена в последнее время запекает рыбу в духовке с картошкой.", "t": "pre"},
+   {"pt": "Ontem fiz uma salada com azeite e limão.", "ru": "Вчера я сделал салат с оливковым маслом и лимоном.", "t": "pas"},
+   {"pt": "Hoje vou cozer os legumes a vapor.", "ru": "Сегодня я приготовлю овощи на пару.", "t": "fut"},
+   {"pt": "Amanhã vamos à mercearia comprar fruta.", "ru": "Завтра мы пойдём в магазинчик за фруктами.", "t": "fut"}
+  ]},
   {"id": "ppc", "label": "Тема · ter + particípio", "date": "«в последнее время» · #217 · 05.11", "month": "Темы B1", "sentences": [
    {"pt": "Ultimamente tenho estudado muito português.", "ru": "В последнее время я много учу португальский.", "t": "pre"},
    {"pt": "Tenho acordado cedo e tenho passeado com a minha neta.", "ru": "В последнее время я рано встаю и гуляю с внучкой.", "t": "pre"},
@@ -115,6 +139,14 @@
   ]}
  ],
  "cloze": [
+  {"q": "Tenho ___ salsa picada na sopa.", "opts": ["postado", "posto", "ponhado"], "ok": 1, "rule": "pôr → <b>posto</b> (неправильный). «postado» — такого причастия от pôr нет (postar = публиковать пост).", "week": "ppc2"},
+  {"q": "Tenho ___ as compras com cartão.", "opts": ["pago", "pagou", "pagando"], "ok": 0, "rule": "pagar → <b>pago</b>: в Португалии с ter говорят tenho pago.", "week": "ppc2"},
+  {"q": "Os supermercados ___ feito muitas promoções.", "opts": ["tem", "têm", "temos"], "ok": 1, "rule": "Они (os supermercados) → <b>têm</b> с ^. tem — это он/она.", "week": "ppc2"},
+  {"q": "Ultimamente ___ mais em casa.", "opts": ["cozinhei", "tenho cozinhado", "cozinho ontem"], "ok": 1, "rule": "«Ultimamente» → <b>ter + particípio</b>: повторяется до сих пор.", "week": "ppc2"},
+  {"q": "Ontem ___ uma salada com limão.", "opts": ["fiz", "tenho feito", "tenho fazido"], "ok": 0, "rule": "Один раз вчера → <b>fiz</b> (pretérito perfeito simples). Ter + particípio — не для «вчера».", "week": "ppc2"},
+  {"q": "Temos ___ os legumes a vapor.", "opts": ["cozido", "cozinho", "cozer"], "ok": 0, "rule": "cozer → <b>cozido</b> (-er → -ido).", "week": "ppc2"},
+  {"q": "Nós ___ substituído as natas por iogurte.", "opts": ["temos", "têm", "tenho"], "ok": 0, "rule": "<b>nós temos</b> + particípio.", "week": "ppc2"},
+  {"q": "Tenho guardado os ___ para controlar as despesas.", "opts": ["talões", "recibos verdes", "bilhetes"], "ok": 0, "rule": "<b>o talão</b> (мн. talões) — чек из магазина. Recibos verdes — это квитанции ИП, bilhete — билет.", "week": "ppc2"},
   {"q": "Ultimamente eu ___ comprado pão fresco.", "opts": ["tenho", "tem", "temos"], "ok": 0, "rule": "<b>eu tenho</b> + particípio. Ter в настоящем: tenho · tens · tem · temos · têm.", "week": "ppc"},
   {"q": "Nós ___ ido ao mercado aos sábados.", "opts": ["temos", "têm", "tens"], "ok": 0, "rule": "<b>nós temos</b> + particípio.", "week": "ppc"},
   {"q": "Eles ___ comprado arroz em embalagens maiores.", "opts": ["tem", "têm", "temos"], "ok": 1, "rule": "<b>eles / vocês têm</b> — с ^ (têm). Без шапочки tem = ele/ela/você.", "week": "ppc"},
@@ -172,6 +204,7 @@
   {"qpt": "O teu filho é mais velho?", "apt": "Não, é mais novo.", "qru": "Твой сын старший?", "aru": "Нет, он младший.", "wq": "velho", "wa": "novo", "grp": "car", "week": "jun2"}
  ],
  "synonyms": [
+  {"qpt": "Temos cozido os legumes a vapor.", "apt": "Temos feito os legumes a vapor.", "qru": "В последнее время мы варим овощи на пару.", "aru": "В последнее время мы готовим овощи на пару.", "wq": "cozido", "wa": "feito", "week": "ppc2"},
   {"qpt": "Tenho feito compras aqui.", "apt": "Ultimamente faço compras aqui.", "qru": "В последнее время я делаю покупки здесь.", "aru": "В последнее время я покупаю здесь.", "wq": "tenho feito", "wa": "ultimamente faço", "week": "ppc"},
   {"qpt": "Acabei de chegar.", "apt": "Cheguei agora mesmo.", "qru": "Я только что пришёл.", "aru": "Я пришёл прямо сейчас.", "wq": "acabei de", "wa": "agora mesmo", "week": "acab"},
   {"qpt": "O fim de semana foi intenso.", "apt": "O fim de semana foi agitado.", "qru": "Выходные были насыщенными.", "aru": "Выходные были бурными.", "wq": "intenso", "wa": "agitado", "week": "jun3"},
