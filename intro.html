@@ -255,9 +255,11 @@
 
 <footer>
   <span>©</span>
-  <a id="authorLink" target="_blank" rel="noopener">Igor Kartuzov</a>
-  <span>·</span>
   <a id="hubLink">SeedWave</a>
+  <span>·</span>
+  <a id="madLink" href="https://seedwave.pt/madeira/?lang=ru&amp;utm_source=treino&amp;utm_medium=footer">Madeira</a>
+  <span>·</span>
+  <a id="authorLink" target="_blank" rel="noopener">Igor Kartuzov</a>
   <span style="opacity:.55">intro v18</span>
 </footer>
 
@@ -437,6 +439,7 @@ function applyLocale(){
   $("altWrite").textContent=L.ui.altWrite;
   $("altLang").textContent=L.ui.altLang;
   $("authorLink").href=AUTHOR_URL;
+  if($("madLink"))$("madLink").href="https://seedwave.pt/madeira/?lang="+(lang||"ru")+"&utm_source=treino&utm_medium=footer";
   $("hubLink").href=withNav(HUB_URL);
 }
 

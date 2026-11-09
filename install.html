@@ -56,7 +56,7 @@
   </div>
   <div class="panel on" id="panel-ios"><ol id="list-ios"></ol></div>
   <div class="panel" id="panel-android"><ol id="list-android"></ol></div>
-  <footer>© <a href="https://www.linkedin.com/in/igor-kartuzov/" target="_blank" rel="noopener">Igor Kartuzov</a> · <a id="hubLink">SeedWave</a></footer>
+  <footer>© <a id="hubLink">SeedWave</a> · <a data-mad href="https://seedwave.pt/madeira/?lang=ru&amp;utm_source=treino&amp;utm_medium=footer">Madeira</a> · <a href="https://www.linkedin.com/in/igor-kartuzov/" target="_blank" rel="noopener">Igor Kartuzov</a></footer>
 </div>
 
 <script>
@@ -101,5 +101,6 @@ document.querySelectorAll(".tab").forEach(t=>t.onclick=function(){
 $("themeBtn").onclick=()=>setTheme(theme==="dark"?"light":"dark");
 render();setTheme(theme);
 </script>
+<script>/* Madeira в подвале: язык читателя */(function(){function u(){var L=(document.documentElement.lang||"").slice(0,2)||((location.search.match(/[?&]lang=([a-z]{2})/)||[])[1])||"pt";document.querySelectorAll("a[data-mad]").forEach(function(a){a.href=a.href.replace(/lang=[a-z]{2}/,"lang="+L)})}u();if(window.MutationObserver)new MutationObserver(u).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]})})()</script>
 </body>
 </html>
