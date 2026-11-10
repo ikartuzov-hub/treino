@@ -1,6 +1,10 @@
 {
  "config": {"lang": "pt-PT", "ui": "ru", "neg": "Não, …", "brand": "Igor ·", "flag": "🇵🇹", "subscribeUrl": "https://kartuzov.gumroad.com/l/fkfdbg", "subscribeText": "Хочешь продолжение — свою следующую неделю?", "subscribeBtn": "Пополнить набор →", "flyerUrl": "start.html", "flyerText": "Как это работает и цены", "methodUrl": "method.html", "methodText": "Метод"},
  "phrases": [
+  {"pt": "Conheci colegas de muitos países.", "ru": "Я познакомился с одногруппниками из многих стран.", "sit": "учёба · новая группа", "cue": "<span>Conheci</span> colegas de muitos países.", "hi": ["Conheci"], "week": "nov2"},
+  {"pt": "Porque é que é assim?", "ru": "Почему это так?", "sit": "вопрос на уроке", "cue": "<span>Porque é que</span> é assim?", "hi": ["Porque é que"], "week": "nov2"},
+  {"pt": "Devagar e sem pressa.", "ru": "Спокойно, без спешки.", "sit": "свой темп", "cue": "Devagar e <span>sem pressa</span>.", "hi": ["sem pressa"], "week": "nov2"},
+  {"pt": "Mal posso esperar!", "ru": "Не могу дождаться!", "sit": "ожидание, радость", "cue": "<span>Mal posso</span> esperar!", "hi": ["Mal posso"], "week": "nov2"},
   {"pt": "Vou despachar esta mala.", "ru": "Я сдам этот чемодан в багаж.", "sit": "аэропорт · сдать багаж", "cue": "Vou <span>despachar</span> esta mala.", "hi": ["despachar"], "week": "viag"},
   {"pt": "Esta mochila é bagagem de mão.", "ru": "Этот рюкзак — ручная кладь.", "sit": "аэропорт · ручная кладь", "cue": "Esta mochila é <span>bagagem de mão</span>.", "hi": ["bagagem de mão"], "week": "viag"},
   {"pt": "Aqui está o meu cartão de embarque.", "ru": "Вот мой посадочный талон.", "sit": "аэропорт · посадка", "cue": "Aqui está o meu <span>cartão de embarque</span>.", "hi": ["cartão de embarque"], "week": "viag"},
@@ -85,6 +89,22 @@
   {"pt": "São estes os meus planos.", "ru": "Такие у меня планы.", "sit": "итог", "cue": "<span>São</span> estes os meus planos.", "hi": ["São"], "week": "jun2"}
  ],
  "weeks": [
+  {"id": "nov2", "label": "Ноябрь / 2", "date": "вторая неделя ноября", "month": "Ноябрь", "sentences": [
+   {"pt": "Na sexta-feira fomos à praia com a família — foi o melhor dia da semana!", "ru": "В пятницу мы ездили с семьёй на пляж — это был лучший день недели!", "t": "pas"},
+   {"pt": "No mesmo dia montaram os móveis novos, e agora a casa nova já parece nossa.", "ru": "В тот же день собрали новую мебель, и теперь новая квартира уже кажется нашей.", "t": "pas"},
+   {"pt": "Na segunda-feira tive a primeira aula de B1 com a professora Rosa. Estava à espera deste dia!", "ru": "В понедельник у меня было первое занятие B1 с преподавателем Розой. Я ждал этого дня!", "t": "pas"},
+   {"pt": "Conheci colegas de muitos países: da Itália, da Venezuela, da Ucrânia e da África do Sul.", "ru": "Я познакомился с одногруппниками из многих стран: из Италии, Венесуэлы, Украины и ЮАР.", "t": "pas"},
+   {"pt": "Esta semana a minha bateria esteve quase sempre a cinco.", "ru": "На этой неделе моя батарейка почти всегда была на пятёрке.", "t": "pas"},
+   {"pt": "Agora penso numa pergunta da aula: porque é que a Madeira tem tantas ligações à Venezuela e à África do Sul?", "ru": "Сейчас думаю над вопросом с урока: почему у Мадейры столько связей с Венесуэлой и ЮАР?", "t": "pre"},
+   {"pt": "Hoje começo a preparar a mala, devagar e sem pressa.", "ru": "Сегодня начинаю собирать чемодан — спокойно, без спешки.", "t": "pre"},
+   {"pt": "Amanhã à noite tenho a segunda aula de B1, a última antes da viagem.", "ru": "Завтра вечером у меня второе занятие B1 — последнее перед поездкой.", "t": "pre"},
+   {"pt": "Na quinta, no clube, digo à Lúcia que volto no dia 3 de dezembro.", "ru": "В четверг в клубе скажу Лусии, что вернусь 3 декабря.", "t": "pre"},
+   {"pt": "Na sexta-feira, dia 13, vamos apanhar o avião para Lisboa e, no sábado, para Praga.", "ru": "В пятницу, 13-го, летим в Лиссабон, а в субботу — в Прагу.", "t": "fut"},
+   {"pt": "Vamos passar duas semanas em Mariánské Lázně, e eu vou descansar a sério.", "ru": "Проведём две недели в Марианских Лазнях, и я буду по-настоящему отдыхать.", "t": "fut"},
+   {"pt": "No domingo vou ter aula com o Ruslan pelo computador, mesmo na República Checa.", "ru": "В воскресенье у меня будет урок с Русланом по компьютеру — даже из Чехии.", "t": "fut"},
+   {"pt": "Quando voltar, no dia 30, vou mostrar à professora Rosa os trabalhos de casa.", "ru": "Когда вернусь, 30-го, покажу Розе домашние задания.", "t": "fut"},
+   {"pt": "Mal posso esperar por esta viagem!", "ru": "Не могу дождаться этой поездки!", "t": "fut"}
+  ]},
   {"id": "viag", "label": "Тема · поездка: аэропорт, отель, СПА", "date": "13–29.11 · вежливо: gostaria / poderia", "month": "Темы B1", "sentences": [
    {"pt": "Já comprámos os bilhetes e reservámos o hotel.", "ru": "Мы уже купили билеты и забронировали отель.", "t": "pas"},
    {"pt": "Agora estou a preparar a mala.", "ru": "Сейчас я собираю чемодан.", "t": "pre"},
@@ -187,6 +207,10 @@
   ]}
  ],
  "cloze": [
+  {"q": "Na segunda-feira ___ a primeira aula de B1.", "opts": ["tenho", "tive", "vou ter"], "ok": 1, "rule": "<b>tive</b> = у меня было (ter → tive). Прошедший понедельник → pretérito perfeito.", "week": "nov2"},
+  {"q": "Na sexta-feira ___ o dia na praia com a família.", "opts": ["passamos", "passámos", "passemos"], "ok": 1, "rule": "<b>passámos</b> — прошедшее (nós) у глаголов на -AR пишется с <b>á</b>. Без акцента passamos — настоящее.", "week": "nov2"},
+  {"q": "Conheci colegas ___ Venezuela.", "opts": ["de", "da", "do"], "ok": 1, "rule": "<b>da</b> = de + a. <i>A</i> Venezuela — женский род со статьёй, поэтому <b>da</b> Venezuela (но de Portugal).", "week": "nov2"},
+  {"q": "Digo à Lúcia ___ volto no dia 3.", "opts": ["que", "qui", "quem"], "ok": 0, "rule": "<b>que</b> = что (союз): digo que… Формы «qui» в португальском нет.", "week": "nov2"},
   {"q": "Vai ___ alguma bagagem?", "opts": ["despachar", "mandar", "entregar"], "ok": 0, "rule": "<b>despachar a bagagem</b> = сдать багаж. Так спрашивают на стойке регистрации (урок 88.14).", "week": "viag"},
   {"q": "___ de um quarto com vista para o jardim.", "opts": ["Gostaria", "Gosto", "Gostei"], "ok": 0, "rule": "<b>Gostaria de</b> — Condicional = «я бы хотел». Вежливая просьба, тема ★★★ 2, 6, 77–79.", "week": "viag"},
   {"q": "___ chamar um táxi, por favor?", "opts": ["Poderia", "Pode-se", "Pôde"], "ok": 0, "rule": "<b>Poderia…?</b> — Condicional от poder: «не могли бы вы…?» Вежливее, чем pode.", "week": "viag"},
@@ -257,6 +281,8 @@
   {"prep": "para", "art": "o", "noun": "filho", "ru": "сыну (для сына)", "ex": "Levo um presente para o filho.", "exru": "Несу подарок сыну.", "week": "core"}
  ],
  "antonyms": [
+  {"qpt": "A viagem é curta?", "apt": "Não, é longa — duas semanas!", "qru": "Поездка короткая?", "aru": "Нет, длинная — две недели!", "wq": "curta", "wa": "longa", "grp": "car", "week": "nov2"},
+  {"qpt": "Fazes a mala depressa?", "apt": "Não, devagar e sem pressa.", "qru": "Ты собираешь чемодан быстро?", "aru": "Нет, медленно, без спешки.", "wq": "depressa", "wa": "devagar", "grp": "fis", "week": "nov2"},
   {"qpt": "O apartamento é novo?", "apt": "Não, é antigo.", "qru": "Квартира новая?", "aru": "Нет, старая.", "wq": "novo", "wa": "antigo", "grp": "car", "week": "nov1"},
   {"qpt": "A bateria está vazia?", "apt": "Não, está cheia!", "qru": "Батарейка пустая?", "aru": "Нет, полная!", "wq": "vazia", "wa": "cheia", "grp": "car", "week": "nov1"},
   {"qpt": "O fogo de artifício foi apagado?", "apt": "Não, foi muito brilhante.", "qru": "Салют был тусклым?", "aru": "Нет, он был очень ярким.", "wq": "apagado", "wa": "brilhante", "grp": "fis", "week": "jun3"},
